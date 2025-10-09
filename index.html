@@ -59,6 +59,11 @@
         <header class="text-center mb-10">
             <h1 class="text-3xl md:text-5xl font-bold text-slate-900">Painel de Influenciadores</h1>
             <p class="text-slate-500 mt-3 text-lg">Encontre o influenciador ideal para sua campanha.</p>
+             <div class="mt-4">
+                <a href="sugestao.html" class="inline-block bg-amber-600 text-white font-semibold px-5 py-2 rounded-lg hover:bg-amber-700 transition-colors">
+                    Sugerir Novo Influenciador
+                </a>
+            </div>
         </header>
 
         <div class="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg mb-6 sticky top-4 z-10">
@@ -186,6 +191,9 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+              // ### CÓDIGO PARA BLOQUEAR BOTÃO DIREITO ###
+              document.addEventListener('contextmenu', event => event.preventDefault());
+
               const segmentColors = {
                   'Música': 'bg-purple-200 text-purple-700', 'Humor': 'bg-yellow-200 text-yellow-700', 'Moda': 'bg-pink-200 text-pink-700', 'Beleza': 'bg-rose-200 text-rose-700', 'Entretenimento': 'bg-cyan-200 text-cyan-700', 'Esporte': 'bg-green-200 text-green-700', 'Gastronomia': 'bg-orange-200 text-orange-700', 'Educação': 'bg-blue-200 text-blue-700', 'Lifestyle': 'bg-lime-200 text-lime-700', 'Viagem': 'bg-teal-200 text-teal-700', 'Família': 'bg-sky-200 text-sky-700', 'Arte': 'bg-indigo-200 text-indigo-700', 'Política': 'bg-gray-200 text-gray-700', 'Audiovisual': 'bg-red-200 text-red-700', 'Autoconhecimento': 'bg-purple-200 text-purple-700', 'Causas sociais': 'bg-emerald-200 text-emerald-700', 'Perfumaria': 'bg-fuchsia-200 text-fuchsia-700', 'Cinema e TV': 'bg-red-200 text-red-700', 'Maternidade': 'bg-sky-200 text-sky-700', 'Finanças': 'bg-green-200 text-green-700', 'Negócios | Marketing': 'bg-blue-200 text-blue-700', 'Cultura regional': 'bg-orange-200 text-orange-700', 'Dança': 'bg-pink-200 text-pink-700', 'Fitness': 'bg-green-200 text-green-700', 'Games': 'bg-indigo-200 text-indigo-700', 'Relacionamento': 'bg-rose-200 text-rose-700','Saúde': 'bg-emerald-200 text-emerald-700', 'Tecnologia': 'bg-blue-200 text-blue-700', 'Default': 'bg-slate-200 text-slate-700'
               };
@@ -451,7 +459,7 @@
               
               allInfluencers = processData(rawData);
               populateFilters();
-              displayInfluencers(allInfluencers);
+              applyFilters(); // Chamada inicial para ordenar a lista completa
 
 
               function populateFilters() {
@@ -599,7 +607,7 @@
                       return matchSearch && matchSegmento && matchRedeSocial && matchOrcamento && matchProjeto && matchAgencia;
                   });
                   
-                  // **NOVA LINHA ADICIONADA: Ordena os resultados filtrados**
+                  // Ordena os resultados filtrados do maior para o menor orçamento
                   filteredInfluencers.sort((a, b) => b.valorNumericoOrcamento - a.valorNumericoOrcamento);
 
                   displayInfluencers(filteredInfluencers);
