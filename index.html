@@ -1,1075 +1,539 @@
 <!DOCTYPE html>
-
 <html lang="pt-br">
-
 <head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Ferramenta de Influenciadores</title>
-
-    <script src="https://cdn.tailwindcss.com"></script>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <style>
-
-        body {
-
-            font-family: 'Inter', sans-serif;
-
-        }
-
-        ::-webkit-scrollbar {
-
-            width: 8px;
-
-        }
-
-        ::-webkit-scrollbar-track {
-
-            background: #f1f1f1;
-
-        }
-
-        ::-webkit-scrollbar-thumb {
-
-            background: #a8a8a8;
-
-            border-radius: 4px;
-
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-
-            background: #555;
-
-        }
-
-        .loader {
-
-            border: 4px solid #f3f3f3;
-
-            border-top: 4px solid #f59e0b; /* Amber 500 */
-
-            border-radius: 50%;
-
-            width: 40px;
-
-            height: 40px;
-
-            animation: spin 1s linear infinite;
-
-        }
-
-        @keyframes spin {
-
-            0% { transform: rotate(0deg); }
-
-            100% { transform: rotate(360deg); }
-
-        }
-
-        #influencer-modal {
-
-            transition: opacity 0.3s ease-in-out;
-
-        }
-
-        #influencer-modal.show {
-
-            opacity: 1;
-
-            pointer-events: auto;
-
-        }
-
-        #modal-content {
-
-           transition: transform 0.3s ease-in-out;
-
-        }
-
-        #influencer-modal.show #modal-content {
-
-            transform: scale(1);
-
-        }
-
-    </style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ferramenta de Influenciadores</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Inter', sans-serif;
+}
+::-webkit-scrollbar {
+width: 8px;
+}
+::-webkit-scrollbar-track {
+background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+background: #a8a8a8;
+border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+background: #555;
+}
+.loader {
+border: 4px solid #f3f3f3;
+border-top: 4px solid #f59e0b; /* Amber 500 */
+border-radius: 50%;
+width: 40px;
+height: 40px;
+animation: spin 1s linear infinite;
+}
+@keyframes spin {
+0% { transform: rotate(0deg); }
+100% { transform: rotate(360deg); }
+}
+#influencer-modal {
+transition: opacity 0.3s ease-in-out;
+}
+#influencer-modal.show {
+opacity: 1;
+pointer-events: auto;
+}
+#modal-content {
+transition: transform 0.3s ease-in-out;
+}
+#influencer-modal.show #modal-content {
+transform: scale(1);
+}
+</style>
 </head>
-
 <body class="bg-amber-50 text-slate-800">
 
-
-
-    <div class="container mx-auto p-4 md:p-8">
-
-        
-
-        <header class="text-center mb-10">
-
-            <h1 class="text-3xl md:text-5xl font-bold text-slate-900">Painel de Influenciadores 🌟</h1>
-
-            <p class="text-slate-500 mt-3 text-lg">Encontre o influenciador ideal para sua campanha.</p>
-
-            <div class="mt-4 flex justify-center space-x-4">
-
-                <button id="show-influencers-btn" class="bg-amber-600 text-white px-4 py-2 rounded-lg hover:bg-amber-700 transition-colors">Painel Principal</button>
-
-                <button id="show-couples-btn" class="bg-slate-200 text-slate-700 px-4 py-2 rounded-lg hover:bg-slate-300 transition-colors">Casais de Influenciadores</button>
-
-            </div>
-
-        </header>
-
-
-
-        <div id="main-panel">
-
-            <div class="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg mb-6 sticky top-4 z-10" id="filters-container">
-
-                  <div class="mb-6">
-
-                      <label for="search-input" class="sr-only">Buscar Influenciador</label>
-
-                      <div class="relative">
-
-                          <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-
-                              <svg class="w-5 h-5 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-
-                              </svg>
-
-                          </div>
-
-                          <input type="text" id="search-input" class="w-full p-3 pl-10 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300" placeholder="Buscar por nome...">
-
-                      </div>
-
-                  </div>
-
-                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
-
-                      <div>
-
-                          <label for="segmento-filter" class="block text-sm font-medium text-slate-700 mb-2">Segmento</label>
-
-                          <select id="segmento-filter" class="w-full p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300">
-
-                              <option value="">Todos</option>
-
-                          </select>
-
-                      </div>
-
-                      <div>
-
-                          <label for="rede-social-filter" class="block text-sm font-medium text-slate-700 mb-2">Rede Social</label>
-
-                          <select id="rede-social-filter" class="w-full p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300">
-
-                              <option value="">Todas</option>
-
-                          </select>
-
-                      </div>
-
-                      <div>
-
-                          <label for="orcamento-filter" class="block text-sm font-medium text-slate-700 mb-2">Orçamento</label>
-
-                          <select id="orcamento-filter" class="w-full p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300">
-
-                              <option value="">Todos</option>
-
-                              </select>
-
-                      </div>
-
-                      <div>
-
-                          <label for="projetos-filter" class="block text-sm font-medium text-slate-700 mb-2">Projetos</label>
-
-                          <select id="projetos-filter" class="w-full p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300">
-
-                              <option value="">Todos</option>
-
-                          </select>
-
-                      </div>
-
-                      <div>
-
-                          <label for="agencia-filter" class="block text-sm font-medium text-slate-700 mb-2">Agência</label>
-
-                          <select id="agencia-filter" class="w-full p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300">
-
-                              <option value="">Todos</option>
-
-                          </select>
-
-                      </div>
-
-                  </div>
-
-            </div>
-
-
-
-            <div class="mb-6 text-right">
-
-                <p class="text-slate-600"><strong id="influencer-count" class="font-bold text-slate-800">0</strong> influenciadores encontrados</p>
-
-            </div>
-
-
-
-            <div id="loader" class="flex justify-center items-center py-10">
-
-                <div class="loader"></div>
-
-            </div>
-
-
-
-           <div id="influencers-list" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
-
-            <p id="no-results" class="hidden text-center text-slate-500 mt-10 text-lg">Nenhum influenciador encontrado com os filtros selecionados.</p>
-
-        </div>
-
-        
-
-        <div id="couples-panel" class="hidden">
-
-             <div id="couples-list" class="space-y-6">
-
-                </div>
-
-        </div>
-
-    </div>
-
-
-
-    <div id="influencer-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
-
-        <div id="modal-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto flex flex-col md:flex-row transform scale-95 transition-transform duration-300">
-
-            <div id="modal-img-container" class="w-full md:w-1/3 flex-shrink-0">
-
-                </div>
-
-            <div class="p-8 flex-grow relative">
-
-                <button id="modal-close-btn" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800 transition-colors">
-
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-
-                </button>
-
-                <h2 id="modal-name" class="text-3xl font-bold mb-2 text-slate-900"></h2>
-
-                <p id="modal-segmento" class="text-amber-600 font-semibold mb-6"></p>
-
-
-
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 mb-6 text-sm">
-
-                    <div>
-
-                        <div class="flex items-center space-x-2">
-
-                            <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><defs><radialGradient id="ig-gradient" cx="0.3" cy="1.2" r="1.2"><stop offset="0%" stop-color="#fdc162"/><stop offset="30%" stop-color="#f5813e"/><stop offset="60%" stop-color="#e1306c"/><stop offset="100%" stop-color="#833ab4"/></radialGradient></defs><path fill="url(#ig-gradient)" d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.784.305-1.459.717-2.126 1.384S.935 3.356.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.785.718 1.46 1.384 2.126.667.666 1.341 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.785-.305 1.46-.718 2.126-1.384.666-.667 1.079-1.341 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.148-.558-2.913-.305-.784-.718-1.459-1.384-2.126C21.313.935 20.644.522 19.86.217 19.094-.083 18.225-.285 16.947-.344 15.667-.401 15.26-.417 12-.417h0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 01-.899 1.382 3.81 3.81 0 01-1.38.899c-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421a3.81 3.81 0 01-1.381-.899 3.81 3.81 0 01-.899-1.38c-.164-.421-.36-1.065-.42-2.235-.058-1.274-.07-1.649-.07-4.859 0-3.211.015-3.586.07-4.859.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.422-.164 1.066-.36 2.235-.413 1.274-.057 1.65-.07 4.859-.07zM12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.468a3.333 3.333 0 110-6.666 3.333 3.333 0 010 6.666zm5.338-9.87a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z"/></svg>
-
-                            <p class="font-bold text-slate-800" id="modal-ig"></p>
-
-                        </div>
-
-                        <p class="text-slate-500 pl-7">Instagram</p>
-
-                    </div>
-
-                    <div>
-
-                        <div class="flex items-center space-x-2">
-
-                             <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000"><title>TikTok</title><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.8-1.59-1.87-2.32-4.2-1.86-6.33.36-1.72 1.46-3.2 3.02-4.06.38-.2.77-.38 1.16-.52.06-1.57.02-3.14.01-4.71.13-2.59 1.91-4.86 4.42-5.63 1.25-.38 2.5-.45 3.75-.28z"/></svg>
-
-                            <p class="font-bold text-slate-800" id="modal-ttk"></p>
-
-                        </div>
-
-                        <p class="text-slate-500 pl-7">TikTok</p>
-
-                    </div>
-
-                    <div>
-
-                        <div class="flex items-center space-x-2">
-
-                            <svg class="w-5 h-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .498 6.186C0 8.07 0 12 0 12s0 3.93.498 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FF0000"/></svg>
-
-                            <p class="font-bold text-slate-800" id="modal-yt"></p>
-
-                        </div>
-
-                        <p class="text-slate-500 pl-7">YouTube</p>
-
-                    </div>
-
-                     <div>
-
-                        <p class="font-bold text-slate-800" id="modal-orcamento"></p>
-
-                        <p class="text-slate-500">Orçamento</p>
-
-                    </div>
-
-                     <div>
-
-                        <p class="font-bold text-slate-800" id="modal-projeto"></p>
-
-                        <p class="text-slate-500">Projeto</p>
-
-                    </div>
-
-                     <div>
-
-                        <p class="font-bold text-slate-800" id="modal-agencia"></p>
-
-                        <p class="text-slate-500">Agência</p>
-
-                    </div>
-
-                </div>
-
-
-
-                <h3 class="font-bold text-slate-800 mb-2 mt-4">Mini Bio</h3>
-
-                <p id="modal-bio" class="text-slate-600 text-base leading-relaxed"></p>
-
-
-
-                <div class="mt-6">
-
-                    <a id="modal-link-btn" href="#" target="_blank" class="inline-flex items-center justify-center w-full md:w-auto px-6 py-3 text-center bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all duration-300 font-semibold">
-
-                        Visitar Perfil
-
-                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-
-                            <path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-
-                        </svg>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
-
-    </div> <script src="dados.js"></script>
-
-
-
-    <script>
-
-        document.addEventListener('DOMContentLoaded', () => {
-
-            // ### CÓDIGO PARA BLOQUEAR BOTÃO DIREITO ###
-
-            document.addEventListener('contextmenu', event => event.preventDefault());
-
-                      
-
-            // Note que seu código agora começa daqui. 
-
-            // As variáveis rawData e couplesData já existem porque foram carregadas pelo dados.js
-
-
-
-              const influencersList = document.getElementById('influencers-list');
-
-              const loader = document.getElementById('loader');
-
-              const noResults = document.getElementById('no-results');
-
-              
-
-              const segmentoFilter = document.getElementById('segmento-filter');
-
-              const redeSocialFilter = document.getElementById('rede-social-filter');
-
-              const orcamentoFilter = document.getElementById('orcamento-filter');
-
-              const projetosFilter = document.getElementById('projetos-filter');
-
-              const agenciaFilter = document.getElementById('agencia-filter');
-
-              const searchInput = document.getElementById('search-input');
-
-              const influencerCount = document.getElementById('influencer-count');
-
-              
-
-              // ### NOVOS ELEMENTOS ###
-
-              const couplesList = document.getElementById('couples-list');
-
-              const showInfluencersBtn = document.getElementById('show-influencers-btn');
-
-              const showCouplesBtn = document.getElementById('show-couples-btn');
-
-              const mainPanel = document.getElementById('main-panel');
-
-              const couplesPanel = document.getElementById('couples-panel');
-
-
-
-              let allInfluencers = [];
-
-
-
-              // Funções de parsing (sem alterações)
-
-              function parseFollowers(str) {
-
-                  if (!str || typeof str !== 'string' || str.trim() === '-') return 0;
-
-                  const cleanedStr = str.toLowerCase().replace(',', '.').trim();
-
-                  if (cleanedStr.includes('m')) {
-
-                      return parseFloat(cleanedStr.replace('m', '')) * 1000000;
-
-                  }
-
-                  if (cleanedStr.includes('mil')) {
-
-                      return parseFloat(cleanedStr.replace('mil', '')) * 1000;
-
-                  }
-
-                  return parseFloat(cleanedStr);
-
-              }
-
-              
-
-              function parseOrcamento(str) {
-
-                  if (!str || typeof str !== 'string' || str.trim() === '-' || str.trim() === 'N/A') return 0;
-
-                  return parseFloat(str.replace(/R\$|R4|\./g, '').replace(',', '.').trim());
-
-              }
-
-
-
-              function formatNumber(num) {
-
-                  if (num >= 1000000) {
-
-                      return (num / 1000000).toFixed(1).replace('.0', '') + ' M';
-
-                  }
-
-                  if (num >= 1000) {
-
-                      return (num / 1000).toFixed(0) + ' mil';
-
-                  }
-
-                  return num.toString();
-
-              }
-
-            
-
-              // Função de processamento de dados (sem alterações)
-
-              function processData(data) {
-
-                  return data.filter(item => item && item.INFLUENCIADOR && item.INFLUENCIADOR.trim() !== "").map(item => {
-
-                      const followers = {
-
-                          ig: parseFollowers(item.IG),
-
-                          ttk: parseFollowers(item.TTK),
-
-                          yt: parseFollowers(item.YT)
-
-                      };
-
-                      const totalFollowers = followers.ig + followers.ttk + followers.yt;
-
-                      let primarySocial = 'Instagram';
-
-                      if (followers.ttk > followers.ig && followers.ttk > followers.yt) {
-
-                          primarySocial = 'TikTok';
-
-                      } else if (followers.yt > followers.ig && followers.yt > followers.ttk) {
-
-                          primarySocial = 'YouTube';
-
-                      }
-
-                      
-
-                      let profileUrl = '#';
-
-                      if(item['@']){
-
-                         switch(primarySocial) {
-
-                             case 'TikTok': profileUrl = `https://tiktok.com/@${item['@']}`; break;
-
-                             case 'YouTube': profileUrl = `https://youtube.com/@${item['@']}`; break;
-
-                             default: profileUrl = `https://instagram.com/${item['@']}`;
-
-                         }
-
-                      }
-
-
-
-                      return {
-
-                          'Influenciador': item.INFLUENCIADOR, '@': item['@'], 'IMAGEM_URL': item.IMAGEM_URL || '', 'IG': item.IG || 'N/A', 'TTK': item.TTK || 'N/A', 'YT': item.YT || 'N/A',
-
-                          'Rede Social': primarySocial, 'Total Seguidores Formatado': formatNumber(totalFollowers), 'Segmento': item.SEGMENTO ? item.SEGMENTO.trim() : 'N/A',
-
-                          'SEGMENTO SECUNDÁRIO': item['SEGMENTO SECUNDÁRIO'] ? item['SEGMENTO SECUNDÁRIO'].trim() : '', 'PROJETOS': item.PROJETOS ? item.PROJETOS.trim() : 'N/A',
-
-                          'AGÊNCIA': item.AGÊNCIA ? item.AGÊNCIA.trim() : 'N/A', 'MINI BIO - INFLUENCIADOR': item['MINI BIO - INFLUENCIADOR'] ? item['MINI BIO - INFLUENCIADOR'].trim() : 'N/A',
-
-                          'Orçamento (Aproximado)': (item['REF. VALOR'] || 'N/A').replace('R4 ','R$ '), 'valorNumericoOrcamento': parseOrcamento(item['REF. VALOR']), 'Link do Perfil': profileUrl
-
-                      };
-
-                  });
-
-              }
-
-              
-
-              // Inicialização dos dados e filtros
-
-              allInfluencers = processData(rawData);
-
-              populateFilters();
-
-              applyFilters();
-
-              
-
-              // ### NOVA FUNÇÃO PARA EXIBIR OS CASAIS ###
-
-              function displayCouples(couples) {
-
-                    couplesList.innerHTML = '';
-
-                    
-
-                    couples.forEach(couple => {
-
-                        const coupleCard = document.createElement('div');
-
-                        coupleCard.className = 'bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:ring-2 hover:ring-amber-500';
-
-
-
-                        let membersHTML = '';
-
-                        couple.MEMBROS.forEach(member => {
-
-                            const initials = member.NOME.split(' ').map(n => n[0]).slice(0, 2).join('');
-
-                            const colorClasses = segmentColors[member.SEGMENTO] || segmentColors['Default'];
-
-                            const [bgColor, textColor] = colorClasses.split(' ');
-
-                            
-
-                            membersHTML += `
-
-                                <div class="flex-1 min-w-[200px] bg-slate-50 p-4 rounded-lg">
-
-                                    <div class="flex items-center space-x-4">
-
-                                        <div class="w-16 h-16 flex-shrink-0 rounded-full overflow-hidden bg-slate-200 flex items-center justify-center ${bgColor}">
-
-                                            <span class="text-2xl font-bold ${textColor}">${initials}</span>
-
-                                        </div>
-
-                                        <div>
-
-                                            <h4 class="font-bold text-slate-900">${member.NOME}</h4>
-
-                                            <p class="text-sm text-amber-600 font-semibold">@${member['@']}</p>
-
-                                            <p class="text-sm text-slate-500">${member.SEGMENTO}</p>
-
-                                        </div>
-
-                                    </div>
-
-                                    <div class="mt-3 text-xs space-y-1 text-slate-700">
-
-                                        <p><strong>IG:</strong> ${member.IG}</p>
-
-                                        <p><strong>TTK:</strong> ${member.TTK}</p>
-
-                                        <p><strong>YT:</strong> ${member.YT}</p>
-
-                                    </div>
-
-                                </div>
-
-                            `;
-
-                        });
-
-
-
-                        coupleCard.innerHTML = `
-
-                            <div class="mb-4 text-center sm:text-left">
-
-                                <h2 class="text-2xl font-bold text-slate-900">${couple.NOME_CASAL}</h2>
-
-                                <p class="text-sm text-slate-500">Agência: ${couple.AGENCIA || 'N/A'}</p>
-
-                            </div>
-
-                            <div class="flex flex-wrap gap-4 mb-4">
-
-                                ${membersHTML}
-
-                            </div>
-
-                            <div class="bg-amber-50 border-l-4 border-amber-500 text-amber-800 p-4 rounded-r-lg">
-
-                                <p class="font-bold">Proposta:</p>
-
-                                <p><strong class="font-semibold">Valor:</strong> ${couple.REF_VALOR || 'N/A'}</p>
-
-                                <p><strong class="font-semibold">Projeto:</strong> ${couple.PROJETOS || 'N/A'}</p>
-
-                                <p><strong class="font-semibold">Escopo:</strong> ${couple.ESCOPO || 'N/A'}</p>
-
-                            </div>
-
-                        `;
-
-                        couplesList.appendChild(coupleCard);
-
-                    });
-
-              }
-
-              
-
-              // Chama a função para renderizar os casais na inicialização
-
-              displayCouples(couplesData);
-
-
-
-              function populateFilters() { // (sem alterações)
-
-                  const segmentos = new Set();
-
-                  const redesSociais = new Set();
-
-                  const projetos = new Set();
-
-                  const agencias = new Set();
-
-                  allInfluencers.forEach(influencer => {
-
-                      if(influencer['Segmento'] && influencer['Segmento'] !== 'N/A') segmentos.add(influencer['Segmento']);
-
-                      if(influencer['Rede Social']) redesSociais.add(influencer['Rede Social']);
-
-                      if(influencer['PROJETOS'] && influencer['PROJETOS'] !== 'N/A') projetos.add(influencer['PROJETOS']);
-
-                      if(influencer['AGÊNCIA'] && influencer['AGÊNCIA'] !== 'N/A') agencias.add(influencer['AGÊNCIA']);
-
-                  });
-
-                  const populateDynamic = (selectElement, options) => {
-
-                      const sortedOptions = Array.from(options).sort();
-
-                        sortedOptions.forEach(option => {
-
-                          const opt = document.createElement('option');
-
-                          opt.value = option;
-
-                          opt.textContent = option;
-
-                          selectElement.appendChild(opt);
-
-                      });
-
-                  };
-
-                  
-
-                  const orcamentoRanges = [
-
-                      { value: 'ate20k', text: 'Até 20 mil' }, { value: 'ate50k', text: 'Até 50 mil' },
-
-                      { value: 'ate100k', text: 'Até 100 mil' }, { value: 'mais100k', text: '+ de 100 mil' }
-
-                  ];
-
-                  orcamentoRanges.forEach(range => {
-
-                      const opt = document.createElement('option');
-
-                      opt.value = range.value; opt.textContent = range.text;
-
-                      orcamentoFilter.appendChild(opt);
-
-                  });
-
-                  
-
-                  populateDynamic(segmentoFilter, segmentos);
-
-                  populateDynamic(redeSocialFilter, redesSociais);
-
-                  populateDynamic(projetosFilter, projetos);
-
-                  populateDynamic(agenciaFilter, agencias);
-
-              }
-
-
-
-              function displayInfluencers(influencers) { // (sem alterações)
-
-                  influencersList.innerHTML = '';
-
-                  loader.style.display = 'none';
-
-                  noResults.classList.toggle('hidden', influencers.length > 0);
-
-                  influencerCount.textContent = influencers.length;
-
-
-
-                  influencers.forEach(influencer => {
-
-                      const influencerName = influencer['Influenciador'] || '';
-
-                      const initials = influencerName.split(' ').map(n => n[0]).slice(0, 2).join('');
-
-                      const colorClasses = segmentColors[influencer.Segmento] || segmentColors['Default'];
-
-                      const [bgColor, textColor] = colorClasses.split(' ');
-
-                      const secondarySegment = influencer['SEGMENTO SECUNDÁRIO'] ? ` - ${influencer['SEGMENTO SECUNDÁRIO']}` : '';
-
-                      
-
-                      let avatarContent;
-
-                      if (influencer.IMAGEM_URL && influencer.IMAGEM_URL.trim() !== '') {
-
-                          avatarContent = `<img src="${influencer.IMAGEM_URL}" alt="${influencerName}" class="w-full h-full object-cover">`;
-
-                      } else {
-
-                          avatarContent = `<div class="w-full h-full flex items-center justify-center ${bgColor}"><span class="text-3xl font-bold ${textColor}">${initials}</span></div>`;
-
-                      }
-
-
-
-                      let socialIconsHTML = '';
-
-                      if (influencer['IG'] && influencer['IG'].trim() !== '-' && influencer['IG'].trim() !== 'N/A') socialIconsHTML += `<svg class="w-5 h-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><defs><radialGradient id="ig-gradient-card-${influencer['@']}" cx="0.3" cy="1.2" r="1.2"><stop offset="0%" stop-color="#fdc162"/><stop offset="30%" stop-color="#f5813e"/><stop offset="60%" stop-color="#e1306c"/><stop offset="100%" stop-color="#833ab4"/></radialGradient></defs><path fill="url(#ig-gradient-card-${influencer['@']})" d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.784.305-1.459.717-2.126 1.384S.935 3.356.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.785.718 1.46 1.384 2.126.667.666 1.341 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.785-.305 1.46-.718 2.126-1.384.666-.667 1.079-1.341 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.148-.558-2.913-.305-.784-.718-1.459-1.384-2.126C21.313.935 20.644.522 19.86.217 19.094-.083 18.225-.285 16.947-.344 15.667-.401 15.26-.417 12-.417h0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 01-.899 1.382 3.81 3.81 0 01-1.38.899c-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421a3.81 3.81 0 01-1.381-.899 3.81 3.81 0 01-.899-1.38c-.164-.421-.36-1.065-.42-2.235-.058-1.274-.07-1.649-.07-4.859 0-3.211.015-3.586.07-4.859.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.422-.164 1.066-.36 2.235-.413 1.274-.057 1.65-.07 4.859-.07zM12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.468a3.333 3.333 0 110-6.666 3.333 3.333 0 010 6.666zm5.338-9.87a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z"/></svg>`;
-
-                      if (influencer['TTK'] && influencer['TTK'].trim() !== '-' && influencer['TTK'].trim() !== 'N/A') socialIconsHTML += `<svg class="w-5 h-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000"><title>TikTok</title><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.8-1.59-1.87-2.32-4.2-1.86-6.33.36-1.72 1.46-3.2 3.02-4.06.38-.2.77-.38 1.16-.52.06-1.57.02-3.14.01-4.71.13-2.59 1.91-4.86 4.42-5.63 1.25-.38 2.5-.45 3.75-.28z"/></svg>`;
-
-                      if (influencer['YT'] && influencer['YT'].trim() !== '-' && influencer['YT'].trim() !== 'N/A') socialIconsHTML += `<svg class="w-5 h-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .498 6.186C0 8.07 0 12 0 12s0 3.93.498 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FF0000"/></svg>`;
-
-
-
-                      const item = document.createElement('div');
-
-                      item.className = 'bg-white rounded-xl shadow-md p-4 flex flex-col sm:flex-row items-center sm:space-x-6 transition-all duration-300 hover:shadow-lg hover:ring-2 hover:ring-amber-500';
-
-                      item.innerHTML = `
-
-                          <div class="w-24 h-24 flex-shrink-0 rounded-full overflow-hidden bg-slate-200">${avatarContent}</div>
-
-                          <div class="flex-grow text-center sm:text-left mt-4 sm:mt-0">
-
-                              <h3 class="text-xl font-bold text-slate-900">${influencerName}</h3>
-
-                              <p class="text-sm text-slate-500">${influencer['Segmento'] || 'N/A'}${secondarySegment}</p>
-
-                              <div class="mt-3 flex justify-center sm:justify-start items-center space-x-4">
-
-                                  <div class="flex items-center space-x-2">${socialIconsHTML}</div>
-
-                                  <div class="text-xs text-slate-600"><span><strong class="text-green-700 font-bold">Orçamento:</strong> ${influencer['Orçamento (Aproximado)'] || 'N/A'}</span></div>
-
-                              </div>
-
-                          </div>
-
-                          <div class="flex-shrink-0 mt-4 sm:mt-0 flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2 w-full sm:w-auto">
-
-                              <button class="details-btn w-full sm:w-auto text-sm bg-slate-200 text-slate-700 px-4 py-2 rounded-lg hover:bg-slate-300 transition-colors">Ver Detalhes</button>
-
-                              
-
-                          </div>`;
-
-                      
-
-                      const detailsButton = item.querySelector('.details-btn');
-
-                      detailsButton.addEventListener('click', () => openModal(influencer));
-
-                      influencersList.appendChild(item);
-
-                  });
-
-              }
-
-
-
-              function applyFilters() { // (sem alterações)
-
-                  const searchTerm = searchInput.value.toLowerCase();
-
-                  const segmento = segmentoFilter.value;
-
-                  const redeSocial = redeSocialFilter.value;
-
-                  const orcamento = orcamentoFilter.value;
-
-                  const projeto = projetosFilter.value;
-
-                  const agencia = agenciaFilter.value;
-
-                  const filteredInfluencers = allInfluencers.filter(influencer => {
-
-                      const matchSearch = influencer.Influenciador.toLowerCase().includes(searchTerm);
-
-                      const matchSegmento = !segmento || influencer['Segmento'] === segmento;
-
-                      const matchRedeSocial = !redeSocial || influencer['Rede Social'] === redeSocial;
-
-                      const matchProjeto = !projeto || influencer['PROJETOS'] === projeto;
-
-                      const matchAgencia = !agencia || influencer['AGÊNCIA'] === agencia;
-
-                      
-
-                      let matchOrcamento = true;
-
-                      if (orcamento) {
-
-                          const valor = influencer.valorNumericoOrcamento;
-
-                          switch (orcamento) {
-
-                              case 'ate20k': matchOrcamento = valor > 0 && valor <= 20000; break;
-
-                              case 'ate50k': matchOrcamento = valor > 20000 && valor <= 50000; break;
-
-                              case 'ate100k': matchOrcamento = valor > 50000 && valor <= 100000; break;
-
-                              case 'mais100k': matchOrcamento = valor > 100000; break;
-
-                              default: matchOrcamento = true;
-
-                          }
-
-                      }
-
-                      return matchSearch && matchSegmento && matchRedeSocial && matchOrcamento && matchProjeto && matchAgencia;
-
-                  });
-
-                  
-
-                  filteredInfluencers.sort((a, b) => b.valorNumericoOrcamento - a.valorNumericoOrcamento);
-
-                  displayInfluencers(filteredInfluencers);
-
-              }
-
-
-
-              // Event listeners para os filtros
-
-              searchInput.addEventListener('input', applyFilters);
-
-              segmentoFilter.addEventListener('change', applyFilters);
-
-              redeSocialFilter.addEventListener('change', applyFilters);
-
-              orcamentoFilter.addEventListener('change', applyFilters);
-
-              projetosFilter.addEventListener('change', applyFilters);
-
-              agenciaFilter.addEventListener('change', applyFilters);
-
-              
-
-               // Lógica do Modal (sem alterações)
-
-              const modal = document.getElementById('influencer-modal');
-
-              const closeModalBtn = document.getElementById('modal-close-btn');
-
-
-
-              function openModal(influencer) {
-
-                  document.getElementById('modal-name').textContent = influencer['Influenciador'];
-
-                  document.getElementById('modal-segmento').textContent = influencer['Segmento'];
-
-                  document.getElementById('modal-bio').textContent = influencer['MINI BIO - INFLUENCIADOR'];
-
-                  
-
-                  const modalImgContainer = document.getElementById('modal-img-container');
-
-                  if (influencer.IMAGEM_URL && influencer.IMAGEM_URL.trim() !== '') {
-
-                      modalImgContainer.innerHTML = `<img src="${influencer.IMAGEM_URL}" alt="${influencer.Influenciador}" class="w-full h-full object-cover md:rounded-l-2xl rounded-t-2xl md:rounded-t-none">`;
-
-                  } else {
-
-                      const influencerName = influencer['Influenciador'] || '';
-
-                      const initials = influencerName.split(' ').map(n => n[0]).slice(0, 2).join('');
-
-                      const colorClasses = segmentColors[influencer.Segmento] || segmentColors['Default'];
-
-                      const [bgColor, textColor] = colorClasses.split(' ');
-
-                      modalImgContainer.innerHTML = `
-
-                          <div class="w-full h-48 md:h-full flex items-center justify-center ${bgColor} md:rounded-l-2xl rounded-t-2xl md:rounded-t-none">
-
-                              <span class="text-7xl font-bold ${textColor}">${initials}</span>
-
-                          </div>`;
-
-                  }
-
-
-
-                  document.getElementById('modal-ig').textContent = influencer['IG'];
-
-                  document.getElementById('modal-ttk').textContent = influencer['TTK'];
-
-                  document.getElementById('modal-yt').textContent = influencer['YT'];
-
-                  document.getElementById('modal-orcamento').textContent = influencer['Orçamento (Aproximado)'];
-
-                  document.getElementById('modal-projeto').textContent = influencer['PROJETOS'];
-
-                  document.getElementById('modal-agencia').textContent = influencer['AGÊNCIA'];
-
-                  document.getElementById('modal-link-btn').href = influencer['Link do Perfil'];
-
-
-
-                  modal.classList.remove('hidden');
-
-                  setTimeout(() => { modal.classList.add('show'); }, 10);
-
-              }
-
-
-
-              function closeModal() {
-
-                  modal.classList.remove('show');
-
-                  setTimeout(() => { modal.classList.add('hidden'); }, 300);
-
-              }
-
-
-
-              closeModalBtn.addEventListener('click', closeModal);
-
-              modal.addEventListener('click', (e) => {
-
-                  if (e.target === modal) { closeModal(); }
-
-              });
-
-              
-
-              // ### LÓGICA DE NAVEGAÇÃO ENTRE PÁGINAS ###
-
-              showInfluencersBtn.addEventListener('click', () => {
-
-                mainPanel.classList.remove('hidden');
-
-                couplesPanel.classList.add('hidden');
-
-                showInfluencersBtn.classList.add('bg-amber-600', 'text-white');
-
-                showInfluencersBtn.classList.remove('bg-slate-200', 'text-slate-700');
-
-                showCouplesBtn.classList.add('bg-slate-200', 'text-slate-700');
-
-                showCouplesBtn.classList.remove('bg-amber-600', 'text-white');
-
-              });
-
-
-
-              showCouplesBtn.addEventListener('click', () => {
-
-                mainPanel.classList.add('hidden');
-
-                couplesPanel.classList.remove('hidden');
-
-                showCouplesBtn.classList.add('bg-amber-600', 'text-white');
-
-                showCouplesBtn.classList.remove('bg-slate-200', 'text-slate-700');
-
-                showInfluencersBtn.classList.add('bg-slate-200', 'text-slate-700');
-
-                showInfluencersBtn.classList.remove('bg-amber-600', 'text-white');
-
-              });
-
-        });
-
-    </script>
-
+<div class="container mx-auto p-4 md:p-8">
+
+<header class="text-center mb-10">
+<h1 class="text-3xl md:text-5xl font-bold text-slate-900">Painel de Influenciadores 🌟</h1>
+<p class="text-slate-500 mt-3 text-lg">Encontre o influenciador ideal para sua campanha.</p>
+<div class="mt-4 flex justify-center space-x-4">
+<button id="show-influencers-btn" class="bg-amber-600 text-white px-4 py-2 rounded-lg hover:bg-amber-700 transition-colors">Painel Principal</button>
+<button id="show-couples-btn" class="bg-slate-200 text-slate-700 px-4 py-2 rounded-lg hover:bg-slate-300 transition-colors">Casais de Influenciadores</button>
+</div>
+</header>
+
+<div id="main-panel">
+<div class="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg mb-6 sticky top-4 z-10" id="filters-container">
+<div class="mb-6">
+<label for="search-input" class="sr-only">Buscar Influenciador</label>
+<div class="relative">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<svg class="w-5 h-5 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+</svg>
+</div>
+<input type="text" id="search-input" class="w-full p-3 pl-10 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300" placeholder="Buscar por nome...">
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+<div>
+<label for="segmento-filter" class="block text-sm font-medium text-slate-700 mb-2">Segmento</label>
+<select id="segmento-filter" class="w-full p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300">
+<option value="">Todos</option>
+</select>
+</div>
+<div>
+<label for="rede-social-filter" class="block text-sm font-medium text-slate-700 mb-2">Rede Social</label>
+<select id="rede-social-filter" class="w-full p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300">
+<option value="">Todas</option>
+</select>
+</div>
+<div>
+<label for="orcamento-filter" class="block text-sm font-medium text-slate-700 mb-2">Orçamento</label>
+<select id="orcamento-filter" class="w-full p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300">
+<option value="">Todos</option>
+</select>
+</div>
+<div>
+<label for="projetos-filter" class="block text-sm font-medium text-slate-700 mb-2">Projetos</label>
+<select id="projetos-filter" class="w-full p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300">
+<option value="">Todos</option>
+</select>
+</div>
+<div>
+<label for="agencia-filter" class="block text-sm font-medium text-slate-700 mb-2">Agência</label>
+<select id="agencia-filter" class="w-full p-2.5 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300">
+<option value="">Todos</option>
+</select>
+</div>
+</div>
+</div>
+
+<div class="mb-6 text-right">
+<p class="text-slate-600"><strong id="influencer-count" class="font-bold text-slate-800">0</strong> influenciadores encontrados</p>
+</div>
+
+<div id="loader" class="flex justify-center items-center py-10">
+<div class="loader"></div>
+</div>
+
+<div id="influencers-list" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+<p id="no-results" class="hidden text-center text-slate-500 mt-10 text-lg">Nenhum influenciador encontrado com os filtros selecionados.</p>
+</div>
+
+<div id="couples-panel" class="hidden">
+<div id="couples-list" class="space-y-6">
+</div>
+</div>
+</div>
+
+<div id="influencer-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+<div id="modal-content" class="bg-white rounded-2xl shadow-2xl w-full max-w-4xl max-h-[90vh] overflow-y-auto flex flex-col md:flex-row transform scale-95 transition-transform duration-300">
+<div id="modal-img-container" class="w-full md:w-1/3 flex-shrink-0">
+</div>
+<div class="p-8 flex-grow relative">
+<button id="modal-close-btn" class="absolute top-4 right-4 text-slate-500 hover:text-slate-800 transition-colors">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+</button>
+<h2 id="modal-name" class="text-3xl font-bold mb-2 text-slate-900"></h2>
+<p id="modal-segmento" class="text-amber-600 font-semibold mb-6"></p>
+
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-x-6 gap-y-4 mb-6 text-sm">
+<div>
+<div class="flex items-center space-x-2">
+<svg class="w-5 h-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><defs><radialGradient id="ig-gradient" cx="0.3" cy="1.2" r="1.2"><stop offset="0%" stop-color="#fdc162"/><stop offset="30%" stop-color="#f5813e"/><stop offset="60%" stop-color="#e1306c"/><stop offset="100%" stop-color="#833ab4"/></radialGradient></defs><path fill="url(#ig-gradient)" d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.784.305-1.459.717-2.126 1.384S.935 3.356.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.785.718 1.46 1.384 2.126.667.666 1.341 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.785-.305 1.46-.718 2.126-1.384.666-.667 1.079-1.341 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.148-.558-2.913-.305-.784-.718-1.459-1.384-2.126C21.313.935 20.644.522 19.86.217 19.094-.083 18.225-.285 16.947-.344 15.667-.401 15.26-.417 12-.417h0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 01-.899 1.382 3.81 3.81 0 01-1.38.899c-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421a3.81 3.81 0 01-1.381-.899 3.81 3.81 0 01-.899-1.38c-.164-.421-.36-1.065-.42-2.235-.058-1.274-.07-1.649-.07-4.859 0-3.211.015-3.586.07-4.859.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.422-.164 1.066-.36 2.235-.413 1.274-.057 1.65-.07 4.859-.07zM12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.468a3.333 3.333 0 110-6.666 3.333 3.333 0 010 6.666zm5.338-9.87a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z"/></svg>
+<p class="font-bold text-slate-800" id="modal-ig"></p>
+</div>
+<p class="text-slate-500 pl-7">Instagram</p>
+</div>
+<div>
+<div class="flex items-center space-x-2">
+<svg class="w-5 h-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000"><title>TikTok</title><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.8-1.59-1.87-2.32-4.2-1.86-6.33.36-1.72 1.46-3.2 3.02-4.06.38-.2.77-.38 1.16-.52.06-1.57.02-3.14.01-4.71.13-2.59 1.91-4.86 4.42-5.63 1.25-.38 2.5-.45 3.75-.28z"/></svg>
+<p class="font-bold text-slate-800" id="modal-ttk"></p>
+</div>
+<p class="text-slate-500 pl-7">TikTok</p>
+</div>
+<div>
+<div class="flex items-center space-x-2">
+<svg class="w-5 h-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .498 6.186C0 8.07 0 12 0 12s0 3.93.498 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FF0000"/></svg>
+<p class="font-bold text-slate-800" id="modal-yt"></p>
+</div>
+<p class="text-slate-500 pl-7">YouTube</p>
+</div>
+<div>
+<p class="font-bold text-slate-800" id="modal-orcamento"></p>
+<p class="text-slate-500">Orçamento</p>
+</div>
+<div>
+<p class="font-bold text-slate-800" id="modal-projeto"></p>
+<p class="text-slate-500">Projeto</p>
+</div>
+<div>
+<p class="font-bold text-slate-800" id="modal-agencia"></p>
+<p class="text-slate-500">Agência</p>
+</div>
+</div>
+
+<h3 class="font-bold text-slate-800 mb-2 mt-4">Mini Bio</h3>
+<p id="modal-bio" class="text-slate-600 text-base leading-relaxed"></p>
+
+<div class="mt-6">
+<a id="modal-link-btn" href="#" target="_blank" class="inline-flex items-center justify-center w-full md:w-auto px-6 py-3 text-center bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition-all duration-300 font-semibold">
+Visitar Perfil
+<svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+<path stroke-linecap="round" stroke-linejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+</svg>
+</a>
+</div>
+</div>
+</div>
+</div> <script src="dados.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+// ### CÓDIGO PARA BLOQUEAR BOTÃO DIREITO ###
+document.addEventListener('contextmenu', event => event.preventDefault());
+
+// Note que seu código agora começa daqui. 
+// As variáveis rawData e couplesData já existem porque foram carregadas pelo dados.js
+
+const influencersList = document.getElementById('influencers-list');
+const loader = document.getElementById('loader');
+const noResults = document.getElementById('no-results');
+
+const segmentoFilter = document.getElementById('segmento-filter');
+const redeSocialFilter = document.getElementById('rede-social-filter');
+const orcamentoFilter = document.getElementById('orcamento-filter');
+const projetosFilter = document.getElementById('projetos-filter');
+const agenciaFilter = document.getElementById('agencia-filter');
+const searchInput = document.getElementById('search-input');
+const influencerCount = document.getElementById('influencer-count');
+
+// ### NOVOS ELEMENTOS ###
+const couplesList = document.getElementById('couples-list');
+const showInfluencersBtn = document.getElementById('show-influencers-btn');
+const showCouplesBtn = document.getElementById('show-couples-btn');
+const mainPanel = document.getElementById('main-panel');
+const couplesPanel = document.getElementById('couples-panel');
+
+let allInfluencers = [];
+
+// Funções de parsing (sem alterações)
+function parseFollowers(str) {
+if (!str || typeof str !== 'string' || str.trim() === '-') return 0;
+const cleanedStr = str.toLowerCase().replace(',', '.').trim();
+if (cleanedStr.includes('m')) {
+return parseFloat(cleanedStr.replace('m', '')) * 1000000;
+}
+if (cleanedStr.includes('mil')) {
+return parseFloat(cleanedStr.replace('mil', '')) * 1000;
+}
+return parseFloat(cleanedStr);
+}
+
+function parseOrcamento(str) {
+if (!str || typeof str !== 'string' || str.trim() === '-' || str.trim() === 'N/A') return 0;
+return parseFloat(str.replace(/R\$|R4|\./g, '').replace(',', '.').trim());
+}
+
+function formatNumber(num) {
+if (num >= 1000000) {
+return (num / 1000000).toFixed(1).replace('.0', '') + ' M';
+}
+if (num >= 1000) {
+return (num / 1000).toFixed(0) + ' mil';
+}
+return num.toString();
+}
+
+// Função de processamento de dados (sem alterações)
+function processData(data) {
+return data.filter(item => item && item.INFLUENCIADOR && item.INFLUENCIADOR.trim() !== "").map(item => {
+const followers = {
+ig: parseFollowers(item.IG),
+ttk: parseFollowers(item.TTK),
+yt: parseFollowers(item.YT)
+};
+const totalFollowers = followers.ig + followers.ttk + followers.yt;
+let primarySocial = 'Instagram';
+if (followers.ttk > followers.ig && followers.ttk > followers.yt) {
+primarySocial = 'TikTok';
+} else if (followers.yt > followers.ig && followers.yt > followers.ttk) {
+primarySocial = 'YouTube';
+}
+
+let profileUrl = '#';
+if(item['@']){
+switch(primarySocial) {
+case 'TikTok': profileUrl = `https://tiktok.com/@${item['@']}`; break;
+case 'YouTube': profileUrl = `https://youtube.com/@${item['@']}`; break;
+default: profileUrl = `https://instagram.com/${item['@']}`;
+}
+}
+
+return {
+'Influenciador': item.INFLUENCIADOR, '@': item['@'], 'IMAGEM_URL': item.IMAGEM_URL || '', 'IG': item.IG || 'N/A', 'TTK': item.TTK || 'N/A', 'YT': item.YT || 'N/A',
+'Rede Social': primarySocial, 'Total Seguidores Formatado': formatNumber(totalFollowers), 'Segmento': item.SEGMENTO ? item.SEGMENTO.trim() : 'N/A',
+'SEGMENTO SECUNDÁRIO': item['SEGMENTO SECUNDÁRIO'] ? item['SEGMENTO SECUNDÁRIO'].trim() : '', 'PROJETOS': item.PROJETOS ? item.PROJETOS.trim() : 'N/A',
+'AGÊNCIA': item.AGÊNCIA ? item.AGÊNCIA.trim() : 'N/A', 'MINI BIO - INFLUENCIADOR': item['MINI BIO - INFLUENCIADOR'] ? item['MINI BIO - INFLUENCIADOR'].trim() : 'N/A',
+'Orçamento (Aproximado)': (item['REF. VALOR'] || 'N/A').replace('R4 ','R$ '), 'valorNumericoOrcamento': parseOrcamento(item['REF. VALOR']), 'Link do Perfil': profileUrl
+};
+});
+}
+
+// Inicialização dos dados e filtros
+allInfluencers = processData(rawData);
+populateFilters();
+applyFilters();
+
+// ### NOVA FUNÇÃO PARA EXIBIR OS CASAIS ###
+function displayCouples(couples) {
+couplesList.innerHTML = '';
+
+couples.forEach(couple => {
+const coupleCard = document.createElement('div');
+coupleCard.className = 'bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:ring-2 hover:ring-amber-500';
+
+let membersHTML = '';
+couple.MEMBROS.forEach(member => {
+const initials = member.NOME.split(' ').map(n => n[0]).slice(0, 2).join('');
+const colorClasses = segmentColors[member.SEGMENTO] || segmentColors['Default'];
+const [bgColor, textColor] = colorClasses.split(' ');
+
+membersHTML += `
+                               <div class="flex-1 min-w-[200px] bg-slate-50 p-4 rounded-lg">
+                                   <div class="flex items-center space-x-4">
+                                       <div class="w-16 h-16 flex-shrink-0 rounded-full overflow-hidden bg-slate-200 flex items-center justify-center ${bgColor}">
+                                           <span class="text-2xl font-bold ${textColor}">${initials}</span>
+                                       </div>
+                                       <div>
+                                           <h4 class="font-bold text-slate-900">${member.NOME}</h4>
+                                           <p class="text-sm text-amber-600 font-semibold">@${member['@']}</p>
+                                           <p class="text-sm text-slate-500">${member.SEGMENTO}</p>
+                                       </div>
+                                   </div>
+                                   <div class="mt-3 text-xs space-y-1 text-slate-700">
+                                       <p><strong>IG:</strong> ${member.IG}</p>
+                                       <p><strong>TTK:</strong> ${member.TTK}</p>
+                                       <p><strong>YT:</strong> ${member.YT}</p>
+                                   </div>
+                               </div>
+                           `;
+});
+
+coupleCard.innerHTML = `
+                           <div class="mb-4 text-center sm:text-left">
+                               <h2 class="text-2xl font-bold text-slate-900">${couple.NOME_CASAL}</h2>
+                               <p class="text-sm text-slate-500">Agência: ${couple.AGENCIA || 'N/A'}</p>
+                           </div>
+                           <div class="flex flex-wrap gap-4 mb-4">
+                               ${membersHTML}
+                           </div>
+                           <div class="bg-amber-50 border-l-4 border-amber-500 text-amber-800 p-4 rounded-r-lg">
+                               <p class="font-bold">Proposta:</p>
+                               <p><strong class="font-semibold">Valor:</strong> ${couple.REF_VALOR || 'N/A'}</p>
+                               <p><strong class="font-semibold">Projeto:</strong> ${couple.PROJETOS || 'N/A'}</p>
+                               <p><strong class="font-semibold">Escopo:</strong> ${couple.ESCOPO || 'N/A'}</p>
+                           </div>
+                       `;
+couplesList.appendChild(coupleCard);
+});
+}
+
+// Chama a função para renderizar os casais na inicialização
+displayCouples(couplesData);
+
+function populateFilters() { // (sem alterações)
+const segmentos = new Set();
+const redesSociais = new Set();
+const projetos = new Set();
+const agencias = new Set();
+allInfluencers.forEach(influencer => {
+if(influencer['Segmento'] && influencer['Segmento'] !== 'N/A') segmentos.add(influencer['Segmento']);
+if(influencer['Rede Social']) redesSociais.add(influencer['Rede Social']);
+if(influencer['PROJETOS'] && influencer['PROJETOS'] !== 'N/A') projetos.add(influencer['PROJETOS']);
+if(influencer['AGÊNCIA'] && influencer['AGÊNCIA'] !== 'N/A') agencias.add(influencer['AGÊNCIA']);
+});
+const populateDynamic = (selectElement, options) => {
+const sortedOptions = Array.from(options).sort();
+sortedOptions.forEach(option => {
+const opt = document.createElement('option');
+opt.value = option;
+opt.textContent = option;
+selectElement.appendChild(opt);
+});
+};
+
+const orcamentoRanges = [
+{ value: 'ate20k', text: 'Até 20 mil' }, { value: 'ate50k', text: 'Até 50 mil' },
+{ value: 'ate100k', text: 'Até 100 mil' }, { value: 'mais100k', text: '+ de 100 mil' }
+];
+orcamentoRanges.forEach(range => {
+const opt = document.createElement('option');
+opt.value = range.value; opt.textContent = range.text;
+orcamentoFilter.appendChild(opt);
+});
+
+populateDynamic(segmentoFilter, segmentos);
+populateDynamic(redeSocialFilter, redesSociais);
+populateDynamic(projetosFilter, projetos);
+populateDynamic(agenciaFilter, agencias);
+}
+
+function displayInfluencers(influencers) { // (sem alterações)
+influencersList.innerHTML = '';
+loader.style.display = 'none';
+noResults.classList.toggle('hidden', influencers.length > 0);
+influencerCount.textContent = influencers.length;
+
+influencers.forEach(influencer => {
+const influencerName = influencer['Influenciador'] || '';
+const initials = influencerName.split(' ').map(n => n[0]).slice(0, 2).join('');
+const colorClasses = segmentColors[influencer.Segmento] || segmentColors['Default'];
+const [bgColor, textColor] = colorClasses.split(' ');
+const secondarySegment = influencer['SEGMENTO SECUNDÁRIO'] ? ` - ${influencer['SEGMENTO SECUNDÁRIO']}` : '';
+
+let avatarContent;
+if (influencer.IMAGEM_URL && influencer.IMAGEM_URL.trim() !== '') {
+avatarContent = `<img src="${influencer.IMAGEM_URL}" alt="${influencerName}" class="w-full h-full object-cover">`;
+} else {
+avatarContent = `<div class="w-full h-full flex items-center justify-center ${bgColor}"><span class="text-3xl font-bold ${textColor}">${initials}</span></div>`;
+}
+
+let socialIconsHTML = '';
+if (influencer['IG'] && influencer['IG'].trim() !== '-' && influencer['IG'].trim() !== 'N/A') socialIconsHTML += `<svg class="w-5 h-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><defs><radialGradient id="ig-gradient-card-${influencer['@']}" cx="0.3" cy="1.2" r="1.2"><stop offset="0%" stop-color="#fdc162"/><stop offset="30%" stop-color="#f5813e"/><stop offset="60%" stop-color="#e1306c"/><stop offset="100%" stop-color="#833ab4"/></radialGradient></defs><path fill="url(#ig-gradient-card-${influencer['@']})" d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.784.305-1.459.717-2.126 1.384S.935 3.356.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.306.785.718 1.46 1.384 2.126.667.666 1.341 1.079 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.785-.305 1.46-.718 2.126-1.384.666-.667 1.079-1.341 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.148-.558-2.913-.305-.784-.718-1.459-1.384-2.126C21.313.935 20.644.522 19.86.217 19.094-.083 18.225-.285 16.947-.344 15.667-.401 15.26-.417 12-.417h0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 01-.899 1.382 3.81 3.81 0 01-1.38.899c-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421a3.81 3.81 0 01-1.381-.899 3.81 3.81 0 01-.899-1.38c-.164-.421-.36-1.065-.42-2.235-.058-1.274-.07-1.649-.07-4.859 0-3.211.015-3.586.07-4.859.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.422-.164 1.066-.36 2.235-.413 1.274-.057 1.65-.07 4.859-.07zM12 6.865a5.135 5.135 0 100 10.27 5.135 5.135 0 000-10.27zm0 8.468a3.333 3.333 0 110-6.666 3.333 3.333 0 010 6.666zm5.338-9.87a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4z"/></svg>`;
+if (influencer['TTK'] && influencer['TTK'].trim() !== '-' && influencer['TTK'].trim() !== 'N/A') socialIconsHTML += `<svg class="w-5 h-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="#000000"><title>TikTok</title><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-2.43.05-4.84-.95-6.43-2.8-1.59-1.87-2.32-4.2-1.86-6.33.36-1.72 1.46-3.2 3.02-4.06.38-.2.77-.38 1.16-.52.06-1.57.02-3.14.01-4.71.13-2.59 1.91-4.86 4.42-5.63 1.25-.38 2.5-.45 3.75-.28z"/></svg>`;
+if (influencer['YT'] && influencer['YT'].trim() !== '-' && influencer['YT'].trim() !== 'N/A') socialIconsHTML += `<svg class="w-5 h-5" role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>YouTube</title><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .498 6.186C0 8.07 0 12 0 12s0 3.93.498 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" fill="#FF0000"/></svg>`;
+
+const item = document.createElement('div');
+item.className = 'bg-white rounded-xl shadow-md p-4 flex flex-col sm:flex-row items-center sm:space-x-6 transition-all duration-300 hover:shadow-lg hover:ring-2 hover:ring-amber-500';
+item.innerHTML = `
+                         <div class="w-24 h-24 flex-shrink-0 rounded-full overflow-hidden bg-slate-200">${avatarContent}</div>
+                         <div class="flex-grow text-center sm:text-left mt-4 sm:mt-0">
+                             <h3 class="text-xl font-bold text-slate-900">${influencerName}</h3>
+                             <p class="text-sm text-slate-500">${influencer['Segmento'] || 'N/A'}${secondarySegment}</p>
+                             <div class="mt-3 flex justify-center sm:justify-start items-center space-x-4">
+                                 <div class="flex items-center space-x-2">${socialIconsHTML}</div>
+                                 <div class="text-xs text-slate-600"><span><strong class="text-green-700 font-bold">Orçamento:</strong> ${influencer['Orçamento (Aproximado)'] || 'N/A'}</span></div>
+                             </div>
+                         </div>
+                         <div class="flex-shrink-0 mt-4 sm:mt-0 flex flex-col sm:flex-row items-center space-y-2 sm:space-y-0 sm:space-x-2 w-full sm:w-auto">
+                              <button class="details-btn w-full sm:w-auto text-sm bg-amber-700 text-white px-4 py-2 rounded-lg hover:bg-amber-500 transition-colors">Ver Detalhes</button>
+                              <button class="details-btn w-full sm:w-auto text-sm bg-amber-700 text-white px-4 py-2 rounded-lg hover:bg-amber-800 transition-colors">Ver Detalhes</button>
+                             
+                         </div>`;
+
+const detailsButton = item.querySelector('.details-btn');
+detailsButton.addEventListener('click', () => openModal(influencer));
+influencersList.appendChild(item);
+});
+}
+
+function applyFilters() { // (sem alterações)
+const searchTerm = searchInput.value.toLowerCase();
+const segmento = segmentoFilter.value;
+const redeSocial = redeSocialFilter.value;
+const orcamento = orcamentoFilter.value;
+const projeto = projetosFilter.value;
+const agencia = agenciaFilter.value;
+const filteredInfluencers = allInfluencers.filter(influencer => {
+const matchSearch = influencer.Influenciador.toLowerCase().includes(searchTerm);
+const matchSegmento = !segmento || influencer['Segmento'] === segmento;
+const matchRedeSocial = !redeSocial || influencer['Rede Social'] === redeSocial;
+const matchProjeto = !projeto || influencer['PROJETOS'] === projeto;
+const matchAgencia = !agencia || influencer['AGÊNCIA'] === agencia;
+
+let matchOrcamento = true;
+if (orcamento) {
+const valor = influencer.valorNumericoOrcamento;
+switch (orcamento) {
+case 'ate20k': matchOrcamento = valor > 0 && valor <= 20000; break;
+case 'ate50k': matchOrcamento = valor > 20000 && valor <= 50000; break;
+case 'ate100k': matchOrcamento = valor > 50000 && valor <= 100000; break;
+case 'mais100k': matchOrcamento = valor > 100000; break;
+default: matchOrcamento = true;
+}
+}
+return matchSearch && matchSegmento && matchRedeSocial && matchOrcamento && matchProjeto && matchAgencia;
+});
+
+filteredInfluencers.sort((a, b) => b.valorNumericoOrcamento - a.valorNumericoOrcamento);
+displayInfluencers(filteredInfluencers);
+}
+
+// Event listeners para os filtros
+searchInput.addEventListener('input', applyFilters);
+segmentoFilter.addEventListener('change', applyFilters);
+redeSocialFilter.addEventListener('change', applyFilters);
+orcamentoFilter.addEventListener('change', applyFilters);
+projetosFilter.addEventListener('change', applyFilters);
+agenciaFilter.addEventListener('change', applyFilters);
+
+// Lógica do Modal (sem alterações)
+const modal = document.getElementById('influencer-modal');
+const closeModalBtn = document.getElementById('modal-close-btn');
+
+function openModal(influencer) {
+document.getElementById('modal-name').textContent = influencer['Influenciador'];
+document.getElementById('modal-segmento').textContent = influencer['Segmento'];
+document.getElementById('modal-bio').textContent = influencer['MINI BIO - INFLUENCIADOR'];
+
+const modalImgContainer = document.getElementById('modal-img-container');
+if (influencer.IMAGEM_URL && influencer.IMAGEM_URL.trim() !== '') {
+modalImgContainer.innerHTML = `<img src="${influencer.IMAGEM_URL}" alt="${influencer.Influenciador}" class="w-full h-full object-cover md:rounded-l-2xl rounded-t-2xl md:rounded-t-none">`;
+} else {
+const influencerName = influencer['Influenciador'] || '';
+const initials = influencerName.split(' ').map(n => n[0]).slice(0, 2).join('');
+const colorClasses = segmentColors[influencer.Segmento] || segmentColors['Default'];
+const [bgColor, textColor] = colorClasses.split(' ');
+modalImgContainer.innerHTML = `
+                         <div class="w-full h-48 md:h-full flex items-center justify-center ${bgColor} md:rounded-l-2xl rounded-t-2xl md:rounded-t-none">
+                             <span class="text-7xl font-bold ${textColor}">${initials}</span>
+                         </div>`;
+}
+
+document.getElementById('modal-ig').textContent = influencer['IG'];
+document.getElementById('modal-ttk').textContent = influencer['TTK'];
+document.getElementById('modal-yt').textContent = influencer['YT'];
+document.getElementById('modal-orcamento').textContent = influencer['Orçamento (Aproximado)'];
+document.getElementById('modal-projeto').textContent = influencer['PROJETOS'];
+document.getElementById('modal-agencia').textContent = influencer['AGÊNCIA'];
+document.getElementById('modal-link-btn').href = influencer['Link do Perfil'];
+
+modal.classList.remove('hidden');
+setTimeout(() => { modal.classList.add('show'); }, 10);
+}
+
+function closeModal() {
+modal.classList.remove('show');
+setTimeout(() => { modal.classList.add('hidden'); }, 300);
+}
+
+closeModalBtn.addEventListener('click', closeModal);
+modal.addEventListener('click', (e) => {
+if (e.target === modal) { closeModal(); }
+});
+
+// ### LÓGICA DE NAVEGAÇÃO ENTRE PÁGINAS ###
+showInfluencersBtn.addEventListener('click', () => {
+mainPanel.classList.remove('hidden');
+couplesPanel.classList.add('hidden');
+showInfluencersBtn.classList.add('bg-amber-600', 'text-white');
+showInfluencersBtn.classList.remove('bg-slate-200', 'text-slate-700');
+showCouplesBtn.classList.add('bg-slate-200', 'text-slate-700');
+showCouplesBtn.classList.remove('bg-amber-600', 'text-white');
+});
+
+showCouplesBtn.addEventListener('click', () => {
+mainPanel.classList.add('hidden');
+couplesPanel.classList.remove('hidden');
+showCouplesBtn.classList.add('bg-amber-600', 'text-white');
+showCouplesBtn.classList.remove('bg-slate-200', 'text-slate-700');
+showInfluencersBtn.classList.add('bg-slate-200', 'text-slate-700');
+showInfluencersBtn.classList.remove('bg-amber-600', 'text-white');
+});
+});
+</script>
 </body>
-
 </html>
