@@ -184,12 +184,12 @@ const couplesData = [
     {
         "NOME_CASAL": "Igor Cosso e Heron Leal", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 20.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
         "MEMBROS": [
-            {"NOME": "Igor Cosso", "IMAGEM_URL": "https://i.ibb.co/r7X02xV/igorcosso.png", "@": "igorcosso", 
+            {"NOME": "Igor Cosso", "IMAGEM_URL": "https://conteudo.imguol.com.br/c/entretenimento/26/2020/10/15/o-ator-igor-cosso-que-se-assumiu-gay-em-junho-deste-ano-1602767136286_v2_4x3.jpg", "@": "igorcosso", 
              "IG": "📷 767 mil", 
              "TTK": "🎵 253,9 mil", 
              "YT": "▶️ 7,58 mil", 
              "SEGMENTO": "Ator"},
-            {"NOME": "Heron Leal", "IMAGEM_URL": "https://i.ibb.co/gP1J653/heronleal.png", "@": "heronleal", 
+            {"NOME": "Heron Leal", "IMAGEM_URL": "https://media.licdn.com/dms/image/v2/D4E03AQGU8wHN99BRjA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1692991665647?e=2147483647&v=beta&t=QmWnhylUAesof0BzPYjLhmA7fqfaHVppWp6ZMMV2bNQ", "@": "heronleal", 
              "IG": "📷 105 mil", 
              "TTK": "🎵 3,081 mil", 
              "YT": "", 
