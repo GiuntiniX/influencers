@@ -164,80 +164,156 @@ const segmentColors = {
     {"INFLUENCIADOR":"Vítor De Castro","@":"vitordecastro","IMAGEM_URL":"","IG":"1.3 M","TTK":"1.3 M","YT":"1.6 M","SEGMENTO":"Humor","SEGMENTO SECUNDÁRIO":"Astrologia, representatividade LGBTQIA+, lifestyle","PROJETOS":"-","REF. VALOR":"-","AGÊNCIA":"Mynd","ESCOPO":"","MINI BIO - INFLUENCIADOR":"Vítor DiCastro é ator, apresentador e criador do canal Deboche Astral, onde une astrologia e humor de forma leve e divertida. Com mais de 1,6 milhão de inscritos no YouTube, ele conquistou o público com vídeos sobre signos e reflexões pessoais. Vítor também atua em séries como Tem Que Suar e é engajado em causas LGBTQIA+, tendo enfrentado experiências de “cura gay” na adolescência. Casado com o jornalista Vinícius Cordeiro, ele é uma figura inspiradora e autêntica nas redes"}
 ]
 
-              // ### NOVA ESTRUTURA DE DADOS PARA OS CASAIS ###
-              const couplesData = [
-                {
-                    "NOME_CASAL": "Pepita e Kayque", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 40.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
-                    "MEMBROS": [
-                        {"NOME": "Pepita", "@": "pepita", "IG": "3 M", "TTK": "296,4 mil", "YT": "112 mil", "SEGMENTO": "Atriz, cantora"},
-                        {"NOME": "Kayque Nogueira", "@": "kayquenogueira", "IG": "281 mil", "TTK": "157,1 mil", "YT": "1,02 mil", "SEGMENTO": "Cantor"}
-                    ]
-                },
-                {
-                    "NOME_CASAL": "Igor Cosso e Heron Leal", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 20.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
-                    "MEMBROS": [
-                        {"NOME": "Igor Cosso", "@": "igorcosso", "IG": "767 mil", "TTK": "253,9 mil", "YT": "7,58 mil", "SEGMENTO": "Ator"},
-                        {"NOME": "Heron Leal", "@": "heronleal", "IG": "105 mil", "TTK": "3,081 mil", "YT": "-", "SEGMENTO": "Contador, empresário"}
-                    ]
-                },
-                {
-                    "NOME_CASAL": "Luca Scarpelli e Gabi Moretti", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 18.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
-                    "MEMBROS": [
-                        {"NOME": "Luca Scarpelli", "@": "olucascarpelli", "IG": "748 mil", "TTK": "159,1 mil", "YT": "182 mil", "SEGMENTO": "Humor"},
-                        {"NOME": "Gabi Moretti", "@": "gabirmoretti", "IG": "1.2 M", "TTK": "259,2 mil", "YT": "507 mil", "SEGMENTO": "Moda, beleza"}
-                    ]
-                },
-                {
-                    "NOME_CASAL": "Jessica Ballut e Taíssa Rampinelli", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 20.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
-                    "MEMBROS": [
-                        {"NOME": "Jessica Ballut (Jazzb)", "@": "itsjazzb", "IG": "312 mil", "TTK": "343,5 mil", "YT": "1.1 M", "SEGMENTO": "LGBT+, humor"},
-                        {"NOME": "Taíssa Rampinelli", "@": "ta_trs", "IG": "36,1 mil", "TTK": "-", "YT": "-", "SEGMENTO": "Saúde mental, humor"}
-                    ]
-                },
-                {
-                    "NOME_CASAL": "Elana Valenaria e Gilberto Baloi", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 40.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
-                    "MEMBROS": [
-                        {"NOME": "Elana Valenaria", "@": "elana", "IG": "2.9 M", "TTK": "863,2 mil", "YT": "5,34 mil", "SEGMENTO": "Ex-BBB, Influencer, atriz"},
-                        {"NOME": "Gilberto Baloi", "@": "gilzagueiro04", "IG": "994 mil", "TTK": "-", "YT": "-", "SEGMENTO": "Zagueiro"}
-                    ]
-                },
-                {
-                    "NOME_CASAL": "Vitória Capel e Gabriel Ruano", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 12.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
-                    "MEMBROS": [
-                        {"NOME": "Vitória Capel", "@": "vi.capel", "IG": "81,1 mil", "TTK": "36,2 mil", "YT": "-", "SEGMENTO": "Alimentação, rotina"},
-                        {"NOME": "Gabriel Ruano", "@": "_ruanog", "IG": "256 mil", "TTK": "394 mil", "YT": "8,4 mil", "SEGMENTO": "Influenciador fitness"}
-                    ]
-                },
-                {
-                    "NOME_CASAL": "Kaique Cerveny e Juliette", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 100.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
-                    "MEMBROS": [
-                        {"NOME": "Kaique Cerveny", "@": "kaiquecerveny", "IG": "549 mil", "TTK": "56,3 mil", "YT": "818", "SEGMENTO": "Atleta, nutrição"},
-                        {"NOME": "Juliette", "@": "juliette", "IG": "29.3 M", "TTK": "16,1 M", "YT": "583 mil", "SEGMENTO": "Advogada, influencer"}
-                    ]
-                },
-                {
-                    "NOME_CASAL": "Fernanda Catania e André Brandt", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 40.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
-                    "MEMBROS": [
-                        {"NOME": "Foquinha", "@": "foquinha", "IG": "1.2 M", "TTK": "644,5 mil", "YT": "2.8 M", "SEGMENTO": "Cultura, pop"},
-                        {"NOME": "André Brandt", "@": "brandtandre", "IG": "44,5 mil", "TTK": "13,1 mil", "YT": "-", "SEGMENTO": "Roteirista, humor"}
-                    ]
-                },
-                {
-                    "NOME_CASAL": "Londrinando", "PROJETOS": "Customizado Jontex", "REF_VALOR": "R$ 60.000,00", "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.", "AGENCIA": "Cely",
-                    "MEMBROS": [
-                        {"NOME": "Londrinando", "@": "londrinando", "IG": "1 M", "TTK": "2.9 M", "YT": "633 mil", "SEGMENTO": "Lifestyle, Viagem, Entretenimento"}
-                    ]
-                },
-                {
-                    "NOME_CASAL": "Sabe Aquela Cena", "PROJETOS": "-", "REF_VALOR": "-", "ESCOPO": "-", "AGENCIA": "Mosaico",
-                    "MEMBROS": [
-                        {"NOME": "Sabe Aquela Cena", "@": "sabeaquelacena", "IG": "114 mil", "TTK": "81 mil", "YT": "141 mil", "SEGMENTO": "Cinema e TV"}
-                    ]
-                },
-                {
-                    "NOME_CASAL": "Malhassaum", "PROJETOS": "-", "REF_VALOR": "-", "ESCOPO": "-", "AGENCIA": "Play9",
-                    "MEMBROS": [
-                        {"NOME": "Malhassaum", "@": "malhassaum", "IG": "361 mil", "TTK": "200 mil", "YT": "555", "SEGMENTO": "Cultura regional, Entretenimento"}
-                    ]
-                }
-              ];
+// ### VERSÃO FINAL COM EMOJIS NO LUGAR DAS PALAVRAS ###
+const couplesData = [
+    {
+        "NOME_CASAL": "Pepita e Kayque", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 40.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
+        "MEMBROS": [
+            {"NOME": "Pepita", "IMAGEM_URL": "https://i.ibb.co/wJ24B0f/pepita.png", "@": "pepita", 
+             "IG": "📷 3 M", 
+             "TTK": "🎵 296,4 mil", 
+             "YT": "▶️ 112 mil", 
+             "SEGMENTO": "Atriz, cantora"},
+            {"NOME": "Kayque Nogueira", "IMAGEM_URL": "https://i.ibb.co/3kM2Wq7/kayque.png", "@": "kayquenogueira", 
+             "IG": "📷 281 mil", 
+             "TTK": "🎵 157,1 mil", 
+             "YT": "▶️ 1,02 mil", 
+             "SEGMENTO": "Cantor"}
+        ]
+    },
+    {
+        "NOME_CASAL": "Igor Cosso e Heron Leal", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 20.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
+        "MEMBROS": [
+            {"NOME": "Igor Cosso", "IMAGEM_URL": "https://i.ibb.co/r7X02xV/igorcosso.png", "@": "igorcosso", 
+             "IG": "📷 767 mil", 
+             "TTK": "🎵 253,9 mil", 
+             "YT": "▶️ 7,58 mil", 
+             "SEGMENTO": "Ator"},
+            {"NOME": "Heron Leal", "IMAGEM_URL": "https://i.ibb.co/gP1J653/heronleal.png", "@": "heronleal", 
+             "IG": "📷 105 mil", 
+             "TTK": "🎵 3,081 mil", 
+             "YT": "", 
+             "SEGMENTO": "Contador, empresário"}
+        ]
+    },
+    {
+        "NOME_CASAL": "Luca Scarpelli e Gabi Moretti", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 18.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
+        "MEMBROS": [
+            {"NOME": "Luca Scarpelli", "IMAGEM_URL": "https://i.ibb.co/j6S1m3C/lucascarpelli.png", "@": "olucascarpelli", 
+             "IG": "📷 748 mil", 
+             "TTK": "🎵 159,1 mil", 
+             "YT": "▶️ 182 mil", 
+             "SEGMENTO": "Humor"},
+            {"NOME": "Gabi Moretti", "IMAGEM_URL": "https://i.ibb.co/8P34Y2r/gabimoretti.png", "@": "gabirmoretti", 
+             "IG": "📷 1.2 M", 
+             "TTK": "🎵 259,2 mil", 
+             "YT": "▶️ 507 mil", 
+             "SEGMENTO": "Moda, beleza"}
+        ]
+    },
+    {
+        "NOME_CASAL": "Jessica Ballut e Taíssa Rampinelli", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 20.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
+        "MEMBROS": [
+            {"NOME": "Jessica Ballut (Jazzb)", "IMAGEM_URL": "https://i.ibb.co/P4y4qfX/jazzb.png", "@": "itsjazzb", 
+             "IG": "📷 312 mil", 
+             "TTK": "🎵 343,5 mil", 
+             "YT": "▶️ 1.1 M", 
+             "SEGMENTO": "LGBT+, humor"},
+            {"NOME": "Taíssa Rampinelli", "IMAGEM_URL": "https://i.ibb.co/q1X4V3B/taissa.png", "@": "ta_trs", 
+             "IG": "📷 36,1 mil", 
+             "TTK": "", 
+             "YT": "", 
+             "SEGMENTO": "Saúde mental, humor"}
+        ]
+    },
+    {
+        "NOME_CASAL": "Elana Valenaria e Gilberto Baloi", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 40.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
+        "MEMBROS": [
+            {"NOME": "Elana Valenaria", "IMAGEM_URL": "https://i.ibb.co/m0R0L6S/elana.png", "@": "elana", 
+             "IG": "📷 2.9 M", 
+             "TTK": "🎵 863,2 mil", 
+             "YT": "▶️ 5,34 mil", 
+             "SEGMENTO": "Ex-BBB, Influencer, atriz"},
+            {"NOME": "Gilberto Baloi", "IMAGEM_URL": "https://i.ibb.co/Qj50P0z/gilberto.png", "@": "gilzagueiro04", 
+             "IG": "📷 994 mil", 
+             "TTK": "", 
+             "YT": "", 
+             "SEGMENTO": "Zagueiro"}
+        ]
+    },
+    {
+        "NOME_CASAL": "Vitória Capel e Gabriel Ruano", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 12.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
+        "MEMBROS": [
+            {"NOME": "Vitória Capel", "IMAGEM_URL": "https://i.ibb.co/L5rK51y/vitoria.png", "@": "vi.capel", 
+             "IG": "📷 81,1 mil", 
+             "TTK": "🎵 36,2 mil", 
+             "YT": "", 
+             "SEGMENTO": "Alimentação, rotina"},
+            {"NOME": "Gabriel Ruano", "IMAGEM_URL": "https://i.ibb.co/g70y7D4/gabrielruano.png", "@": "_ruanog", 
+             "IG": "📷 256 mil", 
+             "TTK": "🎵 394 mil", 
+             "YT": "▶️ 8,4 mil", 
+             "SEGMENTO": "Influenciador fitness"}
+        ]
+    },
+    {
+        "NOME_CASAL": "Kaique Cerveny e Juliette", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 100.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
+        "MEMBROS": [
+            {"NOME": "Kaique Cerveny", "IMAGEM_URL": "https://i.ibb.co/S6w8yq5/kaique.png", "@": "kaiquecerveny", 
+             "IG": "📷 549 mil", 
+             "TTK": "🎵 56,3 mil", 
+             "YT": "▶️ 818", 
+             "SEGMENTO": "Atleta, nutrição"},
+            {"NOME": "Juliette", "IMAGEM_URL": "https://i.ibb.co/Yy6x0B7/juliette.png", "@": "juliette", 
+             "IG": "📷 29.3 M", 
+             "TTK": "🎵 16,1 M", 
+             "YT": "▶️ 583 mil", 
+             "SEGMENTO": "Advogada, influencer"}
+        ]
+    },
+    {
+        "NOME_CASAL": "Fernanda Catania e André Brandt", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 40.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
+        "MEMBROS": [
+            {"NOME": "Foquinha", "IMAGEM_URL": "https://i.ibb.co/zX8Q0hG/foquinha.png", "@": "foquinha", 
+             "IG": "📷 1.2 M", 
+             "TTK": "🎵 644,5 mil", 
+             "YT": "▶️ 2.8 M", 
+             "SEGMENTO": "Cultura, pop"},
+            {"NOME": "André Brandt", "IMAGEM_URL": "https://i.ibb.co/C037Pq4/andrebrandt.png", "@": "brandtandre", 
+             "IG": "📷 44,5 mil", 
+             "TTK": "🎵 13,1 mil", 
+             "YT": "", 
+             "SEGMENTO": "Roteirista, humor"}
+        ]
+    },
+    {
+        "NOME_CASAL": "Londrinando", "PROJETOS": "Customizado Jontex", "REF_VALOR": "R$ 60.000,00", "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.", "AGENCIA": "Cely",
+        "MEMBROS": [
+            {"NOME": "Londrinando", "IMAGEM_URL": "https://i.ibb.co/b3Pq40F/londrinando.png", "@": "londrinando", 
+             "IG": "📷 1 M", 
+             "TTK": "🎵 2.9 M", 
+             "YT": "▶️ 633 mil", 
+             "SEGMENTO": "Lifestyle, Viagem, Entretenimento"}
+        ]
+    },
+    {
+        "NOME_CASAL": "Sabe Aquela Cena", "PROJETOS": "-", "REF_VALOR": "-", "ESCOPO": "-", "AGENCIA": "Mosaico",
+        "MEMBROS": [
+            {"NOME": "Sabe Aquela Cena", "IMAGEM_URL": "https://i.ibb.co/y4L2H3V/sabeaquelacena.png", "@": "sabeaquelacena", 
+             "IG": "📷 114 mil", 
+             "TTK": "🎵 81 mil", 
+             "YT": "▶️ 141 mil", 
+             "SEGMENTO": "Cinema e TV"}
+        ]
+    },
+    {
+        "NOME_CASAL": "Malhassaum", "PROJETOS": "-", "REF_VALOR": "-", "ESCOPO": "-", "AGENCIA": "Play9",
+        "MEMBROS": [
+            {"NOME": "Malhassaum", "IMAGEM_URL": "https://i.ibb.co/5cQ3N0L/malhassaum.png", "@": "malhassaum", 
+             "IG": "📷 361 mil", 
+             "TTK": "🎵 200 mil", 
+             "YT": "▶️ 555", 
+             "SEGMENTO": "Cultura regional, Entretenimento"}
+        ]
+    }
+];
