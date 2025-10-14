@@ -55,10 +55,9 @@
                     <input type="text" id="search-input" class="w-full p-3 pl-10 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300 text-slate-800 placeholder-slate-400" placeholder="Buscar por nome...">
                 </div>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
                 <div class="relative flex items-center bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors"><span class="absolute left-3 text-lg pointer-events-none">🎨</span><select id="segmento-filter" class="w-full p-2.5 pl-10 pr-8 bg-transparent appearance-none focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg cursor-pointer text-slate-800"><option value="">Segmento</option></select><div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"><svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></div></div>
                 <div class="relative flex items-center bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors"><span class="absolute left-3 text-lg pointer-events-none">✨</span><select id="segmento-secundario-filter" class="w-full p-2.5 pl-10 pr-8 bg-transparent appearance-none focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg cursor-pointer text-slate-800"><option value="">Tags</option></select><div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"><svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></div></div>
-                <div class="relative flex items-center bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors"><span class="absolute left-3 text-lg pointer-events-none"⚡️</span><select id="rede-social-filter" class="w-full p-2.5 pl-10 pr-8 bg-transparent appearance-none focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg cursor-pointer text-slate-800"><option value="">Rede Principal</option></select><div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"><svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></div></div>
                 <div class="relative flex items-center bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors"><span class="absolute left-3 text-lg pointer-events-none">💰</span><select id="orcamento-filter" class="w-full p-2.5 pl-10 pr-8 bg-transparent appearance-none focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg cursor-pointer text-slate-800"><option value="">Orçamento</option></select><div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"><svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></div></div>
                 <div class="relative flex items-center bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors"><span class="absolute left-3 text-lg pointer-events-none">🚀</span><select id="projetos-filter" class="w-full p-2.5 pl-10 pr-8 bg-transparent appearance-none focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg cursor-pointer text-slate-800"><option value="">Projetos</option></select><div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"><svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></div></div>
                 <div class="relative flex items-center bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors"><span class="absolute left-3 text-lg pointer-events-none">🏢</span><select id="agencia-filter" class="w-full p-2.5 pl-10 pr-8 bg-transparent appearance-none focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg cursor-pointer text-slate-800"><option value="">Agência</option></select><div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"><svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></div></div>
@@ -119,7 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
           noResults = document.getElementById('no-results'),
           segmentoFilter = document.getElementById('segmento-filter'),
           segmentoSecundarioFilter = document.getElementById('segmento-secundario-filter'),
-          redeSocialFilter = document.getElementById('rede-social-filter'),
+          // A linha abaixo foi removida
+          // redeSocialFilter = document.getElementById('rede-social-filter'),
           orcamentoFilter = document.getElementById('orcamento-filter'),
           projetosFilter = document.getElementById('projetos-filter'),
           agenciaFilter = document.getElementById('agencia-filter'),
@@ -173,11 +173,10 @@ document.addEventListener('DOMContentLoaded', () => {
             Array.from(options).sort().forEach(opt => select.add(new Option(opt, opt)));
         };
 
-        const segmentos = new Set(), segmentosSecundarios = new Set(), redesSociais = new Set(), projetos = new Set(), agencias = new Set();
+        const segmentos = new Set(), segmentosSecundarios = new Set(), projetos = new Set(), agencias = new Set();
         allInfluencers.forEach(i => {
             if (i.Segmento && i.Segmento !== 'N/A') segmentos.add(i.Segmento);
             i.TagsSecundarias.forEach(tag => { if(tag) segmentosSecundarios.add(tag) });
-            if (i['Rede Social']) redesSociais.add(i['Rede Social']);
             if (i.PROJETOS && i.PROJETOS !== 'N/A') projetos.add(i.PROJETOS);
             if (i.AGÊNCIA && i.AGÊNCIA !== 'N/A') agencias.add(i.AGÊNCIA);
         });
@@ -188,7 +187,6 @@ document.addEventListener('DOMContentLoaded', () => {
         
         populate(segmentoFilter, segmentos, 'Segmento');
         populate(segmentoSecundarioFilter, segmentosSecundarios, 'Tags');
-        populate(redeSocialFilter, redesSociais, 'Rede Principal');
         populate(projetosFilter, projetos, 'Projetos');
         populate(agenciaFilter, agencias, 'Agência');
     }
@@ -228,7 +226,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         influencers.forEach(influencer => {
             const name = influencer.Influenciador || '',
-                initials = name.split(' ').map(n => n[0]).slice(0, 2).join('');
+                  initials = name.split(' ').map(n => n[0]).slice(0, 2).join('');
             let avatar = `<div class="w-full h-full flex items-center justify-center bg-slate-200"><span class="text-3xl font-bold text-slate-600">${initials}</span></div>`;
             if (influencer.IMAGEM_URL) avatar = `<img src="${influencer.IMAGEM_URL}" alt="${name}" class="w-full h-full object-cover">`;
 
@@ -259,9 +257,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     };
     
-    // ==========================================================
-    // ===== INÍCIO DA FUNÇÃO MODIFICADA - displayCouples() =====
-    // ==========================================================
     function displayCouples(couples){
         couplesList.innerHTML = '';
         noResultsCouples.classList.toggle('hidden', couples.length !== 0);
@@ -282,7 +277,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     avatarHtml = `<div class="w-full h-full flex items-center justify-center bg-amber-100 text-amber-800"><span class="text-2xl font-bold">${initials}</span></div>`;
                 }
 
-                // --- NOVO BLOCO PARA GERAR TAGS DE SEGMENTO ---
                 let memberSegmentsHtml = '';
                 if (member.SEGMENTO && member.SEGMENTO.trim() !== '' && member.SEGMENTO.trim() !== '-') {
                     memberSegmentsHtml = '<div class="mt-2 flex flex-wrap gap-1">';
@@ -296,7 +290,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                     memberSegmentsHtml += '</div>';
                 }
-                // --- FIM DO NOVO BLOCO ---
 
                 membersHtml += `
                     <div class="flex-1 min-w-[250px] bg-slate-50 p-4 rounded-lg flex flex-col justify-between">
@@ -339,14 +332,38 @@ document.addEventListener('DOMContentLoaded', () => {
             couplesList.appendChild(coupleCard);
         });
     }
-    // ========================================================
-    // ===== FIM DA FUNÇÃO MODIFICADA - displayCouples() ======
-    // ========================================================
     
-    function applyFilters(){
-        const s=searchInput.value.toLowerCase(),sg=segmentoFilter.value,sgs=segmentoSecundarioFilter.value,r=redeSocialFilter.value,o=orcamentoFilter.value,p=projetosFilter.value,a=agenciaFilter.value;const filtered=allInfluencers.filter(i=>{const mS=i.Influenciador.toLowerCase().includes(s);const mSg=!sg||i.Segmento===sg;const mSgs=!sgs||i.TagsSecundarias.includes(sgs);const mR=!r||i['Rede Social']===r;const mP=!p||i.PROJETOS===p;const mA=!a||i.AGÊNCIA===a;let mO=true;if(o){const v=i.valorNumericoOrcamento;switch(o){case'ate20k':mO=v>0&&v<=2e4;break;case'ate50k':mO=v>2e4&&v<=5e4;break;case'ate100k':mO=v>5e4&&v<=1e5;break;case'mais100k':mO=v>1e5;break}}return mS&&mSg&&mSgs&&mR&&mO&&mP&&mA});
+    function applyFilters() {
+        const searchTerm = searchInput.value.toLowerCase();
+        const segmento = segmentoFilter.value;
+        const segmentoSecundario = segmentoSecundarioFilter.value;
+        const orcamento = orcamentoFilter.value;
+        const projeto = projetosFilter.value;
+        const agencia = agenciaFilter.value;
+
+        const filtered = allInfluencers.filter(influencer => {
+            const matchSearch = influencer.Influenciador.toLowerCase().includes(searchTerm);
+            const matchSegmento = !segmento || influencer.Segmento === segmento;
+            const matchSegmentoSecundario = !segmentoSecundario || influencer.TagsSecundarias.includes(segmentoSecundario);
+            const matchProjeto = !projeto || influencer.PROJETOS === projeto;
+            const matchAgencia = !agencia || influencer.AGÊNCIA === agencia;
+
+            let matchOrcamento = true;
+            if (orcamento) {
+                const valor = influencer.valorNumericoOrcamento;
+                switch (orcamento) {
+                    case 'ate20k': matchOrcamento = valor > 0 && valor <= 20000; break;
+                    case 'ate50k': matchOrcamento = valor > 20000 && valor <= 50000; break;
+                    case 'ate100k': matchOrcamento = valor > 50000 && valor <= 100000; break;
+                    case 'mais100k': matchOrcamento = valor > 100000; break;
+                }
+            }
+            
+            // A condição de filtro de rede foi removida do retorno
+            return matchSearch && matchSegmento && matchSegmentoSecundario && matchOrcamento && matchProjeto && matchAgencia;
+        });
         
-        filtered.sort((x,y)=>y.FollowersIG-x.FollowersIG);
+        filtered.sort((a, b) => b.FollowersIG - a.FollowersIG);
         
         displayInfluencers(filtered);
     }
@@ -386,7 +403,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- LISTENERS ---
-    [searchInput, segmentoFilter, segmentoSecundarioFilter, redeSocialFilter, orcamentoFilter, projetosFilter, agenciaFilter].forEach(el => {
+    // A variável redeSocialFilter foi removida do array
+    [searchInput, segmentoFilter, segmentoSecundarioFilter, orcamentoFilter, projetosFilter, agenciaFilter].forEach(el => {
         el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', applyFilters);
     });
 
