@@ -170,12 +170,12 @@ const couplesData = [
     {
         "NOME_CASAL": "Pepita e Kayque", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 40.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
         "MEMBROS": [
-            {"NOME": "Pepita", "IMAGEM_URL": "https://ogimg.infoglobo.com.br/in/22559767-bed-7f7/FT1086A/image6.jpeg.jpg", "@": "pepita", 
+            {"NOME": "Pepita", "IMAGEM_URL": "https://conteudo.imguol.com.br/c/entretenimento/e5/2023/11/14/pepita-abre-o-jogo-e-diz-que-sofre-preconceito-por-ser-mae-1699967227449_v2_1x1.jpg", "@": "pepita", 
              "IG": "📷 3 M", 
              "TTK": "🎵 296,4 mil", 
              "YT": "▶️ 112 mil", 
              "SEGMENTO": "Atriz, cantora"},
-            {"NOME": "Kayque Nogueira", "IMAGEM_URL": "https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.papelpop.com%2F2020%2F09%2Fpepita-se-casa-com-o-bailarino-kayque-nogueira-em-sao-paulo%2F&psig=AOvVaw2qbDXgsMlRPhVTK00I9sOo&ust=1760242619232000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCOD_kvWkm5ADFQAAAAAdAAAAABAY", "@": "kayquenogueira", 
+            {"NOME": "Kayque Nogueira", "IMAGEM_URL": "https://tonamidia.com.br/wp-content/uploads/2023/08/KayqueNogueira-30ago_ToNaMidia.jpg", "@": "kayquenogueira", 
              "IG": "📷 281 mil", 
              "TTK": "🎵 157,1 mil", 
              "YT": "▶️ 1,02 mil", 
