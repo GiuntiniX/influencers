@@ -222,7 +222,7 @@ document.addEventListener('DOMContentLoaded', () => {
         orcamentoFilterCouples.add(new Option('Orçamento', ''));
         [{v:'ate20k',t:'Até R$ 20 mil'},{v:'ate50k',t:'De R$20k a R$50k'},{v:'ate100k',t:'De R$50k a R$100k'},{v:'mais100k',t:'+ de R$ 100 mil'}].forEach(r => orcamentoFilterCouples.add(new Option(r.t, r.v)));
 
-        populate(segmentoFilterCouples, segmentos, 'Segmento (Membro)');
+        populate(segmentoFilterCouples, segmentos, 'Segmento');
         populate(projetosFilterCouples, projetos, 'Projetos');
         populate(agenciaFilterCouples, agencias, 'Agência');
     }
