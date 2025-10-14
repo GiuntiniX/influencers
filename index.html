@@ -73,7 +73,7 @@
 </div>
 
 <div id="influencer-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex justify-center items-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
-    </div>
+</div>
 
 <script src="dados.js"></script>
 <script>
@@ -110,7 +110,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- FUNÇÃO CORRIGIDA PARA POPULAR OS FILTROS ---
     function populateFilters() {
         const populate = (select, options, placeholder) => {
             select.innerHTML = '';
@@ -138,7 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
         populate(agenciaFilter, agencias, 'Agência');
     }
 
-    // --- FUNÇÃO PARA EXIBIR OS CARDS (COM ÍCONES CORRIGIDOS E LIMITE DE TAGS) ---
     function displayInfluencers(influencers){
         influencersList.innerHTML='';
         loader.style.display='none';
@@ -184,7 +182,77 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('modal-ig-container').style.display=influencer.FollowersIG>0?'block':'none';document.getElementById('modal-ttk-container').style.display=influencer.FollowersTTK>0?'block':'none';document.getElementById('modal-yt-container').style.display=influencer.FollowersYT>0?'block':'none';document.getElementById('modal-ig').textContent=formatNumber(influencer.FollowersIG);document.getElementById('modal-ttk').textContent=formatNumber(influencer.FollowersTTK);document.getElementById('modal-yt').textContent=formatNumber(influencer.FollowersYT);document.getElementById('modal-orcamento').textContent=influencer['Orçamento (Aproximado)'];document.getElementById('modal-projeto').textContent=influencer.PROJETOS;document.getElementById('modal-agencia').textContent=influencer.AGÊNCIA;const closeModalBtn=document.getElementById('modal-close-btn');closeModalBtn.addEventListener('click',closeModal);modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});modal.classList.remove('hidden');setTimeout(()=>modal.classList.add('show'),10)}
     function closeModal(){const modal=document.getElementById('influencer-modal');modal.classList.remove('show');setTimeout(()=>{modal.innerHTML='';modal.classList.add('hidden')},300)}
     showInfluencersBtn.addEventListener('click',()=>{mainPanel.classList.remove('hidden');couplesPanel.classList.add('hidden');showInfluencersBtn.classList.add('bg-amber-600','text-white');showInfluencersBtn.classList.remove('bg-fuchsia-600','text-white');showCouplesBtn.classList.add('bg-fuchsia-600','text-white');showCouplesBtn.classList.remove('bg-amber-600','text-white')});showCouplesBtn.addEventListener('click',()=>{mainPanel.classList.add('hidden');couplesPanel.classList.remove('hidden');showCouplesBtn.classList.add('bg-amber-600','text-white');showCouplesBtn.classList.remove('bg-fuchsia-600','text-white');showInfluencersBtn.classList.add('bg-fuchsia-600','text-white');showInfluencersBtn.classList.remove('bg-amber-600','text-white')});allInfluencers=processData(rawData);populateFilters();applyFilters();
-    function displayCouples(couples){couplesList.innerHTML='';couples.forEach(couple=>{const c=document.createElement('div');c.className='bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:ring-2 hover:ring-amber-500';let m='';couple.MEMBROS.forEach(mem=>{const i=mem.NOME.split(' ').map(n=>n[0]).slice(0,2).join('');const cc='bg-amber-100 text-amber-800';m+=`<div class="flex-1 min-w-[200px] bg-slate-50 p-4 rounded-lg"><div class="flex items-center space-x-4"><div class="w-16 h-16 flex-shrink-0 rounded-full overflow-hidden flex items-center justify-center ${cc}"><span class="text-2xl font-bold">${i}</span></div><div><h4 class="font-bold text-slate-900">${mem.NOME}</h4><p class="text-sm text-amber-600 font-semibold">@${mem['@']}</p><p class="text-sm text-slate-500">${mem.SEGMENTO}</p></div></div><div class="mt-3 text-xs space-y-1 text-slate-700"><p><strong>IG:</strong> ${mem.IG}</p><p><strong>TTK:</strong> ${mem.TTK}</p><p><strong>YT:</strong> ${mem.YT}</p></div></div>`});c.innerHTML=`<div class="mb-4 text-center sm:text-left"><h2 class="text-2xl font-bold text-purple-900">${couple.NOME_CASAL}</h2><p class="text-sm text-fuchsia-800">Agência: ${couple.AGENCIA||'N/A'}</p></div><div class="flex flex-wrap gap-4 mb-4">${m}</div><div class="bg-amber-50 border-l-4 border-amber-500 text-amber-800 p-4 rounded-r-lg"><p class="font-bold">Proposta:</p><p><strong class="font-semibold">Valor:</strong> ${couple.REF_VALOR||'N/A'}</p><p><strong class="font-semibold">Projeto:</strong> ${couple.PROJETOS||'N/A'}</p><p><strong class="font-semibold">Escopo:</strong> ${couple.ESCOPO||'N/A'}</p></div>`;couplesList.appendChild(c)})}displayCouples(couplesData);
+    
+    // ==========================================================
+    // ===== INÍCIO DA FUNÇÃO CORRIGIDA - displayCouples() ======
+    // ==========================================================
+    function displayCouples(couples) {
+        couplesList.innerHTML = '';
+        couples.forEach(couple => {
+            const coupleCard = document.createElement('div');
+            coupleCard.className = 'bg-white rounded-xl shadow-lg p-6 transition-all duration-300 hover:shadow-xl hover:ring-2 hover:ring-amber-500';
+            
+            let membersHtml = '';
+            couple.MEMBROS.forEach(member => {
+                let avatarHtml = '';
+                
+                // Verifica se a IMAGEM_URL existe e não está vazia.
+                if (member.IMAGEM_URL) {
+                    // Se existir, cria uma tag <img>.
+                    avatarHtml = `<img src="${member.IMAGEM_URL}" alt="Foto de ${member.NOME}" class="w-full h-full object-cover">`;
+                } else {
+                    // Se NÃO existir, usa a lógica das iniciais como fallback.
+                    const initials = member.NOME.split(' ').map(n => n[0]).slice(0, 2).join('');
+                    avatarHtml = `<div class="w-full h-full flex items-center justify-center bg-amber-100 text-amber-800">
+                                    <span class="text-2xl font-bold">${initials}</span>
+                                  </div>`;
+                }
+
+                membersHtml += `
+                    <div class="flex-1 min-w-[200px] bg-slate-50 p-4 rounded-lg">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-16 h-16 flex-shrink-0 rounded-full overflow-hidden bg-slate-200">
+                                ${avatarHtml}
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">${member.NOME}</h4>
+                                <p class="text-sm text-amber-600 font-semibold">@${member['@']}</p>
+                                <p class="text-sm text-slate-500">${member.SEGMENTO}</p>
+                            </div>
+                        </div>
+                        <div class="mt-3 text-xs space-y-1 text-slate-700">
+                            ${member.IG ? `<p><strong>IG:</strong> ${member.IG}</p>` : ''}
+                            ${member.TTK ? `<p><strong>TTK:</strong> ${member.TTK}</p>` : ''}
+                            ${member.YT ? `<p><strong>YT:</strong> ${member.YT}</p>` : ''}
+                        </div>
+                    </div>
+                `;
+            });
+
+            coupleCard.innerHTML = `
+                <div class="mb-4 text-center sm:text-left">
+                    <h2 class="text-2xl font-bold text-purple-900">${couple.NOME_CASAL}</h2>
+                    <p class="text-sm text-fuchsia-800">Agência: ${couple.AGENCIA || 'N/A'}</p>
+                </div>
+                <div class="flex flex-wrap gap-4 mb-4">
+                    ${membersHtml}
+                </div>
+                <div class="bg-amber-50 border-l-4 border-amber-500 text-amber-800 p-4 rounded-r-lg">
+                    <p class="font-bold">Proposta:</p>
+                    <p><strong class="font-semibold">Valor:</strong> ${couple.REF_VALOR || 'N/A'}</p>
+                    <p><strong class="font-semibold">Projeto:</strong> ${couple.PROJETOS || 'N/A'}</p>
+                    <p><strong class="font-semibold">Escopo:</strong> ${couple.ESCOPO || 'N/A'}</p>
+                </div>
+            `;
+            couplesList.appendChild(coupleCard);
+        });
+    }
+    // ==========================================================
+    // ====== FIM DA FUNÇÃO CORRIGIDA - displayCouples() ========
+    // ==========================================================
+
+    // Chama a função para exibir os casais usando a variável 'couplesData' que virá do seu arquivo 'dados.js'
+    displayCouples(couplesData);
 });
 </script>
 
