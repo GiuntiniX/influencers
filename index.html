@@ -51,13 +51,16 @@
         <div class="bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg mb-6 sticky top-4 z-10" id="filters-container">
             <div class="mb-6">
                 <div class="relative">
-                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg class="w-5 h-5 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg></div>
+                    <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"><svg class="w-5 h-5 text-slate-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0-0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg></div>
                     <input type="text" id="search-input" class="w-full p-3 pl-10 border border-slate-300 rounded-lg focus:ring-2 focus:ring-amber-500 focus:border-amber-500 transition-all duration-300 text-slate-800 placeholder-slate-400" placeholder="Buscar por nome...">
                 </div>
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4">
                 <div class="relative flex items-center bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors"><span class="absolute left-3 text-lg pointer-events-none">🎨</span><select id="segmento-filter" class="w-full p-2.5 pl-10 pr-8 bg-transparent appearance-none focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg cursor-pointer text-slate-800"><option value="">Segmento</option></select><div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"><svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></div></div>
                 <div class="relative flex items-center bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors"><span class="absolute left-3 text-lg pointer-events-none">✨</span><select id="segmento-secundario-filter" class="w-full p-2.5 pl-10 pr-8 bg-transparent appearance-none focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg cursor-pointer text-slate-800"><option value="">Tags</option></select><div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"><svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></div></div>
+                
+                <div class="relative flex items-center bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors"><span class="absolute left-3 text-lg pointer-events-none">📱</span><select id="plataforma-filter" class="w-full p-2.5 pl-10 pr-8 bg-transparent appearance-none focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg cursor-pointer text-slate-800"><option value="">Rede Social</option></select><div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"><svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></div></div>
+                
                 <div class="relative flex items-center bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors"><span class="absolute left-3 text-lg pointer-events-none">💰</span><select id="orcamento-filter" class="w-full p-2.5 pl-10 pr-8 bg-transparent appearance-none focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg cursor-pointer text-slate-800"><option value="">Orçamento</option></select><div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"><svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></div></div>
                 <div class="relative flex items-center bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors"><span class="absolute left-3 text-lg pointer-events-none">🚀</span><select id="projetos-filter" class="w-full p-2.5 pl-10 pr-8 bg-transparent appearance-none focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg cursor-pointer text-slate-800"><option value="">Projetos</option></select><div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"><svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></div></div>
                 <div class="relative flex items-center bg-slate-100 rounded-lg hover:bg-slate-200 transition-colors"><span class="absolute left-3 text-lg pointer-events-none">🏢</span><select id="agencia-filter" class="w-full p-2.5 pl-10 pr-8 bg-transparent appearance-none focus:outline-none focus:ring-2 focus:ring-amber-500 rounded-lg cursor-pointer text-slate-800"><option value="">Agência</option></select><div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none"><svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" /></svg></div></div>
@@ -118,8 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
           noResults = document.getElementById('no-results'),
           segmentoFilter = document.getElementById('segmento-filter'),
           segmentoSecundarioFilter = document.getElementById('segmento-secundario-filter'),
-          // A linha abaixo foi removida
-          // redeSocialFilter = document.getElementById('rede-social-filter'),
+          plataformaFilter = document.getElementById('plataforma-filter'), // Nova variável para o filtro
           orcamentoFilter = document.getElementById('orcamento-filter'),
           projetosFilter = document.getElementById('projetos-filter'),
           agenciaFilter = document.getElementById('agencia-filter'),
@@ -185,6 +187,13 @@ document.addEventListener('DOMContentLoaded', () => {
         orcamentoFilter.add(new Option('Orçamento', ''));
         [{v:'ate20k',t:'Até R$ 20 mil'},{v:'ate50k',t:'De R$20k a R$50k'},{v:'ate100k',t:'De R$50k a R$100k'},{v:'mais100k',t:'+ de R$ 100 mil'}].forEach(r => orcamentoFilter.add(new Option(r.t, r.v)));
         
+        // Popula o novo filtro de plataforma
+        plataformaFilter.innerHTML = '';
+        plataformaFilter.add(new Option('Rede Social', ''));
+        plataformaFilter.add(new Option('Instagram', 'Instagram'));
+        plataformaFilter.add(new Option('TikTok', 'TikTok'));
+        plataformaFilter.add(new Option('YouTube', 'YouTube'));
+
         populate(segmentoFilter, segmentos, 'Segmento');
         populate(segmentoSecundarioFilter, segmentosSecundarios, 'Tags');
         populate(projetosFilter, projetos, 'Projetos');
@@ -337,6 +346,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const searchTerm = searchInput.value.toLowerCase();
         const segmento = segmentoFilter.value;
         const segmentoSecundario = segmentoSecundarioFilter.value;
+        const plataforma = plataformaFilter.value; // Pega o valor do novo filtro
         const orcamento = orcamentoFilter.value;
         const projeto = projetosFilter.value;
         const agencia = agenciaFilter.value;
@@ -347,6 +357,22 @@ document.addEventListener('DOMContentLoaded', () => {
             const matchSegmentoSecundario = !segmentoSecundario || influencer.TagsSecundarias.includes(segmentoSecundario);
             const matchProjeto = !projeto || influencer.PROJETOS === projeto;
             const matchAgencia = !agencia || influencer.AGÊNCIA === agencia;
+
+            // Nova lógica para o filtro de plataforma
+            let matchPlataforma = true; // Permite todos se nenhum filtro for selecionado
+            if (plataforma) {
+                switch(plataforma) {
+                    case 'Instagram':
+                        matchPlataforma = influencer.FollowersIG > 0;
+                        break;
+                    case 'TikTok':
+                        matchPlataforma = influencer.FollowersTTK > 0;
+                        break;
+                    case 'YouTube':
+                        matchPlataforma = influencer.FollowersYT > 0;
+                        break;
+                }
+            }
 
             let matchOrcamento = true;
             if (orcamento) {
@@ -359,8 +385,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             
-            // A condição de filtro de rede foi removida do retorno
-            return matchSearch && matchSegmento && matchSegmentoSecundario && matchOrcamento && matchProjeto && matchAgencia;
+            // Adiciona a nova condição ao retorno
+            return matchSearch && matchSegmento && matchSegmentoSecundario && matchPlataforma && matchOrcamento && matchProjeto && matchAgencia;
         });
         
         filtered.sort((a, b) => b.FollowersIG - a.FollowersIG);
@@ -403,8 +429,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // --- LISTENERS ---
-    // A variável redeSocialFilter foi removida do array
-    [searchInput, segmentoFilter, segmentoSecundarioFilter, orcamentoFilter, projetosFilter, agenciaFilter].forEach(el => {
+    // Adiciona o novo filtro ao array de listeners
+    [searchInput, segmentoFilter, segmentoSecundarioFilter, plataformaFilter, orcamentoFilter, projetosFilter, agenciaFilter].forEach(el => {
         el.addEventListener(el.tagName === 'SELECT' ? 'change' : 'input', applyFilters);
     });
 
