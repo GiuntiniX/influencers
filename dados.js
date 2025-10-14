@@ -192,12 +192,12 @@ const couplesData = [
     {
         "NOME_CASAL": "Luca Scarpelli e Gabi Moretti", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 18.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
         "MEMBROS": [
-            {"NOME": "Luca Scarpelli", "IMAGEM_URL": "https://i.ibb.co/j6S1m3C/lucascarpelli.png", "@": "olucascarpelli", 
+            {"NOME": "Luca Scarpelli", "IMAGEM_URL": "https://p2.trrsf.com/image/fget/cf/1200/1200/middle/images.terra.com/2022/11/01/luca-insta-s1dxa4ha60c6.jpg", "@": "olucascarpelli", 
              "IG": "📷 748 mil", 
              "TTK": "🎵 159,1 mil", 
              "YT": "▶️ 182 mil", 
              "SEGMENTO": "Humor"},
-            {"NOME": "Gabi Moretti", "IMAGEM_URL": "https://i.ibb.co/8P34Y2r/gabimoretti.png", "@": "gabirmoretti", 
+            {"NOME": "Gabi Moretti", "IMAGEM_URL": "https://conteudo.imguol.com.br/c/entretenimento/14/2024/09/11/gabi-moretti-cria-conteudo-sobre-moda-nas-redes-sociais-1726080184117_v2_3x4.jpg", "@": "gabirmoretti", 
              "IG": "📷 1.2 M", 
              "TTK": "🎵 259,2 mil", 
              "YT": "▶️ 507 mil", 
@@ -207,12 +207,12 @@ const couplesData = [
     {
         "NOME_CASAL": "Jessica Ballut e Taíssa Rampinelli", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 20.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
         "MEMBROS": [
-            {"NOME": "Jessica Ballut (Jazzb)", "IMAGEM_URL": "https://i.ibb.co/P4y4qfX/jazzb.png", "@": "itsjazzb", 
+            {"NOME": "Jessica Ballut (Jazzb)", "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1965496640652931072/9h437pea_400x400.jpg", "@": "itsjazzb", 
              "IG": "📷 312 mil", 
              "TTK": "🎵 343,5 mil", 
              "YT": "▶️ 1.1 M", 
              "SEGMENTO": "LGBT+, humor"},
-            {"NOME": "Taíssa Rampinelli", "IMAGEM_URL": "https://i.ibb.co/q1X4V3B/taissa.png", "@": "ta_trs", 
+            {"NOME": "Taíssa Rampinelli", "IMAGEM_URL": "https://pbs.twimg.com/media/FbCmzFQXkAA8Vmj.jpg", "@": "ta_trs", 
              "IG": "📷 36,1 mil", 
              "TTK": "", 
              "YT": "", 
@@ -222,12 +222,12 @@ const couplesData = [
     {
         "NOME_CASAL": "Elana Valenaria e Gilberto Baloi", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 40.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
         "MEMBROS": [
-            {"NOME": "Elana Valenaria", "IMAGEM_URL": "https://i.ibb.co/m0R0L6S/elana.png", "@": "elana", 
+            {"NOME": "Elana Valenaria", "IMAGEM_URL": "https://s2-quem.glbimg.com/LzdmwO1FWT5Pm-k1ivzstWALGgY=/228x0:1144x916/fit-in/1401x916/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2023/Y/N/ycGs3tQgG8wgrKyAkZxA/elana-valenaria.jpg", "@": "elana", 
              "IG": "📷 2.9 M", 
              "TTK": "🎵 863,2 mil", 
              "YT": "▶️ 5,34 mil", 
              "SEGMENTO": "Ex-BBB, Influencer, atriz"},
-            {"NOME": "Gilberto Baloi", "IMAGEM_URL": "https://i.ibb.co/Qj50P0z/gilberto.png", "@": "gilzagueiro04", 
+            {"NOME": "Gilberto Baloi", "IMAGEM_URL": "https://s2-gshow.glbimg.com/Z_c_DA2lSjWluttUF2eBY3AzjUY=/0x0:512x436/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2023/u/6/GfB5MDSdqANJTYbkNfQw/captura-de-tela-2023-03-20-124507.jpg", "@": "gilzagueiro04", 
              "IG": "📷 994 mil", 
              "TTK": "", 
              "YT": "", 
@@ -237,12 +237,12 @@ const couplesData = [
     {
         "NOME_CASAL": "Vitória Capel e Gabriel Ruano", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 12.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
         "MEMBROS": [
-            {"NOME": "Vitória Capel", "IMAGEM_URL": "https://i.ibb.co/L5rK51y/vitoria.png", "@": "vi.capel", 
+            {"NOME": "Vitória Capel", "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSSWo00YRA5C8B1cg30xGQ5mbDwbQ5V3jSJMw&s", "@": "vi.capel", 
              "IG": "📷 81,1 mil", 
              "TTK": "🎵 36,2 mil", 
              "YT": "", 
              "SEGMENTO": "Alimentação, rotina"},
-            {"NOME": "Gabriel Ruano", "IMAGEM_URL": "https://i.ibb.co/g70y7D4/gabrielruano.png", "@": "_ruanog", 
+            {"NOME": "Gabriel Ruano", "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQomRwRfWdJ3FyjUyZ6c1Yp75oeMvFxcvqT2g&s", "@": "_ruanog", 
              "IG": "📷 256 mil", 
              "TTK": "🎵 394 mil", 
              "YT": "▶️ 8,4 mil", 
@@ -252,12 +252,12 @@ const couplesData = [
     {
         "NOME_CASAL": "Kaique Cerveny e Juliette", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 100.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
         "MEMBROS": [
-            {"NOME": "Kaique Cerveny", "IMAGEM_URL": "https://i.ibb.co/S6w8yq5/kaique.png", "@": "kaiquecerveny", 
+            {"NOME": "Kaique Cerveny", "IMAGEM_URL": "https://s2-gshow.glbimg.com/hDpmhXl7Nve98b5_TF-g4ZHPMwg=/0x0:1400x2100/600x0/smart/filters:gifv():strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2025/0/x/lZkTB2SCG0PdqOOEwtAA/img-1640.jpg", "@": "kaiquecerveny", 
              "IG": "📷 549 mil", 
              "TTK": "🎵 56,3 mil", 
              "YT": "▶️ 818", 
              "SEGMENTO": "Atleta, nutrição"},
-            {"NOME": "Juliette", "IMAGEM_URL": "https://i.ibb.co/Yy6x0B7/juliette.png", "@": "juliette", 
+            {"NOME": "Juliette", "IMAGEM_URL": "https://radioculturafm.com.br/wp-content/uploads/2025/04/33787_3b29f295a79d7b7.jpg", "@": "juliette", 
              "IG": "📷 29.3 M", 
              "TTK": "🎵 16,1 M", 
              "YT": "▶️ 583 mil", 
@@ -267,12 +267,12 @@ const couplesData = [
     {
         "NOME_CASAL": "Fernanda Catania e André Brandt", "PROJETOS": "Dia dos namorados", "REF_VALOR": "R$ 40.000", "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories", "AGENCIA": "Mynd",
         "MEMBROS": [
-            {"NOME": "Foquinha", "IMAGEM_URL": "https://i.ibb.co/zX8Q0hG/foquinha.png", "@": "foquinha", 
+            {"NOME": "Foquinha", "IMAGEM_URL": "https://yt3.googleusercontent.com/zqYkqlPKTRXABidMhJ8HVMGwTqaE_E1ZC6lNQeIRQCQJeG2DwVSQ_qNCX1XZVR2yOilxQ8dMXA=s900-c-k-c0x00ffffff-no-rj", "@": "foquinha", 
              "IG": "📷 1.2 M", 
              "TTK": "🎵 644,5 mil", 
              "YT": "▶️ 2.8 M", 
              "SEGMENTO": "Cultura, pop"},
-            {"NOME": "André Brandt", "IMAGEM_URL": "https://i.ibb.co/C037Pq4/andrebrandt.png", "@": "brandtandre", 
+            {"NOME": "André Brandt", "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1375112405945040905/w-qC1TTn_400x400.jpg", "@": "brandtandre", 
              "IG": "📷 44,5 mil", 
              "TTK": "🎵 13,1 mil", 
              "YT": "", 
@@ -282,7 +282,7 @@ const couplesData = [
     {
         "NOME_CASAL": "Londrinando", "PROJETOS": "Customizado Jontex", "REF_VALOR": "R$ 60.000,00", "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.", "AGENCIA": "Cely",
         "MEMBROS": [
-            {"NOME": "Londrinando", "IMAGEM_URL": "https://i.ibb.co/b3Pq40F/londrinando.png", "@": "londrinando", 
+            {"NOME": "Londrinando", "IMAGEM_URL": "https://yt3.googleusercontent.com/PovCiKvuFCau9KCtEKMGXXzBLIVQhIghLExhbFwodjBENzICnfatv327pctwkE0CActok5nXZg=s900-c-k-c0x00ffffff-no-rj", "@": "londrinando", 
              "IG": "📷 1 M", 
              "TTK": "🎵 2.9 M", 
              "YT": "▶️ 633 mil", 
@@ -292,7 +292,7 @@ const couplesData = [
     {
         "NOME_CASAL": "Sabe Aquela Cena", "PROJETOS": "-", "REF_VALOR": "-", "ESCOPO": "-", "AGENCIA": "Mosaico",
         "MEMBROS": [
-            {"NOME": "Sabe Aquela Cena", "IMAGEM_URL": "https://i.ibb.co/y4L2H3V/sabeaquelacena.png", "@": "sabeaquelacena", 
+            {"NOME": "Sabe Aquela Cena", "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-88s0uJhzRWVI_mPjprr7db9gHdpGLpARNA&s", "@": "sabeaquelacena", 
              "IG": "📷 114 mil", 
              "TTK": "🎵 81 mil", 
              "YT": "▶️ 141 mil", 
@@ -302,7 +302,7 @@ const couplesData = [
     {
         "NOME_CASAL": "Malhassaum", "PROJETOS": "-", "REF_VALOR": "-", "ESCOPO": "-", "AGENCIA": "Play9",
         "MEMBROS": [
-            {"NOME": "Malhassaum", "IMAGEM_URL": "https://i.ibb.co/5cQ3N0L/malhassaum.png", "@": "malhassaum", 
+            {"NOME": "Malhassaum", "IMAGEM_URL": "https://f.i.uol.com.br/fotografia/2023/08/21/169264597164e3ba535403d_1692645971_3x2_xl.jpg", "@": "malhassaum", 
              "IG": "📷 361 mil", 
              "TTK": "🎵 200 mil", 
              "YT": "▶️ 555", 
