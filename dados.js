@@ -1,4 +1,5 @@
 const segmentColors = {
+    // --- Segmentos Principais ---
     'Música': 'bg-purple-200 text-purple-700',
     'Humor': 'bg-yellow-200 text-yellow-700',
     'Moda': 'bg-pink-200 text-pink-700',
@@ -10,260 +11,293 @@ const segmentColors = {
     'Lifestyle': 'bg-lime-200 text-lime-700',
     'Viagem': 'bg-teal-200 text-teal-700',
     'Família': 'bg-sky-200 text-sky-700',
+    'família': 'bg-sky-200 text-sky-700', // Variação
     'Arte': 'bg-indigo-200 text-indigo-700',
+    'arte visual': 'bg-indigo-200 text-indigo-700', // Variação
+    'Arte visual': 'bg-indigo-200 text-indigo-700', // Variação
     'Política': 'bg-gray-200 text-gray-700',
     'Audiovisual': 'bg-red-200 text-red-700',
     'Autoconhecimento': 'bg-purple-200 text-purple-700',
     'Causas sociais': 'bg-emerald-200 text-emerald-700',
+    'Ativismo social': 'bg-emerald-200 text-emerald-700',
+    'ativismo social': 'bg-emerald-200 text-emerald-700', // Variação
     'Perfumaria': 'bg-fuchsia-200 text-fuchsia-700',
-    'Cinema e TV': 'bg-red-200 text-red-700', // Padronizado
-    'Cinema e Tv': 'bg-red-200 text-red-700', // Padronizado (mantendo variação por segurança)
     'Maternidade': 'bg-sky-200 text-sky-700',
     'Finanças': 'bg-green-200 text-green-700',
-    'Negócios | Marketing': 'bg-blue-200 text-blue-700', // Padronizado
-    'Negócios/Marketing': 'bg-blue-200 text-blue-700', // Padronizado (mantendo variação por segurança)
     'Cultura regional': 'bg-orange-200 text-orange-700',
     'Dança': 'bg-pink-200 text-pink-700',
     'Fitness': 'bg-green-200 text-green-700',
     'Games': 'bg-indigo-200 text-indigo-700',
     'Relacionamento': 'bg-rose-200 text-rose-700',
+    'relacionamentos': 'bg-rose-200 text-rose-700', // Variação
     'Saúde': 'bg-emerald-200 text-emerald-700',
     'Tecnologia': 'bg-blue-200 text-blue-700',
-    'Atriz, cantora': 'bg-pink-200 text-pink-700',
-    'Ator': 'bg-red-200 text-red-700',
-    'LGBT+, humor': 'bg-yellow-200 text-yellow-700',
-    'Ex-BBB, Influencer, atriz': 'bg-cyan-200 text-cyan-700',
-    'Alimentação, rotina': 'bg-orange-200 text-orange-700',
-    'Atleta, nutrição': 'bg-green-200 text-green-700',
-    'Cultura, pop': 'bg-indigo-200 text-indigo-700',
     'Default': 'bg-slate-200 text-slate-700',
 
-    // --- Novas Tags/Segmentos Adicionados/Padronizados ---
-    'Pets': 'bg-yellow-800 text-yellow-100', // Cor Marrom/Amarelo Escuro
-    'Crítica social': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Publicidade': 'bg-blue-200 text-blue-700', // Reutilizando Negócios
-    'Ativismo': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Inclusão': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Jornalismo': 'bg-gray-400 text-gray-800', // Cinza diferente
-    'Entrevistas': 'bg-cyan-200 text-cyan-700', // Reutilizando Entretenimento
-    'Televisão': 'bg-red-200 text-red-700', // Reutilizando Cinema e TV
-    'Podcast': 'bg-indigo-300 text-indigo-800', // Índigo mais claro
-    'Atuação': 'bg-red-200 text-red-700', // Reutilizando Ator/Cinema e TV
-    'Teatro': 'bg-indigo-200 text-indigo-700', // Reutilizando Arte
-    'Festas e eventos': 'bg-cyan-200 text-cyan-700', // Reutilizando Entretenimento
-    'Reality shows': 'bg-red-200 text-red-700', // Reutilizando Cinema e TV
-    'Psicologia': 'bg-emerald-200 text-emerald-700', // Reutilizando Saúde
-    'Marketing digital': 'bg-blue-200 text-blue-700', // Reutilizando Negócios
-    'Mentoria': 'bg-blue-200 text-blue-700', // Reutilizando Educação
-    'Lutas': 'bg-green-200 text-green-700', // Reutilizando Esporte
-    'Treinamento físico': 'bg-green-200 text-green-700', // Reutilizando Fitness
-    'Cultura drag': 'bg-indigo-200 text-indigo-700', // Reutilizando Arte
-    'Comunicação': 'bg-sky-300 text-sky-800', // Azul Céu mais claro
-    'Produção cultural': 'bg-indigo-200 text-indigo-700', // Reutilizando Arte
-    'Nutrição': 'bg-emerald-200 text-emerald-700', // Reutilizando Saúde
-    'Marketing de influência': 'bg-blue-200 text-blue-700', // Reutilizando Negócios
-    'Empreendedorismo digital': 'bg-blue-200 text-blue-700', // Reutilizando Negócios
-    'Comunicação comunitária': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Direitos humanos': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Cultura amazônica': 'bg-orange-200 text-orange-700', // Reutilizando Cultura Regional
-    'Ativismo regional': 'bg-orange-200 text-orange-700', // Reutilizando Cultura Regional
-    'Políticas públicas': 'bg-gray-200 text-gray-700', // Reutilizando Política
-    'Inovação': 'bg-blue-200 text-blue-700', // Reutilizando Tecnologia
-    'Arquitetura': 'bg-stone-300 text-stone-800', // Cor Pedra
-    'Liderança': 'bg-blue-200 text-blue-700', // Reutilizando Negócios
-    'Entretenimento urbano': 'bg-orange-200 text-orange-700', // Reutilizando Cultura Regional
-    'Confeitaria': 'bg-orange-200 text-orange-700', // Reutilizando Gastronomia
-    'Farmácia': 'bg-emerald-200 text-emerald-700', // Reutilizando Saúde
-    'Corrida': 'bg-green-200 text-green-700', // Reutilizando Esporte
-    'Cultura ancestral': 'bg-orange-200 text-orange-700', // Reutilizando Cultura Regional
-    'Espiritualidade de matriz africana': 'bg-orange-200 text-orange-700', // Reutilizando Cultura Regional
-    'Curiosidades': 'bg-amber-200 text-amber-700', // Cor Âmbar
-    'Ciência': 'bg-blue-200 text-blue-700', // Reutilizando Educação
-    'Séries': 'bg-red-200 text-red-700', // Reutilizando Cinema e TV
-    'Empoderamento negro': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Representatividade negra': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Roteiro': 'bg-red-200 text-red-700', // Reutilizando Audiovisual
-    'Animação 2D': 'bg-indigo-200 text-indigo-700', // Reutilizando Arte
-    'Superação': 'bg-purple-200 text-purple-700', // Reutilizando Autoconhecimento
-    'Dublagens virais': 'bg-yellow-200 text-yellow-700', // Reutilizando Humor
-    'Culinária prática': 'bg-orange-200 text-orange-700', // Reutilizando Gastronomia
-    'Organização': 'bg-gray-300 text-gray-700', // Cinza diferente
-    'Magia natural': 'bg-purple-200 text-purple-700', // Reutilizando Autoconhecimento
-    'Rituais': 'bg-purple-200 text-purple-700', // Reutilizando Autoconhecimento
-    'Bem-estar': 'bg-emerald-200 text-emerald-700', // Reutilizando Saúde
-    'Fotografia': 'bg-indigo-200 text-indigo-700', // Reutilizando Arte
-    'Cultura urbana': 'bg-orange-200 text-orange-700', // Reutilizando Cultura Regional
-    'Feminilidade': 'bg-purple-200 text-purple-700', // Reutilizando Autoconhecimento
-    'Estética retrô': 'bg-pink-200 text-pink-700', // Reutilizando Moda
-    'Comportamento': 'bg-lime-200 text-lime-700', // Reutilizando Lifestyle
-    'Masculinidade contemporânea': 'bg-lime-200 text-lime-700', // Reutilizando Lifestyle
-    'Estética urbana': 'bg-pink-200 text-pink-700', // Reutilizando Moda
-    'Minimalismo': 'bg-pink-200 text-pink-700', // Reutilizando Moda
-    'Decoração vintage': 'bg-indigo-200 text-indigo-700', // Reutilizando Arte
-    'Espiritualidade': 'bg-purple-200 text-purple-700', // Reutilizando Autoconhecimento
-    'Rituais com cristais e plantas': 'bg-purple-200 text-purple-700', // Reutilizando Autoconhecimento
-    'Decoração afetiva': 'bg-indigo-200 text-indigo-700', // Reutilizando Arte
-    'Estilo alternativo': 'bg-pink-200 text-pink-700', // Reutilizando Moda
-    'Gestão de tempo': 'bg-blue-200 text-blue-700', // Reutilizando Negócios
-    'Educação sexual': 'bg-blue-200 text-blue-700', // Reutilizando Educação
-    'Saúde íntima': 'bg-emerald-200 text-emerald-700', // Reutilizando Saúde
-    'e-commerce': 'bg-blue-200 text-blue-700', // Reutilizando Negócios
-    'Motivação': 'bg-purple-200 text-purple-700', // Reutilizando Autoconhecimento
-    'Organização pessoal': 'bg-lime-200 text-lime-700', // Reutilizando Lifestyle
-    'Segurança digital': 'bg-blue-200 text-blue-700', // Reutilizando Tecnologia
-    'Igualdade racial': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Representação pública': 'bg-gray-200 text-gray-700', // Reutilizando Política
-    'Canto': 'bg-purple-200 text-purple-700', // Reutilizando Música
-    'Igualdade de gênero': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Narrativa pessoal': 'bg-lime-200 text-lime-700', // Reutilizando Lifestyle
-    'Narrativa visual': 'bg-indigo-200 text-indigo-700', // Reutilizando Arte
-    'Estética criativa': 'bg-indigo-200 text-indigo-700', // Reutilizando Arte
-    'Dinâmica social': 'bg-lime-200 text-lime-700', // Reutilizando Lifestyle
-    'Cultura feminista': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Inclusão social': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Educação econômica': 'bg-green-200 text-green-700', // Reutilizando Finanças
-    'Economia pública': 'bg-green-200 text-green-700', // Reutilizando Finanças
-    'Palestras em diversidade': 'bg-blue-200 text-blue-700', // Reutilizando Educação
-    'Vlogs pessoais': 'bg-lime-200 text-lime-700', // Reutilizando Lifestyle
-    'Memes': 'bg-yellow-200 text-yellow-700', // Reutilizando Humor
-    'Campanhas': 'bg-blue-200 text-blue-700', // Reutilizando Negócios
-    'Educação infantil': 'bg-blue-200 text-blue-700', // Reutilizando Educação
-    'Empoderamento feminino e trans': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Cultura e representatividade negra': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Stand-up comedy': 'bg-yellow-200 text-yellow-700', // Reutilizando Humor
-    'Paternidade ativa': 'bg-sky-200 text-sky-700', // Reutilizando Família
-    'Imitações sátiricas': 'bg-yellow-200 text-yellow-700', // Reutilizando Humor
-    'Paternidade solo': 'bg-sky-200 text-sky-700', // Reutilizando Família
-    'Família multicultural': 'bg-sky-200 text-sky-700', // Reutilizando Família
-    'Saúde infantil': 'bg-emerald-200 text-emerald-700', // Reutilizando Saúde
-    'Maternidade trans': 'bg-sky-200 text-sky-700', // Reutilizando Maternidade
-    'Defesa de direitos juvenis': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Consultoria em diversidade': 'bg-blue-200 text-blue-700', // Reutilizando Negócios
-    'Organização familiar': 'bg-sky-200 text-sky-700', // Reutilizando Família
-    'Empoderamento racial e LGBTQIA+': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Combate ao bullying': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Organização de festas': 'bg-lime-200 text-lime-700', // Reutilizando Lifestyle
-    'Recepções em casa': 'bg-lime-200 text-lime-700', // Reutilizando Lifestyle
-    'Receitas': 'bg-orange-200 text-orange-700', // Reutilizando Gastronomia
-    'Empoderamento feminino': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais (consistência)
-    'Literatura': 'bg-blue-200 text-blue-700', // Reutilizando Educação
-    'Dicas de motorhome': 'bg-teal-200 text-teal-700', // Reutilizando Viagem
-    'Sustentabilidade': 'bg-green-300 text-green-800', // Verde diferente
-    'Autoconhecimento e desenvolvimento pessoal': 'bg-purple-200 text-purple-700', // Reutilizando Autoconhecimento
-    'Design gráfico': 'bg-indigo-200 text-indigo-700', // Reutilizando Arte
-    'Saúde emocional': 'bg-emerald-200 text-emerald-700', // Reutilizando Saúde
-    'Cultura francesa': 'bg-orange-200 text-orange-700', // Reutilizando Cultura Regional
-    'Autoestima': 'bg-purple-200 text-purple-700', // Reutilizando Autoconhecimento
-    'Turismo': 'bg-teal-200 text-teal-700', // Reutilizando Viagem
-    'Economia criativa': 'bg-blue-200 text-blue-700', // Reutilizando Negócios
-    'Artesanato': 'bg-indigo-200 text-indigo-700', // Reutilizando Arte
-    'Educação criativa': 'bg-blue-200 text-blue-700', // Reutilizando Educação
-    'Ativismo político': 'bg-gray-200 text-gray-700', // Reutilizando Política
-    'Cultura afro-brasileira': 'bg-orange-200 text-orange-700', // Reutilizando Cultura Regional
-    'Tradições populares': 'bg-orange-200 text-orange-700', // Reutilizando Cultura Regional
-    'Cotidiano maranhense': 'bg-orange-200 text-orange-700', // Reutilizando Cultura Regional
-    'Cultura europeia': 'bg-teal-200 text-teal-700', // Reutilizando Viagem
-    'Comunicação digital': 'bg-blue-200 text-blue-700', // Reutilizando Negócios
-    'Cultura maranhense': 'bg-orange-200 text-orange-700', // Reutilizando Cultura Regional
-    'Receitas práticas': 'bg-orange-200 text-orange-700', // Reutilizando Gastronomia
-    'Fotografia': 'bg-indigo-200 text-indigo-700', // Reutilizando Arte
-    'Comunicação digital': 'bg-blue-200 text-blue-700', // Reutilizando Negócios
-    'Investimentos': 'bg-green-200 text-green-700', // Reutilizando Finanças
-    'Desenvolvimento pessoal': 'bg-purple-200 text-purple-700', // Reutilizando Autoconhecimento
-    'Poesia': 'bg-indigo-200 text-indigo-700', // Reutilizando Arte
-    'Desafios': 'bg-cyan-200 text-cyan-700', // Reutilizando Entretenimento
-    'Vlogs': 'bg-lime-200 text-lime-700', // Reutilizando Lifestyle
-    'Representatividade LGBTQIA+': 'bg-purple-300 text-purple-800', // Roxo diferente para destaque
-    'Streaming': 'bg-indigo-200 text-indigo-700', // Reutilizando Games/Tec
-    'Bastidores de shows': 'bg-purple-200 text-purple-700', // Reutilizando Música
-    'Inteligência artificial': 'bg-blue-200 text-blue-700', // Reutilizando Tecnologia
-    'Estética': 'bg-rose-200 text-rose-700', // Reutilizando Beleza
-    'Filosofia': 'bg-blue-200 text-blue-700', // Reutilizando Educação
-    'História': 'bg-blue-200 text-blue-700', // Reutilizando Educação
-    'Documentários': 'bg-red-200 text-red-700', // Reutilizando Cinema e TV
-    'Consumo consciente': 'bg-lime-200 text-lime-700', // Reutilizando Lifestyle
-    'Agroecologia': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Figurino': 'bg-pink-200 text-pink-700', // Reutilizando Moda
-    'Lifehacks': 'bg-lime-200 text-lime-700', // Reutilizando Lifestyle
-    'DIY': 'bg-indigo-200 text-indigo-700', // Reutilizando Arte
-    'Memória afetiva': 'bg-purple-200 text-purple-700', // Reutilizando Autoconhecimento
-    'Casa inteligente': 'bg-blue-200 text-blue-700', // Reutilizando Tecnologia
-    'Decoração': 'bg-lime-200 text-lime-700', // Reutilizando Lifestyle
-    'GRWM': 'bg-pink-200 text-pink-700', // Reutilizando Moda/Beleza
-    'Autocuidado': 'bg-emerald-200 text-emerald-700', // Reutilizando Saúde
-    'Cabelo': 'bg-rose-200 text-rose-700', // Reutilizando Beleza
-    'Produtividade': 'bg-blue-200 text-blue-700', // Reutilizando Negócios
-    'Reviews': 'bg-cyan-200 text-cyan-700', // Reutilizando Entretenimento
-    'Tarô': 'bg-purple-200 text-purple-700', // Reutilizando Autoconhecimento
-    'Numerologia': 'bg-purple-200 text-purple-700', // Reutilizando Autoconhecimento
-    'Saúde energética': 'bg-purple-200 text-purple-700', // Reutilizando Autoconhecimento
-    'Feminismo': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Beleza e moda': 'bg-pink-200 text-pink-700', // Combinando cores
-    'LGBT': 'bg-purple-300 text-purple-800', // Reutilizando Representatividade LGBTQIA+
-    'arte visual': 'bg-indigo-200 text-indigo-700', // Reutilizando Arte
-    'Casal LGBT': 'bg-purple-300 text-purple-800', // Reutilizando Representatividade LGBTQIA+
-    'humor e entretenimento': 'bg-yellow-200 text-yellow-700', // Combinando cores
-    'Causas LGBTQIA+': 'bg-purple-300 text-purple-800', // Reutilizando Representatividade LGBTQIA+
-    'ativismo social': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Entretenimento e cultura pop': 'bg-cyan-200 text-cyan-700', // Reutilizando Entretenimento
-    'cultura pop': 'bg-indigo-200 text-indigo-700', // Reutilizando Cultura, pop
-    'comunicação e palestras': 'bg-sky-300 text-sky-800', // Reutilizando Comunicação
-    'Steraming de games com humor': 'bg-indigo-200 text-indigo-700', // Reutilizando Games
-    'eventos': 'bg-cyan-200 text-cyan-700', // Reutilizando Entretenimento
-    'Talk Shows': 'bg-cyan-200 text-cyan-700', // Reutilizando Entretenimento
-    'performance': 'bg-pink-200 text-pink-700', // Reutilizando Dança/Música
-    'saúde e bem estar': 'bg-emerald-200 text-emerald-700', // Reutilizando Saúde
-    'cinema e cultura brasileira': 'bg-red-200 text-red-700', // Reutilizando Cinema e TV
-    'empoderamento e narrativa pessoal': 'bg-purple-200 text-purple-700', // Reutilizando Autoconhecimento
-    'Representatividade trans': 'bg-purple-300 text-purple-800', // Reutilizando Representatividade LGBTQIA+
-    'relacionamentos': 'bg-rose-200 text-rose-700', // Reutilizando Relacionamento
-    'dinâmica social': 'bg-lime-200 text-lime-700', // Reutilizando Lifestyle
-    'palestras corporativas': 'bg-blue-200 text-blue-700', // Reutilizando Negócios
-    'moda e beleza': 'bg-pink-200 text-pink-700', // Combinando cores
-    'cultura feminista': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Saúde mental': 'bg-emerald-200 text-emerald-700', // Reutilizando Saúde
-    'animais': 'bg-yellow-800 text-yellow-100', // Reutilizando Pets
-    'conscientização social': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'Relacionamento LGBTQIA+': 'bg-purple-300 text-purple-800', // Reutilizando Representatividade LGBTQIA+
-    'comunicação e psicologia': 'bg-sky-300 text-sky-800', // Combinando cores
-    'educação econômca': 'bg-green-200 text-green-700', // Reutilizando Finanças
-    'economia pública': 'bg-green-200 text-green-700', // Reutilizando Finanças
-    'palestras em diversidade': 'bg-blue-200 text-blue-700', // Reutilizando Educação
-    'lives': 'bg-indigo-200 text-indigo-700', // Reutilizando Games/Streaming
-    'cultura jovem': 'bg-lime-200 text-lime-700', // Reutilizando Lifestyle
-    'representatividade LGBT': 'bg-purple-300 text-purple-800', // Reutilizando Representatividade LGBTQIA+
-    'Paternidade LGBTQIA+': 'bg-purple-300 text-purple-800', // Reutilizando Representatividade LGBTQIA+
-    'casal LGBT': 'bg-purple-300 text-purple-800', // Reutilizando Representatividade LGBTQIA+
-    'empoderamento feminino e trans': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'paternidade': 'bg-sky-200 text-sky-700', // Reutilizando Família
-    'cultura e representatividade negra': 'bg-emerald-200 text-emerald-700', // Reutilizando Causas Sociais
-    'família': 'bg-sky-200 text-sky-700', // Reutilizando Família
-    'ex-BBB': 'bg-cyan-200 text-cyan-700', // Reutilizando Entretenimento
-    'bem estar': 'bg-emerald-200 text-emerald-700', // Reutilizando Saúde
-    'Empreededorismo': 'bg-blue-200 text-blue-700', // Padronizado
-    'Criação de conteúdo': 'bg-blue-200 text-blue-700', // Reutilizando Negócios
-    'Zagueiro': 'bg-green-200 text-green-700', // Reutilizando Esporte
-    'Influenciador fitness': 'bg-green-200 text-green-700', // Reutilizando Fitness
-    'Advogada, influencer': 'bg-cyan-200 text-cyan-700', // Reutilizando Entretenimento
-    'Roteirista, humor': 'bg-yellow-200 text-yellow-700', // Reutilizando Humor
-    'Cantor': 'bg-purple-200 text-purple-700', // Reutilizando Música
-    'Contador, empresário': 'bg-blue-200 text-blue-700', // Reutilizando Negócios
-    'Moda, beleza': 'bg-pink-200 text-pink-700', // Combinando cores
-    'Saúde mental, humor': 'bg-yellow-200 text-yellow-700', // Combinando cores
+    // --- Variações de Nomenclatura (Garantindo a cor) ---
+    'Cinema e TV': 'bg-red-200 text-red-700',
+    'Cinema e Tv': 'bg-red-200 text-red-700', // Variação
+    'cinema e cultura brasileira': 'bg-red-200 text-red-700', // Variação
+    'Cinema e cultura brasileira': 'bg-red-200 text-red-700', // Variação
+    'Séries': 'bg-red-200 text-red-700',
+    'Documentários': 'bg-red-200 text-red-700',
+    'Televisão': 'bg-red-200 text-red-700',
+    'Ator': 'bg-red-200 text-red-700',
+    'Atuação': 'bg-red-200 text-red-700',
+    'Roteiro': 'bg-red-200 text-red-700',
+
+    'Negócios | Marketing': 'bg-blue-200 text-blue-700',
+    'Negócios/Marketing': 'bg-blue-200 text-blue-700', // Variação
+    'Publicidade': 'bg-blue-200 text-blue-700',
+    'Marketing digital': 'bg-blue-200 text-blue-700',
+    'Marketing de influência': 'bg-blue-200 text-blue-700',
+    'Empreendedorismo': 'bg-blue-200 text-blue-700',
+    'Gestão de tempo': 'bg-blue-200 text-blue-700',
+    'E-commerce': 'bg-blue-200 text-blue-700',
+    'e-commerce': 'bg-blue-200 text-blue-700', // Variação
+    'Liderança': 'bg-blue-200 text-blue-700',
+    'Campanhas': 'bg-blue-200 text-blue-700',
+    'Consultoria em diversidade': 'bg-blue-200 text-blue-700',
+    'Economia criativa': 'bg-blue-200 text-blue-700',
+    'Comunicação digital': 'bg-blue-200 text-blue-700',
+    'Produtividade': 'bg-blue-200 text-blue-700',
+    'Palestras corporativas': 'bg-blue-200 text-blue-700',
+    'palestras corporativas': 'bg-blue-200 text-blue-700', // Variação
+    'Empreendedorismo': 'bg-blue-200 text-blue-700',
+    'Empreendedorismo': 'bg-blue-200 text-blue-700', // Variação (typo)
+    'Criação de conteúdo': 'bg-blue-200 text-blue-700',
+    'Contador, empresário': 'bg-blue-200 text-blue-700',
+
+    'Cultura pop': 'bg-indigo-200 text-indigo-700',
+    'Cultura, pop': 'bg-indigo-200 text-indigo-700', // Variação
+    'cultura pop': 'bg-indigo-200 text-indigo-700', // Variação
+    'Streaming': 'bg-indigo-200 text-indigo-700',
+    'Lives': 'bg-indigo-200 text-indigo-700',
+    'lives': 'bg-indigo-200 text-indigo-700', // Variação
+    'Streaming de games com humor': 'bg-indigo-200 text-indigo-700',
+    'Steraming de games com humor': 'bg-indigo-200 text-indigo-700', // Variação (typo)
+    
+    'Pets': 'bg-yellow-800 text-yellow-100',
+    'animais': 'bg-yellow-800 text-yellow-100', // Variação
+    'Animais': 'bg-yellow-800 text-yellow-100', // Variação
+
+    'Bem-estar': 'bg-emerald-200 text-emerald-700',
+    'Saúde e bem-estar': 'bg-emerald-200 text-emerald-700',
+    'saúde': 'bg-emerald-200 text-emerald-700', // Variação
+    'Saúde mental': 'bg-emerald-200 text-emerald-700',
+    'Autocuidado': 'bg-emerald-200 text-emerald-700',
+    'Nutrição': 'bg-emerald-200 text-emerald-700',
+    'Psicologia': 'bg-emerald-200 text-emerald-700',
+    'Farmácia': 'bg-emerald-200 text-emerald-700',
+    'Saúde íntima': 'bg-emerald-200 text-emerald-700',
+    'Saúde infantil': 'bg-emerald-200 text-emerald-700',
+    'Saúde emocional': 'bg-emerald-200 text-emerald-700',
+
+    'Educação econômica': 'bg-green-200 text-green-700',
+    'educação econômca': 'bg-green-200 text-green-700', // Variação (typo)
+    'Economia pública': 'bg-green-200 text-green-700',
+    'economia pública': 'bg-green-200 text-green-700', // Variação
+    'Investimentos': 'bg-green-200 text-green-700',
+    
+    'Moda e beleza': 'bg-pink-200 text-pink-700',
+    'moda e beleza': 'bg-pink-200 text-pink-700', // Variação
+    'Beleza e moda': 'bg-pink-200 text-pink-700', // Variação
+    'Moda, beleza': 'bg-pink-200 text-pink-700', // Variação
+    'GRWM': 'bg-pink-200 text-pink-700',
+    'Figurino': 'bg-pink-200 text-pink-700',
+    'Estética retrô': 'bg-pink-200 text-pink-700',
+    'Estética urbana': 'bg-pink-200 text-pink-700',
+    'Minimalismo': 'bg-pink-200 text-pink-700',
+    'Estilo alternativo': 'bg-pink-200 text-pink-700',
+
+    'Humor e entretenimento': 'bg-yellow-200 text-yellow-700',
+    'humor e entretenimento': 'bg-yellow-200 text-yellow-700', // Variação
+    'Stand-up comedy': 'bg-yellow-200 text-yellow-700',
+    'Imitações sátiricas': 'bg-yellow-200 text-yellow-700',
+    'Memes': 'bg-yellow-200 text-yellow-700',
+    'Dublagens virais': 'bg-yellow-200 text-yellow-700',
+    'Roteirista, humor': 'bg-yellow-200 text-yellow-700',
+    'Saúde mental, humor': 'bg-yellow-200 text-yellow-700',
+
+    'Comunicação': 'bg-sky-300 text-sky-800',
+    'Comunicação e palestras': 'bg-sky-300 text-sky-800',
+    'comunicação e palestras': 'bg-sky-300 text-sky-800', // Variação
+    'Comunicação e psicologia': 'bg-sky-300 text-sky-800',
+    'comunicação e psicologia': 'bg-sky-300 text-sky-800', // Variação
+
+    'Paternidade': 'bg-sky-200 text-sky-700',
+    'paternidade': 'bg-sky-200 text-sky-700', // Variação
+    'Paternidade ativa': 'bg-sky-200 text-sky-700',
+    'Paternidade solo': 'bg-sky-200 text-sky-700',
+    'Família multicultural': 'bg-sky-200 text-sky-700',
+    'Maternidade trans': 'bg-sky-200 text-sky-700',
+    'Organização familiar': 'bg-sky-200 text-sky-700',
+
+    // --- Grupo LGBTQIA+ (Cor própria) ---
+    'Representatividade LGBTQIA+': 'bg-purple-300 text-purple-800',
+    'LGBT': 'bg-purple-300 text-purple-800',
+    'LGBTQIA+': 'bg-purple-300 text-purple-800',
+    'Casal LGBT': 'bg-purple-300 text-purple-800',
+    'casal LGBT': 'bg-purple-300 text-purple-800', // Variação
+    'Casal LGBTQIA+': 'bg-purple-300 text-purple-800',
+    'Causas LGBTQIA+': 'bg-purple-300 text-purple-800',
+    'Relacionamento LGBTQIA+': 'bg-purple-300 text-purple-800',
+    'representatividade LGBT': 'bg-purple-300 text-purple-800', // Variação
+    'Paternidade LGBTQIA+': 'bg-purple-300 text-purple-800',
+    'Representatividade trans': 'bg-purple-300 text-purple-800',
+
+    'Empoderamento feminino e trans': 'bg-emerald-200 text-emerald-700',
+    'empoderamento feminino e trans': 'bg-emerald-200 text-emerald-700', // Variação
+    'Cultura e representatividade negra': 'bg-emerald-200 text-emerald-700',
+    'cultura e representatividade negra': 'bg-emerald-200 text-emerald-700', // Variação
+    'Empoderamento negro': 'bg-emerald-200 text-emerald-700',
+    'Representatividade negra': 'bg-emerald-200 text-emerald-700',
+    'Igualdade racial': 'bg-emerald-200 text-emerald-700',
+    'Igualdade de gênero': 'bg-emerald-200 text-emerald-700',
+    'Cultura feminista': 'bg-emerald-200 text-emerald-700',
+    'cultura feminista': 'bg-emerald-200 text-emerald-700', // Variação
+    'Feminismo': 'bg-emerald-200 text-emerald-700',
+    'Empoderamento feminino': 'bg-emerald-200 text-emerald-700',
+
+    'Ex-BBB': 'bg-cyan-200 text-cyan-700',
+    'ex-BBB': 'bg-cyan-200 text-cyan-700', // Variação
+    'Ex-BBB, Influencer, atriz': 'bg-cyan-200 text-cyan-700',
+    'Advogada, influencer': 'bg-cyan-200 text-cyan-700',
+    'Reviews': 'bg-cyan-200 text-cyan-700',
+    'Talk Shows': 'bg-cyan-200 text-cyan-700',
+    'Eventos': 'bg-cyan-200 text-cyan-700',
+    'eventos': 'bg-cyan-200 text-cyan-700', // Variação
+    'Festas e eventos': 'bg-cyan-200 text-cyan-700',
+    'Desafios': 'bg-cyan-200 text-cyan-700',
+    'Entrevistas': 'bg-cyan-200 text-cyan-700',
+    'Reality shows': 'bg-red-200 text-red-700', // Reclassificado para Cinema/TV
+
+    'Palestras em diversidade': 'bg-blue-200 text-blue-700',
+    'palestras em diversidade': 'bg-blue-200 text-blue-700', // Variação
+    'Literatura': 'bg-blue-200 text-blue-700',
+    'Educação infantil': 'bg-blue-200 text-blue-700',
+    'Educação sexual': 'bg-blue-200 text-blue-700',
+    'Mentoria': 'bg-blue-200 text-blue-700',
+    'Ciência': 'bg-blue-200 text-blue-700',
+    'Filosofia': 'bg-blue-200 text-blue-700',
+    'História': 'bg-blue-200 text-blue-700',
+    'Educação criativa': 'bg-blue-200 text-blue-700',
+
+    // --- Combinações e Outros ---
+    'Atriz, cantora': 'bg-pink-200 text-pink-700',
+    'LGBT+, humor': 'bg-yellow-200 text-yellow-700',
+    'Alimentação, rotina': 'bg-orange-200 text-orange-700',
+    'Atleta, nutrição': 'bg-green-200 text-green-700',
+    'Crítica social': 'bg-emerald-200 text-emerald-700',
+    'Ativismo': 'bg-emerald-200 text-emerald-700',
+    'Inclusão': 'bg-emerald-200 text-emerald-700',
+    'Jornalismo': 'bg-gray-400 text-gray-800',
+    'Podcast': 'bg-indigo-300 text-indigo-800',
+    'Teatro': 'bg-indigo-200 text-indigo-700',
+    'Lutas': 'bg-green-200 text-green-700',
+    'Treinamento físico': 'bg-green-200 text-green-700',
+    'Cultura drag': 'bg-indigo-200 text-indigo-700',
+    'Produção cultural': 'bg-indigo-200 text-indigo-700',
+    'Comunicação comunitária': 'bg-emerald-200 text-emerald-700',
+    'Direitos humanos': 'bg-emerald-200 text-emerald-700',
+    'Cultura amazônica': 'bg-orange-200 text-orange-700',
+    'Ativismo regional': 'bg-orange-200 text-orange-700',
+    'Políticas públicas': 'bg-gray-200 text-gray-700',
+    'Inovação': 'bg-blue-200 text-blue-700',
+    'Arquitetura': 'bg-stone-300 text-stone-800',
+    'Entretenimento urbano': 'bg-orange-200 text-orange-700',
+    'Confeitaria': 'bg-orange-200 text-orange-700',
+    'Receitas': 'bg-orange-200 text-orange-700',
+    'Culinária prática': 'bg-orange-200 text-orange-700',
+    'Receitas práticas': 'bg-orange-200 text-orange-700',
+    'Corrida': 'bg-green-200 text-green-700',
+    'Cultura ancestral': 'bg-orange-200 text-orange-700',
+    'Espiritualidade de matriz africana': 'bg-orange-200 text-orange-700',
+    'Curiosidades': 'bg-amber-200 text-amber-700',
+    'Animação 2D': 'bg-indigo-200 text-indigo-700',
+    'Superação': 'bg-purple-200 text-purple-700',
+    'Organização': 'bg-gray-300 text-gray-700',
+    'Magia natural': 'bg-purple-200 text-purple-700',
+    'Rituais': 'bg-purple-200 text-purple-700',
+    'Fotografia': 'bg-indigo-200 text-indigo-700',
+    'Cultura urbana': 'bg-orange-200 text-orange-700',
+    'Feminilidade': 'bg-purple-200 text-purple-700',
+    'Comportamento': 'bg-lime-200 text-lime-700',
+    'Masculinidade contemporânea': 'bg-lime-200 text-lime-700',
+    'Decoração vintage': 'bg-indigo-200 text-indigo-700',
+    'Espiritualidade': 'bg-purple-200 text-purple-700',
+    'Rituais com cristais e plantas': 'bg-purple-200 text-purple-700',
+    'Decoração afetiva': 'bg-indigo-200 text-indigo-700',
+    'Motivação': 'bg-purple-200 text-purple-700',
+    'Organização pessoal': 'bg-lime-200 text-lime-700',
+    'Segurança digital': 'bg-blue-200 text-blue-700',
+    'Representação pública': 'bg-gray-200 text-gray-700',
+    'Canto': 'bg-purple-200 text-purple-700',
+    'Cantor': 'bg-purple-200 text-purple-700',
+    'Narrativa pessoal': 'bg-lime-200 text-lime-700',
+    'Dinâmica social': 'bg-lime-200 text-lime-700',
+    'dinâmica social': 'bg-lime-200 text-lime-700', // Variação
+    'Narrativa visual': 'bg-indigo-200 text-indigo-700',
+    'Estética criativa': 'bg-indigo-200 text-indigo-700',
+    'Inclusão social': 'bg-emerald-200 text-emerald-700',
+    'Vlogs pessoais': 'bg-lime-200 text-lime-700',
+    'Vlogs': 'bg-lime-200 text-lime-700',
+    'Defesa de direitos juvenis': 'bg-emerald-200 text-emerald-700',
+    'Empoderamento racial e LGBTQIA+': 'bg-emerald-200 text-emerald-700',
+    'Combate ao bullying': 'bg-emerald-200 text-emerald-700',
+    'Organização de festas': 'bg-lime-200 text-lime-700',
+    'Recepções em casa': 'bg-lime-200 text-lime-700',
+    'Dicas de motorhome': 'bg-teal-200 text-teal-700',
+    'Sustentabilidade': 'bg-green-300 text-green-800',
+    'Autoconhecimento e desenvolvimento pessoal': 'bg-purple-200 text-purple-700',
+    'Desenvolvimento pessoal': 'bg-purple-200 text-purple-700',
+    'empoderamento e narrativa pessoal': 'bg-purple-200 text-purple-700', // Variação
+    'Design gráfico': 'bg-indigo-200 text-indigo-700',
+    'Cultura francesa': 'bg-orange-200 text-orange-700',
+    'Autoestima': 'bg-purple-200 text-purple-700',
+    'Turismo': 'bg-teal-200 text-teal-700',
+    'Artesanato': 'bg-indigo-200 text-indigo-700',
+    'DIY': 'bg-indigo-200 text-indigo-700',
+    'Ativismo político': 'bg-gray-200 text-gray-700',
+    'Cultura afro-brasileira': 'bg-orange-200 text-orange-700',
+    'Tradições populares': 'bg-orange-200 text-orange-700',
+    'Cotidiano maranhense': 'bg-orange-200 text-orange-700',
+    'Cultura maranhense': 'bg-orange-200 text-orange-700',
+    'Cultura europeia': 'bg-teal-200 text-teal-700',
+    'Poesia': 'bg-indigo-200 text-indigo-700',
+    'Bastidores de shows': 'bg-purple-200 text-purple-700',
+    'Inteligência artificial': 'bg-blue-200 text-blue-700',
+    'Estética': 'bg-rose-200 text-rose-700',
+    'Consumo consciente': 'bg-lime-200 text-lime-700',
+    'Agroecologia': 'bg-emerald-200 text-emerald-700',
+    'Lifehacks': 'bg-lime-200 text-lime-700',
+    'Memória afetiva': 'bg-purple-200 text-purple-700',
+    'Casa inteligente': 'bg-blue-200 text-blue-700',
+    'Decoração': 'bg-lime-200 text-lime-700',
+    'Cabelo': 'bg-rose-200 text-rose-700',
+    'Tarô': 'bg-purple-200 text-purple-700',
+    'Numerologia': 'bg-purple-200 text-purple-700',
+    'Saúde energética': 'bg-purple-200 text-purple-700',
+    'Performance': 'bg-pink-200 text-pink-700',
+    'performance': 'bg-pink-200 text-pink-700', // Variação
+    'Cultura jovem': 'bg-lime-200 text-lime-700',
+    'cultura jovem': 'bg-lime-200 text-lime-700', // Variação
+    'Zagueiro': 'bg-green-200 text-green-700',
+    'Influenciador fitness': 'bg-green-200 text-green-700',
 };
-              
-              // ### DADOS DOS INFLUENCIADORES INDIVIDUAIS (ORIGINAL) ###
-           const rawData = [
-          
+
+// ### DADOS DOS INFLUENCIADORES INDIVIDUAIS (ATUALIZADO) ###
+const rawData = [
+    
 {
     "INFLUENCIADOR": "Urias",
     "@": "uriasss",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWJ6s_ILfRH3w2NuKrGgHEeY_-318qP9jsWS3V-I-TxoDlgZMf40M_6MQLzSUBI9P7HTwe-CCHJitKw-OyjUCMfUafErpssZe6VbFewwTj",
+    "IMAGEM_URL": "https://mundonegro.inf.br/wp-content/uploads/2025/08/URIAS-CRIOLO0481-scaled.jpg",
     "IG": "903 mil",
     "TTK": "114,6 mil",
     "YT": "293 mil",
     "SEGMENTO": "Música",
-    "SEGMENTO SECUNDÁRIO": "Beleza e moda, lifestyle, LGBT, arte visual",
+    "SEGMENTO SECUNDÁRIO": "Beleza, moda, lifestyle, LGBT, arte visual",
     "PROJETOS": "Pride / LGBT",
     "REF. VALOR": "R$ 40.000",
     "AGÊNCIA": "Mynd",
@@ -273,7 +307,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Diva Depressão",
     "@": "divadepressao",
-    "IMAGEM_URL": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQnwiHo6WTyqYdXy2_KpYTMsee5lpuKDnTtrqSoVH15G_wmNm-T8VEosQHskLN1xOJ6jfT7QKP2jFpMME90ncS96fL-95t8hLtnBAIvDY9_",
+    "IMAGEM_URL": "https://assets.propmark.com.br/uploads/2023/05/Diva-depress-o_Cr-dito-Instagram.Divulga--o--1-.jpg",
     "IG": "1.9 M",
     "TTK": "400,2 mil",
     "YT": "3.3 M",
@@ -318,7 +352,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Paulo Gomiz",
     "@": "paulogomiz",
-    "IMAGEM_URL": "https://s2-gshow.glbimg.com/wEWYHpmGQfssjYAmRthVLrLJZ3Y=/1080x608/top/smart/https://i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2020/E/B/HOzv9HRv2NFECsB3loMA/paulo-gomiz-tvk.jpeg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnP0Uap3Lx6vDYtKCiu6BTNifm-vffFYGcDg&s",
     "IG": "433 mil",
     "TTK": "1.7 M",
     "YT": "-",
@@ -333,12 +367,12 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Pabllo Vittar",
     "@": "pabllovittar",
-    "IMAGEM_URL": "https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2022/08/03/407859439-pabllo-vittar-2-instagram.jpg",
+    "IMAGEM_URL": "https://boaforma.abril.com.br/wp-content/uploads/sites/2/2023/02/DESTAQUE-PV-BOA-FORMA-.jpg?crop=1&resize=1212,909",
     "IG": "12.8 M",
     "TTK": "9.9 M",
     "YT": "7.9 M",
     "SEGMENTO": "Música",
-    "SEGMENTO SECUNDÁRIO": "Representatividade LGBTQIA+, moda, beleza, Entretenimento e cultura pop",
+    "SEGMENTO SECUNDÁRIO": "Representatividade LGBTQIA+, moda, beleza, Entretenimento, cultura pop",
     "PROJETOS": "Pride / LGBT",
     "REF. VALOR": "R$ 180.000",
     "AGÊNCIA": "Mynd",
@@ -348,7 +382,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Bianca Dellafancy",
     "@": "biancadellafancy",
-    "IMAGEM_URL": "https://s2-quem.glbimg.com/gGJFnBxeWyYgLGuazfrS-gcx52k=/0x0:1365x2048/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2024/B/5/EgFATwTtu2c8UkI3JFQw/bianca-4-.jpg",
+    "IMAGEM_URL": "https://veja.abril.com.br/wp-content/uploads/2024/04/Bianca-DellaFancy-persona-drag-do-artista-paulista-Felippe-Souza.jpg?crop=1&resize=1212,909",
     "IG": "568 mil",
     "TTK": "520,6 mil",
     "YT": "289 mil",
@@ -363,7 +397,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Lorelay Fox",
     "@": "lorelay_fox",
-    "IMAGEM_URL": "https://blog.ebaconline.com.br/blog/wp-content/uploads/2023/04/image3-3-1024x683.jpg",
+    "IMAGEM_URL": "https://conteudo.imguol.com.br/c/entretenimento/4f/2021/06/15/lorelay-fox-1623793162018_v2_1x1.jpg",
     "IG": "727 mil",
     "TTK": "129,3 mil",
     "YT": "1 M",
@@ -378,7 +412,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Wanessa Wolf",
     "@": "wanessawolf",
-    "IMAGEM_URL": "https://poltronavip.com/_next/image?url=https%3A%2F%2Fapi.poltronavip.com%2Fwp-content%2Fuploads%2F2024%2F01%2FWANESSA-WOLF-FOTODIATV.png&w=1920&q=100",
+    "IMAGEM_URL": "https://static.ndmais.com.br/2023/09/wanessa-wolf-800x800.jpg",
     "IG": "884 mil",
     "TTK": "722,6 mil",
     "YT": "381 mil",
@@ -393,7 +427,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Blogueirinha",
     "@": "blogueirinha",
-    "IMAGEM_URL": "https://f.i.uol.com.br/fotografia/2024/11/28/173284031567490b7b814e3_1732840315_3x2_md.jpg",
+    "IMAGEM_URL": "https://i.uai.com.br/uS2DxICV-xn-0Y239JTA-0RwimM=/1200x1200/smart/imgsapp2.uai.com.br/app/noticia_133890394703/2025/06/06/362864/blogueirinha-nega-transicao-de-genero-e-fala-sobre-fim-do-casamento-_1_68284.jpeg",
     "IG": "4.3 M",
     "TTK": "2.6 M",
     "YT": "1.8 M",
@@ -423,12 +457,12 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Gominho",
     "@": "gominho",
-    "IMAGEM_URL": "https://assets.portalleodias.com/2024/04/Gominho-se-revolta-apos-furto-de-presente-que-ganhou-de-Preta-Gil_-Faca-bom-proveito.jpg",
+    "IMAGEM_URL": "https://caras.com.br/wp-content/uploads/2025/05/gominho-emagreciento.jpg",
     "IG": "1.7 M",
     "TTK": "68,3 mil",
     "YT": "-",
     "SEGMENTO": "Humor",
-    "SEGMENTO SECUNDÁRIO": "Entretenimento, representatividade LGBTQIA+, saúde e bem estar",
+    "SEGMENTO SECUNDÁRIO": "Entretenimento, representatividade LGBTQIA+, saúde, bem-estar",
     "PROJETOS": "Pride / LGBT",
     "REF. VALOR": "R$ 40.000",
     "AGÊNCIA": "Mynd",
@@ -438,7 +472,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Flávio Verne",
     "@": "flavioverne",
-    "IMAGEM_URL": "https://gabipolary.com.br/wp-content/uploads/2022/05/906ca68e-4fba-45e8-b414-8ad2452ae2eb.jpeg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyjBOTYblNITO3KrEzkKc-wRQCNb8IDHCFmA&s",
     "IG": "222 mil",
     "TTK": "433,6 mil",
     "YT": "27 mil",
@@ -453,7 +487,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Lia Clark",
     "@": "liaclark",
-    "IMAGEM_URL": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSr7-5UxBuoflK_BAxaNNZhzJj0MojFDG8dy9HXRyAp05he7zxr85F2VolPJg5RQILG6csj9Q-PnPIOGamI9wj6ubC6wdxGzNUDKnuA-e8",
+    "IMAGEM_URL": "https://i0.statig.com.br/bancodeimagens/imgalta/3m/1p/u1/3m1pu12t4loqm4bia4av7zp89.jpg",
     "IG": "511 mil",
     "TTK": "246,3 mil",
     "YT": "383 mil",
@@ -468,7 +502,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Nicolas Avansini",
     "@": "nicolasavansini",
-    "IMAGEM_URL": "https://s2-gshow.glbimg.com/BoUvzr_gUXNQNsCQqdUvTlgmEIo=/1200x/smart/filters:cover():strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2022/y/n/WuzXAjRdWBcvX0FGaBcA/whatsapp-image-2022-06-29-at-21.13.50.jpeg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnP0Uap3Lx6vDYtKCiu6BTNifm-vffFYGcDg&s",
     "IG": "370 mil",
     "TTK": "1.1 M",
     "YT": "4,38 mil",
@@ -483,7 +517,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Priscila Caliari",
     "@": "pricaliari",
-    "IMAGEM_URL": "https://i.pinimg.com/736x/e1/a6/04/e1a60404a965587284ffeaedbcd35bf4.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwkLrBHb71p5oeLvEDv25SyOpcNs7a0eBXYA&s",
     "IG": "1.4 M",
     "TTK": "5.3 M",
     "YT": "159 mil",
@@ -498,7 +532,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Malu Camargo",
     "@": "malufca",
-    "IMAGEM_URL": "https://i.pinimg.com/736x/fc/b9/71/fcb9710690d994d2b370e195454ab869.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvDN6hvKm6mWKB1hk_ZbVUeNYqIDMWMrU3dA&s",
     "IG": "1 M",
     "TTK": "3.8 M",
     "YT": "65,8 mil",
@@ -528,7 +562,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Ari Dantas",
     "@": "aridantas_",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRL-jcwljS-ID_yHK38cHh8ZW3nTnbr1LvIIw&s",
+    "IMAGEM_URL": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEge2grhgYFhtGMDAbSBuTGsvbP7NEAI_lrExu8N4WlTdUWTvM3YXTPu-f-02NbmabLFWJH1KhO3EO0I_8FceqGfHQcRGMSplAe0wmUbMtb00bOryMA9GBnpCX1GD__g1beywuvDhSln0pGza5rypXWQmIHYkIfIkTh3C7pWK1XPgDfDApDqGN0w1BKNdA/s813/3f6a4835-1364-4d4f-ac9e-86fab73812a7.jpg",
     "IG": "423 mil",
     "TTK": "1.4 M",
     "YT": "1,85 mil",
@@ -558,7 +592,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Giovanna Heliodoro",
     "@": "transpreta",
-    "IMAGEM_URL": "https://conteudo.imguol.com.br/c/entretenimento/3f/2022/06/02/giovanna-heliodoro-vai-desfilar-para-a-marca-led-na-spfw-1654174768860_v2_1920x1919.jpg",
+    "IMAGEM_URL": "https://www.motiveacaopalestras.com.br/assets/images/palestrantes/645500f69ffa9f0de5ec3126ab00c75e.jpg",
     "IG": "272 mil",
     "TTK": "48,9 mil",
     "YT": "-",
@@ -574,7 +608,7 @@ const segmentColors = {
     {
     "INFLUENCIADOR": "Louie Ponto",
     "@": "louieponto",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/T6O7D-JzxSYpt_aO5gHfXO5S-idatH1GSo2iIXkQZcT243_KQ5HXBfLTKGmMbeBZuNzwYQIH=s900-c-k-c0x00ffffff-no-rj",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy4BzUu2zGKOkmELggztZNm8h8BGFD-L_JSfwmdxKOELl2RXoO_Eb8eCHrrKVWd96efp8&usqp=CAU",
     "IG": "267 mil",
     "TTK": "282,4 mil",
     "YT": "670 mil",
@@ -604,7 +638,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Beta Boechat",
     "@": "betaboechat",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/prBuhW12TS0zNUxnUgfMkO79Y7fXQKq4zTvMIVYoU22CYIN9SEV6eNpPNSomORuWBQhjUVxXJw=s900-c-k-c0x00ffffff-no-rj",
+    "IMAGEM_URL": "https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2024/10/02/snapinsta-app_407948904_18396064495031667_5355477679681335409_n_1080-qe9wf365hir7.jpg",
     "IG": "337 mil",
     "TTK": "225,7 mil",
     "YT": "344 mil",
@@ -619,7 +653,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Lu Mayers",
     "@": "luiza_mayers",
-    "IMAGEM_URL": "https://www.fashionbubbles.com/wp-content/uploads/2025/09/quem-e-luiza-mayers-4.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzrWCB_rxRiIdjabMmp7YQd0pwiSX8E2Zo0w&s",
     "IG": "3.8 M",
     "TTK": "3.4 M",
     "YT": "554 mil",
@@ -649,7 +683,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Douglas Souza",
     "@": "douglasouza",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/aQK31Agr6lZ38-WOYmfKNlWaYaqvXmkZISa3cRE5rx57iJyX7o21YK5ocsroa8QbqWdKzxHn=s900-c-k-c0x00ffffff-no-rj",
+    "IMAGEM_URL": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2021/08/50337_15A4C26FFFDBAD67.jpg?w=1200&h=1200&crop=1",
     "IG": "1.9 M",
     "TTK": "674,7 mil",
     "YT": "100 mil",
@@ -664,7 +698,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Gil do Vigor",
     "@": "gildovigor",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1eIajVj5XSPjnAF7kcOn6JuMZPOC5-xT0bNRmgfF8YyA7niZtyejaNI0SOjZN4sUucM-rhpKcTK1gIRT20OTdpmSku_gq_DlcrU7_Mx85jA",
+    "IMAGEM_URL": "https://conteudo.imguol.com.br/c/entretenimento/0b/2021/06/11/gil-do-vigor-1623423655894_v2_450x600.jpg.webp",
     "IG": "14.1 M",
     "TTK": "2.5 M",
     "YT": "-",
@@ -679,7 +713,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Jonas Maria",
     "@": "jonasmariaa",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/dwbQ_G4fQZi6wmQ-7Tw84pzYi3BR5wVUAsK65YDptpyUKR6wrEym05x8xV3l8REOI0skhwSh4g=s900-c-k-c0x00ffffff-no-rj",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO9pB3yQyqArvv_HxteJc5cSHPOOl_cg4SAA&s",
     "IG": "128 mil",
     "TTK": "11,3 mil",
     "YT": "53,5 mil",
@@ -694,7 +728,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Luba",
     "@": "lubatv",
-    "IMAGEM_URL": "https://www.tvtime.com/_next/image?url=https%3A%2F%2Fartworks.thetvdb.com%2Fbanners%2Fperson%2F7968228%2F5e8fc77ba09f2.jpg&w=640&q=75",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrGGDnJgXoXa3tdMZDE6dAJegy7zIF8UdxMg&s",
     "IG": "4.1 M",
     "TTK": "1.1 M",
     "YT": "8.6 M",
@@ -739,12 +773,12 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Gabriela Mendes",
     "@": "gabrielameendes_",
-    "IMAGEM_URL": "https://defatoonline.com.br/wp-content/uploads/2023/02/WhatsApp-Image-2023-02-07-at-11.19.59-e1675779922517.jpeg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT732FNo8lKIk0-bR26EAXeYW6wfKbmhsMLQQ&s",
     "IG": "421 mil",
     "TTK": "1 M",
     "YT": "-",
     "SEGMENTO": "Beleza",
-    "SEGMENTO SECUNDÁRIO": "Lifestyle, viagens, bem estar, representatividade LGBTQIA+, beleza",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, viagens, bem-estar, representatividade LGBTQIA+, beleza",
     "PROJETOS": "Pride / LGBT",
     "REF. VALOR": "R$ 20.000",
     "AGÊNCIA": "Mynd",
@@ -754,7 +788,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Lázaro Freitas",
     "@": "uailazaro",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrNttQZ7WCe7aJnFCn1plj9COrzxouLXYEew&s",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyqK2P7HIUz6yrMY0fMaUty0D-VoozH9hkEQ&s",
     "IG": "6.7 M",
     "TTK": "14,4 M",
     "YT": "-",
@@ -769,7 +803,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Carlos Silva e Wilson Nunes",
     "@": "2pais2bes",
-    "IMAGEM_URL": "https://s2.glbimg.com/zlFO9-Uj4kaNxKo24SV09Smse8w=/e.glbimg.com/og/ed/f/original/2022/06/24/carlos_e_wilson_se_casaram_no_inicio_de_marco.png",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxXM_SAGNlTH5bNSDKDt-S6HzLixgz8FuyIQ&s",
     "IG": "180 mil",
     "TTK": "164,1 mil",
     "YT": "597",
@@ -784,7 +818,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "2 Papais",
     "@": "2papais",
-    "IMAGEM_URL": "https://2papais.com.br/wp-content/uploads/2022/08/Papais-gays-com-filho.jpeg",
+    "IMAGEM_URL": "https://s2-gq.glbimg.com/kSCh-eGeVF1priV55nJ2bwHx8X4=/0x0:1000x1500/600x0/smart/filters:gifv():strip_icc()/i.s3.glbimg.com/v1/AUTH_71a8fe14ac6d40bd993eb59f7203fe6f/internal_photos/bs/2023/L/l/a1D522RKGq9ezZhQMh6Q/2-papais-fertilizacao-in-vitro-gq-2.jpg",
     "IG": "164 mil",
     "TTK": "284,5 mil",
     "YT": "1,15 mil",
@@ -801,7 +835,7 @@ const segmentColors = {
     "@": "carolixas",
     "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGmTn33SuCur1yUzcv6SHkh-vMS-Gsm9s9rA&s",
     "IG": "2.6 M",
-    "TTK": "7,5 M",
+    "TTK": "7.5 M",
     "YT": "2.3 M",
     "SEGMENTO": "Entretenimento",
     "SEGMENTO SECUNDÁRIO": "Humor, lifestyle, cultura pop, casal LGBT, representatividade LGBTQIA+",
@@ -814,7 +848,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Pepita",
     "@": "pepita",
-    "IMAGEM_URL": "https://ogimg.infoglobo.com.br/in/22559767-bed-7f7/FT1086A/image6.jpeg.jpg",
+    "IMAGEM_URL": "https://i0.wp.com/obatuque.com/wp-content/uploads/2025/02/pepita-scaled.jpeg?fit=1920%2C2560&ssl=1",
     "IG": "3 M",
     "TTK": "296,4 mil",
     "YT": "112 mil",
@@ -829,7 +863,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Família Pessoa Tardivo",
     "@": "familiapessoatardivo",
-    "IMAGEM_URL": "https://bebe.abril.com.br/wp-content/uploads/2023/08/familia-pessoa-tardivo.jpg?crop=1&resize=1212,909",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRYo66kmzE2qPDm7qyqL1R4dJLsGlhERqXgjg&s",
     "IG": "1.1 M",
     "TTK": "1,1 M",
     "YT": "28,1 mil",
@@ -844,7 +878,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Babu Santana",
     "@": "babusantana",
-    "IMAGEM_URL": "https://s2.glbimg.com/JVd7b1MsrMWFF4IB6FmxqZjCP98=/e.glbimg.com/og/ed/f/original/2021/07/06/babu-santana5.jpg",
+    "IMAGEM_URL": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Babu_santana.jpg/250px-Babu_santana.jpg",
     "IG": "4.8 M",
     "TTK": "76,7 mil",
     "YT": "100 mil",
@@ -859,7 +893,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Yuri Marçal",
     "@": "oyurimarcal",
-    "IMAGEM_URL": "https://f.i.uol.com.br/fotografia/2020/09/03/15991325335f50d3754e155_1599132533_3x2_lg.jpg",
+    "IMAGEM_URL": "https://gama-uploads.nyc3.cdn.digitaloceanspaces.com/2020/10/L_yuri_perfil-1024x1024.jpg",
     "IG": "1.2 M",
     "TTK": "1.1 M",
     "YT": "-",
@@ -874,7 +908,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Victor Sarro",
     "@": "victorsarro",
-    "IMAGEM_URL": "https://www.dialethoseventos.com.br/assets-custom/img/palestrantes/victor-sarro-03022025-141902.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSK5yYn0Pb6WCjTysoJVN14dURM43jUdHQ_iQ&s",
     "IG": "2.5 M",
     "TTK": "1.3 M",
     "YT": "408 mil",
@@ -889,12 +923,12 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Rodrigo Hilbert",
     "@": "rodrigo.hilbert",
-    "IMAGEM_URL": "https://s2.glbimg.com/u-40flekw7Ipx4CH-UL8zAr_8Rs=/560x750/e.glbimg.com/og/ed/f/original/2017/09/11/rodrigo_hilbert.jpg",
+    "IMAGEM_URL": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/12/rodrigo-hilbert-e1734030695943.jpg?w=1006",
     "IG": "5.3 M",
     "TTK": "326 mil",
     "YT": "-",
     "SEGMENTO": "Gastronomia",
-    "SEGMENTO SECUNDÁRIO": "Lifestyle, família, bem estar, moda",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, família, bem-estar, moda",
     "PROJETOS": "Paternidade",
     "REF. VALOR": "R$ 65.000",
     "AGÊNCIA": "Mynd",
@@ -904,7 +938,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Fred",
     "@": "fred",
-    "IMAGEM_URL": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSUDyfcNlFMpSvwvk3TykUKOBgIDSBqXfOS43oTKb8jMM5PIdzi5TVWW8lBePiOe0zYkZxANM8_YPxkWR_PsLaqQB0VueVYV9hA-RxFvX3HGg",
+    "IMAGEM_URL": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Fred_desimpedidos2020.jpg",
     "IG": "11.7 M",
     "TTK": "5.5 M",
     "YT": "-",
@@ -919,22 +953,22 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Julio Rocha",
     "@": "juliorocha_",
-    "IMAGEM_URL": "https://upload.wikimedia.org/wikipedia/commons/1/1b/Julio_Rocha.jpg",
+    "IMAGEM_URL": "https://s2.glbimg.com/85DEMCBvt6wTAnINima2KmQxEFA=/620x877/smart/e.glbimg.com/og/ed/f/original/2021/02/03/imagem_jpeg-7a5960c9c170-1.jpeg",
     "IG": "4.6 M",
     "TTK": "3 M",
     "YT": "499 mil",
     "SEGMENTO": "Cinema e TV",
-    "SEGMENTO SECUNDÁRIO": "Família, lifestyle, moda, bem estar",
+    "SEGMENTO SECUNDÁRIO": "Família, lifestyle, moda, bem-estar",
     "PROJETOS": "Paternidade",
     "REF. VALOR": "R$ 40.000",
     "AGÊNCIA": "Mynd",
     "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories",
-    "MINI BIO - INFLUENCIADOR": "Júlio Rocha é ator, conhecido por papéis em novelas e séries de televisão. Além da carreira artística, compartilha em suas redes sociais momentos do dia a dia com a família, rotina como pai e temas ligados à estilo de vida e bem estar, aproximando-se de um público que se identifica com seu lado pessoal."
+    "MINI BIO - INFLUENCIADOR": "Júlio Rocha é ator, conhecido por papéis em novelas e séries de televisão. Além da carreira artística, compartilha em suas redes sociais momentos do dia a dia com a família, rotina como pai e temas ligados à estilo de vida e bem-estar, aproximando-se de um público que se identifica com seu lado pessoal."
 },
 {
     "INFLUENCIADOR": "André Moreira",
     "@": "andre_moreiraf",
-    "IMAGEM_URL": "https://s.hs-data.com/bilder/spieler/gross/273936.jpg",
+    "IMAGEM_URL": "https://lusoamericano.com/wp-content/uploads/2017/02/23/andr%C3%A9-moreira-atletico-madrid-e1487874728202.jpg",
     "IG": "587 mil",
     "TTK": "153,7 mil",
     "YT": "-",
@@ -949,7 +983,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Marcio Garcia",
     "@": "oficialmarciogarcia",
-    "IMAGEM_URL": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQXgIig9pdrJh3utJ4a0ON0nuVXs-HN-yktvoGtH4MYEtCndvk1F2QX5qwARfkgjejLZYW_2tPcWBzm9QG64VakRySOpgOjmOeL3-jBnHvpxA",
+    "IMAGEM_URL": "https://upload.wikimedia.org/wikipedia/commons/a/a3/M%C3%A1rcio_Garcia%2C_FEV.2022_%2801%29.jpg",
     "IG": "11.5 M",
     "TTK": "-",
     "YT": "-",
@@ -964,7 +998,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Rafa César",
     "@": "eurafacesar",
-    "IMAGEM_URL": "https://s2.glbimg.com/HLbUTPamAxeoQhjET4AswRnZHaw=/620x413/smart/e.glbimg.com/og/ed/f/original/2022/05/06/luke0822.jpg",
+    "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1947417947971997697/FlJuiRI9_400x400.jpg",
     "IG": "1.1 M",
     "TTK": "4,2 M",
     "YT": "-",
@@ -994,14 +1028,14 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Tadeu França",
     "@": "otadeufranca",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8Kg7Ce_R2FrGvO5I1fbCdU0nXt9Y3apeLEQ&s",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNqN0LaBvdA4BKjP2wiup3uQBN7SuUCNwjng&s",
     "IG": "74,8 mil",
     "TTK": "324,8 mil",
     "YT": "895",
     "SEGMENTO": "Humor",
     "SEGMENTO SECUNDÁRIO": "Empoderamento racial e LGBTQIA+, combate ao bullying",
     "PROJETOS": "Paternidade",
-    "REF. VALOR": "R$ 12.000",
+    "REF. VALOR": "R4 12.000",
     "AGÊNCIA": "Mynd",
     "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories",
     "MINI BIO - INFLUENCIADOR": "Tadeu é ator e escritor que usa humor crítico para promover a paternidade ativa; \"Pai não ajuda, pai cria\". Ele questiona normas de gênero e promove reflexões sobre justiça emocional nas famílias, também abordando temas como combate ao racismo infantil e críticas ao bullying através de loteratura infantil."
@@ -1009,12 +1043,12 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Ceará (Wellington Muniz)",
     "@": "oceara",
-    "IMAGEM_URL": "https://s2.glbimg.com/H09YAmsE60Faw9LGOpfPqFBHjTE=/640x424/top/i.glbimg.com/og/ig/infoglobo/f/original/2019/03/29/ceara.jpg",
+    "IMAGEM_URL": "https://s2.glbimg.com/OA2lSSYzbgzk2mAf01TO4_XbunI=/e.glbimg.com/og/ed/f/original/2017/08/03/wellingtonmuniz1.jpg",
     "IG": "3.9 M",
     "TTK": "768,8 mil",
     "YT": "-",
     "SEGMENTO": "Humor",
-    "SEGMENTO SECUNDÁRIO": "Empreededorismo, entretenimento, imitações sátiricas",
+    "SEGMENTO SECUNDÁRIO": "Empreendedorismo, entretenimento, imitações sátiricas",
     "PROJETOS": "Paternidade",
     "REF. VALOR": "R$ 40.000",
     "AGÊNCIA": "Mynd",
@@ -1034,12 +1068,12 @@ const segmentColors = {
     "REF. VALOR": "R$12.000",
     "AGÊNCIA": "Mynd",
     "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories",
-    "MINI BIO - INFLUENCIADOR": "Hugo é pai solo, cebeleleiro e influenciador que compartilha sua rotina com a filha Selina, unindo paternidade e superação. Seu conteúdo inspira com mensagens sobre disciplina , saúde mental e autoestima masculina. Ele promove a paternidade solo como espaço deforça emocional e autenticidade."
+    "MINI BIO - INFLUENCIADOR": "Hugo é pai solo, cebeleleiro e influenciador que compartilha sua rotina com a filha Selina, unindo paternidade e superação. Seu conteúdo inspira com mensagens sobre disciplina , saúde mental e autoestima masculina. Ele promove a paternidade solo como espaço deforça emocional e autenticidade. "
 },
 {
     "INFLUENCIADOR": "Fabio Riudi",
     "@": "olhaoapedeles",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHoIJULpjB26fGtbLjL-l7e79MWX1rQ7j60Q&s",
+    "IMAGEM_URL": "https://i.pinimg.com/280x280_RS/d5/86/a0/d586a089dd5acacff375f026d05c59e7.jpg",
     "IG": "276 mil",
     "TTK": "99 mil",
     "YT": "1790",
@@ -1054,7 +1088,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Naiumi Goldoni",
     "@": "naiumigoldoni",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/THIDjzOEkjV082bTTdawKYYs9L0dtcbxIlpd-z_VumTmfexa7Y91dl5TYrGZml2N4rRiD8_u=s900-c-k-c0x00ffffff-no-rj",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiQp_1Yg6YS8P315OHSPwJ7mrMHqGoqxZacYbgk-iX4uVXuJueRnA1pQ8MWrCVfvYkIi0&usqp=CAU",
     "IG": "1.8 M",
     "TTK": "2.9 M",
     "YT": "1.3 M",
@@ -1064,12 +1098,12 @@ const segmentColors = {
     "REF. VALOR": "R$ 40.000",
     "AGÊNCIA": "Mynd",
     "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories",
-    "MINI BIO - INFLUENCIADOR": "Naiumi é atriz, modelo e criadora de conteúdo que documenta a maternidade real com suas duas filhas.Seus vídeos incluem vlogs de viagem, dicas alimentares, educação financeira e maternidade consciente. Compartilha desafios e aprendizados com honestidade e humor."
+    "MINI BIO - INFLUENCIADOR": "Naiumi é atriz, modelo e criadora de conteúdo que documenta a maternidade real com suas duas filhas.Seus vídeos incluem vlogs de viagens, dicas alimentares, educação financeira e maternidade consciente. Compartilha desafios e aprendizados com honestidade e humor."
 },
 {
     "INFLUENCIADOR": "Thamirys Nunes",
     "@": "minhacriancatrans",
-    "IMAGEM_URL": "https://p2.trrsf.com/image/fget/cf/500/0/images.terra.com/2024/05/28/thamirys-nunes-qxisu28899o5.png",
+    "IMAGEM_URL": "https://media.licdn.com/dms/image/v2/D4D03AQHajRnrf0UmHQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1713474241700?e=2147483647&v=beta&t=-ksH36fgl4qKXoBF4H6ajRhFdSMnVC_QfZYyN_wzZ7s",
     "IG": "170 mil",
     "TTK": "64,4 mil",
     "YT": "-",
@@ -1084,7 +1118,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Mariana Arasaki",
     "@": "coracaodemami",
-    "IMAGEM_URL": "https://conteudo.imguol.com.br/c/entretenimento/82/2023/12/08/mariana-arasaki-teve-dez-gestacoes-e-12-filhos-1702052993536_v2_1x1.jpg",
+    "IMAGEM_URL": "https://crizzapi.com.br/wp-content/uploads/2022/06/Mariana04.jpg",
     "IG": "1.1 M",
     "TTK": "571 mil",
     "YT": "-",
@@ -1099,7 +1133,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Matheus Costa",
     "@": "matheuscosta",
-    "IMAGEM_URL": "https://assets.gamearena.gg/wp-content/uploads/2024/12/18144306/matheus-costa-sucesso-na-internet-1024x576.jpg",
+    "IMAGEM_URL": "https://cloudfront-us-east-1.images.arcpublishing.com/estadao/V4QK3QTF3NCKLP6E3TGCTLLN5U.jpeg",
     "IG": "3.7 M",
     "TTK": "6.3 M",
     "YT": "737 mil",
@@ -1113,8 +1147,8 @@ const segmentColors = {
 },
 {
     "INFLUENCIADOR": "Gustavo Tubarão",
-    "@": "gustavotubarao",
-    "IMAGEM_URL": "https://www.citadel.com.br/wp-content/uploads/2023/11/Gustavo-Tubarao.jpg",
+    "@": "ogustavotubarao",
+    "IMAGEM_URL": "https://www.estadao.com.br/resizer/v2/4V76JE3LDNGWXLVAJ7KGQSYRBI.jpg?quality=80&auth=e782af9216dc6c8477448a1810ca69c614572dc9e86fe8f8ac3cad552fdb5c65&width=1200&height=1200&focal=1552,1648",
     "IG": "12.2 M",
     "TTK": "13.5 M",
     "YT": "1,7 mil",
@@ -1144,7 +1178,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Nah Cardoso",
     "@": "nahcardoso",
-    "IMAGEM_URL": "https://www.nahcardoso.com.br/wp-content/uploads/2019/07/nah-cardoso.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZ_fgUP3Nk89vGFcJpf76NoGQCFtTMGuKBUQ&s",
     "IG": "10.7 M",
     "TTK": "1 M",
     "YT": "3.1 M",
@@ -1159,12 +1193,12 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Bruna Ayra",
     "@": "brunaayraa",
-    "IMAGEM_URL": "https://i.pinimg.com/736x/ac/d1/ca/acd1ca5ca1ca99d9a7d7277648a1f06e.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR23Cx_Bwaia_frwkMdYz1CHAPGch9bR9nVGQ&s",
     "IG": "1.6 M",
     "TTK": "1.3 M",
     "YT": "52,3 mil",
     "SEGMENTO": "Beleza",
-    "SEGMENTO SECUNDÁRIO": "Humor, Lifestyle, Viagem, moda",
+    "SEGMENTO SECUNDÁRIO": "Humor, Lifestyle, Viagens, moda",
     "PROJETOS": "Dia dos namorados",
     "REF. VALOR": "R$ 18.000",
     "AGÊNCIA": "Mynd",
@@ -1189,7 +1223,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Renan Gandara",
     "@": "rgfragrances",
-    "IMAGEM_URL": "https://i.pinimg.com/280x280_RS/b0/d6/7c/b0d67c48ea4ef093351778fce01e5343.jpg",
+    "IMAGEM_URL": "https://media.licdn.com/dms/image/v2/D4D03AQFpxgLM5KR6KQ/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1712024242699?e=2147483647&v=beta&t=K-vn4GQqW-MSDlwlxgrOcg7lllGxTGCBhN2kt4p5PmY",
     "IG": "26,4 mil",
     "TTK": "119,9 mil",
     "YT": "5,62 mil",
@@ -1204,7 +1238,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Diandra Ranielly",
     "@": "mesasdadiandra",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEwRE6RORyzukfq9qZxOtvp595jz5hUqY0tA&s",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8QwXmh3kxgBak-6rqXoo30Ec8DBc4Byw-7g&s",
     "IG": "333 mil",
     "TTK": "2,895",
     "YT": "-",
@@ -1219,7 +1253,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Duda Menegheti",
     "@": "duda.menegheti",
-    "IMAGEM_URL": "https://www.rbsdirect.com.br/imagesrc/16131719.jpg?w=700",
+    "IMAGEM_URL": "https://artworks.thetvdb.com/banners/v4/actor/8909546/photo/666301731b19c.jpg",
     "IG": "112 mil",
     "TTK": "113,8 mil",
     "YT": "-",
@@ -1234,7 +1268,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Thainá Natani",
     "@": "thainanatani",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTtPE0wE9-kjDRmqKhDG0oL2xxMQ9L0MIK7Bw&s",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6AnZeUSBRefmn2sbIFOLQwBvu983l18o8UA&s",
     "IG": "223 mil",
     "TTK": "31,2 mil",
     "YT": "1,35 mil",
@@ -1249,22 +1283,22 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Partiu Alasca",
     "@": "partiualasca",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_mXsLtUH6zbkuoQPfg8E2Ur4U2L-EtS3aBg1yPA6jIh7CA=s160-c-k-c0x00ffffff-no-rj",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVYTf96-q4dHBCmH68Mnfv3jnxlyobo2AWkw&s",
     "IG": "66 mil",
     "TTK": "-",
     "YT": "-",
-    "SEGMENTO": "Viagem",
+    "SEGMENTO": "Viagens",
     "SEGMENTO SECUNDÁRIO": "Lifestyle, relacionamento, dicas de motorhome, sustentabilidade",
     "PROJETOS": "Dia dos namorados",
     "REF. VALOR": "R$ 12.000",
     "AGÊNCIA": "Mynd",
     "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories",
-    "MINI BIO - INFLUENCIADOR": "Partiu Alasca é um projeto criado por Gui Toledo e Jana Makeup um casal de criadores de conteúdo que decidiu largar tudo no Brasil para viver uma aventura sobre rodas. A jornada começou com o objetivo de ir de São Paulo até o Alasca em um motorhome, documentando cada passo da viagem em vídeos no YouTube e postagens nas redes sociais. Com uma abordagem leve, divertida e inspiradora, o casal compartilha os desafios e aprendizados da vida nômade, mostrando desde os bastidores da adaptação ao motorhome até os encontros com culturas e paisagens incríveis pelo caminho. O projeto conquistou uma comunidade fiel de seguidores que se identificam com o desejo de liberdade, simplicidade e conexão com o mundo. Além das viagens, eles também abordam temas como relacionamento, superação de medos, desapego e a busca por uma vida com mais propósito."
+    "MINI BIO - INFLUENCIADOR": "Partiu Alasca é um projeto criado por Gui Toledo e Jana Makeup um casal de criadores de conteúdo que decidiu largar tudo no Brasil para viver uma aventura sobre rodas. A jornada começou com o objetivo de ir de São Paulo até o Alasca em um motorhome, documentando cada passo da viagens em vídeos no YouTube e postagens nas redes sociais. Com uma abordagem leve, divertida e inspiradora, o casal compartilha os desafios e aprendizados da vida nômade, mostrando desde os bastidores da adaptação ao motorhome até os encontros com culturas e paisagens incríveis pelo caminho. O projeto conquistou uma comunidade fiel de seguidores que se identificam com o desejo de liberdade, simplicidade e conexão com o mundo. Além das viagens, eles também abordam temas como relacionamento, superação de medos, desapego e a busca por uma vida com mais propósito."
 },
 {
     "INFLUENCIADOR": "Priscila Evellyn",
     "@": "priscilaevellyn",
-    "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1817092832676511744/HnxXHDnz_400x400.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR6rudDx4YstmkohV0fzxMyL81pdMsSwnOLGQ&s",
     "IG": "3.9 M",
     "TTK": "2.9 M",
     "YT": "214 mil",
@@ -1279,7 +1313,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Ana Schreder",
     "@": "anaschr",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNy8Ju9va_NPhMrorMNfMH8OGe-utZpZjlyg&s",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjPeFfCaixlHAFl5fjkLKC5TLCJcKsRHpDVg&s",
     "IG": "202 mil",
     "TTK": "202,9 mil",
     "YT": "179",
@@ -1294,7 +1328,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Felipe Bustamante",
     "@": "ofelipebustamante",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCxSAGhMKCxkX6uwfJj3tqhy5vsR4In_Nxkg&s",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5DiAOtECvQ0Nuljo1GVSyGCCmPp8Bg2h__Q&s",
     "IG": "47,5 mil",
     "TTK": "5,551",
     "YT": "-",
@@ -1309,7 +1343,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Gustvo Jannuzi Dal Moro",
     "@": "gustavodalmoro",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3fg85dnMQCxKtdtJWwnX-OaufuhEDrHJQvICe7tSinxpb1yV1YHBvfwCvtyf0lUXQZFo&usqp=CAU",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM0g4evhzczt7-iaLvSTOpGub4WezSRNXkdA&s",
     "IG": "154 mil",
     "TTK": "122,3 mil",
     "YT": "-",
@@ -1324,7 +1358,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Klébio Damas",
     "@": "klebiodamas",
-    "IMAGEM_URL": "https://revistamaxima.com.br/wp-content/uploads/klebiodamas_264389324_332315688723290_1608231452383025830_n_1.jpg",
+    "IMAGEM_URL": "https://gkpb.com.br/wp-content/uploads/2021/04/Klebio.jpg",
     "IG": "1.5 M",
     "TTK": "2.3 M",
     "YT": "1240",
@@ -1339,7 +1373,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Sara Barbosa",
     "@": "sarabarbosaoficial",
-    "IMAGEM_URL": "https://i.pinimg.com/736x/90/b3/43/90b343ace7e85cc35e9e8d774fa3aff7.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEbEzF2O8P2zRHmgOopX9o8w8-e8MKMiMnUQ&s",
     "IG": "78,7 mil",
     "TTK": "-",
     "YT": "-",
@@ -1354,7 +1388,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Juliana Motta",
     "@": "julianamotta",
-    "IMAGEM_URL": "https://i.pinimg.com/736x/e5/ba/38/e5ba3814f873734338b65cd98ec01d70.jpg",
+    "IMAGEM_URL": "https://siterg.uol.com.br/wp-content/uploads/2020/10/juliana-motta-divulgacao-e1603376283973.jpg",
     "IG": "1.9 M",
     "TTK": "3.8 M",
     "YT": "1.8 M",
@@ -1369,7 +1403,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Nina Baiocchi",
     "@": "ninabaiocchi",
-    "IMAGEM_URL": "https://akamai.sscdn.co/uploadfile/letras/fotos/f/b/b/9/fbb9d8acbe5e2a99145c3cc848a1ae90.jpg",
+    "IMAGEM_URL": "https://i.scdn.co/image/ab6761610000e5ebd635dd134a663306d51a9123",
     "IG": "2.2 M",
     "TTK": "12,2 M",
     "YT": "5.8 M",
@@ -1384,7 +1418,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Bernardo Dugin",
     "@": "bernardodugin",
-    "IMAGEM_URL": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2023/05/bernardo_dugin_ator-e1683215384160.png?w=944",
+    "IMAGEM_URL": "https://cdn.managerfashion.com/hr/assets/c1688/t8211/book/2687b890-fbab-436f-954e-70a0caa75099.jpg",
     "IG": "64,8 mil",
     "TTK": "59 mil",
     "YT": "-",
@@ -1399,7 +1433,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Marina Cardoso Lima",
     "@": "marinacardoso.lima",
-    "IMAGEM_URL": "https://i.ytimg.com/vi/z_UgUz2e8GU/maxresdefault.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxYHht49LuPSK1fWDElF6hZzIUow8uMXhLKA&s",
     "IG": "196 mil",
     "TTK": "281,8 mil",
     "YT": "47,6 mil",
@@ -1414,7 +1448,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Chloe Marie Dubois",
     "@": "chloemariedub",
-    "IMAGEM_URL": "https://s2-marieclaire.glbimg.com/Ye96Kh8nqBeBg7UPizcywXdbFE4=/0x0:2450x1378/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_51f0194726ca4cae994c33379977582d/internal_photos/bs/2023/4/V/YfBX5xRY22WHc2GnNGsA/chloe-marie-dubois.png",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzuHjEcddkl5PN0b2hbYFV4XXu5ukBdT5ouQ&s",
     "IG": "558 mil",
     "TTK": "3.7 M",
     "YT": "14,1 mil",
@@ -1429,7 +1463,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Thamires Hauch",
     "@": "thamireshauch",
-    "IMAGEM_URL": "https://s2-gshow.glbimg.com/nsApw9OUJgN8l0MYaQ1pML8c9iQ=/0x0:1400x1866/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2025/L/W/Wq1IgYQfqXJzGY9TSKmw/img-3105.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTzgcMQFQJOeP8YjLvTImh1nKB3_Rn2q503Q&s",
     "IG": "1.8 M",
     "TTK": "1.2 M",
     "YT": "-",
@@ -1444,7 +1478,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Beatriz Chiba e Clara",
     "@": "reviewsporsp",
-    "IMAGEM_URL": "https://i.pinimg.com/474x/35/82/38/35823836fb333a3b5cee0d77d75e0267.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKPq1DaZY4tggXgEzaKSS4ODPWTtm632PesA&s",
     "IG": "1.4 M",
     "TTK": "3.3 M",
     "YT": "1.6 M",
@@ -1459,12 +1493,12 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Raissa Faria",
     "@": "raisssafaria",
-    "IMAGEM_URL": "https://i.pinimg.com/280x280_RS/49/4c/e3/494ce3dd34f09929e6a6989f496806ef.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmqHB4DaI6rA8rFqkg8yozYbjL1JQ0hZlryQ&s",
     "IG": "60 mil",
     "TTK": "20,2 mil",
     "YT": "-",
     "SEGMENTO": "Arte",
-    "SEGMENTO SECUNDÁRIO": "Artesanato, empreendedorismo,  educação criativa, empoderamento feminino",
+    "SEGMENTO SECUNDÁRIO": "Artesanato, empreendedorismo, educação criativa, empoderamento feminino",
     "PROJETOS": "Dia dos namorados",
     "REF. VALOR": "R$ 15.000",
     "AGÊNCIA": "Mynd",
@@ -1472,9 +1506,24 @@ const segmentColors = {
     "MINI BIO - INFLUENCIADOR": "Raissa Faria é criadora da Escola da Resina, um projeto voltado para o ensino de técnicas de arte em resina epóxi. Através de cursos online, ela capacita principalmente mulheres a desenvolverem habilidades artesanais e transformarem isso em fonte de renda. Com uma abordagem prática e acolhedora, Raissa compartilha conteúdos sobre produção de quadros em resina, vendas online e empreendedorismo criativo. Seu trabalho promove o empoderamento feminino, a autonomia financeira e a valorização do trabalho manual."
 },
 {
+    "INFLUENCIADOR": "Carol Jacques e Carol Paula",
+    "@": "carolixas",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGmTn33SuCur1yUzcv6SHkh-vMS-Gsm9s9rA&s",
+    "IG": "2.6 M",
+    "TTK": "7.5 M",
+    "YT": "2.3 M",
+    "SEGMENTO": "Entretenimento",
+    "SEGMENTO SECUNDÁRIO": "Humor, lifestyle, cultura pop, casal LGBT, representatividade LGBTQIA+",
+    "PROJETOS": "Casais LGBT",
+    "REF. VALOR": "R$ 40.000",
+    "AGÊNCIA": "Mynd",
+    "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Carol Jacques e Carol Paula, conhecidas como \"Carolixas\" são uma duo de criadoras de conteúdo que ganharam popularidade com vídeos de humor e situações do dia a dia nas redes sociais. O estilo descontraído e a forte conexão entre elas criam identificação com o público jovem, e também se destacam pela representatividade LGBTQIA+"
+},
+{
     "INFLUENCIADOR": "Gleici Damasceno",
     "@": "gleicidamasceno",
-    "IMAGEM_URL": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcS3gQbH59tdKTVE9HbCYysS_ak78ocWAcTTDOaKcxXcZX3_mUExqJP4oEe0ENvw_fpEyufvrNrSkwNbgK4sScJPg_M4Cqr7cDr5xwWRTdV1",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSi-pNeNFcy0Td4gt6ZAeFMKtobsLmckZrM_Q&s",
     "IG": "5.4 M",
     "TTK": "1.7 M",
     "YT": "-",
@@ -1489,7 +1538,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "John Drops",
     "@": "johndrops",
-    "IMAGEM_URL": "https://static1.purepeople.com.br/articles/2/27/05/42/@/3074528-john-drops-no-tapete-rosa-da-premiacao-1200x0-3.jpg",
+    "IMAGEM_URL": "https://noticiasdatv.uol.com.br/media/uploads/artigos/john-drops-sorrindo-reproducao-instagram.jpg",
     "IG": "1.2 M",
     "TTK": "150,3 mil",
     "YT": "11,8 mil",
@@ -1504,7 +1553,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Fernanda Evan",
     "@": "pretaevan",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtjpcvqVEZo8HPYSigbr5pn9q9Kwu8qtsXZQ&s",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2QTicXELjM_CuPc1cexeaKxiTRhT1HxsKBQ&s",
     "IG": "328 mil",
     "TTK": "551,9 mil",
     "YT": "-",
@@ -1519,7 +1568,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Amanda Mota",
     "@": "amoramota",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLXfPRtdKgaWPv73H6QWHAs4Cc8Qq5tRfHEJjqWZ6pWRPvP9KpiCiS_uRB3A5if2sYllI&usqp=CAU",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtjpcvqVEZo8HPYSigbr5pn9q9Kwu8qtsXZQ&s",
     "IG": "335 mil",
     "TTK": "98,6 mil",
     "YT": "13,4 mil",
@@ -1534,7 +1583,7 @@ const segmentColors = {
 {
     "INFLUENCIADOR": "Thyza Ferreira",
     "@": "thyzaferreira",
-    "IMAGEM_URL": "https://d1x4bjge7r9nas.cloudfront.net/wp-content/uploads/2023/02/02215025/Design-sem-nome-2023-02-02T215011.190.png",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtsHTJOdIvB97xL09-ZnWG0gNMn4B9KhKaQSrWyQONOKnoNhn7Hp46hMnbBuZDZKXm62I&usqp=CAU",
     "IG": "91,8 mil",
     "TTK": "3,573",
     "YT": "-",
@@ -1546,10 +1595,10 @@ const segmentColors = {
     "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories",
     "MINI BIO - INFLUENCIADOR": "Thyza Ferreira é comunicadora, influenciadora digital e CEO da Agência Dois F. Com conteúdo voltado para estilo de vida, marketing e cultura regional, ela compartilha dicas de moda, empreendedorismo e experiências pessoais. Seu trabalho é marcado por propósito, criatividade e impacto social, com foco em conexão entre marcas e pessoas."
   },
-  {
+{
     "INFLUENCIADOR": "Juliana Paiva",
     "@": "juulianapaiva",
-    "IMAGEM_URL": "https://www.maisnovela.com.br/wp-content/uploads/2023/12/naom_5b3ded830b99b.jpg",
+    "IMAGEM_URL": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Juliana_Paiva%2C_atriz_brasileira.jpg",
     "IG": "13.2 M",
     "TTK": "6.4 M",
     "YT": "-",
@@ -1561,10 +1610,10 @@ const segmentColors = {
     "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories",
     "MINI BIO - INFLUENCIADOR": "Juliana Paiva é atriz brasileira com milhões de seguidores nas redes sociais. Embaixadora da L’Oréal Paris, ela compartilha conteúdos sobre beleza, autocuidado e bastidores da vida artística. Seu estilo é leve, elegante e inspirador, promovendo autoestima e bem-estar com autenticidade."
   },
-  {
+{
     "INFLUENCIADOR": "Michele Andrade",
     "@": "micheleandrade",
-    "IMAGEM_URL": "https://paraiba21.com.br/wp-content/uploads/skc6700c7b-9965-48c2-9c70-7ea5b2643bb1-scaled.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfxMcC2N59vtjvRW5K7_jQ4390FCWPObr_8NgT7ydNKbii3FitUzgwBv9hAqIlB3PHYXk&usqp=CAU",
     "IG": "7.7 M",
     "TTK": "3.7 M",
     "YT": "492 mil",
@@ -1576,10 +1625,10 @@ const segmentColors = {
     "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories",
     "MINI BIO - INFLUENCIADOR": "Michele Andrade é cantora, compositora e influenciadora digital pernambucana. Com mais de 3 milhões de seguidores, ela mistura forró, xote e pop em seus conteúdos musicais. Ex-vocalista da banda Limão com Mel e participante do The Voice Brasil, Michele usa as redes para divulgar sua arte e se conectar com o público de forma espontânea e vibrante."
   },
-  {
+{
     "INFLUENCIADOR": "Maíra Azevedo",
     "@": "tiamaoficial",
-    "IMAGEM_URL": "https://ogimg.infoglobo.com.br/in/24237118-265-59f/FT1086A/tia-ma.jpg",
+    "IMAGEM_URL": "https://ogimg.infoglobo.com.br/in/24240076-7f8-efb/FT1086A/Tia-Ma-2019Foto-de-Magali-Moraes.jpg",
     "IG": "1.6 M",
     "TTK": "113,2 mil",
     "YT": "-",
@@ -1591,7 +1640,7 @@ const segmentColors = {
     "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories",
     "MINI BIO - INFLUENCIADOR": "Maíra Azevedo, conhecida como Tia Má, é jornalista, atriz e influenciadora digital. Com mais de 1 milhão de seguidores, ela aborda temas como racismo, autoestima, relacionamentos e política com profundidade e leveza. Seu conteúdo é real, provocador e inspirador, voltado para mulheres negras e pessoas que buscam transformação social."
   },
-  {
+{
     "INFLUENCIADOR": "Ed Gama",
     "@": "edgama",
     "IMAGEM_URL": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/04/ed-gama-e1714068531394.jpg?w=1079&h=607&crop=1",
@@ -1606,10 +1655,10 @@ const segmentColors = {
     "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories",
     "MINI BIO - INFLUENCIADOR": "Ed Gama é humorista, apresentador e imitador alagoano com mais de 2 milhões de seguidores no TikTok. Conhecido por sua participação em programas como \"Domingão com Huck\" e \"LOL Brasil\", ele mistura humor inteligente com sátiras e imitações de personalidades. Seu conteúdo é leve, criativo e voltado para o entretenimento, com forte presença em vídeos virais e podcasts."
   },
-  {
+{
     "INFLUENCIADOR": "Elana Valenaria",
     "@": "elana",
-    "IMAGEM_URL": "https://s2.glbimg.com/fzAO68cfd6GHWb_5VJbaQ-HwTQw=/620x620/smart/e.glbimg.com/og/ed/f/original/2020/06/13/elana.valenaria_103463623_282190822928883_5438788813986805407_n.jpg",
+    "IMAGEM_URL": "https://s2-gshow.glbimg.com/ymSRr5WJJIlGIjs7oz5Y0-G-T0s=/0x0:1080x1348/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2021/i/i/lDCfVRQuC5I6t1gasP8g/elana.valenaria-133703700-1741929892639731-270283221366962130-n.jpg",
     "IG": "2.9 M",
     "TTK": "863,5 mil",
     "YT": "5,34 mil",
@@ -1621,10 +1670,10 @@ const segmentColors = {
     "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories",
     "MINI BIO - INFLUENCIADOR": "Elana Valenária é engenheira agrônoma, influenciadora digital e ex-participante do BBB19 e No Limite. Natural do Piauí, ela compartilha conteúdos sobre treinos, beleza, receitas saudáveis e looks do dia. Com quase 1 milhão de seguidores, Elana promove autoestima, saúde e empoderamento feminino com autenticidade e carisma."
   },
-  {
+{
     "INFLUENCIADOR": "Wladia Goes",
     "@": "wladiagoes",
-    "IMAGEM_URL": "https://www.revistayacht.com.br/wp-content/uploads/2025/03/61b9284e-5f43-4e40-9126-60deaee75098.jpeg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3N1pkSAK9OlUjveD9rxq1T6Fgh_6LmMkTXw&s",
     "IG": "162 mil",
     "TTK": "359,1 mil",
     "YT": "-",
@@ -1636,10 +1685,10 @@ const segmentColors = {
     "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories",
     "MINI BIO - INFLUENCIADOR": "Wladia Goes é influenciadora digital baiana que cria conteúdo voltado para mulheres maduras. Com linguagem acessível e estilo elegante, ela aborda temas como climatério, autoestima, investimentos e cuidados com a saúde. Participa de campanhas de conscientização e é referência em estilo de vida com propósito."
   },
-  {
+{
     "INFLUENCIADOR": "Dudu Barros",
     "@": "dudubarros",
-    "IMAGEM_URL": "https://cdn.jornaldebrasilia.com.br/wp-content/uploads/2022/08/23175322/WhatsApp-Image-2022-08-23-at-15.38.23.jpeg",
+    "IMAGEM_URL": "https://s2-extra.glbimg.com/8kaWmLNaZGlvhBQvNK-YW_fE-eg=/0x0:820x850/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_1f551ea7087a47f39ead75f64041559a/internal_photos/bs/2023/x/C/1OmBwIRVAwrlH0yuZBwA/dudu.jpg",
     "IG": "676 mil",
     "TTK": "28,8 mil",
     "YT": "-",
@@ -1651,7 +1700,7 @@ const segmentColors = {
     "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories",
     "MINI BIO - INFLUENCIADOR": "Dudu Barros é stylist, influenciador digital e promoter baiano. Com mais de 600 mil seguidores, ele é criador da festa \"Quinta Sem Salto\", que celebra a diversidade e liberdade de expressão. Estudante de Gênero e Diversidade Sexual, Dudu usa suas redes para combater a gordofobia e promover inclusão, representatividade e cultura."
   },
-  {
+{
     "INFLUENCIADOR": "Jade Veloso",
     "@": "jadeveloso",
     "IMAGEM_URL": "https://i.pinimg.com/736x/a2/c5/d2/a2c5d2a296a1ff349b2d56b78638f259.jpg",
@@ -1665,11 +1714,11 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories",
     "MINI BIO - INFLUENCIADOR": "Jade Veloso é influenciadora digital baiana conhecida por compartilhar dicas de cuidados com cabelos cacheados, resenhas de produtos e conteúdos de moda. Com mais de 400 mil seguidores, ela promove o autocuidado e a valorização da estética natural com leveza e autenticidade."
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Mariana Pinto",
     "@": "marianadagrana",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRDKPirg9SYa7IbhN8DoIogXpOSv7NCQpItiOtVOP6ESpIYFu-InfIQMojlvXFz6DXq5Q&usqp=CAU",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvMC6Ugjm1kQWh4iDsXJWMR2x-VBySbXc-2Q&s",
     "IG": "87,6 mil",
     "TTK": "45,6 mil",
     "YT": "-",
@@ -1680,11 +1729,11 @@ const segmentColors = {
     "AGÊNCIA": "Cely",
     "ESCOPO": "01 reels de 60s no Feed do Instagram",
     "MINI BIO - INFLUENCIADOR": "Mariana Pinto, conhecida como Mariana da Grana, é educadora financeira e criadora de conteúdo digital. Com mais de 2 milhões de seguidores, ela ensina sobre finanças pessoais, organização e segurança nas redes. Seu conteúdo é prático, acessível e voltado para quem busca autonomia financeira."
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Camila Lopes",
     "@": "camiclopes",
-    "IMAGEM_URL": "https://i.pinimg.com/736x/60/27/94/6027945d641b73c85a65dd4bb384e8a6.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKI-ywddtVaeG0O8qjYmjKXHbc_q4AluYQag&s",
     "IG": "71,1 mil",
     "TTK": "68 mil",
     "YT": "-",
@@ -1695,8 +1744,8 @@ const segmentColors = {
     "AGÊNCIA": "Cely",
     "ESCOPO": "Chegar pronto para o evento; rótulo de parceria paga em todos os conteúdos, independente do formato.",
     "MINI BIO - INFLUENCIADOR": "Camila Lopes é influenciadora digital, empreendedora e mãe. Criadora da marca Blacklist, ela compartilha sua rotina como mãe e empresária, abordando temas como maternidade real, estilo alternativo e gestão de tempo. Seu conteúdo é autêntico, acolhedor e voltado para mulheres que equilibram múltiplos papéis."
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Lívia Vasconcelos",
     "@": "liviavscn",
     "IMAGEM_URL": "https://yt3.googleusercontent.com/Xa8AkcZuR3Pc57lJEQuxv-K6FzD75dFywRn-tCCOPGq8kc3AfzAnXNerg_-yQjGe5J5D-56Kaw=s900-c-k-c0x00ffffff-no-rj",
@@ -1710,11 +1759,11 @@ const segmentColors = {
     "AGÊNCIA": "Cely",
     "ESCOPO": "Direito de repost nos canais de digital da marca pelo período da campanha",
     "MINI BIO - INFLUENCIADOR": "Lívia Vasconcelos é influenciadora digital e fundadora da Lojinha da Lívia, uma papelaria que começou online e hoje tem lojas físicas. Com mais de 140 mil inscritos no YouTube, ela compartilha conteúdos sobre maternidade, organização e empreendedorismo com leveza e inspiração."
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Luana Lumertz",
     "@": "luanalumertz",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/8F_zjkuDX81V5UAfDOeAfpSovg04IUw40GI4oQsy6CwHSDtsPwZGFRXKgd52TOWKuMg5TIqEJw=s900-c-k-c0x00ffffff-no-rj",
+    "IMAGEM_URL": "https://media.licdn.com/dms/image/v2/D4D03AQFsFf7C8CwWaA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1718664298353?e=2147483647&v=beta&t=bRQSueAARUiSa2pzmY6QfDTwNaH-YYIVVqKioJfEV24",
     "IG": "57,7 mil",
     "TTK": "4,907",
     "YT": "378 mil",
@@ -1724,12 +1773,12 @@ const segmentColors = {
     "REF. VALOR": "R$ 5.500",
     "AGÊNCIA": "Cely",
     "ESCOPO": "Sem exclusividade",
-    "MINI BIO - INFLUENCIADOR": "Luana Lumertz é educadora sexual e empreendedora, fundadora da Egalité Sex Shop. Ela compartilha conteúdos educativos sobre sexualidade, saúde íntima e empreendedorismo feminino. Seu trabalho promove autonomia, prazer e informação com responsabilidade e acolhimento."
-  },
-  {
+    "MINI BIO - INFLUENCIADOR": "Luana Lumertz é educadora sexual e empreendedora, fundadora da Egalité Sex Shop. Ela compartilha conteúdos educativos sobre sexualidade, saúde íntima e Empreendedorismo. Seu trabalho promove autonomia, prazer e informação com responsabilidade e acolhimento."
+},
+{
     "INFLUENCIADOR": "Carol Escobar",
     "@": "carol.consulta",
-    "IMAGEM_URL": "https://media.licdn.com/dms/image/v2/D4D03AQGZlKpE529O5g/profile-displayphoto-shrink_200_200/B4DZX4aA91HAAY-/0/1743629326529?e=2147483647&v=beta&t=l5CXhvIm2xXgjM7tqOBxhPI-RnM7pv5fwL98rY7RprI",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfS7GOTcQZC3bkao8-P2g34Cs38yYFshpfOA&s",
     "IG": "116 mil",
     "TTK": "18,2 mil",
     "YT": "-",
@@ -1740,11 +1789,11 @@ const segmentColors = {
     "AGÊNCIA": "Cely",
     "ESCOPO": "01 diárias de 4 horas no estúdio do Terra para a gravação do podcast",
     "MINI BIO - INFLUENCIADOR": "Carol Escobar, conhecida como Carol Consulta, é consultora de negócios e influenciadora digital. Com conteúdo voltado para empreendedores, ela oferece dicas práticas sobre gestão, vendas e posicionamento de marca. Seu estilo é direto, motivador e voltado para quem busca crescer com propósito."
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Thaynara OG",
     "@": "thaynaraog",
-    "IMAGEM_URL": "https://s2.glbimg.com/MyGu6TCAfnf32WL_RWz_z75H3r0=/620x413/top/e.glbimg.com/og/ed/f/original/2019/09/12/4_uBLcj03.jpg",
+    "IMAGEM_URL": "https://s2-quem.glbimg.com/LHjT56UoGz-7X6GR-cF6m-iugqU=/0x0:1400x950/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2025/S/K/9DT2bFRPqEdmh8kYfEIQ/thay8.jpg",
     "IG": "6M",
     "TTK": "586,5 mil",
     "YT": "819 mil",
@@ -1755,11 +1804,11 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Thaynara OG é influenciadora digital, apresentadora e advogada maranhense. Ficou conhecida por seus vídeos bem-humorados no Snapchat e hoje é referência em cultura nordestina, moda e entretenimento. Criadora do São João da Thay, evento beneficente que reúne artistas e arrecada fundos para projetos sociais, ela usa sua influência para promover inclusão, regionalidade e solidariedade."
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Rita Batista",
     "@": "ritabatista",
-    "IMAGEM_URL": "https://s2-quem.glbimg.com/7mJAgJ78UBx2f0BAVrNW-ohAyXk=/0x0:950x1400/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2024/I/d/GdQB69SkikqFGLtRL2Kg/rita-batista.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvVIHU9GXrPGL23j2D_uL70iiAlCr48sA58Q&s",
     "IG": "610 mil",
     "TTK": "128,1 mil",
     "YT": "1 mil",
@@ -1770,11 +1819,11 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Rita Batista é jornalista, apresentadora e influenciadora baiana. Com carreira consolidada na TV e rádio, ela usa suas redes para promover debates sobre raça, gênero e cultura afro-brasileira. Seu conteúdo é informativo, engajado e voltado para a valorização da identidade negra e da mulher na mídia."
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Fabiana Karla",
     "@": "fabianakarlareal",
-    "IMAGEM_URL": "https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2025/02/27/747208623-fabiana-karla.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvVIHU9GXrPGL23j2D_uL70iiAlCr48sA58Q&s",
     "IG": "2.4 M",
     "TTK": "356,5 mil",
     "YT": "-",
@@ -1785,11 +1834,11 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Fabiana Karla é atriz, comediante e influenciadora digital. Conhecida por seus papéis no humor da TV Globo, ela também compartilha conteúdos sobre autoestima, saúde e maternidade. Seu estilo é leve, divertido e inspirador, promovendo aceitação e bem-estar com autenticidade."
-  },
-    {
+},
+{
     "INFLUENCIADOR": "Max Petterson",
     "@": "maxpetterson",
-    "IMAGEM_URL": "https://f.i.uol.com.br/fotografia/2023/06/02/1685722321647a14d1dbf26_1685722321_3x2_md.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSafSYV1Sss1seK4HFx8z8qbrIF01CZY-a0Yw&s",
     "IG": "1.2 M",
     "TTK": "801 mil",
     "YT": "574 mil",
@@ -1800,11 +1849,11 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Max Petterson é ator, influenciador e comediante cearense radicado na França. Ficou famoso por seus vídeos sobre o choque cultural entre Brasil e Europa. Com humor inteligente e observações do cotidiano, ele promove reflexões sobre identidade, imigração e educação internacional."
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Lucas Pizane",
     "@": "lucaspizane",
-    "IMAGEM_URL": "https://aloalobahia.com/wp-content/uploads/2025/01/Snapinsta.app_437777936_2885777204909354_7333026239229860861_n_1080-2.jpg",
+    "IMAGEM_URL": "https://admin.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/01/lucas-pizane-.png",
     "IG": "642 mil",
     "TTK": "108,7 mil",
     "YT": "-",
@@ -1815,11 +1864,11 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Lucas Pizane é cantor, compositor e influenciador digital baiano. Ex-participante do reality musical \"Popstar\", ele compartilha conteúdos sobre sua carreira musical, moda e lifestyle. Seu estilo é moderno, criativo e voltado para o público jovem que acompanha tendências culturais."
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Morgana Camila",
     "@": "morganacamila",
-    "IMAGEM_URL": "https://cloudfront-us-east-1.images.arcpublishing.com/newr7/4O624VQBUNIB3MJWNQONYCYDQY.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy2cJWE_1htws61kLTkBl05QMKjzIhrZrMxQ&s",
     "IG": "413 mil",
     "TTK": "43,5 mil",
     "YT": "4730",
@@ -1830,8 +1879,8 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Morgana Camila é influenciadora digital e empreendedora baiana. Criadora da marca Morgana Camila Store, ela compartilha conteúdos sobre moda, maternidade e rotina empreendedora. Seu conteúdo é voltado para mulheres que buscam estilo, independência e inspiração."
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Fernando Campos",
     "@": "fernandocampos",
     "IMAGEM_URL": "https://s2-quem.glbimg.com/NQkfvbbZHI82mNZZ9h4Q7ifPEoA=/0x0:1440x977/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2023/V/n/BgfjXwQeW9DAKiP1QLFA/luanatayze-fotos-de-divulgacao-fernando-2021-9-de-15-.jpg",
@@ -1845,11 +1894,11 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Fernando Campos é influenciador digital e criador de conteúdo conhecido por seus vídeos de humor e sátiras sobre o cotidiano. Com estilo espontâneo e linguagem acessível, ele se conecta com o público jovem por meio de trends, paródias e observações bem-humoradas sobre a vida moderna."
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Sayonara Elayne",
     "@": "oxesayo",
-    "IMAGEM_URL": "https://portalcorreio.com.br/portalcorreio/storage/2023/05/105b3717b4c51867c5cf5584eeff6c17-scaled.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcShhPgJcOBq59PHdr47aFZUwGPZHjQ88p9tjg&s",
     "IG": "39,1 mil",
     "TTK": "36 mil",
     "YT": "-",
@@ -1860,11 +1909,11 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Sayonara Elayne é criadora de conteúdo regional, formada em comunicação social e apaixonada por audiovisual. Ela compartilha vídeos que valorizam a cultura nordestina, especialmente da Paraíba, com uma abordagem leve, educativa e visualmente envolvente. Seu conteúdo promove identidade cultural e conexão com as raízes locais"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Mila Costa",
     "@": "nocasomila",
-    "IMAGEM_URL": "https://www.baladain.com.br/wp-content/uploads/2020/05/mila.jpg",
+    "IMAGEM_URL": "https://diariodonordeste.verdesmares.com.br/image/contentid/policy:1.3088703:1621637077/image.jpg?h=630&q=0.6&w=1200&$p$h$q$w=f76cc5e",
     "IG": "692 mil",
     "TTK": "41,9 mil",
     "YT": "15 mil",
@@ -1875,11 +1924,11 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Mila Costa é influenciadora digital cearense radicada em Recife, conhecida por seus vídeos bem-humorados sobre a vida adulta e maternidade. Criadora do perfil “No Caso Mila”, ela compartilha reflexões sobre o dia a dia com espontaneidade e carisma. Advogada com pós em marketing, Mila também é colunista e podcaster, conectando-se com seu público por meio de humor e afet"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Ramon Teodoro",
     "@": "ramonteodoro",
-    "IMAGEM_URL": "https://p2.trrsf.com.br/image/fget/cf/540/960/smart/images.terra.com/2022/08/26/ramonteodoro_70663288_2722026501149100_5207488304282449265_n-sobrrbkrjvp2.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkAM2cXE5cNdRQrhcHWWZt-Bdv-trC5_I23g&s",
     "IG": "3.3 M",
     "TTK": "13.6 M",
     "YT": "-",
@@ -1890,11 +1939,11 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Ramon Teodoro é influenciador digital baiano que ganhou destaque por compartilhar sua rotina com leveza e autenticidade. Com milhões de seguidores no TikTok e Instagram, ele aborda temas como saúde mental, ansiedade e depressão, além de mostrar os “perrengues chiques” de sua vida. Seu conteúdo é acolhedor, sensível e voltado para o bem-estar emocional"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Bosco Barroso",
     "@": "boscobarroso",
-    "IMAGEM_URL": "https://nossomeio.com.br/wp-content/themes/2024/690/0/crop/2024/03/boscobarroso_1709320205_3314340563904191493_36171020-e1709645989200.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTb02GE6sr32g-WsksqENKwvXZlwMYHZfq6aJf7-gtZh1FX_9yHc44tumJbOuUlShOHJFY&usqp=CAU",
     "IG": "1.2 M",
     "TTK": "605,1 mil",
     "YT": "-",
@@ -1905,11 +1954,11 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Bosco Barroso é repórter do SBT Ceará e influenciador digital conhecido por seu conteúdo divertido e espontâneo. Com vídeos que misturam jornalismo e humor, ele se conecta com o público por meio de reflexões leves e bem-humoradas sobre o cotidiano. Seu trabalho é marcado pela valorização da cultura nordestina e pela alegria que transmite em suas redes"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Dy Miryan",
     "@": "dymiryan",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/heghJYg30HB_ML_vavd-YuDOrmHYGkuXSZXeuWJ7-fzl-l2DgOYl-NWjf8TKAMtWizE9vhh2LA=s900-c-k-c0x00ffffff-no-rj",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjaCeFCPqRCR-uj7PKNp4zxiT4wO9xKFbWTg&s",
     "IG": "1.1 M",
     "TTK": "-",
     "YT": "9540",
@@ -1920,26 +1969,26 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Dy Miryan é influenciadora digital brasileira radicada em Portugal, com forte presença nas semanas de moda europeias. Empresária e defensora das artes, ela compartilha conteúdos sobre alta-costura, eventos internacionais e estilo de vida sofisticado. Seu trabalho une glamour, consciência social e valorização da estética com propósito"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Dinho Junior",
     "@": "dinhojunior",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYBzzfg3EvrMUnhXhtLHet0BH2YhvhD3ricw&s",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1HuubhgfnwVomc767uv77Lpx_6BehbMC16A&s",
     "IG": "236 mil",
     "TTK": "37,7 mil",
     "YT": "16 mil",
     "SEGMENTO": "Entretenimento",
-    "SEGMENTO SECUNDÁrio": "Música, entrevistas, humor",
+    "SEGMENTO SECUNDÁRIO": "Música, entrevistas, humor",
     "PROJETOS": "-",
     "REF. VALOR": "-",
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Dinho Junior é apresentador, locutor e influenciador digital baiano. Com mais de 15 anos de carreira na comunicação, ele comanda programas como “Pipoco” na Salvador FM, misturando entrevistas, música e humor. Conhecido como “O Cremoso da Bahia”, seu conteúdo é irreverente, popular e voltado para o entretenimento regiona"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Laura Simões",
     "@": "laurasimoesoficial",
-    "IMAGEM_URL": "https://s2-vogue.glbimg.com/kpfA28zJpWjvo9z-BZ2BMXH5Y0s=/0x0:640x920/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_5dfbcf92c1a84b20a5da5024d398ff2f/internal_photos/bs/2022/7/Y/GuDcB3RACLFtJzVgVvDA/2019-12-03-laurasimoesoficial-79213598-169428580804905-1277650664855855632-n.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYuH-Ug0kB57NUwjfFu90F284pERygc7eogA&s",
     "IG": "39,6 mil",
     "TTK": "-",
     "YT": "306",
@@ -1950,11 +1999,11 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Laura Simões é modelo plus size e influenciadora digital, filha da atriz Fabiana Karla. Com conteúdos voltados para autoestima, moda e aceitação corporal, ela compartilha sua jornada pessoal com sensibilidade e força. Seu trabalho promove a diversidade de corpos e o amor-próprio com autenticidade"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Alexia Brito",
     "@": "botaa_po",
-    "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1454431994830540802/G5LzZRTt_400x400.jpg",
+    "IMAGEM_URL": "https://pbs.twimg.com/media/F7VERZgW4AA5Y8X?format=jpg&name=large",
     "IG": "676 mil",
     "TTK": "165,9 mil",
     "YT": "-",
@@ -1965,11 +2014,11 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Alexia Brito, conhecida como Bota Pó, é uma influenciadora digital, maquiadora e humorista maranhense. Mulher trans, ela viralizou com vídeos bem-humorados e se tornou referência em estilo e representatividade. Seu conteúdo mistura moda, autoestima e ativismo, promovendo inclusão e visibilidade para a comunidade LGBTQIA+"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Meu Maranhão",
     "@": "meumaranhao_",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/3-oQKJb_1JgXurJ7M7IfGDx7BtQYmfo1wLa9zB0G_ln7LlPqc0HkOQDHhTYd5fJHyVsxHcnOFg=s160-c-k-c0x00ffffff-no-rj",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4SXV81R_HUxlcOd5gTKSarw6k699GZKSn4A&s",
     "IG": "216 mil",
     "TTK": "90,5 mil",
     "YT": "-",
@@ -1980,11 +2029,11 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Meu Maranhão é um projeto digital que celebra as belezas, tradições e histórias do estado do Maranhão. Com vídeos e imagens que retratam cidades, festas, comidas típicas e paisagens locais, o perfil promove o turismo regional e a valorização da cultura maranhense com autenticidade e afeto"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Karleana Oliveira",
     "@": "nacozinhadakarle",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/pvTXxTpv6mmgBnphA3UqCueYDZh3ykB_hiKPjELlQ__jorJRALXTP7k8mx_aZ5pOjPRf1Hk6uiU=s160-c-k-c0x00ffffff-no-rj",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs7Sga3Qe85ie4lFkq0DNVTmP8t9vMlyEOcA&s",
     "IG": "649 mil",
     "TTK": "555,6 mil",
     "YT": "13,1 mil",
@@ -1995,11 +2044,11 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Karleana Oliveira é influenciadora digital maranhense e estudante de gastronomia. Criadora do perfil “Na Cozinha da Karle”, ela compartilha receitas acessíveis e saborosas com bom humor e simplicidade. Seu conteúdo valoriza a culinária regional e conecta o público com a tradição e o sabor do Nordeste"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Dina Carmona",
     "@": "dina_carmona",
-    "IMAGEM_URL": "https://www.oliberal.com/image/contentid/policy:1.562534:1657918656/Credito-Alle-Peixoto.jpeg?f=2x1&$p$f=b69fe82&w=1500&$w=f075b93",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS21vYHOzKrrpcA8DD1Nakwp1nCfk6uLxB72A&s",
     "IG": "102 mil",
     "TTK": "86 mil",
     "YT": "2280",
@@ -2010,23 +2059,23 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Dina Carmona é publicitária, influenciadora digital e criadora do projeto “Mulheres Fortes do Norte”. Com foco em representatividade e protagonismo feminino na Amazônia, ela promove mentorias, palestras e conteúdos sobre identidade, moda sustentável e inclusão. Seu trabalho é voltado para fortalecer narrativas de mulheres nortistas e romper estereótipos midiáticos"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Luanne Holanda",
     "@": "luanneholanda",
-    "IMAGEM_URL": "https://mir-s3-cdn-cf.behance.net/user/276/d4b62a160794789.6584c8c23349a.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCN5gimvfbQiq0MRr0DsMExRWijhI9v2cqnw&s",
     "IG": "38,4 mil",
     "TTK": "167,5 mil",
     "YT": "906",
-    "SEGMENTO": "Viagem",
+    "SEGMENTO": "Viagens",
     "SEGMENTO SECUNDÁRIO": "Moda, lifestyle, fotografia, cultura nordestina",
     "PROJETOS": "-",
     "REF. VALOR": "-",
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
-    "MINI BIO - INFLUENCIADOR": "Luanne Holanda é influenciadora digital maranhense que compartilha experiências de viagem, cultura regional e estilo de vida sustentável. Criativa e comunicadora, ela valoriza o Nordeste com registros poéticos e visuais, promovendo consumo consciente e conexão com a natureza e a identidade loca"
-  },
-  {
+    "MINI BIO - INFLUENCIADOR": "Luanne Holanda é influenciadora digital maranhense que compartilha experiências de viagens, cultura regional e estilo de vida sustentável. Criativa e comunicadora, ela valoriza o Nordeste com registros poéticos e visuais, promovendo consumo consciente e conexão com a natureza e a identidade loca"
+},
+{
     "INFLUENCIADOR": "Giovana Braga",
     "@": "giovanabraga",
     "IMAGEM_URL": "https://oimparcial.com.br/app/uploads/2021/05/159958396_258813479255228_7725120379232841694_n.jpg",
@@ -2040,11 +2089,11 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Giovana Braga é jornalista maranhense e influenciadora digital. Ela integrou a equipe de redes sociais do reality No Limite da TV Globo, destacando-se pela criatividade e profissionalismo. Seu conteúdo é voltado para bastidores da mídia, cultura pop e estratégias de comunicação digital"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Marcinha OG",
     "@": "marcinhaog",
-    "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1356075839788613635/dA34KAEi_400x400.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvR7qFIuLIZsHYeOi_pd_afkyR9Sx69dta4Q&s",
     "IG": "88,2 mil",
     "TTK": "453",
     "YT": "-",
@@ -2055,11 +2104,11 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Marcinha OG é influenciadora digital que representa a cultura urbana com autenticidade e atitude. Seu conteúdo mistura moda street, música e empoderamento feminino, conectando-se com o público jovem por meio de uma linguagem direta e visual marcante. Ela também participa de eventos e campanhas voltadas à diversidade e inclusão."
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Kellen Lopes",
     "@": "kellenlopesramalho",
-    "IMAGEM_URL": "https://i.pinimg.com/280x280_RS/a2/d8/56/a2d856a12288ff86712fd937b5faac50.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEx6J5kTJgK0dsr1N4ocqKWS9w6eiZEgNdKg&s",
     "IG": "16,4 mil",
     "TTK": "16,6 mil",
     "YT": "-",
@@ -2070,8 +2119,8 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Kellen Lopes, conhecida como Diva, é historiadora, empreendedora, apresentadora e mãe. Ela usa o pole dance como ferramenta de expressão e empoderamento, promovendo autoestima e liberdade feminina. Seu conteúdo celebra a força das mulheres e a cultura local, com alto astral e autenticidade"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Gabriela Murad",
     "@": "gabrielamurad_",
     "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTocGGI99a8rjClXUsFIakF5u9Po3f5X7LdAA&s",
@@ -2085,11 +2134,11 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Gabriela Murad é uma influenciadora digital que ganhou notoriedade ao compartilhar sua jornada de emagrecimento e transformação pessoal. Com uma abordagem honesta e emocional, ela fala sobre saúde física e mental, distorção de imagem, e os desafios de manter uma rotina saudável. Seu conteúdo é motivacional e acolhedor, criando uma comunidade engajada que se identifica com suas experiências. Gabriela também aborda temas como moda fitness e bem-estar emocional, sempre com um toque pessoal e autêntico"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Michel Do céu",
     "@": "micheldoceu",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5XvxnX4QjL2CP3KLQ_ANTvC3X-ym5eXAzPg&s",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYKYvETRNBy3SLvGdKnw_SVN4lYy0oYGJ2DQ&s",
     "IG": "15 mil",
     "TTK": "8074",
     "YT": "-",
@@ -2100,11 +2149,11 @@ const segmentColors = {
     "AGÊNCIA": "Waví",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Michel Do Céu é um influenciador maranhense que conquistou o público com seu jeito irreverente e simples. Ele ficou conhecido nacionalmente após participar do quadro \"Quem Quer Ser um Milionário\" no Caldeirão do Huck, e desde então vem crescendo nas redes sociais. Seu conteúdo mistura humor com reflexões sobre o dia a dia, sempre com uma linguagem acessível e carismática. Michel é considerado uma promessa entre os influenciadores regionais e tem uma audiência altamente engajada"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Luísa Sonza",
     "@": "luisasonza",
-    "IMAGEM_URL": "https://s2.glbimg.com/yPtiyLNi_2h8aEIYmpqj90SaVME=/620x413/top/e.glbimg.com/og/ed/f/original/2020/09/10/image_PY3xnhC.png",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSyr9HvSgFPQ7W2cCQrutAljNes9CJKciES4Ewp0UrgRV4688nm0bE8nqLO2x6cqsDa2iw&usqp=CAU",
     "IG": "30.9 M",
     "TTK": "17.5 M",
     "YT": "8.3 M",
@@ -2115,11 +2164,11 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Luísa Sonza é uma cantora, compositora e influenciadora digital brasileira. Iniciou sua carreira fazendo covers no YouTube e rapidamente se tornou uma das maiores artistas pop do país. Com hits como \"Braba\", \"Modo Turbo\" e \"Penhasco\", ela se destaca pela versatilidade musical e pela abordagem ousada sobre temas como sexualidade, autoestima e feminismo. Luísa também é conhecida por sua presença marcante nas redes sociais e por ser uma figura influente na luta contra a cultura do cancelamento"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Cinthia Cruz",
     "@": "cinthiacruz_",
-    "IMAGEM_URL": "https://pbs.twimg.com/media/GzEDeQSWcAARgJn?format=jpg&name=large",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIa4bHVmj2HLUn0YnnBcb-kpOlbjNtq77bnQ&s",
     "IG": "14.2 M",
     "TTK": "12.5 M",
     "YT": "-",
@@ -2130,8 +2179,8 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Cinthia Cruz é atriz e influenciadora digital, conhecida por sua atuação em novelas como Chiquititas. Com mais de 12 milhões de seguidores no TikTok, ela compartilha conteúdos variados que vão desde bastidores de sua carreira artística até dicas de beleza e rotina pessoal. Cinthia tem uma presença forte e carismática, e seu conteúdo é voltado para um público jovem que acompanha tanto sua trajetória profissional quanto sua vida pessoal"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Vivi",
     "@": "vivi",
     "IMAGEM_URL": "https://f.i.uol.com.br/fotografia/2025/06/04/174905717568407e9760560_1749057175_3x4_md.jpg",
@@ -2145,11 +2194,11 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Vivi é uma influenciadora e cantora brasileira que vem se destacando por sua autenticidade e versatilidade artística. Com um estilo plural e inquieto, ela transita entre o universo digital e os palcos, consolidando sua carreira musical com o lançamento de seu EP de estreia. Vivi valoriza a liberdade criativa e mantém uma relação próxima com seus fãs, sendo reconhecida por sua originalidade e por colaborações com artistas como Pabllo Vittar e Rebecca"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Thiago Nigro",
     "@": "thiago.nigro",
-    "IMAGEM_URL": "https://investidorsardinha.r7.com/wp-content/uploads/2020/08/thiago-nigro-conheca-a-vida-e-a-carreira-do-primo-rico.jpg",
+    "IMAGEM_URL": "https://m.media-amazon.com/images/S/amzn-author-media-prod/kj7loqtulr9fub2nqachqtljdo._SY450_CR0%2C0%2C450%2C450_.jpg",
     "IG": "9.5 M",
     "TTK": "2.3 M",
     "YT": "6.9 M",
@@ -2160,26 +2209,26 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "pThiago Nigro, conhecido como \"O Primo Rico\", é um dos maiores influenciadores de finanças do Brasil. Fundador do Grupo Primo e autor do best-seller Do Mil ao Milhão, ele começou sua trajetória após perder todo o dinheiro que investiu na bolsa aos 18 anos. Desde então, se especializou em finanças e criou um império digital voltado à educação financeira. Com linguagem acessível e foco em liberdade financeira, Thiago também é palestrante, podcaster (PrimoCast) e empresário, sendo referência para milhões de brasileiros"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Xamã",
     "@": "euxama",
-    "IMAGEM_URL": "https://p2.trrsf.com/image/fget/cf/1200/1600/middle/images.terra.com/2023/05/03/70837107-xama-divulgacao.jpg",
+    "IMAGEM_URL": "https://i.pinimg.com/474x/78/01/c3/7801c38743c265da3de96b1f3385076a.jpg",
     "IG": "8.2 M",
     "TTK": "1.7 M",
     "YT": "613 mil",
     "SEGMENTO": "Música",
-    "SEGMENTO SECUNDÁRIO": "Atuação,  cultura pop, poesia",
+    "SEGMENTO SECUNDÁRIO": "Atuação, cultura pop, poesia",
     "PROJETOS": "-",
     "REF. VALOR": "-",
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Xamã, nome artístico de Geizon Fernandes, é um rapper, cantor e ator carioca. Ganhou destaque com hits como Malvadão 3 e Leão, e é conhecido por suas letras poéticas, cheias de referências a cinema, filosofia e cultura pop. Além da música, Xamã também atua em novelas e séries, como Renascer e Justiça. Sua versatilidade artística e autenticidade o tornaram um dos nomes mais respeitados da cena urbana brasileira"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Raissa Chaddad",
     "@": "raissachaddad",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/LNN2tJ94yg6Z97OLWmdkPE6SsFd1S8zswKgA_zO4Fi3luEDhYGcJmIqlAgcr5p-QFXLhZEDqMWM=s900-c-k-c0x00ffffff-no-rj",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9eXU4Plc5Spv8AmBR5iVaMkiqyP4Z2_ncrg&s",
     "IG": "8.1 M",
     "TTK": "9.8 M",
     "YT": "4.9 M",
@@ -2190,8 +2239,8 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Raissa Chaddad é atriz e influenciadora digital, conhecida por seu papel como Bia em Chiquititas. Desde então, participou de novelas como As Aventuras de Poliana e séries como As Seguidoras. Com forte presença no TikTok e Instagram, Raissa compartilha seu dia a dia, bastidores de gravações, moda e dança. Seu público é majoritariamente jovem, e ela se destaca pela espontaneidade e carisma"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Sarah Andrade",
     "@": "sarahandrade",
     "IMAGEM_URL": "https://s2-gshow.glbimg.com/iqa85WR5J1VPRCKxQ24UwSCBzms=/0x0:1080x1350/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2022/w/f/icnXYkQe29NAIAYCPBRg/sarahandrade-271668756-452390676527113-2618492829760946980-n.jpg",
@@ -2204,12 +2253,12 @@ const segmentColors = {
     "REF. VALOR": "-",
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
-    "MINI BIO - INFLUENCIADOR": "Sarah Andrade ficou conhecida nacionalmente após sua participação no BBB 21, mas já era uma profissional de marketing com MBA em Los Angeles. Após o reality, ela se consolidou como influenciadora e empresária, com foco em empreendedorismo feminino e inovação. Sarah compartilha conteúdos sobre negócios, bem-estar e estilo de vida, sempre com uma abordagem estratégica e inspiradora"
-  },
-    {
+    "MINI BIO - INFLUENCIADOR": "Sarah Andrade ficou conhecida nacionalmente após sua participação no BBB 21, mas já era uma profissional de marketing com MBA em Los Angeles. Após o reality, ela se consolidou como influenciadora e empresária, com foco em Empreendedorismo e inovação. Sarah compartilha conteúdos sobre negócios, bem-estar e estilo de vida, sempre com uma abordagem estratégica e inspiradora"
+},
+{
     "INFLUENCIADOR": "Jully Molinna",
     "@": "jullymolinna",
-    "IMAGEM_URL": "https://pt.quizur.com/_image?href=https://img.quizur.com/f/img5eefc32aaf3358.40453369.jpg?lastEdited=1592771375&w=600&h=600&f=webp",
+    "IMAGEM_URL": "https://contigo.com.br/wp-content/uploads/2024/06/jully-molinna-3.jpg",
     "IG": "6.8 M",
     "TTK": "12.6 M",
     "YT": "6.8 M",
@@ -2220,11 +2269,11 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Jully Molinna é uma influenciadora digital e youtuber brasileira, natural de Belo Horizonte. Ficou conhecida por seus vídeos criativos e bem-humorados no YouTube, onde acumula mais de 6 milhões de inscritos e mais de 589 milhões de visualizações. Seu conteúdo inclui desafios, vlogs de aventura e momentos do cotidiano, sempre com uma abordagem divertida e autêntica. Jully também é muito popular no Instagram, onde compartilha seu estilo e rotina. Ela é querida especialmente pela Geração Z e já enfrentou episódios de bullying, que transformou em força para inspirar seus seguidores"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Isabelle Nogueira",
     "@": "isabelle.nogueira",
-    "IMAGEM_URL": "https://www.marciapiovesan.com.br/wp-content/uploads/2024/08/Isabelle-Nogueira.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS0KPNJ2k5uDNhlaPMH4g8vLOkekzy4oya2ng&s",
     "IG": "5.9 M",
     "TTK": "692 mil",
     "YT": "10.6 M",
@@ -2235,11 +2284,11 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Isabelle Nogueira é dançarina, empresária, professora e influenciadora digital natural de Manaus. Ficou nacionalmente conhecida ao participar do BBB 24, onde se destacou por sua autenticidade e carisma. Desde 2018, atua como Cunhã Poranga do Boi Garantido no Festival de Parintins, sendo uma das principais representantes da cultura amazônica. Isabelle também é autora de literatura infantojuvenil, embaixadora de causas sociais e ambientais, e idealizadora do Festival da Cunhã, que promove arte, turismo e sustentabilidade na Amazônia"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Priscilla",
     "@": "_apriscilla_",
-    "IMAGEM_URL": "https://pbs.twimg.com/media/G1NmW7xWsAEzPzV?format=jpg&name=large",
+    "IMAGEM_URL": "https://revistaanamaria.com.br/wp-content/uploads/2024/12/httpsrevistaanamaria.com_.brmediauploadspriscilla_alcantara_novo_visual.jpg",
     "IG": "5.2 M",
     "TTK": "2.3 M",
     "YT": "3.5 M",
@@ -2250,11 +2299,11 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Priscilla, anteriormente conhecida como Priscilla Alcantara, é cantora e influenciadora digital com mais de 20 anos de carreira. Começou no SBT como apresentadora infantil e se destacou no segmento gospel, antes de migrar para o pop com grande sucesso. Seu conteúdo mistura música, espiritualidade e autenticidade, e ela é conhecida por sua personalidade disruptiva e visual marcante. Priscilla tem milhões de seguidores nas redes sociais e é referência em transição artística e liberdade criativa"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "El Gato",
     "@": "rodrigofee2",
-    "IMAGEM_URL": "https://i.scdn.co/image/ab6761610000e5eb6d83a3d17850f046ef185880",
+    "IMAGEM_URL": "https://i.pinimg.com/736x/4a/34/f0/4a34f033d9094a29e926df526f36e769.jpg",
     "IG": "4.4 M",
     "TTK": "3.6 M",
     "YT": "9.2 M",
@@ -2265,11 +2314,11 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Rodrigo Fernandes, conhecido como El Gato, é um influenciador digital, streamer e empresário brasileiro. Ficou famoso com vídeos de Free Fire e fundou a organização de esports Los Grandes (LØS), uma das maiores do Brasil. Começou com vídeos de humor gospel e depois migrou para o universo gamer, acumulando milhões de seguidores. El Gato é conhecido por seu estilo carismático, conteúdo divertido e por representar suas raízes e fé nas redes sociais"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Pequena Lo",
     "@": "_pequenalo",
-    "IMAGEM_URL": "https://acessocultural.com.br/wp-content/uploads/2020/10/pequena-lo-entrevista.jpeg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-v-TXzo24y24d_a_YtSi6vWuopouJKN-vqw&s",
     "IG": "4.2 M",
     "TTK": "6.2 M",
     "YT": "20 mil",
@@ -2280,11 +2329,11 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Lorrane Silva, conhecida como Pequena Lo, é psicóloga, influenciadora digital e apresentadora. Diagnosticada com uma síndrome rara que afeta a mobilidade, ela usa o humor para combater o capacitismo e promover inclusão. Ficou conhecida durante a pandemia com vídeos no TikTok e Instagram, e desde então participou de programas como Plantão BBB e Prazer, Luísa. Pequena Lo é referência em representatividade e já foi destaque na lista Forbes Under 30"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Lorena Maria",
     "@": "badgallore",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQZjqhEp2axEO0EjZYqkjIFSlKc_yjZJK3Og&s",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7oCYy1CKLnulQOo_H_ywU_kEC_FLqTsidOg&s",
     "IG": "3.9 M",
     "TTK": "843 mil",
     "YT": "-",
@@ -2295,11 +2344,11 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Lorena Maria é influenciadora digital, empresária e mãe. Ganhou notoriedade após seu relacionamento com MC Daniel, mas já era conhecida por comandar marcas de cosméticos e lingerie voltadas à autoestima feminina. Com mais de 4 milhões de seguidores, ela compartilha sua rotina, posicionamentos sociais e experiências como mãe solo. Lorena é uma voz ativa contra o machismo e usa sua plataforma para inspirar outras mulheres a empreender e se expressar com liberdade"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Thais Braz",
     "@": "thaisbraz",
-    "IMAGEM_URL": "https://www.marciapiovesan.com.br/wp-content/uploads/2022/06/thais.jpg",
+    "IMAGEM_URL": "https://midias.agazeta.com.br/2022/03/12/thais-braz-719885-article.jpg",
     "IG": "3.6 M",
     "TTK": "1.4 M",
     "YT": "-",
@@ -2310,11 +2359,11 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Thais Braz é ex-BBB (edição 21), dentista de formação, e atualmente modelo e influenciadora digital. Após o reality, ela investiu na carreira de criadora de conteúdo, abordando temas como moda, estética, autoestima e relacionamentos. Thais também fala abertamente sobre saúde mental e já revelou experiências pessoais com relacionamentos abusivos. Seu estilo é sofisticado e ela é presença constante em eventos de moda como o SPFW."
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Menos é Mais",
     "@": "grupomenosemais",
-    "IMAGEM_URL": "https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0lNRiISrUABEFJoSr7wRkQN7B6FJzil8_TIerVkAjhmSxTJw24wbSqQH8LVXC-S8zNwvspw_Gg85KaVbu4KxRY371PVPZ2qVXwIy4ReKhoEenutNzWNfRaHgPHB9hJddn_YY4YgNYRGWc1pB1MbRGbI0zCFcpHYWloKLMNCr80QUm1N9dJkpSD49OZK0/w680/1000786289.jpg",
+    "IMAGEM_URL": "https://web.portalsucesso.com.br/wp-content/uploads/2023/08/menos-%C3%A9-mais-15-de-agosto.png",
     "IG": "3.3 M",
     "TTK": "1.5 M",
     "YT": "4.3 M",
@@ -2325,11 +2374,11 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Menos é Mais é um grupo de pagode formado em 2017 no Distrito Federal, composto por Duzão, Gustavo Góes, Jorge Farias, Paulinho Félix e Ramon Alvarenga. Eles se destacaram por regravar clássicos do pagode e lançar músicas autorais como “Plano Piloto”. Com milhões de visualizações no YouTube e prêmios como o Multishow, o grupo é referência na nova geração do pagode brasileiro, misturando tradição e inovação"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Açucena Guirra",
     "@": "acucena",
-    "IMAGEM_URL": "https://i.pinimg.com/736x/81/3b/4b/813b4bfc3bb017c6a0049207828432e6.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAzvh_73H7Uke7U2wXpihQy2fpY0Cq_0uJDg&s",
     "IG": "3,1 M",
     "TTK": "14.4 M",
     "YT": "198 mil",
@@ -2340,11 +2389,11 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Açucena Guirra é uma estrela do TikTok conhecida por seus vídeos de humor e histórias narradas com estilo único. Com mais de 14 milhões de seguidores, ela conquistou o público com seu carisma e autenticidade. Açucena também compartilha momentos pessoais, como sua experiência com a maternidade, e é reconhecida por sua capacidade de transformar situações cotidianas em conteúdo envolvente e divertido"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Douglas Silva",
     "@": "douglassilva",
-    "IMAGEM_URL": "https://imagem.natelinha.uol.com.br/tudo-sobre/douglas-silva_2794.jpeg",
+    "IMAGEM_URL": "https://montenegrotalents.com.br/wp-content/uploads/2022/01/Sessao-sem-titulo3148-1024x683.jpg",
     "IG": "3.1 M",
     "TTK": "726 mil",
     "YT": "-",
@@ -2355,11 +2404,11 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Douglas Silva é ator e influenciador, conhecido por papéis marcantes como Dadinho (Cidade de Deus) e Acerola (Cidade dos Homens). Participou do BBB 22, onde ganhou ainda mais visibilidade e passou a ser chamado de “DG”. Douglas usa suas redes para compartilhar momentos com a família, bastidores de projetos e reflexões sobre sua trajetória. Ele é uma figura respeitada na cultura brasileira e inspira com sua autenticidade e talento"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Fernanda Keulla",
     "@": "fernandakeulla",
-    "IMAGEM_URL": "https://s2-quem.glbimg.com/Dh2mlSUMVv_dEGZu1Zuezbvf3j0=/0x0:1080x1349/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2023/M/g/HGDkozSpezDUalE3UN7w/fernandakeulla-310959824-8363295193695451-1309363493061088464-n.jpg",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3uXpNx0V99VHlFxY1K_6jHc5n2U1LV8Qbew&s",
     "IG": "2.7 M",
     "TTK": "613 mil",
     "YT": "-",
@@ -2370,8 +2419,8 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Fernanda Keulla é advogada, apresentadora e influenciadora digital, vencedora do BBB 13. Após o reality, construiu uma carreira sólida na televisão, passando por programas como Rede BBB, Vídeo Show e Encrenca. Atualmente, investe na carreira de atriz e enfrenta desafios pessoais, como a Síndrome de Sjögren. Fernanda é conhecida por seu carisma, versatilidade e por compartilhar sua jornada com leveza e fé"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Uai Vicente",
     "@": "uaivicente",
     "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxm5I7gR3pU37H-ZqYTCjzLgNqhhbplxMK-g&s",
@@ -2385,11 +2434,11 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Uai Vicente é influenciador digital e irmão gêmeo de Uai Lázaro. Juntos, formam os “Irmãos Uai”, fenômenos das redes sociais que viralizaram com vídeos engraçados e espontâneos durante a pandemia. Naturais de Jataí (GO), eles são integrantes da LOUD e produzem conteúdos que misturam humor, desafios e cultura goiana. Vicente é carismático, divertido e tem milhões de seguidores no TikTok e Instagram"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "João Luiz Pedrosa",
     "@": "joaolpedrosa",
-    "IMAGEM_URL": "https://midias.correiobraziliense.com.br/_midias/jpg/2024/05/15/675x450/1_foto_joa__o__vdp-37101749.jpeg?20240516065337?20240516065337",
+    "IMAGEM_URL": "https://revistadbn.com.br/wp-content/uploads/2025/02/WhatsApp-Image-2025-02-07-at-14.47.17-e1738951957918.jpeg",
     "IG": "2.3 M",
     "TTK": "339 mil",
     "YT": "-",
@@ -2400,11 +2449,11 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "João Luiz Pedrosa é professor de Geografia, mestre em Educação, apresentador e influenciador digital. Ganhou notoriedade nacional ao participar do BBB 21, onde se destacou por seu carisma, didática e posicionamentos firmes sobre temas sociais. Após o reality, João se tornou apresentador do programa Trace Trends, voltado à cultura negra e diversidade, e passou a colaborar com grandes marcas como Smirnoff, Chevrolet, Deezer e Santander. Ele também é palestrante e criador de conteúdo voltado à educação, inclusão e engajamento social, sendo uma das vozes mais respeitadas da nova geração de comunicadores brasileiros"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Victória Diniz",
     "@": "victoriadinizofc",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRiPmUdW_I7lx5lFOn6p0H-EmIinda8AOVSnA&s",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVZf5a15szk3q32lu_ouLqXxLG4sNiUZIB8A&s",
     "IG": "2 M",
     "TTK": "2 M",
     "YT": "29 mil",
@@ -2415,11 +2464,11 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Victória Diniz é atriz e influenciadora digital brasileira, conhecida por interpretar a personagem Bibi na novela Carrossel do SBT. Após sua carreira como atriz mirim, ela se reinventou como criadora de conteúdo, compartilhando vídeos sobre seu dia a dia, dicas de beleza, cabelo e maquiagem. Com mais de 2 milhões de seguidores no TikTok, Victória se destaca pela autenticidade e proximidade com seus fãs, inspirando jovens com sua trajetória de transformação e amadurecimento"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Jackson Moura",
     "@": "jacksonoficial",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFtTvwGM9FzMlKJ-V30n_0BaMIHrGUIfVncA&s",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaRVRcNNVAA6POVOoStE4iYCUgIyVFXj7jzw&s",
     "IG": "1.9 M",
     "TTK": "3.7 M",
     "YT": "513 mil",
@@ -2430,11 +2479,39 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Jackson Moura é ator, comediante e influenciador digital piauiense. Com formação em teatro e TV, participou de produções como Poliana Moça (SBT) e do curta “LucioFei” com Whindersson Nunes para o canal da Netflix Brasil. Seu conteúdo mistura humor cotidiano com personagens caricatos e situações populares, conquistando milhões de seguidores nas redes sociais. Jackson também é conhecido por seu sotaque nordestino e por representar com orgulho suas raízes culturais"
-  },
-  {
+},
+{
+    "INFLUENCIADOR": "Valquiria V",
+    "@": "val.quiriav",
+    "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1638919649818472448/m0se5VZW_400x400.jpg",
+    "IG": "1.8 M",
+    "TTK": "2.2 M",
+    "YT": "-",
+    "SEGMENTO": "Humor",
+    "SEGMENTO SECUNDÁRIO": "Cultura pop, documentários, maternidade, lifestyle",
+    "PROJETOS": "-",
+    "REF. VALOR": "-",
+    "AGÊNCIA": "Mynd",
+    "MINI BIO - INFLUENCIADOR": "Valquiria V é influenciadora digital e criadora de conteúdo conhecida por seu estilo irônico e bem-humorado. Com mais de 2 milhões de seguidores no TikTok e mais de 60 milhões de curtidas, ela produz vídeos que misturam humor, crítica social e reflexões sobre o cotidiano. Valquiria também aborda temas como maternidade, crimes reais e cultura pop, sempre com uma linguagem acessível e divertida. Seu conteúdo é marcado por autenticidade e conexão com o público jovem"
+},
+{
+    "INFLUENCIADOR": "Cenourinha",
+    "@": "cenourinha_oficial",
+    "IMAGEM_URL": "https://cdn.midiamax.com.br/wp-content/uploads/2024/10/02152941/Cenourinha.jpg",
+    "IG": "1.8 M",
+    "TTK": "2.4 M",
+    "YT": "447 mil",
+    "SEGMENTO": "Beleza",
+    "SEGMENTO SECUNDÁRIO": "Maternidade, autoestima, lifestyle",
+    "PROJETOS": "-",
+    "REF. VALOR": "-",
+    "AGÊNCIA": "Mynd",
+    "MINI BIO - INFLUENCIADOR": "Cenourinha, nome artístico de Evelyn Thalia, é influenciadora digital nascida em Campo Grande (MS) e atualmente residente em Alcinópolis. Começou sua carreira enquanto trabalhava como operadora de caixa, usando os vídeos como forma de escape. Hoje, com mais de 10 milhões de seguidores somando todas as redes, ela compartilha tutoriais de maquiagem, cuidados com a pele, vlogs e reflexões sobre autoestima. Cenourinha é exemplo de superação e inspiração para quem busca crescer com autenticidade no universo digital"
+},
+{
     "INFLUENCIADOR": "Rosamaria",
     "@": "rosamariaoficial",
-    "IMAGEM_URL": "https://sbt-news-assets-prod.s3.sa-east-1.amazonaws.com/Rosamaria_b0bcdae328.png",
+    "IMAGEM_URL": "https://img.olympics.com/images/image/private/t_s_pog_staticContent_hero_lg_2x/f_auto/primary/oikox8fggzslt3nyokz4",
     "IG": "1.6 M",
     "TTK": "111 mil",
     "YT": "-",
@@ -2445,11 +2522,11 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Rosamaria Montibeller é jogadora da Seleção Brasileira de Vôlei e atua profissionalmente no Japão. Com quase 1,7 milhão de seguidores, ela compartilha sua rotina como atleta, viagens e parcerias com marcas. Rosamaria é engajada em causas como saúde mental e igualdade de gênero, tendo se afastado da seleção em 2019 por questões emocionais. Ela também lançou uma marca pessoal voltada ao público feminino, promovendo coragem, liberdade e respeito. É uma das vozes mais influentes do esporte brasileiro nas redes sociais"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Almanaque SOS",
     "@": "almanaquesos",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_nhQgI8vll8hcfqj3d2OL9MTWgYMHrkC8WckQcV3M7gK_0=s900-c-k-c0x00ffffff-no-rj",
+    "IMAGEM_URL": "https://conteudo.imguol.com.br/c/noticias/36/2023/10/20/dario-centurione-fundador-do-almanaque-sos-1697838806308_v2_450x450.png",
     "IG": "1.6 M",
     "TTK": "2.6 M",
     "YT": "2.2 M",
@@ -2460,11 +2537,11 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Almanaque SOS é um projeto digital que mistura ciência, curiosidades e dicas práticas para o cotidiano. Com mais de 2,7 milhões de seguidores no TikTok e 2,3 milhões no YouTube, o canal é apresentado por Dario e Gouves, que criam conteúdos acessíveis e divertidos sobre temas como receitas, truques domésticos, saúde e tecnologia. Considerado a “Ana Maria dos jovens”, o projeto tem uma audiência bilionária e é referência em conteúdo educativo leve e viral"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Jessi Neto",
     "@": "jessi",
-    "IMAGEM_URL": "https://pt.quizur.com/_image?href=https://img.quizur.com/f/img64ac508e614999.54851501.jpg?lastEdited=1689014418&w=600&h=600&f=webp",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQu9LQ31F0cQ4Mz6sy6qhnMp4fMArOxfVClKg&s",
     "IG": "1.6 M",
     "TTK": "892 mil",
     "YT": "-",
@@ -2475,8 +2552,8 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "",
     "MINI BIO - INFLUENCIADOR": "Jessi Neto é influenciadora digital, esposa do youtuber Luccas Neto, e mãe dos pequenos Luke e Anakin. Com mais de 1,5 milhão de seguidores, ela compartilha sua rotina familiar, viagens e momentos especiais com os filhos. Jessi também fala sobre maternidade real, saúde emocional e já revelou ter feito terapia para lidar com a exposição e a vida confortável proporcionada pelo sucesso de Luccas. Seu conteúdo é acolhedor, leve e voltado para famílias jovens"
-  },
-  {
+},
+{
     "INFLUENCIADOR": "Tia Má",
     "@": "tiamaoficial",
     "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1946759320554614785/lpYqsYhT_400x400.jpg",
@@ -2490,11 +2567,90 @@ const segmentColors = {
     "AGÊNCIA": "Mynd",
     "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories",
     "MINI BIO - INFLUENCIADOR": "Maíra Azevedo, conhecida como Tia Má, é jornalista, atriz, escritora e influenciadora digital. Natural de Salvador, ela se tornou referência nas redes sociais por abordar temas como racismo, maternidade, autoestima e empoderamento feminino com autenticidade e coragem. Mãe de dois filhos, Tia Má compartilha sua rotina e reflexões sobre criar crianças negras em um ambiente permeado por desigualdades estruturais. Ela também atua como palestrante e estrela a série de comédia Toda Família Tem, da Prime Video. Seu conteúdo é marcado por sinceridade, humor e resistência, e ela é reconhecida por provocar diálogos transformadores sobre inclusão e representatividade."
+},
+{
+    "INFLUENCIADOR": "Bela Gil",
+    "@": "belagil",
+    "IMAGEM_URL": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTtGPBufMQ7OSIbmgxneeUqMTvdnParBOpdCQduS4iC-fFztApVJ4SafZKR56j65F3r63AlnJwPWGwx0cQBt-YRXDrxSFm7ULZAFD2T5jU",
+    "IG": "4.1 M",
+    "TTK": "150 mil",
+    "YT": "500 mil",
+    "SEGMENTO": "Culinária Saudável",
+    "SEGMENTO SECUNDÁRIO": "Sustentabilidade, Bem-estar, Lifestyle",
+    "PROJETOS": "Culinária / Sustentabilidade",
+    "REF. VALOR": "R$ 60.000",
+    "AGÊNCIA": "N/A",
+    "ESCOPO": "1 Reels Feed ou Tiktok + 1 Post Feed IG + 1 sequência de 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Bela Gil é uma chef de cozinha, apresentadora e ativista brasileira, conhecida por seu trabalho na culinária natural e orgânica. Defensora de um estilo de vida mais sustentável e saudável, ela compartilha receitas, dicas e reflexões sobre alimentação e bem-estar em suas plataformas."
+},
+{
+    "INFLUENCIADOR": "Uai Gabrielly",
+    "@": "uaigabrielly",
+    "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1768475857490788352/9at6-9aQ_400x400.jpg",
+    "IG": "1.5 M",
+    "TTK": "5.2 M",
+    "YT": "-",
+    "SEGMENTO": "Humor",
+    "SEGMENTO SECUNDÁRIO": "Relacionamento, moda, lifestyle, vlogs",
+    "PROJETOS": "-",
+    "REF. VALOR": "-",
+    "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
+    "MINI BIO - INFLUENCIADOR": "Gabrielly Gonzalez Ferreira, conhecida como Uai Gabrielly, é uma influenciadora digital que conquistou o público com seu humor espontâneo, estilo de vida autêntico e visual marcante. Ela se destaca por vídeos engraçados, desafios de casal (com o namorado Vicente), e situações cotidianas com um toque de leveza e identificação. Gabrielly mistura moda casual com vlogs e esquetes, criando um conteúdo que parece uma conversa entre amigas. Sua autenticidade e carisma a tornaram uma das vozes mais queridas da Geração Z. Além disso, ela já participou de campanhas com marcas como Dove e Sadia, sendo reconhecida por sua conexão genuína com o público e por espalhar positividade nas redes"
+  },
+  {
+    "INFLUENCIADOR": "Adam Mitch",
+    "@": "adammicth",
+    "IMAGEM_URL": "https://www.datocms-assets.com/46743/1718311540-seo_easy-resize-com.jpg?auto=format%2Ccompress&cs=srgb",
+    "IG": "1.5 M",
+    "TTK": "3 M",
+    "YT": "516 mil",
+    "SEGMENTO": "Humor",
+    "SEGMENTO SECUNDÁRIO": "Moda, representatividade LGBTQIA+, autoestima",
+    "PROJETOS": "-",
+    "REF. VALOR": "-",
+    "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
+    "MINI BIO - INFLUENCIADOR": "Adam Mitch é jornalista e influenciadora digital, referência no universo da beleza. Com mais de 5 milhões de seguidores, ela viralizou com vídeos criativos e resenhas de produtos, como a famosa “saga do batom canela”. Adam começou sua carreira escrevendo blogs e evoluiu para vídeos que misturam humor, estética e autenticidade. Ela é conhecida por sua abordagem divertida e empoderadora, sendo uma voz importante na comunidade LGBTQIA+ e na luta por mais representatividade no mercado de beleza"
+  },
+  {
+    "INFLUENCIADOR": "Diego Hypolito",
+    "@": "diegohypolito",
+    "IMAGEM_URL": "https://s2-oglobo.glbimg.com/4dHbYN56IrSFZADDg4k7Oy16CE4=/0x0:6119x4257/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2025/u/a/BRw2oUSJqxPUH6Wo9Slg/45-1-.jpg",
+    "IG": "1.5 M",
+    "TTK": "158 mil",
+    "YT": "-",
+    "SEGMENTO": "Esporte",
+    "SEGMENTO SECUNDÁRIO": "Motivação, saúde mental, televisão",
+    "PROJETOS": "-",
+    "REF. VALOR": "-",
+    "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
+    "MINI BIO - INFLUENCIADOR": "Diego Hypolito é ex-ginasta olímpico, medalhista e comentarista esportivo. Foi o primeiro sul-americano a conquistar uma medalha no Campeonato Mundial de Ginástica e participou das Olimpíadas do Rio. Em 2025, entrou no BBB 25 ao lado da irmã Daniele Hypolito, ganhando ainda mais visibilidade. Diego também atua como palestrante e artista circense, e é engajado em projetos sociais. Sua trajetória é marcada por superação, inclusive ao lidar com depressão e assumir publicamente sua sexualidade\""
+  },
+  {
+    "INFLUENCIADOR": "Lucas Veloso",
+    "@": "lucasveloso_",
+    "IMAGEM_URL": "https://image.tmdb.org/t/p/original/2RElwkCL4rAplZ4Gc6g7YJhqv46.jpg",
+    "IG": "1.5 M",
+    "TTK": "135 mil",
+    "YT": "136 mil",
+    "SEGMENTO": "Humor",
+    "SEGMENTO SECUNDÁRIO": "Atuação, música, televisão, imitações",
+    "PROJETOS": "-",
+    "REF. VALOR": "-",
+    "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
+    "MINI BIO - INFLUENCIADOR": "Lucas Veloso é ator, comediante e músico, filho do humorista Shaolin. Começou a carreira aos 5 anos e se destacou em programas como Os Trapalhões, Velho Chico e Dança dos Famosos. Ele também atua em stand-up comedy e é conhecido por suas imitações e carisma. Lucas participou de eventos como o Fight Music Show e mantém uma presença forte nas redes sociais, misturando humor, cultura pop e bastidores da vida artística"
   },
   {
     "INFLUENCIADOR": "Vítor De Castro",
     "@": "vitordecastro",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT023DMVFNcbDudB_GEglvq80rA8jiwNyr-p0CpWDQlVT6LKc4WgyASSHILQ7pWoYt8KsXtvKTqZ-Kdqiu4CM3s8K-VETAe8_nZI1J8E-4EjA",
+    "IMAGEM_URL": "https://www.mixpalestras.com.br/assets-custom/img/palestrantes/vitor-di-castro-24052021-105932.jpg",
     "IG": "1.3 M",
     "TTK": "1.3 M",
     "YT": "1.6 M",
@@ -2503,13 +2659,14 @@ const segmentColors = {
     "PROJETOS": "-",
     "REF. VALOR": "-",
     "AGÊNCIA": "Mynd",
-    "ESCOPO": "",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Vítor DiCastro é ator, apresentador e criador do canal Deboche Astral, onde une astrologia e humor de forma leve e divertida. Com mais de 1,6 milhão de inscritos no YouTube, ele conquistou o público com vídeos sobre signos e reflexões pessoais. Vítor também atua em séries como Tem Que Suar e é engajado em causas LGBTQIA+, tendo enfrentado experiências de “cura gay” na adolescência. Casado com o jornalista Vinícius Cordeiro, ele é uma figura inspiradora e autêntica nas redes"
   },
   {
     "INFLUENCIADOR": "Fernando Medeiros",
     "@": "femedeiros",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://p2.trrsf.com/image/fget/cf/500/0/images.terra.com/2023/10/14/328269442_2283333221851312_1470172680598417802_n-1ibbi3gbh80mv.jpg",
     "IG": "1.3 M",
     "TTK": "546 mil",
     "YT": "-",
@@ -2517,14 +2674,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Saúde, família, motivação",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Fernando Medeiros é ex-BBB, atleta e influenciador digital focado em esportes e qualidade de vida. Apresentador do canal Central do Basquete, ele é referência na divulgação da cultura da NBA no Brasil. Casado com a influenciadora Aline Gotschalg, Fernando compartilha sua rotina de treinos, reflexões sobre saúde masculina e momentos em família. Recentemente, falou abertamente sobre seu tratamento hormonal, reforçando a importância do autocuidado e da quebra de tabus sobre masculinidade"
   },
   {
     "INFLUENCIADOR": "João Silva",
     "@": "joaosilva",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaU8mOACoB_zwgWLHD3-CoTHYWIbr7tR3Dag&s",
     "IG": "1.3 M",
     "TTK": "21 mil",
     "YT": "701 mil",
@@ -2532,14 +2690,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Comunicação, lifestyle, entretenimento, futebol",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "João Silva, também conhecido como João Guilherme Silva, é apresentador e filho de Faustão. Com apenas 21 anos, já comandou o Programa do João na Band e está em transição para o SBT. Carismático e moderno, João busca conectar o digital com a TV aberta, trazendo formatos inovadores e entrevistas vibrantes. Ele é agenciado pela Mynd e tem se destacado como uma das promessas da nova geração da televisão brasileira"
   },
   {
     "INFLUENCIADOR": "Tamile Garcia",
     "@": "tamilegarcia",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeJEDZulnn5zbumcJzC84Bd-iNN-I9y7J1XA&s",
     "IG": "1.3 M",
     "TTK": "2.7 M",
     "YT": "11 mil",
@@ -2547,14 +2706,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Maternidade, cultura nordestina, dança, cotidiano",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Tamile Garcia é influenciadora digital, humorista e mãe, natural de Lagarto, Sergipe. Ela conquistou o público com vídeos engraçados sobre maternidade, rotina familiar e situações do dia a dia. Tamile se define como “mãe, criadora de conteúdo e nordestina”, e seu conteúdo mistura humor espontâneo com temas reais, criando uma conexão forte com o público feminino e jovem. Ela também é conhecida por sua autenticidade, carisma e criatividade, e já foi embaixadora de eventos como o Forrozão da Sergipe. Seus vídeos populares incluem esquetes sobre gravidez, maternidade escolhida e desafios com o marido e o filho, Bryan"
   },
   {
     "INFLUENCIADOR": "Yuri Marçal",
     "@": "oyurimarcal",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://f.i.uol.com.br/fotografia/2022/03/18/16476286176234d149e75ae_1647628617_3x2_md.jpg",
     "IG": "1.2 M",
     "TTK": "1.1 M",
     "YT": "410 mil",
@@ -2562,14 +2722,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Crítica social, cultura negra, ativismo, publicidade",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Yuri Marçal é comediante, ator e roteirista carioca, conhecido por seu humor afiado e engajado. Com mais de 1 milhão de seguidores, ele trata de temas como racismo, intolerância religiosa e política com inteligência e leveza. Yuri foi o primeiro humorista a fazer stand-up solo no Theatro Municipal de SP e tem um especial na Netflix chamado Ledo Engano. Ele também atua em campanhas publicitárias e é uma das vozes mais relevantes da comédia brasileira contemporânea"
   },
   {
     "INFLUENCIADOR": "Foquinha",
     "@": "foquinha",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVqoE4WW-bEvl5IA056adtWUt_FkdJpvg1cQ&s",
     "IG": "1.2 M",
     "TTK": "634 mil",
     "YT": "2 M",
@@ -2577,14 +2738,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Jornalismo, entrevistas, lifestyle, televisão, cultura pop",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Fernanda Catania, conhecida como Foquinha, é jornalista, apresentadora, youtuber e influenciadora digital. Formada pela PUC-SP, iniciou sua carreira na Rolling Stone Brasil e na Capricho, onde foi editora de entretenimento. Foquinha também é repórter do Multishow, apresentadora de eventos como o Festival Tudum da Netflix, e co-host do podcast Donos da Razão, ao lado do marido André Brandt. Seu conteúdo é leve, informativo e divertido, com entrevistas de nomes como Dua Lipa, Millie Bobby Brown, Anitta e Margot Robbie. Ela é referência em comunicação digital e jornalismo de entretenimento"
   },
   {
     "INFLUENCIADOR": "Ana Hikari",
     "@": "_anahikari",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://s2-quem.glbimg.com/RMa1L0OBbV5z02Me32g16f4nMdY=/0x0:1400x950/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2024/A/a/59BbW8TjKdAcT3ztO1lw/ana-hikari.jpg",
     "IG": "1.1 M",
     "TTK": "1.3 M",
     "YT": "-",
@@ -2592,14 +2754,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Feminismo, cultura pop, podcast, ativismo social, atuação",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Ana Hikari é atriz, apresentadora e influenciadora digital. Formada em Artes Cênicas pela USP, foi a primeira protagonista asiática da TV Globo, interpretando Tina em Malhação: Viva a Diferença, papel que também levou para a série As Five. Ela já atuou em novelas como Quanto Mais Vida Melhor e Família É Tudo, além de produções da Star+ e Warner. Ana também é apresentadora do podcast Clube do Erro, onde discute histórias reais com humor e empatia. Reconhecida pela Forbes “30 Under 30” e pelo Prêmio Mulheres Que Transformam, ela usa suas redes para falar sobre racismo, feminismo, LGBTQIA+ e representatividade asiática. Seu conteúdo é engajado, inteligente e inspirador"
   },
   {
     "INFLUENCIADOR": "Felipe Roque",
     "@": "feliperoque",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://br.web.img2.acsta.net/pictures/20/04/08/17/17/0731167.jpg",
     "IG": "1.1 M",
     "TTK": "514",
     "YT": "-",
@@ -2607,14 +2770,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Atuação, televisão, lifestyle, teatro",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Felipe Roque é ator e modelo carioca, com carreira iniciada aos 13 anos. Atuou em novelas como A Regra do Jogo, Malhação: Pro Dia Nascer Feliz, Gênesis e A Infância de Romeu e Julieta. Além da atuação, Felipe tem carreira como modelo internacional e já morou em Milão. Ele é conhecido por seu estilo, carisma e versatilidade artística, transitando entre televisão, teatro e cinema. Com mais de 1 milhão de seguidores, compartilha bastidores de gravações, vida pessoal e projetos culturais"
   },
   {
     "INFLUENCIADOR": "Dudu Farias",
     "@": "dudufarias",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://aloalobahia.com/images/p/dudufariasentrevista_e_alo_alo_bahia.jpg",
     "IG": "1.1 M",
     "TTK": "-",
     "YT": "-",
@@ -2622,14 +2786,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, inclusão, festas e eventos",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Dudu Farias é stylist, influenciador digital e promoter. Ele é conhecido por vestir celebridades como Rodrigo Faro, Thiaguinho, Marina Ruy Barbosa, Claudia Leitte e Ivete Sangalo, além de ter colaborado com Carlinhos Maia em coleções de moda como a linha unissex Essential da marca Baška, desfilada no SPFW. Com um acervo de mais de 8 mil peças, Dudu é referência em moda masculina e luta contra a gordofobia no universo fashion. Seu conteúdo nas redes sociais mistura bastidores de produções, reflexões sobre estética e inclusão, além de mostrar sua rotina agitada como stylist e promoter. Ele também é conhecido por sua personalidade extrovertida e por estar envolvido em grandes eventos e parcerias com marcas do setor de moda e entretenimento"
   },
   {
     "INFLUENCIADOR": "Juliana Paiva",
     "@": "paivajuliana",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUqjGz8xN6pabpCiKc40UDniq5boKV2xz3cw&s",
     "IG": "1.1 M",
     "TTK": "79 mil",
     "YT": "-",
@@ -2637,14 +2802,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Atuação, lifestyle, televisão",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Juliana Paiva é atriz brasileira, nascida em 1993 no Rio de Janeiro. Ficou conhecida por papéis marcantes em novelas como Ti Ti Ti, Malhação, Totalmente Demais, O Tempo Não Para e Salve-se Quem Puder. Com uma carreira sólida na TV Globo, Juliana também atuou em filmes e séries da Netflix e Prime Video. Seu estilo é moderno e autêntico, e ela é reconhecida por sua versatilidade e carisma nas telas"
   },
   {
     "INFLUENCIADOR": "Daniele Hypolito",
     "@": "danyhypolito",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7_-vQhCE40N1LIZzlnRUAxtbwd_YBYdM7z7OORr7SJUWXpGGUPJGDrr_y39jmFbVKjas&usqp=CAU",
     "IG": "1 M",
     "TTK": "101 mil",
     "YT": "-",
@@ -2652,14 +2818,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Reality shows, saúde mental, motivação",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Daniele Hypolito é ex-ginasta olímpica e influenciadora digital. Foi a primeira brasileira a conquistar uma medalha em mundiais de ginástica artística e participou de cinco Olimpíadas. Em 2025, entrou no BBB 25 ao lado do irmão Diego Hypolito, mostrando um lado mais leve e divertido. Daniele também participou de realities como Dancing Brasil e Power Couple, e atua como comentarista esportiva. Seu conteúdo é voltado para motivação, saúde emocional e bastidores da vida esportiva"
   },
   {
     "INFLUENCIADOR": "Sarah Aline",
     "@": "sarah_aline",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2023/01/16/foto-01-vbhw7afgl9v6.jpg",
     "IG": "1 M",
     "TTK": "80 mil",
     "YT": "-",
@@ -2667,14 +2834,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Diversidade, inclusão, lifestyle, psicologia",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Sarah Aline é psicóloga, analista de diversidade e influenciadora digital. Ganhou notoriedade ao participar do BBB 23, onde se destacou por sua inteligência emocional e posicionamentos firmes. Ela criou o projeto “Sarah Aline de A a Z”, que aborda temas de saúde mental com linguagem acessível. Sarah também atua em empresas promovendo inclusão de mulheres, pessoas negras, LGBTQIA+ e PCDs. Seu conteúdo é educativo, acolhedor e voltado para transformação social"
   },
   {
     "INFLUENCIADOR": "Isabela Matte",
     "@": "isabelamatte",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/NXRYY9j7gXjThFeS_PQh5a75tKjyND3YN1WwhN4GGV6opabJoAyGBltmkakTr5VPRtnTcpstxw=s900-c-k-c0x00ffffff-no-rj",
     "IG": "1 M",
     "TTK": "479 mil",
     "YT": "130 mil",
@@ -2682,14 +2850,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Maternidade, marketing digital, educação, moda",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Isabela Matte é empresária e influenciadora digital, fundadora da marca Isabela Matte Store aos 12 anos. Aos 14, já era milionária e hoje lidera uma empresa com mais de 120 mil clientes. Também criou a Isabela Matte Academy, onde oferece cursos sobre empreendedorismo e vendas. Reconhecida pela Forbes Under 30, Isabela compartilha conteúdos sobre moda consciente, maternidade e gestão de negócios. Seu estilo é elegante e acessível, e ela inspira jovens empreendedoras com sua trajetória precoce e bem-sucedida"
   },
   {
     "INFLUENCIADOR": "Barbara França",
     "@": "barbarafrancaa",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://s2-gshow.glbimg.com/Qqoc8SbdnEHHZnW3bddOUMfdhyA=/0x0:1080x865/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2018/C/E/Rf5FpjTg2WNCaY2ahYMA/barbarafrancaa-21373734-1271554119621457-9153709093242798080-n.jpg",
     "IG": "1 M",
     "TTK": "208 mil",
     "YT": "-",
@@ -2697,14 +2866,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, publicidade, atuação",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Barbara Souza França é atriz brasileira, nascida em São Lourenço (MG) e criada no Rio de Janeiro. Começou sua carreira aos 13 anos em campanhas publicitárias e estreou na TV em 2006. Ganhou destaque como Bárbara em Malhação: Pro Dia Nascer Feliz e atuou em novelas como Tempo de Amar, Verão 90, Amor Sem Igual e Gênesis . Formada em teatro pela escola O Tablado, Barbara também estudou jornalismo e tem interesse em cinema. Seu estilo é elegante e versátil, e ela é reconhecida por sua dedicação à arte e autenticidade."
   },
   {
     "INFLUENCIADOR": "Lourena",
     "@": "lourenaofficial",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://uploads.metroimg.com/wp-content/uploads/2024/03/14164931/Lourena-Rap-Preconceito-Album-4.jpg",
     "IG": "1 M",
     "TTK": "290 mil",
     "YT": "488 mil",
@@ -2712,14 +2882,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Feminismo, cultura urbana",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Lourena é cantora, compositora e influenciadora digital carioca, conhecida por sua participação nas edições 9, 11 e 14 do projeto Poesia Acústica. Com letras que abordam vivências femininas e sociais, ela se destaca como uma das principais vozes do rap feminino no Brasil. Lourena também é ativa nas redes sociais, onde compartilha bastidores de sua carreira e reflexões sobre machismo e representatividade. Seu estilo mistura sensibilidade com força, e ela inspira com autenticidade e talento."
   },
   {
     "INFLUENCIADOR": "Drica Divina",
     "@": "dricadivina",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/H8XTbW9nLImZ72ryXr5lcUGMRFBxpTdzB2a9PW6Km9Pnu3W2TVgXF-OalC0XJ78YE5VXhCoM=s900-c-k-c0x00ffffff-no-rj",
     "IG": "1 M",
     "TTK": "703 mil",
     "YT": "-",
@@ -2727,14 +2898,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Empoderamento feminino, comportamento, autoestima",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Drica Divina, nome artístico de Adriana Tabuti, é maquiadora, influenciadora e palestrante. Com mais de 2 milhões de seguidores, ela é referência em beleza para mulheres maduras e combate o etarismo nas redes sociais. Indicada ao TikTok Awards e ao Prêmio iBest, Drica compartilha dicas de maquiagem, cuidados com a pele e reflexões sobre independência feminina. Seu conteúdo é acolhedor, educativo e voltado para mulheres que buscam se reconectar com sua autoestima."
   },
   {
     "INFLUENCIADOR": "Douglas feijhonys",
     "@": "feijhonys",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8AFnFggh_NVUkbjFsakq97kAnyFILgq_dbQ&s",
     "IG": "1 M",
     "TTK": "1.4 M",
     "YT": "150 mil",
@@ -2742,14 +2914,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Família, cultura nordestina, cotidiano, gastronomia",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
-    "MINI BIO - INFLUENCIADOR": "Douglas Oliveiro, conhecido como Feijhonys, é influenciador digital do Ceará que viralizou com vídeos sobre sua rotina doméstica, receitas simples e momentos com sua avó, Dona Jó. Com mais de 3 milhões de seguidores, ele mistura humor, afeto e autenticidade, mostrando o dia a dia de forma leve e inspiradora. Douglas é conhecido por seu carisma, simplicidade e por representar com orgulho suas raíes nordestinas."
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
+    "MINI BIO - INFLUENCIADOR": "Douglas Oliveiro, conhecido como Feijhonys, é influenciador digital do Ceará que viralizou com vídeos sobre sua rotina doméstica, receitas simples e momentos com sua avó, Dona Jó. Com mais de 3 milhões de seguidores, ele mistura humor, afeto e autenticidade, mostrando o dia a dia de forma leve e inspiradora. Douglas é conhecido por seu carisma, simplicidade e por representar com orgulho suas raízes nordestinas."
   },
   {
     "INFLUENCIADOR": "Thiago Pantaleão",
     "@": "thiagopantaleao",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2023/03/01/screenshot_20230301-123822_2-1h84uq8qlzlma.png",
     "IG": "907 mil",
     "TTK": "1.5 M",
     "YT": "105 mil",
@@ -2757,29 +2930,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Representatividade LGBTQIA+, moda, ativismo social",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Thiago Pantaleão é cantor, compositor e dançarino carioca, nascido em Vassouras (RJ). Sua música mistura R&B, pop e funk com letras sobre identidade, aceitação e diversidade. Ganhou destaque com o single Tipo Iza e lançou os álbuns Fim do Mundo e Nova Era. Thiago é uma das vozes mais potentes da nova geração do pop brasileiro, com influências de Rihanna, Beyoncé e Gloria Groove. Ele também é engajado em causas LGBTQIA+ e usa sua arte para promover inclusão e representatividade."
-  },
-  {
-    "INFLUENCIADOR": "Wanessa Wolf",
-    "@": "wanessawolf",
-    "IMAGEM_URL": "",
-    "IG": "881 mil",
-    "TTK": "714 mil",
-    "YT": "365 mil",
-    "SEGMENTO": "Humor",
-    "SEGMENTO SECUNDÁRIO": "Cultura pop, streaming, representatividade LGBTQIA+, games",
-    "PROJETOS": "-",
-    "REF. VALOR": "-",
-    "ESCOPO": "-",
-    "AGÊNCIA": "Mynd",
-    "MINI BIO - INFLUENCIADOR": "Wanessa Wolf é streamer, apresentadora e influenciadora digital trans, natural de Niterói (RJ). Começou sua carreira em 2018 com transmissões ao vivo de jogos e vídeos de comédia, conquistando uma legião de fãs com seu estilo irreverente e engajado. Wanessa é conhecida por seu humor ácido, bordões marcantes e por abordar temas como transfobia e inclusão com inteligência e leveza. Em 2023, arrecadou R$20 mil para ONGs trans durante lives de Hogwarts Legacy. Atualmente, apresenta o Programa da Wanessa na DiaTV e é uma das vozes mais influentes da comunidade LGBTQIA+ no Brasil"
   },
   {
     "INFLUENCIADOR": "Chico Salgado",
     "@": "chico_salgado",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBhs7b8aGpsqVrVpQPCnWhOlnxSq1gX4owPw&s",
     "IG": "842 mil",
     "TTK": "-",
     "YT": "5 mil",
@@ -2787,14 +2946,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lutas, lifestyle, treinamento físico, saúde",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Chico Salgado é personal trainer, educador físico e especialista em lutas, conhecido como o “personal das estrelas”. Responsável pela transformação física de celebridades como Bruna Marquezine, Fábio Assunção, Angélica e Giovanna Ewbank, Chico criou o método Personal Fight, que mistura MMA com treino funcional. Ele também atua como preparador físico em filmes e séries, como Tropa de Elite. Com mais de 700 mil seguidores, é referência em saúde, performance e bem-estar, e tem como missão democratizar o acesso à atividade física no Brasil"
   },
   {
     "INFLUENCIADOR": "Gabisteca",
     "@": "gabiisteca",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://p2.trrsf.com/image/fget/cf/500/0/images.terra.com/2023/07/26/330977242_6205442442851372_9020076189036390507_n-vbhdvmsifh2v.jpg",
     "IG": "832 mil",
     "TTK": "2.2 M",
     "YT": "10 mil",
@@ -2802,14 +2962,31 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Moda, atuação, cultura pop",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Gabriela Araújo, conhecida como Gabisteca, é atriz, apresentadora e influenciadora digital. Com mais de 2 milhões de seguidores no TikTok, ela viralizou com vídeos de humor, poesia e histórias pessoais. Gabisteca já cobriu eventos como o Emmy, Grammy Latino e Oscar pela TNT Brasil, e é reconhecida por sua versatilidade artística e autenticidade. Seu conteúdo mistura criatividade, crítica social e leveza, e ela é considerada uma das vozes mais promissoras da nova geração de criadores de conteúdo."
+  },
+  {
+    "INFLUENCIADOR": "Lorelay Fox",
+    "@": "loreray_fox",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbu8PUYPYTHs-iqlrWnHnnYzj0COTfUJc9ag&s",
+    "IG": "727 mil",
+    "TTK": "129 mil",
+    "YT": "1 M",
+    "SEGMENTO": "Beleza",
+    "SEGMENTO SECUNDÁRIO": "Cultura drag, diversidade, humor, cultura pop",
+    "PROJETOS": "-",
+    "REF. VALOR": "-",
+    "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
+    "MINI BIO - INFLUENCIADOR": "Lorelay Fox é o nome artístico de Danilo Dabague, publicitário, drag queen, youtuber e influenciador digital. Pioneira no conteúdo drag no Brasil, Lorelay viralizou com vídeos sobre maquiagem, identidade LGBTQIA+ e cultura pop. Com mais de 1 milhão de inscritos no YouTube, é jurada fixa do reality Corrida das Blogueiras e já participou de programas como Amor & Sexo e Superbonita. Lorelay é reconhecida por seu carisma, inteligência e por promover debates importantes com leveza e humor."
   },
   {
     "INFLUENCIADOR": "Sacha Bali",
     "@": "sachabali",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9x-sHnQFhGuH1e7G5Rbi76tfX6oB_XB6zTw&s",
     "IG": "710 mil",
     "TTK": "35 mil",
     "YT": "-",
@@ -2817,14 +2994,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Atuação, reality show, produção cultural",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Sacha Bali é ator, diretor, roteirista e produtor carioca. Com carreira iniciada em 2005, atuou em novelas como Bicho do Mato, Os Mutantes, Jesus e Salve Jorge, além de filmes e séries como Bom Dia, Verônica e 1 Contra Todos. Em 2024, venceu o reality A Fazenda 16, ganhando destaque nacional. Sacha é conhecido por sua versatilidade artística, carisma e engajamento com temas sociais. Também é formado em cinema e tem experiência como cameraman e roteirista."
   },
   {
     "INFLUENCIADOR": "Mari Moon",
     "@": "marimoon",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8YRAbnwc8srxS8sWXg4DoSZDqgNjyx237xA&s",
     "IG": "701 mil",
     "TTK": "33 mil",
     "YT": "366 mil",
@@ -2832,14 +3010,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura pop, ativismo, tecnologia",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Mari Moon, nome artístico de Mariana de Souza Alves Lima, é apresentadora, influenciadora digital e pioneira da internet brasileira. Ficou famosa em 2003 com seu blog no Fotolog e se tornou VJ da MTV Brasil, apresentando programas como Scrap MTV e Acesso MTV. Também atuou como dubladora (voz da Vanellope em Detona Ralph) e participou de eventos como Lollapalooza e CCXP. Mari é referência em estilo, criatividade e ativismo digital, sendo uma das primeiras influenciadoras do país."
   },
   {
     "INFLUENCIADOR": "Nátaly Neri",
     "@": "natalyneri",
-    "IMAGEM_URL": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQcGyPfVtJwA-SsybRsb3zJevgwfALsU_QAUplP3ZZrXnQjZhS_EsyErQ9UXcbuHWM-cWKidEyeLfPopDsICwPZNwNp39FcotPrVXC0-A",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrp9HdFZ7Z1gJ3vD6ADU6VBb-jsotiKwwKnw&s",
     "IG": "659 mil",
     "TTK": "276 mil",
     "YT": "813 mil",
@@ -2847,14 +3026,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Moda, beleza, empoderamento feminino, equidade racial",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Nátaly Neri é comunicadora, cientista social e influenciadora digital. Formada pela UNIFESP, ela se destacou como uma das primeiras criadoras de conteúdo a abordar beleza e estilo de vida com foco em questões étnico-sociais. Seu canal no YouTube, Afros e Afins, discute temas como representatividade, direitos LGBTQIA+, e sustentabilidade. Nátaly também é apresentadora de programas como DiaCast e Tem Que Sustentar, e jurada no Corrida das Blogueiras. Reconhecida por prêmios como MTV MIAW e iBest, ela inspira com sua abordagem crítica, acessível e transformadora"
   },
   {
     "INFLUENCIADOR": "Laura Fernandez",
     "@": "laura",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://s2-quem.glbimg.com/307Qv2vJzMA5KY2BNwPVeDkvx3o=/0x0:948x948/fit-in/988x948/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2024/h/B/rz13MeRUm1GgxT3r8MBQ/laura-fernandez.jpg",
     "IG": "563 mil",
     "TTK": "52 mil",
     "YT": "18 mil",
@@ -2862,14 +3042,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Maternidade, saúde, lifestyle, atuação",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Laura Fernandez é modelo, atriz e influenciadora digital. Ficou conhecida por sua relação com Francisco Gil (filho de Preta Gil), com quem teve sua filha Sol de Maria aos 16 anos. Laura compartilha reflexões sobre maternidade precoce, autoestima e saúde reprodutiva, tendo congelado seus óvulos aos 27 anos como forma de cuidar de si mesma. Ela também atua em novelas como Elas por Elas e é reconhecida por sua autenticidade, beleza e força emocional."
   },
   {
     "INFLUENCIADOR": "Dragbox",
     "@": "canaldragbox",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/ZY2OPGHBpaCgp9gmd3og-BfzZhQVTyEz88mTgNSSa397Nn8LJ6vWyCsG7eiCyd0BC5KQYAFwuA=s900-c-k-c0x00ffffff-no-rj",
     "IG": "516 mil",
     "TTK": "995 mil",
     "YT": "337 mil",
@@ -2877,14 +3058,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Entretenimento, gastronomia, cultura drag, educação",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Dragbox é um canal criado pelo casal de drag queens Tatá M. Shady (Thairone Cavalcanti) e Olive Oil (Eduardo Kunst). Com mais de 245 mil inscritos no YouTube, o canal aborda temas como cultura pop, LGBTQIAPN+, humor e conhecimento geral. Eles também apresentam quadros como Escolinha do Dragbox e Dragbox na Cozinha na DiaTV. O conteúdo é leve, divertido e inclusivo, com forte presença em eventos e espetáculos como EAD com Dragbox Ao Vivo. Tatá e Olive são referência em criatividade e representatividade."
   },
   {
     "INFLUENCIADOR": "Kaique Cerveny",
     "@": "kaiquecerveny",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://sportbuzz.com.br/wp-content/uploads/2025/01/kaique-cerveny-e-destaque-no-maior-festival-de-crossfit-do-mundo.jpg",
     "IG": "545 mil",
     "TTK": "55 mil",
     "YT": "-",
@@ -2892,14 +3074,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Nutrição, lifestyle, publicidade",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Kaique Cerveny é atleta profissional de crossfit, campeão brasileiro da modalidade em 2019 e medalhista internacional. Natural de Bauru (SP), mora em Brasília e também estuda Nutrição. Ganhou notoriedade ao se tornar namorado da cantora Juliette, mas já era conhecido por sua rotina intensa de treinos e por compartilhar conteúdos motivacionais e educativos sobre alto desempenho físico. Kaique também realiza campanhas publicitárias e planeja lançar conteúdos exclusivos sobre sua rotina como atleta"
   },
   {
     "INFLUENCIADOR": "Caio Franco",
     "@": "francocaio",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg4MDieXWLkN4EnsL6anKqoURVudAiSufVfw&s",
     "IG": "535 mil",
     "TTK": "159 mil",
     "YT": "-",
@@ -2907,14 +3090,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, motivação, moda esportiva",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Caio Franco é personal trainer, influenciador digital e empresário. Conhecido como o “personal dos famosos”, ele treina celebridades como Whindersson Nunes, Ana Hickmann e Mari Gonzalez. Caio compartilha treinos funcionais, dicas de condicionamento físico e bastidores de sua rotina com clientes de alto desempenho. Além de atuar como preparador físico em eventos internacionais, como lutas de boxe, Caio também é sócio da marca de roupas ÉOH Hype Culture, voltada ao público fitness e urbano. Seu conteúdo é motivacional, técnico e voltado para quem busca performance, saúde e estilo de vida ativo."
   },
   {
     "INFLUENCIADOR": "Gabriela Loran",
     "@": "gabrielaloran",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNKd42sei2aW8iyRUqDBomqUV2yc8RzbXHTg&s",
     "IG": "534 mil",
     "TTK": "431 mil",
     "YT": "27 mil",
@@ -2922,14 +3106,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Atuação, representatividade LGBTQIA+, cultura pop",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Gabriela Loran é atriz, modelo, influenciadora digital e ativista trans. Natural de São Gonçalo (RJ), foi a primeira atriz trans a interpretar uma personagem trans em uma novela da Globo (Malhação: Vidas Brasileiras). Desde então, atuou em produções como Arcanjo Renegado, Cara e Coragem, Renascer e Novela (Prime Video). Em 2024, passou por cirurgia de redesignação de gênero e compartilhou sua experiência com coragem e transparência. Gabriela é embaixadora da L'Oréal Paris e usa sua voz para promover inclusão, protagonismo trans e letramento social"
   },
   {
     "INFLUENCIADOR": "Viegas",
     "@": "viegas",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://cdn.folhape.com.br/img/pc/1100/1/dn_arquivo/2022/01/viegas-foto-rodrigo-marconatto1.jpg",
     "IG": "527 mil",
     "TTK": "1 mil",
     "YT": "19 mil",
@@ -2937,29 +3122,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura urbana, ativismo social",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Marcos Aurélio Viegas de Carvalho, conhecido como Viegas, é cantor, compositor e ex-participante do Big Brother Brasil 18 e No Limite. Viegas construiu sua carreira musical de forma independente, vendendo CDs pelas ruas e misturando rap, reggae e mensagens de resistência. Após o BBB, ele ganhou visibilidade nacional e lançou o álbum Conexão, reforçando sua identidade musical e social. Viegas é conhecido por seu estilo autêntico, dreads marcantes (que cortou após 20 anos), e por sua postura firme em realities. Ele também é pai da Marina, e mantém uma relação forte com sua família, que inspira suas composições. Além da música, Viegas atua como comunicador e ativista, promovendo cultura periférica e debates sobre identidade e arte urbana"
-  },
-  {
-    "INFLUENCIADOR": "Lia Clark",
-    "@": "liaclark",
-    "IMAGEM_URL": "",
-    "IG": "512 mil",
-    "TTK": "246 mil",
-    "YT": "382 mil",
-    "SEGMENTO": "Música",
-    "SEGMENTO SECUNDÁRIO": "Representatividade LGBTQIA+, moda, ativismo",
-    "PROJETOS": "-",
-    "REF. VALOR": "-",
-    "ESCOPO": "-",
-    "AGÊNCIA": "Mynd",
-    "MINI BIO - INFLUENCIADOR": "Lia Clark é cantora, compositora e drag queen brasileira, pioneira no funk dentro da arte drag . Ficou conhecida com o hit Trava Trava e desde então lançou álbuns como Clark Boom e É da Pista. Lia é referência em representatividade LGBTQIA+ na música, misturando letras ousadas com crítica social e empoderamento. Já se apresentou no Rock in Rio e colabora com artistas como Pabllo Vittar e Mulher Pepita. Seu conteúdo é vibrante, provocativo e libertador"
   },
   {
     "INFLUENCIADOR": "Thalya Hillebrant",
     "@": "thalia_hill",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdYHiFn3rhnv5oqwmgQVG7bx8WmLms9wT1vg&s",
     "IG": "461 mil",
     "TTK": "104 mil",
     "YT": "-",
@@ -2967,14 +3138,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Farmácia, lifestyle, motivação, corrida",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Thalya Hillebrant é farmacêutica e influenciadora digital apaixonada por corrida. Ganhou destaque ao compartilhar vídeos com seu pai, Jorge Hillebrant, mostrando a rotina de treinos e competições, o que viralizou nas redes sociais. Ela venceu sua primeira meia maratona e inspira seguidores com conteúdos sobre superação, saúde e bem-estar. Seu estilo é leve, motivacional e voltado para quem busca qualidade de vida."
   },
   {
     "INFLUENCIADOR": "Irlaine tavares",
     "@": "irlaineee",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://conteudo.imguol.com.br/c/entretenimento/00/2022/10/21/irlaine-tavares-proprietaria-da-it-wigs-1666393654155_v2_450x600.jpg",
     "IG": "441 mil",
     "TTK": "159 mil",
     "YT": "35 mil",
@@ -2982,14 +3154,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Marketing digital, moda, mentoria, empreendedorismo",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Irlaine Tavares é empresária, influenciadora e mentora, fundadora da marca It Wigs, especializada em laces para mulheres negras. Começou como manicure e fotógrafa, e hoje fatura milhões com vendas online e marketing de afiliados. Irlaine também ensina outras mulheres negras a empreender e se comunicar digitalmente. Seu conteúdo é inspirador, educativo e voltado para autoestima, liberdade financeira e empoderamento feminino."
   },
   {
     "INFLUENCIADOR": "Raull Santiago",
     "@": "raullsantiago",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://fncj.org.br/media/zoo/images/Raul_Santiago_da_Silva_42783cee25facc23e2023a470f35c146.jpg",
     "IG": "413 mil",
     "TTK": "10 mil",
     "YT": "1 mil",
@@ -2997,14 +3170,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Empreendedorismo, comunicação comunitária, sustentabilidade, direitos humanos",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Raull Santiago é ativista, empreendedor e influenciador digital, fundador do coletivo Papo Reto no Complexo do Alemão (RJ) . Ele atua em defesa dos direitos humanos, contra a violência policial e pela equidade racial. Também é embaixador de eventos como a Brazilian Week em Nova York e foi eleito um dos 50 profissionais mais criativos do Brasil. Raull se define como “sobrevivedor” e usa sua trajetória para inspirar jovens periféricos a empreender com consciência de classe"
   },
   {
     "INFLUENCIADOR": "Zaynara",
     "@": "zaynaraa",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://p2.trrsf.com/image/fget/cf/940/0/images.terra.com/2025/10/25/captura-de-tela-2025-10-24-210828-1hv395jikywde.png",
     "IG": "406 mil",
     "TTK": "241 mil",
     "YT": "49 mil",
@@ -3012,14 +3186,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura amazônica, moda, ativismo regional",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Zaynara Damasceno Cruz é cantora e compositora paraense, considerada a nova diva do beat melody — um estilo que mistura brega, calypso e tecnomelody. Começou sua carreira aos 8 anos em uma banda familiar e lançou seu primeiro álbum aos 16. Em 2024, assinou com a Sony Music e lançou feats com Pabllo Vittar, Joelma e Gaby Amarantos. Premiada como Revelação do Ano no Prêmio Multishow, Zaynara é conhecida por sua voz potente, presença de palco e por representar a cultura do Norte com orgulho e autenticidade"
   },
   {
     "INFLUENCIADOR": "Carol Novaes",
     "@": "carolnovaes",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://s2-quem.glbimg.com/u8zvuVQtq6w_sfP5UE3ugRgy7RQ=/0x0:1080x1080/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2024/T/O/zdspeGSTWmWdz3o0mvTQ/carol-novaes-sera-destaque-da-unidos-de-vila-maria-no-carnaval-2024-alvaro-dellafina.jpg",
     "IG": "390 mil",
     "TTK": "3 mil",
     "YT": "-",
@@ -3027,14 +3202,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Direito, moda, televisão, empoderamento feminino",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
-    "MINI BIO - INFLUENCIADOR": "Carol Novaes é advogada, influenciadora digital e ex-participante do reality Casamento às Cegas da Netflix. Após o programa, deixou o escritório de advocacia para se dedicar à carreira artística e passou a abordar temas como igualdade racial, moda e empoderamento feminino    . Ela também atua como mestre de cerimônia e palestrante, sendo agenciada pela Mynd. Carol é conhecida por seu posicionamento firme, carisma e por inspirar mulheres a se reinventarem."
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
+    "MINI BIO - INFLUENCIADOR": "Carol Novaes é advogada, influenciadora digital e ex-participante do reality Casamento às Cegas da Netflix. Após o programa, deixou o escritório de advocacia para se dedicar à carreira artística e passou a abordar temas como igualdade racial, moda e empoderamento feminino . Ela também atua como mestre de cerimônia e palestrante, sendo agenciada pela Mynd. Carol é conhecida por seu posicionamento firme, carisma e por inspirar mulheres a se reinventarem."
   },
   {
     "INFLUENCIADOR": "Gouvs",
     "@": "oigouvs",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw5e4LwLeORo_Mo8p_O2UlYLFf25yNQlr_AQ&s",
     "IG": "385 mil",
     "TTK": "107 mil",
     "YT": "-",
@@ -3042,14 +3218,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Inteligência artificial, cultura pop, lifestyle, humor",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Carlos Gouveia, conhecido como Gouvs, é influenciador digital e criador de conteúdo culinário. Natural de Jarinu (SP), viralizou ao testar receitas sugeridas pelo ChatGPT, criando pratos inusitados como panqueca de cerveja e arroz de presunto . Com mais de 400 mil seguidores, Gouvs mistura humor, criatividade e acessibilidade em seus vídeos. Ele venceu o reality Tastemakers da Tastemade Brasil e apresenta seu próprio programa de culinária. Seu estilo é leve, divertido e acolhedor."
   },
   {
     "INFLUENCIADOR": "Thuany Raquel",
     "@": "thuanyraquel",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHLRdhp9Qkmjh6awtztF0s-hFYP7InbpuLAA&s",
     "IG": "341 mil",
     "TTK": "121 mil",
     "YT": "-",
@@ -3057,14 +3234,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Psicologia, empreendedorismo, lifestyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Thuany Raquel é psicóloga, empresária, modelo e influenciadora digital. Ganhou notoriedade ao participar do reality Brincando com Fogo Brasil da Netflix, onde se destacou por sua personalidade forte e atitude. Ela compartilha conteúdos sobre saúde mental, moda e empoderamento feminino, e tem mais de 340 mil seguidores no Instagram. Thuany é conhecida por sua autenticidade, beleza e por promover reflexões sobre relacionamentos e autoestima"
   },
   {
     "INFLUENCIADOR": "Darlan Romani",
     "@": "darlan_romani",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://www.olimpiadatododia.com.br/wp-content/uploads/2024/03/Darlan.jpg.webp",
     "IG": "309 mil",
     "TTK": "-",
     "YT": "-",
@@ -3072,14 +3250,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Motivação, superação, saúde",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Darlan Romani é atleta olímpico brasileiro especializado em arremesso de peso. Natural de Concórdia (SC), é campeão mundial indoor e bicampeão pan-americano. Detentor de recordes sul-americanos, Darlan ficou em 4º lugar nas Olimpíadas de Tóquio e é conhecido como “Sr. Incrível” por sua força e carisma. Superou desafios como COVID-19 e hérnia de disco, e inspira com sua trajetória de superação e dedicação ao esporte."
   },
   {
     "INFLUENCIADOR": "Carmem Virginia",
     "@": "carmemvirginia",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuFfyCSumqVRFi_ADoKq8H55nzvtnj8SBgeg&s",
     "IG": "286 mil",
     "TTK": "925",
     "YT": "1 mil",
@@ -3087,14 +3266,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura ancestral, empoderamento negro, espiritualidade de matriz africana",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Carmem Virginia é uma renomada chef pernambucana e proprietária do restaurante Altar Cozinha Ancestral, com unidades em Recife e São Paulo. Seu trabalho é voltado para a valorização da culinária afro-brasileira, com pratos que celebram a ancestralidade e a espiritualidade das religiões de matriz africana. Ela já cozinhou para celebridades como Will Smith e participou do MasterChef Brasil como convidada especial. Carmem é conhecida por sua personalidade forte, acolhedora e por usar a gastronomia como ferramenta de resistência cultural e inclusão."
   },
   {
     "INFLUENCIADOR": "Bruna Mariani",
     "@": "brunamarianii",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXNklTUP2VhbbQvzi-yTee64WTvTXtU9-X6Q&s",
     "IG": "202 mil",
     "TTK": "1.8 M",
     "YT": "8 mil",
@@ -3102,14 +3282,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Moda, lifestyle, entretenimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Bruna Mariani é uma influenciadora digital e modelo que conquistou mais de 2 milhões de seguidores no TikTok com seus conteúdos voltados para cuidados com a pele, cabelo e dicas de compras. Ela também compartilha momentos do seu dia a dia, incluindo seu relacionamento e experiências pessoais. Bruna tem um estilo leve e divertido, e seu conteúdo é voltado para quem busca dicas práticas de beleza com um toque de humor e autenticidade."
   },
   {
     "INFLUENCIADOR": "Janaina Torres",
     "@": "janainatorresoficial",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://gowhere.com.br/wp-content/uploads/2023/10/Janaina-Torres-Rueda_Cred-Marcus-Steinmeyer-17-682x1024.jpg",
     "IG": "193 mil",
     "TTK": "-",
     "YT": "-",
@@ -3117,14 +3298,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Empreendedorismo, inclusão social, sustentabilidade",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Janaina Torres Rueda é uma das chefs mais premiadas do Brasil, eleita a melhor chef mulher do mundo pelo World's 50 Best Restaurants em 2024. Ela é proprietária de diversos estabelecimentos em São Paulo, como A Casa do Porco e Bar da Dona Onça. Nascida no Brás, Janaina começou sua trajetória vendendo lanches na infância e hoje é referência mundial em gastronomia. Seu trabalho une alta cozinha com inclusão social, sustentabilidade e valorização da cultura popular brasileira."
   },
   {
     "INFLUENCIADOR": "Jinki Winkki",
     "@": "jinkwinkki",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://pbs.twimg.com/media/G1U983NXMAAAok6.jpg",
     "IG": "193 mil",
     "TTK": "304 mil",
     "YT": "70 mil",
@@ -3132,14 +3314,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, representatividade negra, cultura pop",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Jinki Winkki, nome artístico de Gabriela Pereira, é streamer e criadora de conteúdo voltada para o universo gamer, especialmente League of Legends. Ela é conhecida por seu estilo divertido, carismático e engajado, sendo uma voz importante na luta por mais representatividade de mulheres negras no cenário dos eSports. Jinki também participa de projetos como as Garotas Mágicas e já integrou organizações como Vorax e Xisde. Seu conteúdo mistura gameplay, humor e mensagens de empoderamento."
   },
   {
     "INFLUENCIADOR": "Arthur Viana",
     "@": "arthurr_viana",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQe2Px3XRkUvT28I-SSBqF7le45imj2v_uuZQ&s",
     "IG": "189 mil",
     "TTK": "1.1 M",
     "YT": "570 mil",
@@ -3147,14 +3330,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Séries, curiosidades, cultura pop",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Arthur Viana é um influenciador digital e youtuber apaixonado por cinema. Ele se destaca por suas análises profundas e bem-humoradas de filmes clássicos, blockbusters e séries populares. Arthur também é palestrante e criador de conteúdo na Rio2C, e seu estilo combina conhecimento técnico com leveza e entretenimento. Ele compartilha curiosidades, listas temáticas e reações a trailers, sempre com uma abordagem acessível e divertida."
   },
   {
     "INFLUENCIADOR": "Bia Nogueira",
     "@": "nnogueirabea",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1969097916137562112/xy83_CVZ_400x400.jpg",
     "IG": "179 mil",
     "TTK": "612 mil",
     "YT": "-",
@@ -3162,14 +3346,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Teatro, empoderamento feminino, cultura afro-brasileira",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
-    "MINI BIO - INFLUENCIADOR": "Bia Nogueira é uma multiartista mineira, cantora, atriz, compositora e produtora cultural,  com forte atuação na valorização da música feita por mulheres e da cultura negra. Fundadora do Festival Sonora e do Coletivo Mulheres Criando, ela também dirige o Festival IMuNe e integra a banda Yônika. Bia é reconhecida por sua versatilidade e criatividade, transitando entre gêneros como samba, rap, afrobeat e eletrônico. Eleita profissional do ano pelo Prêmio SIM, é uma voz potente na cena musical e cultural brasileira."
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
+    "MINI BIO - INFLUENCIADOR": "Bia Nogueira é uma multiartista mineira, cantora, atriz, compositora e produtora cultural, com forte atuação na valorização da música feita por mulheres e da cultura negra. Fundadora do Festival Sonora e do Coletivo Mulheres Criando, ela também dirige o Festival IMuNe e integra a banda Yônika. Bia é reconhecida por sua versatilidade e criatividade, transitando entre gêneros como samba, rap, afrobeat e eletrônico. Eleita profissional do ano pelo Prêmio SIM, é uma voz potente na cena musical e cultural brasileira."
   },
   {
     "INFLUENCIADOR": "Preto Zezé",
     "@": "pretozeze",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1427384619972837385/9Gc4vdGa_400x400.jpg",
     "IG": "172 mil",
     "TTK": "-",
     "YT": "-",
@@ -3177,14 +3362,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Música, literatura, poliíticas públicas",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Preto Zezé, nascido Francisco José Pereira de Lima, é uma das maiores lideranças das favelas brasileiras. Criado na favela das Quadras, em Fortaleza, ele começou sua trajetória como rapper e ativista, e hoje é presidente da Central Única das Favelas (CUFA), com atuação nacional e internacional. Seu trabalho é voltado para o combate ao racismo estrutural, à desigualdade social e à promoção da inclusão. Autor de livros e palestrante, Preto Zezé é conhecido por transformar dor em potência e por politizar a revolta em ações concretas. Ele também atua como produtor artístico e musical, e já foi reconhecido como uma das 500 pessoas mais influentes da América Latina."
   },
   {
     "INFLUENCIADOR": "Chris Castro",
     "@": "chriscastro",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcwAHFldKHqJ6Kp6TkFM9ijth3oCSjzZBSLw&s",
     "IG": "167 mil",
     "TTK": "4 mil",
     "YT": "16 mil",
@@ -3192,14 +3378,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Nutrição, estética, marketing de influência, empreendedorismo digital",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
-    "MINI BIO - INFLUENCIADOR": "Chris Castro é nutricionista especializada em Nutrição Clínica Funcional e influenciadora digital com foco em beleza e saúde. Ela é criadora do curso “Influenciadora Lucrativa”, voltado para mulheres que desejam viver da sua influência digital de forma profissional e rentável 2. Atualmente, Chris é Diretora Artística de Beleza e Moda na Mynd, maior agência de marketing de influência do Brasil. Seu conteúdo é técnico, acessível e voltado para o bem-estar, com dicas práticas sobre alimentação saudável, skincare e cosméticos. Ela também é reconhecida por sua capacidade de ensinar outras mulheres a monetizar sua presença online com autenticidade e estratégia."
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
+    "MINI BIO - INFLUENCIADOR": "Chris Castro é nutricionista especializada em Nutrição Clínica Funcional e influenciadora digital com foco em beleza e saúde. Ela é criadora do curso “Influenciadora Lucrativa”, voltado para mulheres que desejam viver da sua influência digital de forma profissional e rentável 2. Atualmente, Chris é Diretora Artística de Beleza e Moda na Mynd, maior agência de marketing de influência do Brasil. Seu conteúdo é técnico, acessível e voltado para o bem-estar, com dicas práticas sobre alimentação saudável, skincare e cosméticos. Ela também é reconhecida por sua capacidade de ensinar outras mulheres a monetizar sua presença online com autenticidade e estratégia.\n"
   },
   {
     "INFLUENCIADOR": "Facundo Guerra",
     "@": "facundoguerra",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://f.i.uol.com.br/fotografia/2023/10/03/1696342021651c20058852b_1696342021_3x2_xl.jpg",
     "IG": "129 mil",
     "TTK": "40 mil",
     "YT": "-",
@@ -3207,14 +3394,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Inovação, cultura, arquitetura, liderança, entretenimento urbano",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Facundo Guerra é um empresário argentino radicado no Brasil, conhecido como o “rei da noite paulistana”. CEO do Grupo Vegas, ele é responsável por empreendimentos icônicos como Cine Joia, Bar dos Arcos, Riviera, Blue Note e Mirante 9 de Julho. Com formação em engenharia de alimentos, jornalismo e ciências políticas, Facundo é um empreendedor criativo que transforma espaços urbanos em experiências culturais. Ele também atua como apresentador, palestrante e escritor, e é reconhecido por sua visão de mundo que une propósito, estética e impacto social. Seu trabalho é voltado para a revitalização do centro de São Paulo e para a criação de negócios com alma e memória."
   },
   {
     "INFLUENCIADOR": "Batata",
     "@": "batatagg",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxtHR3F41SBCoHPYWmsmXI6bEyRQYZxi_-cA&s",
     "IG": "106 mil",
     "TTK": "495 mil",
     "YT": "798 mil",
@@ -3222,29 +3410,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura pop, humor, entretenimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Batata é streamer e youtuber brasileiro, conhecido por seu conteúdo voltado para jogos como GTA RP, The Sims, Free Fire e Resident Evil. Com mais de 799 mil inscritos no YouTube e presença ativa no TikTok e Twitch, ele é agenciado pela Mynd e tem um estilo divertido, espontâneo e próximo do público. Batata também participa de eventos de cultura pop e é reconhecido por sua criatividade e carisma nas transmissões ao vivo"
-  },
-  {
-    "INFLUENCIADOR": "Muka",
-    "@": "falamuka",
-    "IMAGEM_URL": "",
-    "IG": "92 mil",
-    "TTK": "7 mil",
-    "YT": "83 mil",
-    "SEGMENTO": "Política",
-    "SEGMENTO SECUNDÁRIO": "Cultura pop, reality shows, carnaval, entrevistas, bastidores da TV",
-    "PROJETOS": "-",
-    "REF. VALOR": "-",
-    "ESCOPO": "-",
-    "AGÊNCIA": "Mynd",
-    "MINI BIO - INFLUENCIADOR": "Murilo Ribeiro, conhecido como Muka, é jornalista e influenciador digital carioca. Criador do “Space do Muka”, uma das salas de conversa por áudio mais ouvidas do mundo no Twitter, ele se tornou referência na cobertura de reality shows e temas políticos. Atualmente trabalha na Empresa Brasil de Comunicação (EBC) e é agenciado pela Mynd. Seu conteúdo é espontâneo, divertido e informativo, e ele é conhecido como o “Reizinho dos Spaces” por sua habilidade de criar ambientes acolhedores e engajados"
   },
   {
     "INFLUENCIADOR": "Tassia Magalhães",
     "@": "tassia_magalhaes",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://viagem.cnnbrasil.com.br/wp-content/uploads/sites/5/2023/06/tassia-magalhaes-chef-nelita.jpg?w=1200&h=900&crop=1",
     "IG": "48 mil",
     "TTK": "-",
     "YT": "-",
@@ -3252,29 +3426,31 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Confeitaria, empreendedorismo feminino, sustentabilidade",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Tássia Magalhães é chef e proprietária do restaurante Nelita, em São Paulo, eleito um dos melhores da América Latina pelo prêmio 50 Best. Ela lidera uma equipe exclusivamente feminina e é reconhecida por sua cozinha sensível, autoral e sofisticada. Com formação internacional e experiência em restaurantes como Noma e Geranium, Tássia usa a gastronomia como ferramenta de empoderamento e transformação social. Seu estilo valoriza a delicadeza, a memória afetiva e a sororidade"
   },
   {
     "INFLUENCIADOR": "Jessica Ferreira",
     "@": "furiia_",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAtGUgANtdm0-Gf0YC4SZNI1YqT2tNytSkkg&s",
     "IG": "47 mil",
     "TTK": "-",
     "YT": "-",
     "SEGMENTO": "Esporte",
-    "SEGMENTO SECUNDÁRIO": "Empreendedorismo feminino, motivação,  lifestyle",
+    "SEGMENTO SECUNDÁRIO": "Empreendedorismo feminino, motivação, lifestyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Jessica Ferreira é atleta profissional de futsal e influenciadora digital. Com presença no TikTok e Instagram, ela compartilha conteúdos sobre sua rotina esportiva, motivação e empoderamento feminino. Jessica também atua como mentora e empreendedora, ajudando outras mulheres a desenvolverem suas carreiras digitais. Seu estilo é autêntico, determinado e voltado para o crescimento pessoal e profissional"
   },
   {
     "INFLUENCIADOR": "Rodrigo Terron",
     "@": "rodrigoterron",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://s2-pegn.glbimg.com/CRz5405wa6UnJPM2d7WIjMcESQg=/0x0:4240x2832/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_ba41d7b1ff5f48b28d3c5f84f30a06af/internal_photos/bs/2024/u/B/HAWY8gTx686ZBCdMKC2g/rt-4.jpg",
     "IG": "44 mil",
     "TTK": "10 mil",
     "YT": "-",
@@ -3282,14 +3458,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Educação digital, inovação, tecnologia",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Rodrigo Terron é CEO da Rocketseat, uma das maiores plataformas de educação em programação do Brasil, e conselheiro da organização de eSports Los Grandes. Com mais de 10 anos de atuação, ele é referência em tecnologia, inovação e empreendedorismo. Terron também é agenciado pela Mynd e foi destaque na lista Forbes Under 30. Sua trajetória é marcada por superação — cresceu sem acesso à internet e hoje lidera uma das maiores comunidades de desenvolvedores da América Latina. Seu conteúdo inspira jovens a entrarem no mundo da tecnologia com propósito e impacto."
   },
   {
     "INFLUENCIADOR": "Luan Iaconis",
     "@": "luaniaconis",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOnTcmHxRBa33wUHQyLX0U_o8tiz4I3JdEog&s",
     "IG": "24 mil",
     "TTK": "88 mil",
     "YT": "-",
@@ -3297,14 +3474,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Roteiro, animação 2D, cultura pop, reality shows, atuação",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
-    "MINI BIO - INFLUENCIADOR": "Luan Iaconis é ator, humorista, roteirista e animador 2D. Ele ficou conhecido por interpretar o personagem Maicon na série Auto Posto do Comedy Central e por seus vídeos virais no TikTok. Luan também participou de realities como VC na DiaTV e é presença constante em eventos culturais e entrevistas com artistas como Liniker e Pabllo Vittar.\n Seu conteúdo mistura humor ácido, crítica social e referências da cultura pop, com vídeos que vão de animações a esquetes cômicas. Luan é carismático, criativo e engajado, e seu estilo conecta com a Geração Z por meio de narrativas bem construídas e personagens marcantes."
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
+    "MINI BIO - INFLUENCIADOR": "Luan Iaconis é ator, humorista, roteirista e animador 2D. Ele ficou conhecido por interpretar o personagem Maicon na série Auto Posto do Comedy Central e por seus vídeos virais no TikTok. Luan também participou de realities como VC na DiaTV e é presença constante em eventos culturais e entrevistas com artistas como Liniker e Pabllo Vittar.\nSeu conteúdo mistura humor ácido, crítica social e referências da cultura pop, com vídeos que vão de animações a esquetes cômicas. Luan é carismático, criativo e engajado, e seu estilo conecta com a Geração Z por meio de narrativas bem construídas e personagens marcantes."
   },
   {
     "INFLUENCIADOR": "walissonfortes",
     "@": "walissonfortesoficial",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5W7HXaPz20RpL5B1jX9jsQin6FnRXrKyhfw&s",
     "IG": "8 mil",
     "TTK": "-",
     "YT": "-",
@@ -3312,14 +3490,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Superação, inclusão, motivação, lifestyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Walisson Fortes é atleta paralímpico brasileiro, campeão mundial dos 100m rasos na classe T64. Natural de Eldorado do Sul (RS), ele começou no esporte após um acidente de moto que resultou na amputação de parte da perna. Desde então, se tornou referência em superação e alto rendimento, conquistando medalhas em competições internacionais e quebrando recordes brasileiros. Seu conteúdo nas redes sociais é voltado para motivação, inclusão e rotina de treinos, inspirando milhares de pessoas com sua história de resiliência e conquista."
   },
   {
     "INFLUENCIADOR": "Cecília Araujo",
     "@": "ceciliaraujo_",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://s2-ge.glbimg.com/GpMAM9aSunhgYqbfPvlhxtJR6hE=/4000x0/filters:format(jpeg)/https://i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2024/U/f/G7yBH6QBunjUXK53RBiQ/aca-8171.jpg",
     "IG": "8 mil",
     "TTK": "-",
     "YT": "-",
@@ -3327,14 +3506,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Autoestima, empoderamento feminino, saúde, superação",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Mynd",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Cecília Araújo é nadadora paralímpica brasileira, medalhista em diversas competições internacionais, incluindo os Jogos de Tóquio e campeonatos mundiais. Diagnosticada com paralisia cerebral ao nascer, ela encontrou na natação uma forma de terapia e, depois, uma carreira. Cecília é conhecida por sua força, carisma e dedicação, e usa suas redes para falar sobre autoestima, inclusão e os desafios enfrentados por pessoas com deficiência. Sua trajetória inspira jovens atletas e mulheres a acreditarem em seu potencial."
   },
   {
     "INFLUENCIADOR": "Graciely Junqueira",
     "@": "gracielyjunqueiraoficial",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://i.pinimg.com/736x/d0/2a/f7/d02af76799a263536371ab4b9ee14dba.jpg",
     "IG": "2.7 M",
     "TTK": "1.6 M",
     "YT": "895 mil",
@@ -3342,14 +3522,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Moda, atuação, música, lifestyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
-    "MINI BIO - INFLUENCIADOR": "Graciely Junqueira é atriz, influenciadora digital e criadora de conteúdo com mais de 1,5 milhão de seguidores no TikTok. Ela ficou conhecida por seus papéis nas novelas “Cúmplices de um Resgate” e “As Aventuras de Poliana”, e hoje compartilha dicas de beleza, moda e cuidados com cabelo cacheado. Graciely também é cantora e dubladora, e inspira sua comunidade com mensagens de autoestima, estilo de vida saudável e autenticidade. Seu conteúdo é leve, divertido e voltado para jovens que buscam se expressar com liberdade."
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
+    "MINI BIO - INFLUENCIADOR": "Graciely Junqueira é atriz, influenciadora digital e criadora de conteúdo com mais de 1,5 milhão de seguidores no TikTok. Ela ficou conhecida por seus papéis nas novelas “Cúmplices de um Resgate” e “As Aventuras de Poliana”, e hoje compartilha dicas de beleza, moda e cuidados com cabelo cacheado. Graciely também é cantora e dubladora, e inspira sua comunidade com mensagens de autoestima, estilo de vida saudável e autenticidade. Seu conteúdo é leve, divertido e voltado para jovens que buscam se expressar com liberdade.\n"
   },
   {
     "INFLUENCIADOR": "Zabela",
     "@": "yorkbela",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://holofotte.com/wp-content/uploads/2025/08/FotoSite_Zabela-scaled.jpg",
     "IG": "1.2 M",
     "TTK": "2.8 M",
     "YT": "-",
@@ -3357,14 +3538,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura pop, lifestyle, dublagens virais",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Zabela, também conhecida como Izabela Severo, é um fenômeno do TikTok, com milhões de seguidores conquistados por seus áudios virais e humor afiado. Ela ficou conhecida por transformar falas do cotidiano em conteúdos cômicos e altamente compartilháveis, como o famoso caso do “Melocoton” contado no programa do Porchat. Seu estilo é espontâneo, sarcástico e muito criativo, e ela é agenciada pela Holofotte. Zabela também colabora com outros criadores e é presença constante em trends e memes da internet."
   },
   {
     "INFLUENCIADOR": "Luiz Felipe",
     "@": "euluizfelipealves",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://f.i.uol.com.br/fotografia/2025/03/19/174240585167db00db2eb97_1742405851_3x4_md.jpg",
     "IG": "739 mil",
     "TTK": "788 mil",
     "YT": "-",
@@ -3372,14 +3554,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Culinária prática, organização, humor, relacionamento LGBTQIA+",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Conhecido como o “Moço da Lancheira”, Luiz Felipe viralizou ao compartilhar as marmitas carinhosamente preparadas para seu marido, Diógenes . Com mais de 800 mil seguidores no TikTok, ele se destaca por um conteúdo leve, afetivo e inspirador, que mistura receitas, rotina doméstica e reflexões sobre o dia a dia. Luiz é casado, pai de pets e mora em São Paulo. Seu conteúdo é voltado para quem busca autenticidade, acolhimento e uma vida com mais intenção e afeto."
   },
   {
     "INFLUENCIADOR": "Gabriel Magela",
     "@": "gabrielmagela_",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtzZbFciAzdiLbO57Rp_z4uLqkuZjc3461Ig&s",
     "IG": "585 mil",
     "TTK": "748 mil",
     "YT": "-",
@@ -3387,14 +3570,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, esportes, viagens, pets, psicologia",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Gabriel Magela é psicólogo, pós-graduado em neurociências e comportamento humano, e criador de conteúdo com mais de 700 mil seguidores. Ele compartilha conteúdos sobre saúde mental de forma acessível e leve, além de mostrar sua rotina de treinos, viagens e momentos com seu cachorro Marcinho. Gabriel também atua na área esportiva e inspira sua comunidade com mensagens de autocuidado, resiliência e bem-estar emocional. Seu estilo é acolhedor, informativo e motivador."
   },
   {
     "INFLUENCIADOR": "Mari Fernandes",
     "@": "marifrnd",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEaxVhzZEG-HBhmTiN3PkV1IJIF2iwCcQFmg&s",
     "IG": "425 mil",
     "TTK": "101 mil",
     "YT": "-",
@@ -3402,14 +3586,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Empreendedorismo musical, lifestyle, relacionamentos",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Mari Fernandez, nome artístico de Mariana Fernandes de Sousa, é uma das maiores vozes femininas do piseiro e forró no Brasil. Natural do Ceará, ela começou a cantar ainda criança e ganhou destaque nacional com o hit “Não, Não Vou”, que viralizou no TikTok. Desde então, lançou diversos sucessos e parcerias com artistas como Gustavo Mioto, Maiara & Maraisa e Zé Felipe. Mari também é empresária e tem se destacado por sua autenticidade, carisma e força no cenário musical. Em 2023, assumiu publicamente sua bissexualidade e seu relacionamento com a modelo Júlia Ribeiro."
   },
   {
     "INFLUENCIADOR": "Micaela Di Corrado",
     "@": "micaeladicorrado",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwVXbnKJixRTvCXZN2SFSmaWOme8RyHDTWYA&s",
     "IG": "382 mil",
     "TTK": "125 mil",
     "YT": "-",
@@ -3417,14 +3602,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Bem-estar, magia natural, sustentabilidade, pets, decoração",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
-    "MINI BIO - INFLUENCIADOR": "Micaela Di Corrado é artista audiovisual, fotógrafa e criadora de conteúdo apaixonada por decoração, rituais de autocuidado e estilo de vida consciente. Com mais de 130 mil seguidores no TikTok, ela compartilha dicas de decoração vintage, organização, rituais com cristais e plantas, além de receitas e momentos com seus pets. Seu conteúdo é esteticamente acolhedor, com foco em bem-estar, espiritualidade e romantização da rotina. Micaela também oferece consultorias e cursos sobre criação de conteúdo e decoração afetiva."
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
+    "MINI BIO - INFLUENCIADOR": "Micaela Di Corrado é artista audiovisual, fotógrafa e criadora de conteúdo apaixonada por decoração, rituais de autocuidado e estilo de vida consciente. Com mais de 130 mil seguidores no TikTok, ela compartilha dicas de decoração vintage, organização, rituais com cristais e plantas, além de receitas e momentos com seus pets. Seu conteúdo é esteticamente acolhedor, com foco em bem-estar, espiritualidade e romantização da rotina. Micaela também oferece consultorias e cursos sobre criação de conteúdo e decoração afetiva.\n"
   },
   {
     "INFLUENCIADOR": "Matheus Esperon",
     "@": "esperonquegoste",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7ksHnQ22o06VXcuUFqODMgoHzAIcRnFeNxA&s",
     "IG": "379 mil",
     "TTK": "545 mil",
     "YT": "15 mil",
@@ -3432,14 +3618,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura pop, humor, lives interativas",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Matheus Esperon é criador de conteúdo apaixonado por filmes e séries. Com mais de 500 mil seguidores no TikTok e presença ativa no YouTube, ele compartilha análises, dicas e curiosidades sobre o universo audiovisual. Seus vídeos têm um estilo leve e divertido, e ele costuma se apresentar como “aquele amigo que fala de filmes e séries”. Esperon também realiza lives diárias e é agenciado pela Holofotte, sendo uma referência para quem busca conteúdo geek com bom humor e autenticidade"
   },
   {
     "INFLUENCIADOR": "Luiz Marts",
     "@": "luizmarts",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSv-HfOh6MyfzFRxMa_zq5VZH_MEA374nYptA&s",
     "IG": "311 mil",
     "TTK": "196 mil",
     "YT": "-",
@@ -3447,14 +3634,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Moda, lifestyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Luiz Marts é influenciador digital especializado em beleza, com foco em skincare e maquiagem. Ele compartilha resenhas sinceras, tutoriais e dicas de autocuidado com leveza e humor. Com mais de 68 mil seguidores no TikTok e presença no Instagram, Luiz inspira sua comunidade com conteúdos acessíveis e criativos. É agenciado pela Holofotte e tem se destacado por sua autenticidade e conexão com o público jovem."
   },
   {
     "INFLUENCIADOR": "Mannu Mallibu",
     "@": "mannumallibu",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTxNCM-7NzZDKmIlXfOERZjvqPGLcRxcYxIw&s",
     "IG": "286 mil",
     "TTK": "1.9 M",
     "YT": "7700",
@@ -3462,14 +3650,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Representatividade LGBTQIA+, teatro, lifestyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Mannu Mallibu é a drag queen criada por Daniel Ernane, humorista e artista com formação teatral. Com mais de 1,9 milhão de seguidores no TikTok, Mannu viralizou com vídeos de personagens autorais que retratam situações cotidianas com muito humor e carisma. Seu conteúdo é leve, criativo e altamente compartilhável, e ela é agenciada pela Holofotte. Mannu também atua em campanhas publicitárias e eventos culturais."
   },
   {
     "INFLUENCIADOR": "Experimente SP",
     "@": "experimente.sp",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_mTtjhYGJ6LJa09A3vsMmiwycvjf-fYaCSLeMO4_ezyFPoQ=s900-c-k-c0x00ffffff-no-rj",
     "IG": "301 mil",
     "TTK": "54 mil",
     "YT": "4660",
@@ -3477,14 +3666,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Gastronomia, hospedagem, exposições, lifestyle, experiências culturais em SP",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Criado por Bruna e Felipe, o Experimente SP é um projeto de conteúdo voltado para explorar São Paulo de forma afetiva e curiosa. O casal compartilha dicas de passeios, restaurantes, exposições, hospedagens e experiências únicas na cidade — como visitar o Borboletário do Museu Catavento ou a exposição imersiva de Friends. Com presença ativa no TikTok, Instagram e YouTube, o perfil é referência para quem busca descobrir novos rolês e lugares encantadores. O estilo é acolhedor, informativo e visualmente atrativo, com foco em experiências acessíveis e memoráveis."
   },
   {
     "INFLUENCIADOR": "Let Vasconcelos",
     "@": "_letvasconcelos",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://i.pinimg.com/736x/22/7b/b0/227bb091aefc56ac783b9aa74056f067.jpg",
     "IG": "272 mil",
     "TTK": "137 mil",
     "YT": "-",
@@ -3492,14 +3682,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Skincare, autoestima, lifestyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Let Vasconcelos é influenciadora digital apaixonada por beleza e autocuidado. Ela compartilha dicas de skincare, maquiagem e truques que ajudam sua comunidade a se sentir mais confiante. Com um papo leve e bem-humorado, Let também aborda temas como autoestima, relacionamentos e rotina de forma autêntica e inspiradora. Seu conteúdo é voltado para mulheres jovens que buscam se cuidar com leveza e estilo, e ela é agenciada pela Holofotte."
   },
   {
     "INFLUENCIADOR": "Wendy Hazin",
     "@": "wendyhazin",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRY3AMHCNKG8Hj9JBWczZJ_POCvfAL1Qxg3RA&s",
     "IG": "235 mil",
     "TTK": "365 mil",
     "YT": "-",
@@ -3507,14 +3698,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Beleza, maternidade, viagens, empreendedorismo, lifetyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Wendy Hazin é influenciadora digital, empresária e criadora de conteúdo voltada para moda, beleza e lifestyle. Ela compartilha sua rotina como mãe, empreendedora e mulher moderna, com dicas de looks, cuidados pessoais e experiências de viagem. Wendy também é fundadora da marca Hazin, voltada para moda feminina. Seu estilo é elegante, acolhedor e inspirador, com uma comunicação próxima e empática com seu público."
   },
   {
     "INFLUENCIADOR": "Lucas Alencar",
     "@": "lucasalencar_blog",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLjRANoJ0sAUYsr8z7MirBvK80xwsx2OE1ew&s",
     "IG": "189 mil",
     "TTK": "257 mil",
     "YT": "-",
@@ -3522,14 +3714,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Beleza, viagens, comportamento, cultura pop. lifestyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
-    "MINI BIO - INFLUENCIADOR": "Lucas Alencar é influenciador digital e criador de conteúdo voltado para moda masculina, estilo de vida e beleza. Com uma estética refinada e comunicação leve, ele compartilha dicas de looks, cuidados com a pele e experiências culturais. Lucas também aborda temas como autoestima, diversidade e comportamento masculino contemporâneo. Seu conteúdo é visualmente bem produzido e voltado para homens que buscam se expressar com autenticidade."
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
+    "MINI BIO - INFLUENCIADOR": "Lucas Alencar é influenciador digital e criador de conteúdo voltado para moda masculina, estilo de vida e beleza. Com uma estética refinada e comunicação leve, ele compartilha dicas de looks, cuidados com a pele e experiências culturais. Lucas também aborda temas como autoestima, diversidade e comportamento masculino contemporâneo. Seu conteúdo é visualmente bem produzido e voltado para homens que buscam se expressar com autenticidade.\n"
   },
   {
     "INFLUENCIADOR": "João Gorri",
     "@": "joaogorri",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVhmtpZNpxhr5oC7MJblaES30OliiompODqw&s",
     "IG": "140 mil",
     "TTK": "2700",
     "YT": "-",
@@ -3537,14 +3730,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Fotografia, lifestyle, cultura urbana",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "João Gorri é criador de conteúdo voltado para moda masculina, comportamento e estética urbana. Com uma linguagem visual forte e conteúdo autoral, ele compartilha reflexões sobre masculinidade, estilo e identidade. João também atua como modelo e fotógrafo, trazendo uma abordagem artística e sensível para suas redes. Seu conteúdo é sofisticado, introspectivo e voltado para expressão pessoal."
   },
   {
     "INFLUENCIADOR": "Gab Ambrósio",
     "@": "gabsambrosio",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-HGNDmvttg8O_Hs26TEH733SpqLYn1hhTSA&s",
     "IG": "182 mil",
     "TTK": "202 mil",
     "YT": "-",
@@ -3552,14 +3746,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Beleza, lifestyle, cultura pop, fotografia",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Gab Ambrósio é influenciadora digital e criadora de conteúdo com foco em moda, beleza e lifestyle. Ela compartilha looks criativos, dicas de estilo e momentos do dia a dia com uma estética moderna e autêntica. Gab também aborda temas como cultura pop, fotografia e expressão pessoal, com uma comunicação leve e visualmente marcante. Seu conteúdo é voltado para quem busca inspiração e identidade na moda."
   },
   {
     "INFLUENCIADOR": "Johnny Garcia",
     "@": "johnnygarci4",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNAYenWJXVvM2ESrpMDr4CnxJN6gPUnHAqgw&s",
     "IG": "128 mil",
     "TTK": "686 mil",
     "YT": "-",
@@ -3567,14 +3762,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura pop, comportamento, lifestyle, entretenimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Johnny Garcia é influenciador digital conhecido por seus vídeos de humor e comentários sobre cultura pop. Com uma linguagem divertida e espontânea, ele cria conteúdos que misturam comédia, crítica social e entretenimento. Johnny também aborda temas como comportamento, relacionamentos e cotidiano com leveza e sarcasmo. Seu estilo é irreverente, criativo e voltado para o público jovem."
   },
   {
     "INFLUENCIADOR": "Ramile Alves",
     "@": "cantos.eencantos",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0Xa63-fAW_9HK3vmIvwz3dB8b_j2P3ZYlAg&s",
     "IG": "123 mil",
     "TTK": "9200",
     "YT": "-",
@@ -3582,14 +3778,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Astrologia, feminilidade, bem-estar, rituais",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Ramile Alves é terapeuta holística e criadora do projeto Cantos e Encantos, voltado para espiritualidade, autoconhecimento e práticas ancestrais. Ela compartilha conteúdos sobre astrologia, rituais femininos, ciclos lunares e cura energética, com uma abordagem acolhedora e intuitiva. Ramile também realiza vivências e mentorias voltadas para mulheres, promovendo reconexão com o sagrado feminino. Seu estilo é sensível, místico e profundamente conectado com a natureza e a energia dos ciclos."
   },
   {
     "INFLUENCIADOR": "Nannoca",
     "@": "nannoca",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://blog.lojasrenner.com.br/wp-content/uploads/2022/09/capa_interno_2x-65.jpg",
     "IG": "122 mil",
     "TTK": "20 mil",
     "YT": "-",
@@ -3597,14 +3794,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura pop, comportamento, lifestyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Nannoca é criadora de conteúdo conhecida por seus vídeos bem-humorados sobre situações do dia a dia, relacionamentos e cultura pop. Com uma linguagem espontânea e divertida, ela conquistou um público fiel nas redes sociais, especialmente no TikTok e Instagram. Seu conteúdo mistura comédia, crítica leve e identificação com o público jovem. Nannoca também participa de campanhas publicitárias e colabora com marcas voltadas para lifestyle e entretenimento."
   },
   {
     "INFLUENCIADOR": "Frimes",
     "@": "frimes",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://hashtagpop.com.br/wp-content/media/2024/02/frimes-1.png",
     "IG": "118 mil",
     "TTK": "65 mil",
     "YT": "18 mil",
@@ -3612,14 +3810,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Moda, arte, comportamento, lifestyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Frimes é cantora, compositora e influenciadora digital com forte presença na cena alternativa brasileira. Seu estilo mistura pop experimental, estética retrô e referências visuais marcantes. Além da música, Frimes compartilha conteúdos sobre moda, arte e comportamento, com uma abordagem criativa e provocativa. Ela é conhecida por sua autenticidade, senso estético apurado e por representar uma geração que busca liberdade de expressão e identidade."
   },
   {
     "INFLUENCIADOR": "Pedro Ferraz",
     "@": "pedro__ferraz",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzYhVuPFhrt2Ug3RBo8jnkkQf2icTVGpDHAA&s",
     "IG": "116 mil",
     "TTK": "216 mil",
     "YT": "-",
@@ -3627,14 +3826,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Fotografia, viagens, comportamento, lifestyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Pedro Ferraz é influenciador digital e criador de conteúdo voltado para moda masculina, fotografia e estilo de vida. Com uma estética minimalista e elegante, ele compartilha dicas de looks, registros de viagens e reflexões sobre comportamento. Pedro também atua como modelo e colabora com marcas de moda e lifestyle. Seu conteúdo é visualmente refinado, introspectivo e voltado para expressão pessoal e autenticidade"
   },
   {
     "INFLUENCIADOR": "Pedro Andrini",
     "@": "pedroandrini",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvemkHaPqTw4uJPrFX5vkngo4EJct8NmrZzwHz38D_XJL64QAJTRmPgP32M1Gxmq7DPTY&usqp=CAU",
     "IG": "95 mil",
     "TTK": "34 mil",
     "YT": "39 mil",
@@ -3642,14 +3842,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, cultura pop, fotografia",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Pedro Andrini é criador de conteúdo com foco em moda masculina, comportamento e lifestyle. Ele compartilha looks, reflexões sobre masculinidade contemporânea e registros visuais com forte apelo estético. Pedro também aborda temas como cultura pop e expressão pessoal, com uma linguagem leve e moderna. Seu conteúdo é voltado para homens que buscam estilo, autenticidade e conexão com temas atuais."
   },
   {
     "INFLUENCIADOR": "Sophia Lara",
     "@": "sophialaralorem",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ5fjf2qRHSGlGFNVUw3rMVbbIsMuVKB5IVeA&s",
     "IG": "79 mil",
     "TTK": "1.4 M",
     "YT": "195 mil",
@@ -3657,14 +3858,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Beleza, lifestyle, comportamento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Sophia Lara é influenciadora digital e criadora de conteúdo voltada para moda e estilo de vida. Com uma estética leve e contemporânea, ela compartilha looks do dia, dicas de beleza e reflexões sobre comportamento e autoestima. Sophia também colabora com marcas de moda e beleza, trazendo autenticidade e sensibilidade para suas parcerias. Seu conteúdo é visualmente inspirador, com foco em expressão pessoal e bem-estar."
   },
   {
     "INFLUENCIADOR": "Bernardo Menezes",
     "@": "be.nardin",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://media.licdn.com/dms/image/v2/D4D03AQF53rYapDqCGQ/profile-displayphoto-shrink_200_200/B4DZbT.0zpIEAc-/0/1747313184420?e=2147483647&v=beta&t=VeYeHSF4vcgmdZ9IpK2OfvtwBHYVn4h2uv2fPgeYSSQ",
     "IG": "67 mil",
     "TTK": "325 mil",
     "YT": "-",
@@ -3672,14 +3874,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura pop, lifestyle, fotografia",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Bernardo Menezes, conhecido como Be Nardin, é criador de conteúdo com foco em moda masculina, comportamento e cultura pop. Ele compartilha reflexões sobre masculinidade, estilo e identidade, com uma linguagem visual forte e conteúdo autoral. Bernardo também atua como modelo e fotógrafo, trazendo uma abordagem artística e sensível para suas redes. Seu conteúdo é sofisticado, introspectivo e voltado para expressão pessoal."
   },
   {
     "INFLUENCIADOR": "Felipe sousa",
     "@": "pelosolhosdefelipe",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaB2g7RaYPcCUrFyaLZbjHIhm4uLCe7hFGag&s",
     "IG": "88 mil",
     "TTK": "7 mil",
     "YT": "-",
@@ -3687,14 +3890,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura, lifestyle, diversidade, arte",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
-    "MINI BIO - INFLUENCIADOR": "Felipe Sousa é influenciador digital e criador do projeto “Pelos Olhos de Felipe”, onde compartilha sua visão sobre o mundo por meio de moda, arte e comportamento. Com uma abordagem sensível e poética, ele fala sobre identidade, diversidade e expressão pessoal. Felipe também colabora com marcas e projetos culturais, sendo reconhecido por seu olhar artístico e engajado. Seu conteúdo é visual, reflexivo e voltado para quem busca autenticidade e profundidade nas redes."
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
+    "MINI BIO - INFLUENCIADOR": "Felipe Sousa é influenciador digital e criador do projeto “Pelos Olhos de Felipe”, onde compartilha sua visão sobre o mundo por meio de moda, arte e comportamento. Com uma abordagem sensível e poética, ele fala sobre identidade, diversidade e expressão pessoal. Felipe também colabora com marcas e projetos culturais, sendo reconhecido por seu olhar artístico e engajado. Seu conteúdo é visual, reflexivo e voltado para quem busca autenticidade e profundidade nas redes.\n"
   },
   {
     "INFLUENCIADOR": "Rafa Cota",
     "@": "rafa.cota",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQAJ4jYw3B0bMOpM_vzE9ZwNTV3JgYQgm4iBQ&s",
     "IG": "65 mil",
     "TTK": "120 mil",
     "YT": "-",
@@ -3702,14 +3906,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Maternidade, Lifestyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Rafa Cota é criadora de conteúdo digital e social media, conhecida por compartilhar sua rotina como mãe jovem e apaixonada por vida fitness. Ela inspira sua comunidade ao mostrar como concilia maternidade com treinos e autocuidado. Com mais de 185 mil seguidores, Rafa se destaca por sua autenticidade e por promover uma vida saudável e ativa, além de abordar temas como gestação, cuidados com o corpo e rotina familiar"
   },
   {
     "INFLUENCIADOR": "Vanessa Grão",
     "@": "vanessagrao",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://www.eufemea.com/wp-content/uploads/2023/01/e667d606-4711-4324-98d3-eaf5b8e15853.jpg",
     "IG": "60 mil",
     "TTK": "48 mil",
     "YT": "-",
@@ -3717,14 +3922,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Relacionamento, Educação",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Vanessa Grão é criadora de conteúdo, PCD e lésbica, que utiliza suas redes sociais para promover conscientização sobre pessoas com deficiência, feminismo e pautas LGBTQIAP+. Com mais de 110 mil seguidores, ela compartilha experiências pessoais e textos educativos, buscando dar visibilidade às dificuldades enfrentadas por minorias. Seu conteúdo é engajado, sensível e voltado para transformação social"
   },
   {
     "INFLUENCIADOR": "Isa Otto",
     "@": "isaaotto",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDv13cpmeiojqxiUSbrKmTiQV9-qBQz6HVqQ&s",
     "IG": "58 mil",
     "TTK": "8 mil",
     "YT": "9260",
@@ -3732,14 +3938,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Moda, Autoconhecimento, Humor",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Isabella Otto é jornalista e criadora de conteúdo que compartilha sua paixão pela natureza, moda retrô e consciência ambiental. Com mais de 68 mil seguidores, ela produz conteúdos humorados sobre comportamento e sustentabilidade, inspirando sua comunidade com looks vintage e reflexões sobre o cotidiano. Seu estilo único e abordagem leve tornam seu conteúdo atrativo e autêntico"
   },
   {
     "INFLUENCIADOR": "Fabrício Machado",
     "@": "fabriciomachadox",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQwT8-26wGweyzJ56zyey7XzE48jitvHb9f0A&s",
     "IG": "51 mil",
     "TTK": "91 mil",
     "YT": "-",
@@ -3747,14 +3954,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Fitness, Entretenimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Fabrício Machado, também conhecido como Fafá, é criador de conteúdo que compartilha sua rotina com autenticidade, incluindo treinos, organização pessoal e momentos de lazer. Com mais de 92 mil seguidores no TikTok e presença no YouTube, ele inspira sua comunidade com vlogs sobre produtividade e bem-estar. Além disso, é mestre de bateria da escola de samba Grande Rio, destacando-se no cenário carnavalesco por sua dedicação e carisma"
   },
   {
     "INFLUENCIADOR": "Iorgute",
     "@": "iorguti",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4OKZV7zN4J52NxJkm2gfeEdoeHTL8rk6Wuw&s",
     "IG": "50 mil",
     "TTK": "2 mil",
     "YT": "-",
@@ -3762,14 +3970,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Autoconhecimento, Relacionamento, Lifestyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Gutierre Sousa, conhecido como Iorguti, é artista e ilustrador que compartilha conteúdos sobre relações, autocuidado e estética visual. Seu trabalho é marcado por ilustrações sensíveis e vídeos com estética de café, que encantam sua comunidade. Ele também participa de projetos como “A Cor do Meu Orgulho”, promovendo representatividade e diversidade nas artes digitais"
   },
   {
     "INFLUENCIADOR": "Thiago Cordova",
     "@": "thiagocordova",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUapg-N_hVCecBoqdklefICCgXSdOA0iqnYA&s",
     "IG": "37 mil",
     "TTK": "28 mil",
     "YT": "-",
@@ -3777,14 +3986,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Criação de conteúdo",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Thiago Cordova é criador de conteúdo que compartilha vivências do seu relacionamento de forma leve e inspiradora. Com mais de 70 mil seguidores, ele também produz vídeos humorísticos sobre situações cotidianas, conquistando seu público com autenticidade e carisma. Seu conteúdo é voltado para conexões humanas e boas risadas, promovendo identificação e afeto entre os seguidores"
   },
   {
     "INFLUENCIADOR": "Marcus Frausto",
     "@": "marcusfrausto",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmiZSi8YzSHcxOcdEU2n82aHe1w-SvKG6d78AdbvqawUA1h7YU7J5E4-XbpIkmtqSI9-k&usqp=CAU",
     "IG": "33 mil",
     "TTK": "17 mil",
     "YT": "-",
@@ -3792,14 +4002,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, Entretenimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Marcus Frausto é criador de conteúdo conhecido por seu humor espontâneo e vídeos descontraídos no TikTok, onde soma mais de 17 mil seguidores e quase 400 mil curtidas. Ele compartilha situações cotidianas com uma abordagem leve e divertida, conquistando o público com autenticidade e carisma. Seu conteúdo é voltado para jovens adultos que se identificam com o humor casual e sem filtros"
   },
   {
     "INFLUENCIADOR": "Lorena Loschi",
     "@": "lorysl",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvBViNymHHUf7Wr_ASZVpnAhv9xs5s0Q7F2g&s",
     "IG": "31 mil",
     "TTK": "6700",
     "YT": "-",
@@ -3807,14 +4018,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Beleza, Lifestyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Lorena Loschi é modelo e criadora de conteúdo digital, com forte presença nos segmentos de moda e beleza. Seu estilo autêntico e criativo inspira sua comunidade, com looks que mesclam tendências e referências vintage. Além de atuar como modelo, ela compartilha seu dia a dia e dicas de estilo, conectando-se com um público jovem e engajado que busca autenticidade e inspiração estética"
   },
   {
     "INFLUENCIADOR": "Fusconautas",
     "@": "fusconautas",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdasEGyWCS37vnjyKWfrpKbmBEt1_xs7wK5Q&s",
     "IG": "23 mil",
     "TTK": "6 mil",
     "YT": "-",
@@ -3822,14 +4034,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, Cultura regional",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Holofotte",
+    "ESCOPO": "-",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Criado pelo casal sergipano Carol Mendonça e Cláudio Jedai, o projeto Fusconautas une viagens, audiovisual e o amor por um fusca chamado Lindomar. Com conteúdo de alta qualidade visual, eles compartilham experiências por destinos do Brasil e América do Sul, promovendo o turismo acessível e cultural. Carol é cineasta e Cláudio é designer e filmmaker, e juntos produzem vídeos e fotos inspiradores, com foco em autenticidade, natureza e conexão com a audiência"
   },
   {
     "INFLUENCIADOR": "Mateus Machado",
     "@": "tettrem",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://conteudo.imguol.com.br/c/splash/7d/2025/08/25/mateus-machado-e-mais-conhecido-como-tettrem-nas-redes-sociais-1756149443737_v2_1x1.jpg",
     "IG": "12 M",
     "TTK": "6.9 M",
     "YT": "689 mil",
@@ -3837,14 +4050,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Entretenimento, Criação de conteúdo, Cultura regional",
     "PROJETOS": "Black Friday",
     "REF. VALOR": "R$ 43.500",
-    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Mateus Machado, conhecido como Tettrem, é um dos maiores criadores de conteúdo do Brasil, com mais de 25 milhões de seguidores nas redes sociais. Natural de São Gonçalo (RJ), ele ficou famoso por seus vídeos de reação e humor espontâneo. Fundou uma produtora com amigos e hoje também atua como empresário e palestrante. Seu conteúdo é acessível, sem ostentação, e tem como objetivo impactar positivamente a vida das pessoas com leveza e autenticidade"
   },
   {
     "INFLUENCIADOR": "Bruna Ayra",
     "@": "brunaayraa",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR23Cx_Bwaia_frwkMdYz1CHAPGch9bR9nVGQ&s",
     "IG": "1.6 M",
     "TTK": "1.3 M",
     "YT": "52,3 mil",
@@ -3852,14 +4066,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Lifestyle, Viagem, moda",
     "PROJETOS": "Black Friday",
     "REF. VALOR": "R$ 87.000",
-    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Bruna Ayra é criadora de conteúdo brasileira com forte presença no Instagram, TikTok e YouTube, somando mais de 2,8 milhões de seguidores. Seu conteúdo mistura humor, estilo de vida, beleza e reflexões pessoais, com uma abordagem espontânea e divertida. Ela já realizou parcerias com marcas como Maybelline NY Brasil e Sicredi, e é reconhecida por seu conteúdo leve, seguro para marcas e altamente engajador, voltado para o público jovem das gerações Z e Y"
   },
   {
     "INFLUENCIADOR": "Letticia",
     "@": "letticiamunniz",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://s2-quem.glbimg.com/UUD6Vmyx3kOHcNM6o0jOCQDDf6c=/0x0:1076x676/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2023/H/U/sm532YSNy1bK5Nx9esAg/letticia.jpg",
     "IG": "1.1 M",
     "TTK": "85,6 mil",
     "YT": "-",
@@ -3867,14 +4082,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Autoconhecimento, Moda, Cultura regional",
     "PROJETOS": "Black Friday",
     "REF. VALOR": "R$ 87.000",
-    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Letticia Munniz é modelo, apresentadora e influenciadora digital, conhecida por seu ativismo em prol da positividade corporal e quebra de padrões estéticos. Com mais de 1 milhão de seguidores, ela compartilha conteúdos sobre autoaceitação, feminismo e diversidade. Já atuou como assistente de palco no “Domingão com Huck” e participou de projetos na MTV e Porta dos Fundos. Seu trabalho inspira pessoas a se libertarem de padrões e valorizarem suas singularidades"
   },
   {
     "INFLUENCIADOR": "Thalita Meneghin",
     "@": "thalitameneghim",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT4qPK6HIwR_LSI2yLGIyaM7d-z2QiiPoak6g&s",
     "IG": "1.5 M",
     "TTK": "2 M",
     "YT": "-",
@@ -3882,14 +4098,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Criação de conteúdo, Cinema e TV",
     "PROJETOS": "Black Friday",
     "REF. VALOR": "R$ 65.250",
-    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Thalita Meneghin é atriz, cantora e youtuber, cofundadora do canal “Depois das Onze”, com mais de 3 milhões de inscritos. Começou sua carreira aos 14 anos e já atuou em teatro, TV e webséries. Foi repórter da RBS TV e atualmente se dedica a projetos próprios na internet e à atuação em séries da Globo. Seu conteúdo mistura humor, entretenimento e reflexões sobre a vida, com uma abordagem leve e criativa"
   },
   {
     "INFLUENCIADOR": "Brino",
     "@": "brino",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROv3j7NRH6C3dg1dpcoT9wpIQrCIKHRMrDSay2nb-aU9HQc9DeuKv9h_a0Nt-hcftmJIM&usqp=CAU",
     "IG": "7.6 M",
     "TTK": "9.5 M",
     "YT": "6.6 M",
@@ -3897,14 +4114,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Música, Criação de conteúdo",
     "PROJETOS": "Black Friday",
     "REF. VALOR": "R$ 174.000",
-    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Bruno Moreira, conhecido como Brino, é streamer e influenciador digital com mais de 1,1 milhão de seguidores na Twitch. Ficou conhecido por suas transmissões de GTA RP e vídeos de “reacts” descontraídos. Antes da fama, trabalhou como social media e designer. Também é cantor e multi-instrumentista, e já enfrentou desafios pessoais como uma grave doença em 2019. Seu conteúdo é voltado para o público gamer e jovem, com foco em entretenimento e superação"
   },
   {
     "INFLUENCIADOR": "Samanta Alves",
     "@": "mantaalves",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Samanta_Alves_em_2024_%28cropped%29.jpg",
     "IG": "3.3 M",
     "TTK": "2.4 M",
     "YT": "-",
@@ -3912,14 +4130,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura regional, Entretenimento, Criação de conteúdo",
     "PROJETOS": "Black Friday",
     "REF. VALOR": "R$ 167.330",
-    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Samanta Alves é influenciadora e repórter carioca que ganhou destaque com o quadro “Na Galera”, realizando entrevistas bem-humoradas em espaços públicos. Começou sua carreira com vídeos de passinho em pontos turísticos do Rio de Janeiro e viralizou com conteúdos espontâneos e populares. Com mais de 5 milhões de seguidores nas redes, Samanta representa a alma suburbana carioca, misturando humor, improviso e autenticidade. Já atuou como repórter em eventos como o Prêmio Multishow e cobriu os Jogos Olímpicos de Paris em 2024. Seu diferencial é a conexão direta com o povo e a capacidade de transformar o cotidiano em conteúdo cativante"
   },
   {
     "INFLUENCIADOR": "Rao",
     "@": "raonyp",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtUbW1jf1ARxh8Sj77yK3bLuAK1C2igfel-w&s",
     "IG": "419 mil",
     "TTK": "538,8 mil",
     "YT": "2.5 M",
@@ -3927,14 +4146,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Criação de conteúdo, Cultura pop",
     "PROJETOS": "Black Friday",
     "REF. VALOR": "R$ 58.000",
-    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Raony Phillips é roteirista, dublador e criador da websérie “Girls In The House”, produzida com o jogo The Sims 4. Reconhecido por seu humor ácido e referências à cultura pop, Raony conquistou o público LGBTQIA+ com personagens icônicas e diálogos marcantes. Seu canal Rao TV ultrapassa 1,2 milhão de inscritos e ele também lançou o livro “Meu Livro. Eu que escrevi.”. Em 2024, viralizou com a série satírica “Marisa Maiô”, criada com inteligência artificial. Raony é uma das vozes mais originais da internet brasileira, misturando crítica social, representatividade e inovação digital"
   },
   {
     "INFLUENCIADOR": "Giovana Ferrarezi",
     "@": "giovanaferrarezi",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://i.pinimg.com/236x/9d/b9/ff/9db9ff3ccd5e09c6c62ec00b1651bb54.jpg",
     "IG": "589 mil",
     "TTK": "64,1 mil",
     "YT": "675 mil",
@@ -3942,14 +4162,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Beleza, Lifestyle, Criação de conteúdo",
     "PROJETOS": "Black Friday",
     "REF. VALOR": "R$ 87.000",
-    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Giovana Ferrarezi é influenciadora digital, youtuber e palestrante, com mais de 600 mil inscritos no YouTube e mais de 550 mil seguidores no Instagram. Ela compartilha dicas de estilo, beleza e experiências pessoais, além de entrevistas e reflexões sobre o mercado de influência. Giovana é referência em conteúdo criativo e já participou de eventos e campanhas voltadas para o universo fashion e digital. Seu público é majoritariamente jovem e engajado, interessado em tendências e autenticidade."
   },
   {
     "INFLUENCIADOR": "Luca Scarpelli",
     "@": "olucascarpelli",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://gama-uploads.nyc3.cdn.digitaloceanspaces.com/2022/12/qes-alt.png",
     "IG": "756 mil",
     "TTK": "159 mil",
     "YT": "182 mil",
@@ -3957,14 +4178,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Autoconhecimento, Cultura regional, Criação de conteúdo",
     "PROJETOS": "Black Friday",
     "REF. VALOR": "R$ 52.200",
-    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Luca Scarpelli é publicitário, youtuber e apresentador do Queer Eye Brasil. Homem trans e bissexual, ele criou o canal “Transdiário” para compartilhar sua jornada de transição e promover debates sobre diversidade de gênero. Luca é reconhecido por sua atuação em projetos que abordam identidade, inclusão e saúde mental. Seu conteúdo é sensível, educativo e voltado para a representatividade, com forte impacto entre o público LGBTQIA+. Também atua como palestrante e criador de narrativas autênticas nas redes sociais"
   },
   {
     "INFLUENCIADOR": "Lu Perisse",
     "@": "luisaperisse",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://p2.trrsf.com/image/fget/cf/1200/1600/middle/images.terra.com/2025/02/24/luisaperisse-1iuyahb2z6zc3.jpeg",
     "IG": "542 mil",
     "TTK": "210 mil",
     "YT": "-",
@@ -3972,14 +4194,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Música, Cinema e TV, Criação de conteúdo",
     "PROJETOS": "Black Friday",
     "REF. VALOR": "R$ 580.000",
-    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 diária/4 horas no estúdio do Terra, 1 live de até 60 minutos",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Luísa Perissé é atriz, influenciadora e filha dos atores Heloísa Perissé e Lug de Paula. Com forte veia artística herdada da família, ela atua em teatro, TV e streaming, com destaque para produções como “Sem Filtro” (Netflix) e “Os Espetaculares” (Prime Video). Em 2025, viralizou com a música “Trap do Trepa Trepa”, considerada o hit do Carnaval. Luísa mistura humor, música e carisma em seus conteúdos, conquistando um público jovem e engajado. Seu diferencial está na espontaneidade e na capacidade de transformar momentos simples em fenômenos culturais"
   },
   {
     "INFLUENCIADOR": "Érica Yokota",
     "@": "erica.yokota",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://media.licdn.com/dms/image/v2/D4D03AQGI4iLDWcPgtQ/profile-displayphoto-shrink_200_200/B4DZc2nyyaH4Ac-/0/1748968094602?e=2147483647&v=beta&t=FxjG8wuz7lVqcPb5fM30-aFjUeh-5c-y7-Es43rjTfs",
     "IG": "44,8 mil",
     "TTK": "17,6 mil",
     "YT": "202",
@@ -3987,14 +4210,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Gastronomia, Lifestyle, Cultura regional",
     "PROJETOS": "Festival de Inverno",
     "REF. VALOR": "R$ 1.980",
-    "ESCOPO": "1 Post Reels/60 segundos - 1 combo de stories de 03 telas de 15 segundos cada no Instagram",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Post Reels/60 segundos - 1 combo de stories de 03 telas de 15 segundos cada no Instagram",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Érica Yokota é designer e criadora de conteúdo apaixonada por Campos do Jordão. Ela compartilha roteiros turísticos, dicas gastronômicas e experiências locais, com foco em turismo afetivo e acessível. Seu conteúdo inclui vídeos sobre pontos turísticos, receitas caseiras e reflexões pessoais, conectando-se com um público que valoriza autenticidade, natureza e bem-estar. Também aborda temas como burnout e desenvolvimento pessoal em suas redes"
   },
   {
     "INFLUENCIADOR": "Pati | Campos Do Jordão",
     "@": "camposcompati",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhUIlklvqhyqtWb0vU57u2PWFbc_2N4hF7Bg&s",
     "IG": "275 mil",
     "TTK": "27,7 mil",
     "YT": "-",
@@ -4002,29 +4226,31 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Gastronomia, Cultura regional, Lifestyle",
     "PROJETOS": "Festival de Inverno",
     "REF. VALOR": "R$ 2.376",
-    "ESCOPO": "1 combo de stories de 03 telas de 15 segundos cada no Instagram",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 combo de stories de 03 telas de 15 segundos cada no Instagram",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Patrícia Maronês, conhecida como Pati, mora há mais de 12 anos em Campos do Jordão e é referência em conteúdo turístico sobre a cidade. Com mais de 26 mil seguidores no TikTok, ela compartilha dicas de passeios, restaurantes, eventos e curiosidades locais. Seu conteúdo é voltado para quem deseja explorar Campos do Jordão com profundidade e praticidade, sendo procurado por turistas em busca de experiências completas e personalizadas"
   },
   {
     "INFLUENCIADOR": "Campos Do Jordão por Flávia",
     "@": "lovecamposdojordao",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5PQIFcmersBn9GTkIcXgVlq_Byn4TwcKflQ&s",
     "IG": "189 mil",
     "TTK": "18,9 mil",
     "YT": "-",
     "SEGMENTO": "Viagem",
     "SEGMENTO SECUNDÁRIO": "Lifestyle, Gastronomia, Cultura regional",
     "PROJETOS": "Festival de Inverno",
-    "REF. VALOR": "R$ 2.363",
-    "ESCOPO": "1 Post Reels/60 segundos - 1 combo de stories de 03 telas de 15 segundos cada no Instagram",
+    "REF. VALOR": "R$ 2. 363",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Post Reels/60 segundos - 1 combo de stories de 03 telas de 15 segundos cada no Instagram",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Flávia é criadora do perfil “Love Campos do Jordão”, onde compartilha suas experiências na cidade com dicas de passeios, hospedagens, restaurantes e eventos. Com mais de 18 mil seguidores no TikTok e presença no YouTube, ela oferece roteiros prontos e conteúdos visuais que valorizam a beleza e a cultura local. Seu público é formado por viajantes que buscam autenticidade e conforto em suas visitas à Serra da Mantiqueira"
   },
   {
     "INFLUENCIADOR": "Raffaela Ventura",
     "@": "raffaelaventura",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqcJpGETTefGtS85jDTrTNs9Ka-u7EfDhGDQ&s",
     "IG": "72,6 mil",
     "TTK": "10,1 mil",
     "YT": "-",
@@ -4032,14 +4258,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, Criação de conteúdo",
     "PROJETOS": "Festival de Inverno",
     "REF. VALOR": "R$ 7.920",
-    "ESCOPO": "1 Post Reels/60 segundos - 1 combo de stories de 03 telas de 15 segundos cada no Instagram",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Post Reels/60 segundos - 1 combo de stories de 03 telas de 15 segundos cada no Instagram",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Raffaela Ventura é influenciadora digital que compartilha conteúdos sobre beleza, cuidados pessoais e rotina. Com presença no TikTok e YouTube, ela realiza resenhas de produtos, vídeos de transformação e dicas de organização. Seu público é formado por mulheres jovens interessadas em estética, bem-estar e vida prática. Também aborda temas como mudança de casa e desenvolvimento pessoal em seus vídeos"
   },
   {
     "INFLUENCIADOR": "Maria Júlia",
     "@": "majusalgaado",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiez40fdlducEM-UnhXJPV95W4XjRf9Jf6qOQb0Ar4t5GY18Fvleo_Jrun43s-M0Db0Us&usqp=CAU",
     "IG": "372 mil",
     "TTK": "1.1 M",
     "YT": "3100",
@@ -4047,14 +4274,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, Criação de conteúdo",
     "PROJETOS": "Festival de Inverno",
     "REF. VALOR": "R$ 15.840",
-    "ESCOPO": "1 Post Reels/60 segundos - 1 combo de stories de 03 telas de 15 segundos cada no Instagram",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Post Reels/60 segundos - 1 combo de stories de 03 telas de 15 segundos cada no Instagram",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Maria Júlia, conhecida como Maju Salgado, é influenciadora digital com mais de 1 milhão de seguidores no TikTok e mais de 50 milhões de curtidas. Natural de Canela (RS), ela compartilha vídeos engraçados, vlogs e momentos do cotidiano com uma abordagem leve e divertida. Seu conteúdo é voltado para o público jovem, com foco em humor regional, autenticidade e conexão emocional com os seguidores"
   },
   {
     "INFLUENCIADOR": "Ana Paula Sá",
     "@": "_anasa",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYR0IciyM-Gf_oedYg79nVyG20obdt46wDKg&s",
     "IG": "82,9 mil",
     "TTK": "-",
     "YT": "-",
@@ -4062,14 +4290,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Beleza, Lifestyle, Viagem",
     "PROJETOS": "Festival de Inverno",
     "REF. VALOR": "R$ 4.620",
-    "ESCOPO": "1 Post Reels/60 segundos - 1 combo de stories de 03 telas de 15 segundos cada no Instagram",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Post Reels/60 segundos - 1 combo de stories de 03 telas de 15 segundos cada no Instagram",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Ana Paula Sáenz é modelo mexicana, influenciadora digital e apresentadora de podcast. Com mais de 3 milhões de seguidores no Instagram, ela é conhecida por seu estilo marcante e por ser embaixadora da Fashion Nova. Além de moda, compartilha tutoriais de beleza, vlogs de estilo de vida e viagens internacionais. Ana também atua no setor imobiliário e apresenta o podcast “Your Life Teacher”, onde entrevista personalidades de destaque. Seu conteúdo é voltado para um público que busca glamour, autenticidade e inspiração pessoal"
   },
   {
     "INFLUENCIADOR": "Rafaella Melo",
     "@": "rafameloli",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8LkUajPspRFo1VqXzniyqi0niLFaqp-4v6w&s",
     "IG": "243 mil",
     "TTK": "147,6 mil",
     "YT": "-",
@@ -4077,14 +4306,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Moda, Beleza, Criação de conteúdo",
     "PROJETOS": "Festival de Inverno",
     "REF. VALOR": "R$ 4.224",
-    "ESCOPO": "1 Post Reels/60 segundos - 1 combo de stories de 03 telas de 15 segundos cada no Instagram",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Post Reels/60 segundos - 1 combo de stories de 03 telas de 15 segundos cada no Instagram",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Rafaella Melo é criadora de conteúdo digital que compartilha sua rotina com leveza e autenticidade. Seu perfil no Instagram (@rafameloli) é voltado para lifestyle, com destaque para looks do dia, cuidados pessoais e momentos do cotidiano. Ela se conecta com um público jovem e feminino, interessado em estética, moda acessível e experiências reais. Seu diferencial está na estética visual e na proximidade com os seguidores, criando uma comunidade engajada e acolhedora"
   },
   {
     "INFLUENCIADOR": "Livia Koeler",
     "@": "liviakoeler",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2aGurN9-bbkt3ZhwTl2PdFlmrQFfUjc8M1Q&s",
     "IG": "277 mil",
     "TTK": "782,8 mil",
     "YT": "102",
@@ -4092,14 +4322,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, Moda",
     "PROJETOS": "Festival de Inverno",
     "REF. VALOR": "R$ 13.200",
-    "ESCOPO": "1 Post Reels/60 segundos - 1 combo de stories de 03 telas de 15 segundos cada no Instagram",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Post Reels/60 segundos - 1 combo de stories de 03 telas de 15 segundos cada no Instagram",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Livia Koeler é criadora de conteúdo com mais de 750 mil seguidores no TikTok e 250 mil no Instagram. Ela compartilha vlogs, unboxings e dicas de beleza, com foco em produtos acessíveis e experiências pessoais. Seu conteúdo é leve, divertido e voltado para o público jovem feminino. Livia também aborda temas como autoestima, rotina e cuidados com o corpo, sempre com uma linguagem próxima e acolhedora"
   },
   {
     "INFLUENCIADOR": "Leticia Luger",
     "@": "leticialuger",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThIzAHonNcCS5pPTUnN15EYWM-GuuIxW18OA&s",
     "IG": "373 mil",
     "TTK": "113,1 mil",
     "YT": "258 mil",
@@ -4107,14 +4338,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Fitness, Beleza, Família",
     "PROJETOS": "Festival de Inverno",
     "REF. VALOR": "R$ 21.780",
-    "ESCOPO": "1 Post Reels/60 segundos - 1 combo de stories de 03 telas de 15 segundos cada no Instagram",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Post Reels/60 segundos - 1 combo de stories de 03 telas de 15 segundos cada no Instagram",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Letícia Luger é influenciadora digital e youtuber brasileira, com mais de 330 mil seguidores no Instagram e 250 mil inscritos no YouTube. Ela compartilha sua rotina com leveza e inspiração, abordando temas como maternidade, organização, treinos e beleza. Letícia é conhecida por seus vlogs autênticos e por mostrar sua vida real com transparência, conectando-se com um público que valoriza equilíbrio, bem-estar e rotina familiar"
   },
   {
     "INFLUENCIADOR": "Rafa Uccman",
     "@": "rafauccman",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://i.metroimg.com/gSZRqxHWCRTtn3O9-CRqpB583XNp_6Wtqge6N1g-iDQ/w:1200/q:85/f:webp/plain/2024/11/28105545/Rafa-Uccman.jpg",
     "IG": "11 M",
     "TTK": "5.8 M",
     "YT": "-",
@@ -4122,14 +4354,15 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Entretenimento, Criação de conteúdo, Cultura pop",
     "PROJETOS": "The Town",
     "REF. VALOR": "R$ 870.000",
-    "ESCOPO": "5 diárias de 06 horas - 05 posts Reels de 60 segundos+05 combos de stories de 03 telas+02 posts Feeds Carrosséis",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "5 diárias de 06 horas - 05 posts Reels de 60 segundos+05 combos de stories de 03 telas+02 posts Feeds Carrosséis",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Rafa Uccman, nome artístico de Rafael Francisco Batista, é influenciador digital, humorista e apresentador do podcast “Poccast”. Com mais de 9 milhões de seguidores no Instagram, ele se destacou com vídeos engraçados sobre relacionamentos e cotidiano. Rafa é uma figura importante na comunidade LGBTQIA+, conhecido por seu estilo andrógino e autenticidade. Já participou de reality shows e produções da TV, sendo referência em representatividade e criatividade no cenário digital brasileiro"
   },
   {
     "INFLUENCIADOR": "Vittor Fernando",
     "@": "vittorfernando",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://assets.propmark.com.br/uploads/2022/07/Vittor_Fernando.jpg",
     "IG": "5.4 M",
     "TTK": "11,1 M",
     "YT": "-",
@@ -4137,29 +4370,30 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Entretenimento, Criação de conteúdo",
     "PROJETOS": "The Town",
     "REF. VALOR": "R$ 797.500",
-    "ESCOPO": "5 diárias de 06 horas - 05 posts Reels de 60 segundos+05 combos de stories de 03 telas+02 posts Feeds Carrosséis",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "5 diárias de 06 horas - 05 posts Reels de 60 segundos+05 combos de stories de 03 telas+02 posts Feeds Carrosséis",
+    "JÁ TRABALHAMOS:": "",
     "MINI BIO - INFLUENCIADOR": "Vittor Fernando é ator, comediante e criador de conteúdo digital. Ganhou destaque durante a pandemia com vídeos de humor sobre o cotidiano, especialmente no TikTok, onde soma mais de 5,6 milhões de seguidores, e no Instagram, com mais de 3,2 milhões. Com formação em balé e teatro, ele usa sua base artística para criar personagens cômicos e situações que refletem a vida jovem. Já participou de produções como o curta “Viral” e foi roteirista do TikTok Awards. Seu conteúdo é leve, divertido e altamente viral."
   },
-  {
+{
     "INFLUENCIADOR": "Gabb",
     "@": "gabb",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://ffw.com.br/wp-content/uploads/2024/01/gabb-ffw-com_-br-2024.jpeg",
     "IG": "367 mil",
     "TTK": "354,3 mil",
     "YT": "-",
-    "SEGMENTO": "Moda",
+    "SEGMENTO": "Moda ",
     "SEGMENTO SECUNDÁRIO": "Humor, Causas sociais, Criação de conteúdo",
     "PROJETOS": "The Town",
     "REF. VALOR": "R$ 623.500",
-    "ESCOPO": "5 diárias de 06 horas - 05 posts Reels de 60 segundos+05 combos de stories de 03 telas+02 posts Feeds Carrosséis",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "5 diárias de 06 horas - 05 posts Reels de 60 segundos+05 combos de stories de 03 telas+02 posts Feeds Carrosséis",
     "MINI BIO - INFLUENCIADOR": "Gabb, nome artístico de Gabriel Moraes, é uma criadora de conteúdo não binária que revolucionou a moda digital com o programa “Ambulatório da M.O.D.A” 2. Mineira de Juiz de Fora, Gabb mistura humor ácido com críticas fashion, criando bordões como “horrorooosa” e “iconic”. Com formação em Ciências Sociais, já foi RP e DJ, e hoje é referência em inclusão e estilo. Participou do Domingão com Huck e foi convidada pelo TikTok para o Cannes Lions. Seu conteúdo é plural, divertido e engajado com a comunidade LGBTQIAP+"
   },
   {
     "INFLUENCIADOR": "Dante Olivier",
     "@": "olivierdante",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://api.poltronavip.com/wp-content/uploads/2023/01/Dante-Olivier.jpg",
     "IG": "370 mil",
     "TTK": "1.7 M",
     "YT": "21,5 mil",
@@ -4167,14 +4401,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Autoconhecimento, Arte, Cultura regional",
     "PROJETOS": "The Town",
     "REF. VALOR": "R$ 166.750",
-    "ESCOPO": "5 diárias de 06 horas - 05 posts Reels de 60 segundos+05 combos de stories de 03 telas+02 posts Feeds Carrosséis",
     "AGÊNCIA": "Cely",
-    "MINI BIO - INFLUENCIADOR": "Dante Olivier é ator, dançarino e influenciador digital, conhecido por sua atuação em pautas LGBTQIAP+ e visibilidade trans . Natural de Recife, compartilha sua jornada de transição e experiências pessoais com sensibilidade e autenticidade. Produz conteúdo sobre saúde mental, relacionamentos e arte, e já participou da série “Chão de Estrelas”. Com mais de 1,3 milhão de seguidores no TikTok, Dante é referência em representatividade e educação social."
+    "ESCOPO": "5 diárias de 06 horas - 05 posts Reels de 60 segundos+05 combos de stories de 03 telas+02 posts Feeds Carrosséis",
+    "MINI BIO - INFLUENCIADOR": "Dante Olivier é ator, dançarino e influenciador digital, conhecido por sua atuação em pautas LGBTQIAP+ e visibilidade trans . Natural de Recife, compartilha sua jornada de transição e experiências pessoais com sensibilidade e autenticidade. Produz conteúdo sobre saúde mental, relacionamentos e arte, e já participou da série “Chão de Estrelas”. Com mais de 1,3 milhão de seguidores no TikTok, Dante é referência em representatividade e educação social.\n"
   },
   {
     "INFLUENCIADOR": "Rafa Chalub",
     "@": "rafachalub",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://s2-quem.glbimg.com/lzUDiZPst1182u0nSB9Tyrv6-Bw=/0x0:1920x1080/888x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2024/I/Q/JZql5JQ5WmJCq9sfOGdw/rafa-chalub-credito-mamilos-cafe.jpg",
     "IG": "1.5 M",
     "TTK": "1.2 M",
     "YT": "94,2 mil",
@@ -4182,14 +4416,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Entretenimento, Criação de conteúdo, Causas sociais",
     "PROJETOS": "The Town",
     "REF. VALOR": "R$ 478.500",
-    "ESCOPO": "5 diárias de 06 horas - 05 posts Reels de 60 segundos+05 combos de stories de 03 telas+02 posts Feeds Carrosséis",
     "AGÊNCIA": "Cely",
-    "MINI BIO - INFLUENCIADOR": "Rafa Chalub é ator, comediante e roteirista, conhecido por seu humor crítico e representativo . Ficou famoso como “Esse Menino” com vídeos virais durante a pandemia, como o da vacina Pfizer. Com mais de 3 milhões de seguidores, já atuou em plataformas como Multishow, Prime Video e Globo. Criou o especial “Poodle” e o reality “Dando Duro”. Em 2025, lançou o talk show “Pequenas Doses Cavalares” e estreou no cinema com “Perrengue Fashion”. Seu conteúdo é disruptivo, engajado e voltado para quebrar estereótipos."
+    "ESCOPO": "5 diárias de 06 horas - 05 posts Reels de 60 segundos+05 combos de stories de 03 telas+02 posts Feeds Carrosséis",
+    "MINI BIO - INFLUENCIADOR": "Rafa Chalub é ator, comediante e roteirista, conhecido por seu humor crítico e representativo . Ficou famoso como “Esse Menino” com vídeos virais durante a pandemia, como o da vacina Pfizer. Com mais de 3 milhões de seguidores, já atuou em plataformas como Multishow, Prime Video e Globo. Criou o especial “Poodle” e o reality “Dando Duro”. Em 2025, lançou o talk show “Pequenas Doses Cavalares” e estreou no cinema com “Perrengue Fashion”. Seu conteúdo é disruptivo, engajado e voltado para quebrar estereótipos.\n"
   },
   {
     "INFLUENCIADOR": "Lucas Lima",
     "@": "lucas.lima",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://f.i.uol.com.br/fotografia/2023/01/16/167388630963c57a6523ba5_1673886309_3x2_md.jpg",
     "IG": "2.2 M",
     "TTK": "161,7 mil",
     "YT": "-",
@@ -4197,14 +4431,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Criação de conteúdo, Entretenimento",
     "PROJETOS": "The Town",
     "REF. VALOR": "R$ 381.350",
-    "ESCOPO": "5 diárias de 06 horas - 05 posts Reels de 60 segundos+05 combos de stories de 03 telas+02 posts Feeds Carrosséis",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "5 diárias de 06 horas - 05 posts Reels de 60 segundos+05 combos de stories de 03 telas+02 posts Feeds Carrosséis",
     "MINI BIO - INFLUENCIADOR": "Lucas Scholles Lima é músico multi-instrumentista, compositor, produtor musical e integrante da banda Família Lima. Com carreira iniciada nos anos 1990, ele também atua como arranjador e criador de trilhas sonoras para teatro, comerciais e games. Após seu divórcio com Sandy, Lucas passou a se destacar como influenciador digital, compartilhando conteúdos bem-humorados e reflexivos sobre sua rotina e carreira. Seu público é composto por fãs da música brasileira e seguidores interessados em bastidores da indústria musical e vida pessoal de artistas"
   },
   {
     "INFLUENCIADOR": "Mari Moon",
     "@": "marimoon",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8YRAbnwc8srxS8sWXg4DoSZDqgNjyx237xA&s",
     "IG": "709 mil",
     "TTK": "36,7 mil",
     "YT": "365 mil",
@@ -4212,29 +4446,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Beleza, Cultura pop, Criação de conteúdo",
     "PROJETOS": "The Town",
     "REF. VALOR": "R$ 398.750",
+    "AGÊNCIA": "Cely",
     "ESCOPO": "4 diárias de 06 horas - 05 posts Reels de 60 segundos+05 combos de stories de 03 telas+02 posts Feeds Carrosséis",
-    "AGÊNCIA": "Cely",
     "MINI BIO - INFLUENCIADOR": "Mariana de Souza Alves Lima, conhecida como Mari Moon, é apresentadora, influenciadora digital e uma das primeiras celebridades da internet brasileira. Ficou famosa em 2003 com seu blog no Fotolog e se tornou VJ da MTV Brasil, onde apresentou programas como Scrap MTV e Acesso MTV. Mari também atuou como designer, figurinista e empresária, lançando sua própria marca de roupas. Seu estilo colorido e excêntrico a tornou ícone da moda alternativa. Ela se conecta com um público jovem e criativo, interessado em autenticidade, cultura pop e estética visual"
-  },
-  {
-    "INFLUENCIADOR": "Xamã",
-    "@": "euxama",
-    "IMAGEM_URL": "",
-    "IG": "8.1 M",
-    "TTK": "1.7 M",
-    "YT": "642 mil",
-    "SEGMENTO": "Música",
-    "SEGMENTO SECUNDÁRIO": "Cinema e TV, Cultura pop, Autoconhecimento",
-    "PROJETOS": "The Town",
-    "REF. VALOR": "R$ 986.000",
-    "ESCOPO": "3 diárias de 06 horas - 05 posts Reels de 60 segundos+05 combos de stories de 03 telas+02 posts Feeds Carrosséis",
-    "AGÊNCIA": "Cely",
-    "MINI BIO - INFLUENCIADOR": "Geizon Carlos da Cruz Fernandes, conhecido como Xamã, é rapper, cantor e ator carioca. Com hits como “Malvadão 3” e “Luxúria”, ele se tornou um dos maiores nomes do rap nacional, misturando referências filosóficas, cinematográficas e urbanas em suas letras. Também atua como ator, tendo participado de novelas como “Renascer” e vencido o prêmio de Melhor Ator Coadjuvante no Festival de Gramado. Seu conteúdo é voltado para fãs de música urbana, cultura pop e narrativas profundas"
   },
   {
     "INFLUENCIADOR": "Valentina Bandeira",
     "@": "valenbandeira",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://s2-quem.glbimg.com/X0U4s3YoyA86zhG5Z9WOw8baZ90=/0x0:1400x1176/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b0f0e84207c948ab8b8777be5a6a4395/internal_photos/bs/2024/B/f/BdzcCBQn2xqGOAXw5vfQ/valentina-bandeira.jpg",
     "IG": "1.3 M",
     "TTK": "177,6 mil",
     "YT": "114 mil",
@@ -4242,14 +4461,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Criação de conteúdo, Cinema e TV",
     "PROJETOS": "The Town",
     "REF. VALOR": "R$ 1.015.000",
-    "ESCOPO": "5 diárias de 06 horas - 05 posts Reels de 60 segundos+05 combos de stories de 03 telas+02 posts Feeds Carrosséis",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "5 diárias de 06 horas - 05 posts Reels de 60 segundos+05 combos de stories de 03 telas+02 posts Feeds Carrosséis",
     "MINI BIO - INFLUENCIADOR": "Valentina Ramos Whately Bandeira é atriz e influenciadora digital franco-brasileira. Iniciou sua carreira no teatro e ganhou destaque em novelas como “Totalmente Demais” e “Todas as Flores”. Também apresentou o programa “Beija Sapo” na MTV e integra o elenco de séries humorísticas da Globo. Na internet, adota o nome Valen Bandeira e compartilha esquetes cômicas e reflexões sobre o cotidiano. Seu público é jovem e engajado, atraído por seu humor afiado e autenticidade"
   },
   {
     "INFLUENCIADOR": "Alexandra Gurgel",
     "@": "alexandragurgel",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://conteudo.imguol.com.br/c/entretenimento/75/2021/11/06/alexandra-gurgel-1636209985934_v2_1080x1349.jpg",
     "IG": "1 M",
     "TTK": "881,3 mil",
     "YT": "534 mil",
@@ -4257,29 +4476,29 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Autoconhecimento, Saúde, Educação",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Alexandra Gurgel é jornalista, escritora, ativista e criadora do canal “Alexandrismos”. Fundadora do Movimento Corpo Livre, ela é referência na luta contra a gordofobia e na promoção da positividade corporal. Com mais de 1 milhão de seguidores no Instagram e quase 500 mil no YouTube, Alexandra compartilha conteúdos sobre autoestima, saúde mental e desconstrução de padrões estéticos. Já lançou livros e realiza palestras e projetos voltados para diversidade e inclusã"
   },
   {
     "INFLUENCIADOR": "Aline Braga",
     "@": "alinebragaa",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSx-aZe40y5o3UIj6ROAjptmmBI3LzN2RrHTkKRX7rv8pSahHk6txGGmGDTgPywVWRGzHI&usqp=CAU",
     "IG": "429 mil",
     "TTK": "256,6 mil",
     "YT": "-",
     "SEGMENTO": "Lifestyle",
-    "SEGMENTO SECUNDÁRIO": "",
+    "SEGMENTO SECUNDÁRIO": "Maternidade, Humor, Família",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
-    "MINI BIO - INFLUENCIADOR": ""
+    "ESCOPO": "-",
+    "MINI BIO - INFLUENCIADOR": "Aline Braga é criadora de conteúdo voltada para maternidade real, humor cotidiano e vida em família. Produz vídeos sobre sua rotina com as filhas Manu e Liz, abordando os desafios e alegrias da parentalidade com leveza e autenticidade. Seu conteúdo inclui a série “MãeFlix”, que retrata situações comuns de forma divertida. Aline se destaca pela linguagem espontânea, conexão emocional com o público e presença ativa no Instagram e TikTok."
   },
   {
     "INFLUENCIADOR": "Angélica",
     "@": "angelicaksy",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1x_xuj5-SGXs8vESDI1wnUpcHvEv-K_nn3Q&s",
     "IG": "17.4 M",
     "TTK": "1.2 M",
     "YT": "-",
@@ -4287,14 +4506,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Música, Família, Entretenimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Angélica Ksyvickis Huck é apresentadora, atriz e cantora brasileira com mais de 40 anos de carreira. Começou na TV aos 4 anos e ficou famosa com o hit “Vou de Táxi”. Apresentou programas como “Estrelas”, “Fama” e “Simples Assim”, e atuou em novelas e filmes. Casada com Luciano Huck, é mãe de três filhos. Seu conteúdo atual mistura bem-estar, espiritualidade e bastidores da vida artística, com forte presença nas redes sociais e plataformas de streaming"
   },
   {
     "INFLUENCIADOR": "Barbara Coura",
     "@": "barbaracoura",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/eAXZdm1r9YMMF7oO8KFueTrl7u4HitMod8_6kXNKXRGLKEFBpHInzDCRwv4K4d19eJ3JmxAy3UY=s900-c-k-c0x00ffffff-no-rj",
     "IG": "3 M",
     "TTK": "12.9 M",
     "YT": "4.2 M",
@@ -4302,14 +4521,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Entretenimento, Criação de conteúdo",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Bárbara Coura é atriz e influenciadora digital mineira que viralizou com vídeos interpretando personagens do cotidiano. Com mais de 12 milhões de seguidores no TikTok, ela cria roteiros autorais e atua sozinha em cenas que retratam situações comuns com humor e sensibilidade. Vencedora do TikTok Awards, Bárbara usa seu quarto como estúdio e planeja seguir carreira artística além das redes sociais"
   },
   {
     "INFLUENCIADOR": "Bruno Correa",
     "@": "brunocorrea",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKQtr6ErkbKW5lWnnl_IwWaPjo-zKWg98TcA&s",
     "IG": "2.1 M",
     "TTK": "2.2 M",
     "YT": "7680",
@@ -4317,29 +4536,29 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Entretenimento, Tecnologia, Criação de conteúdo",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Bruno Correa é youtuber, streamer e criador de conteúdo especializado em Minecraft e cultura gamer. Com mais de 7.6 milhões de inscritos no YouTube e 2.1 milhões de seguidores no Instagram, ele produz vídeos de gameplay, vlogs e tecnologia. Já colaborou com Felipe Neto e PewDiePie, e é conhecido por sua trajetória inspiradora, saindo de dificuldades pessoais para se tornar um dos maiores influenciadores do Brasi"
   },
   {
     "INFLUENCIADOR": "Camila Farani",
     "@": "camilafarani",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://files.sunoresearch.com.br/p/uploads/2021/05/camila-farani.jpg",
     "IG": "1.1 M",
     "TTK": "88 mil",
     "YT": "100 mil",
     "SEGMENTO": "Negócios | Marketing",
-    "SEGMENTO SECUNDÁRIO": "Educação, Finanças, Criação de conteúdo",
+    "SEGMENTO SECUNDÁRIO": "Educação, Finanças, Criação de conteúdo\n",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Camila Farani é empresária, investidora e influenciadora digital, conhecida por sua atuação no Shark Tank Brasil. Fundadora do Grupo Farani e ex-presidente da G2 Capital, ela compartilha conteúdos sobre empreendedorismo, inovação e liderança. Com milhões de seguidores em diversas plataformas, Camila inspira empreendedores com dicas práticas e reflexões sobre o mundo dos negócios. É uma das vozes mais influentes do ecossistema empresarial brasileiro"
   },
   {
     "INFLUENCIADOR": "Cainã, Cauê e Ynaê",
     "@": "Cauwave",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1xFyggBN7f1H8KNGz5RtnAG_2zC1hjDJagQ&s",
     "IG": "1.1 M",
     "TTK": "1.7 M",
     "YT": "21,3 mil",
@@ -4347,14 +4566,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura regional, História, Curiosidades",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Cauwave é um projeto criado por três irmãos que viralizaram com vídeos educativos e curiosidades sobre etimologia, história e cultura popular. Com mais de 1.7 milhão de seguidores no TikTok e presença no YouTube, eles produzem conteúdo leve e informativo, com estética criativa e linguagem acessível. O grupo é conhecido por transformar conhecimento em entretenimento, promovendo educação de forma divertida"
   },
   {
     "INFLUENCIADOR": "Clayton Conservani",
     "@": "claytonconservani",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://palestrarte.com.br/portfolio/wp-content/uploads/2019/01/clayton-conservani-palestrarte-1.jpg",
     "IG": "102 mil",
     "TTK": "-",
     "YT": "-",
@@ -4362,14 +4581,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Viagem, Entretenimento, Criação de conteúdo",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Clayton Conservani é jornalista e repórter especializado em esportes radicais. Com mais de 25 anos de carreira na TV Globo, apresentou quadros como “Planeta Extremo” e cobriu expedições ao Everest, Antártica e Himalaia. É conhecido por sua coragem e paixão por aventura, e atualmente atua como palestrante e criador de conteúdo sobre superação e desafios extremos"
   },
   {
     "INFLUENCIADOR": "Daniel Braune",
     "@": "brauneoficial",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://pbs.twimg.com/media/Fq5VwhtWwAIZikD.jpg",
     "IG": "1.2 M",
     "TTK": "5.2 M",
     "YT": "136 mil",
@@ -4377,14 +4596,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Criação de conteúdo",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
-    "MINI BIO - INFLUENCIADOR": "Daniel Braune é jornalista esportivo e influenciador digital, conhecido por seus vídeos sobre futebol no TikTok, onde acumula mais de 5 milhões de seguidores e 27 milhões de curtidas . Ele também possui um canal no YouTube e é presença constante em podcasts e programas esportivos. Com uma abordagem descontraída e bem-humorada, Braune se destaca por análises esportivas acessíveis e conteúdo voltado para torcedores apaixonados, especialmente do Botafogo."
+    "ESCOPO": "-",
+    "MINI BIO - INFLUENCIADOR": "Daniel Braune é jornalista esportivo e influenciador digital, conhecido por seus vídeos sobre futebol no TikTok, onde acumula mais de 5 milhões de seguidores e 27 milhões de curtidas . Ele também possui um canal no YouTube e é presença constante em podcasts e programas esportivos. Com uma abordagem descontraída e bem-humorada, Braune se destaca por análises esportivas acessíveis e conteúdo voltado para torcedores apaixonados, especialmente do Botafogo.\n"
   },
   {
     "INFLUENCIADOR": "Dani Calabresa",
     "@": "danicalabresa",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://www.tupi.fm/wp-content/uploads/dani-calabresa-2.jpg",
     "IG": "3 M",
     "TTK": "650 mil",
     "YT": "-",
@@ -4392,14 +4611,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Entretenimento, Cinema e TV",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Dani Calabresa é humorista, roteirista e apresentadora com mais de 20 anos de carreira na TV brasileira . Ficou conhecida por sua atuação em programas como “Furo MTV”, “Zorra” e “Escolinha do Professor Raimundo”. Também participou de filmes e dublagens, como “Divertida Mente”. Dani é referência no humor feminino e mantém uma presença ativa nas redes sociais, onde compartilha bastidores da carreira e momentos pessoais com leveza e autenticidade."
   },
   {
     "INFLUENCIADOR": "Danielle Diz",
-    "@": "deniellediz",
-    "IMAGEM_URL": "",
+    "@": "daniellediz",
+    "IMAGEM_URL": "https://newr7-r7-prod.web.arc-cdn.net/resizer/v2/5OKJ2ARTARICNLIWNDVE7EV6AU.jpg?auth=71c0929e1984f5e461ad5ff1e137816da1585b259800bdaf50df4a8cbe90797c&width=1075&height=713",
     "IG": "7 M",
     "TTK": "5.7 M",
     "YT": "3280",
@@ -4407,14 +4626,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Autoconhecimento, Criação de conteúdo",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
-    "MINI BIO - INFLUENCIADOR": "Danielle Diz é influenciadora digital e artista visual que mistura moda com humor e performance . Com mais de 16 milhões de seguidores nas redes, ela cria vídeos teatrais e criativos que exploram estilo, identidade e autoexpressão. Seu conteúdo é voltado para a Geração Z e destaca-se pela estética ousada, autenticidade e parcerias com marcas como SHEIN e McDonald's. Danielle é uma das vozes mais originais da moda digital brasileira."
+    "ESCOPO": "-",
+    "MINI BIO - INFLUENCIADOR": "Danielle Diz é influenciadora digital e artista visual que mistura moda com humor e performance . Com mais de 16 milhões de seguidores nas redes, ela cria vídeos teatrais e criativos que exploram estilo, identidade e autoexpressão. Seu conteúdo é voltado para a Geração Z e destaca-se pela estética ousada, autenticidade e parcerias com marcas como SHEIN e McDonald's. Danielle é uma das vozes mais originais da moda digital brasileira.\n"
   },
   {
     "INFLUENCIADOR": "David Ludolf",
     "@": "ludolfdavid_",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdJTPVDk63Gtn9LiSLB9wk1PrK4X2p6XKjxQ&s",
     "IG": "88,8 mil",
     "TTK": "79,3 mil",
     "YT": "227",
@@ -4422,14 +4641,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Autoconhecimento, Cultura regional, Criação de conteúdo",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "David Ludolf é fotógrafo e influenciador digital carioca que se tornou referência em moda masculina contemporânea . Seus vídeos “arrume-se comigo” viralizaram por desafiar normas de gênero e promover liberdade estética. Com formação em fotografia e experiência em revistas como Vogue e GQ, David combina estilo, reflexão e representatividade. Já colaborou com marcas como Hering e C&A, e inspira homens a se expressarem por meio da moda."
   },
   {
     "INFLUENCIADOR": "Dias de Cacho",
     "@": "diasdecacho",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1663382853760045056/qvwIuS_y_400x400.jpg",
     "IG": "48,5 mil",
     "TTK": "7963",
     "YT": "-",
@@ -4437,14 +4656,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Causas sociais, Autoconhecimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Bruna Dias, criadora do perfil @diasdecacho, é jornalista e influenciadora da Rocinha (RJ) que compartilha sua jornada de transição capilar desde 2017 . Seu conteúdo valoriza a autoestima de mulheres negras e promove o amor próprio por meio do cuidado com os cabelos naturais. Com mais de 40 mil seguidores, Bruna também atua como palestrante e já integrou a equipe da Play9. Seu trabalho é voltado para empoderamento e representatividade."
   },
   {
     "INFLUENCIADOR": "Diego Cruz",
     "@": "diegocruz_",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://f.i.uol.com.br/fotografia/2023/09/19/16951509756509f37f98d58_1695150975_3x2_md.jpg",
     "IG": "3.4 M",
     "TTK": "9.2 M",
     "YT": "2660",
@@ -4452,14 +4671,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Entretenimento, Cinema e TV",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
-    "MINI BIO - INFLUENCIADOR": "Diego Cruz é ator e influenciador carioca com mais de 9 milhões de seguidores no TikTok. Ficou conhecido por vídeos cômicos interpretando personagens caricatos e já atuou em novelas da Globo como “Quanto Mais Vida, Melhor!” e “Elas por Elas”. Seu conteúdo mistura humor, atuação e roteiros criativos, conquistando um público jovem e engajado. Em 2025, assumiu relacionamento com Bianca Andrade, o que ampliou ainda mais sua visibilidade."
+    "ESCOPO": "-",
+    "MINI BIO - INFLUENCIADOR": "Diego Cruz é ator e influenciador carioca com mais de 9 milhões de seguidores no TikTok. Ficou conhecido por vídeos cômicos interpretando personagens caricatos e já atuou em novelas da Globo como “Quanto Mais Vida, Melhor!” e “Elas por Elas”. Seu conteúdo mistura humor, atuação e roteiros criativos, conquistando um público jovem e engajado. Em 2025, assumiu relacionamento com Bianca Andrade, o que ampliou ainda mais sua visibilidade.\n"
   },
   {
     "INFLUENCIADOR": "Eliziane Berberian",
     "@": "elizianeberberian",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://i.pinimg.com/736x/73/7a/6c/737a6c6e5c795269e84e6412a9f14d94.jpg",
     "IG": "1.1 M",
     "TTK": "1.8 M",
     "YT": "26,2 mil",
@@ -4467,14 +4686,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, Autoconhecimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Eliziane Berberian é influenciadora digital brasileira, conhecida por seus conteúdos sobre beleza, estilo de vida e reflexões pessoais. Com mais de 1.9 milhão de seguidores no TikTok e presença no YouTube, ela compartilha vídeos sobre rotina no campo, autocuidado e vida simples. Seu conteúdo é acolhedor e voltado para quem busca leveza, autenticidade e conexão com a natureza"
   },
   {
     "INFLUENCIADOR": "Eric Borges",
     "@": "eericborges",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIpKZFEBiECftfKLQBbFKt9IlBIjwqq5TUQA&s",
     "IG": "365 mil",
     "TTK": "1.7 M",
     "YT": "18,8 mil",
@@ -4482,14 +4701,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Educação, Lifestyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Eric Borges é influenciador digital e criador de conteúdo humorístico, com mais de 1.7 milhão de seguidores no TikTok. Ficou conhecido por vídeos engraçados sobre a vida universitária, usando tela verde e situações cotidianas para gerar identificação com o público jovem. Seu conteúdo mistura comédia consciente e crítica social, sendo referência entre estudantes e jovens adultos"
   },
   {
     "INFLUENCIADOR": "Erika Januza",
     "@": "erikajanuza",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://f.i.uol.com.br/fotografia/2023/12/20/1703089890658316e2ddb12_1703089890_3x4_md.jpg",
     "IG": "4.8 M",
     "TTK": "450 mil",
     "YT": "-",
@@ -4497,14 +4716,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Moda, Causas sociais, Cultura regional",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Erika Januza é atriz e modelo brasileira, conhecida por protagonizar a minissérie “Suburbia” e atuar em novelas como “Em Família”, “O Outro Lado do Paraíso” e “Amor de Mãe”. Com trajetória marcada por superação e representatividade, Erika também é musa do carnaval e embaixadora de marcas como Samsung e Dior. Seu conteúdo valoriza a cultura afro-brasileira, moda e empoderamento feminino"
   },
   {
     "INFLUENCIADOR": "Fátima Bernardes",
     "@": "fatimabernardes",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://imagem.natelinha.uol.com.br/tudo-sobre/fatima_bernardes_45b532800576f6784965d0336a772dc2faa5c196_98f012eea5a8fe88e0d05c339f29a840c8bd362a.jpeg",
     "IG": "13 M",
     "TTK": "508,6 mil",
     "YT": "331 mil",
@@ -4512,14 +4731,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Família, Entretenimento, Autoconhecimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Fátima Bernardes é jornalista e apresentadora com mais de 35 anos de carreira na TV Globo. Foi âncora do Jornal Nacional por 14 anos e apresentou o programa “Encontro” por uma década. Atualmente, atua como influenciadora e criadora de conteúdo no YouTube, abordando temas como bem-estar, educação e cotidiano. É referência em comunicação, com forte presença entre públicos diversos e engajados"
   },
   {
     "INFLUENCIADOR": "Felipe Castanhari",
     "@": "fecastanhari",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJyCfgO4R7JffkZ18ccAXrFYG1lOPunBoAnw&s",
     "IG": "7.2 M",
     "TTK": "1 M",
     "YT": "15 M",
@@ -4527,14 +4746,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Ciência, História, Cultura pop",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Felipe Castanhari é youtuber, apresentador e criador do canal “Canal Nostalgia”, com mais de 14 milhões de inscritos. Produz conteúdos educativos sobre história, ciência e cultura pop com linguagem acessível e visual atrativo. Criou a série “Mistery Lab” na Netflix e já foi listado pela Forbes como um dos jovens mais promissores do Brasil. Seu público é formado por jovens curiosos e interessados em aprender de forma divertida"
   },
   {
     "INFLUENCIADOR": "Felipe Neto",
     "@": "felipeneto",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://politica.estadao.com.br/blogs/estadao-verifica/wp-content/uploads/sites/690/2020/05/foto-instagram-felipeneto_260520201626.jpg",
     "IG": "17.4 M",
     "TTK": "17.6 M",
     "YT": "47,4 M",
@@ -4542,14 +4761,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Negócios/Marketing, Causas sociais, Educação",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Felipe Neto é um dos maiores youtubers do Brasil, com mais de 47 milhões de inscritos e 18 bilhões de visualizações. Empresário, escritor e ativista, ele fundou a Paramaker e o canal Parafernalha. Seu conteúdo mistura humor, opinião e temas sociais, e ele já foi listado entre as 100 pessoas mais influentes do mundo pela revista Time. É referência em comunicação digital e engajamento socia"
   },
   {
     "INFLUENCIADOR": "Franklin Medrado",
     "@": "franklinmedrado",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://substackcdn.com/image/fetch/$s_!N2YJ!,w_1200,h_600,c_fill,f_jpg,q_auto:good,fl_progressive:steep,g_auto/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fa3c39ba2-a897-44f8-8807-280068fa7d0d_1079x1528.jpeg",
     "IG": "3.7 M",
     "TTK": "3.7 M",
     "YT": "169 mil",
@@ -4557,14 +4776,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Criação de conteúdo, Entretenimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Franklin Medrado é criador de conteúdo digital e humorista brasileiro, conhecido por seus vídeos com efeitos visuais e histórias engraçadas. Com mais de 3.7 milhões de seguidores no TikTok e 3.1 milhões no Instagram, ele conquistou o público com seu estilo irreverente e criativo. Franklin também mantém o canal “Os Medrados” no YouTube, onde compartilha vlogs, reações e esquetes. Seu conteúdo é voltado para o público jovem e familiar, com foco em humor leve e cotidiano."
   },
   {
     "INFLUENCIADOR": "Fred Nicácio",
     "@": "frednicacio",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://s2-gshow.glbimg.com/PxBbkxOvr9Xkc4gJ4xBc3kbPPnw=/0x0:1080x1350/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2023/C/S/n90y0fRiWpqbQdnzLmQg/fred-se-considera-um-medico-amoroso-e-ja-viralizou-por-atendimentos-no-sus-que-marcaram-a-historia-de-muitas-pessoas-instagram.jpg",
     "IG": "1.1 M",
     "TTK": "113,5 mil",
     "YT": "-",
@@ -4572,14 +4791,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Saúde, Autoconhecimento, Entretenimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Fred Nicácio é médico, fisioterapeuta, apresentador e influenciador digital. Ficou conhecido por sua participação no BBB 23 e por apresentar o reality “Queer Eye Brasil”. Com atuação na área de dermatologia e terapia intensiva, Fred também é ativista das causas raciais e LGBTQIA+. Ele viralizou ao atender pacientes em Libras e por sua postura humanizada na medicina. Seu conteúdo mistura saúde, espiritualidade, representatividade e reflexões sociais."
   },
   {
     "INFLUENCIADOR": "Gabi Gagliassi",
     "@": "gabigagliassi",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://assets.portalleodias.com/2024/04/1200x900-2025-04-09T183751.615.jpg",
     "IG": "2.4 M",
     "TTK": "5.3 M",
     "YT": "65,4 mil",
@@ -4587,14 +4806,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, Educação, Criação de conteúdo",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
-    "MINI BIO - INFLUENCIADOR": "Gabi Gagliassi é jogadora profissional de vôlei e influenciadora digital, atualmente atuando pelo Tijuca Tênis Clube . Com mais de 7 milhões de seguidores nas redes sociais, ela compartilha sua rotina como atleta, dicas de treino e conteúdos educativos sobre o esporte. Conhecida como “Mina do Vôlei”, Gabi também aborda temas como superação, carreira esportiva e motivação. Seu público é majoritariamente jovem e engajado com o universo esportivo."
+    "ESCOPO": "-",
+    "MINI BIO - INFLUENCIADOR": "Gabi Gagliassi é jogadora profissional de vôlei e influenciadora digital, atualmente atuando pelo Tijuca Tênis Clube . Com mais de 7 milhões de seguidores nas redes sociais, ela compartilha sua rotina como atleta, dicas de treino e conteúdos educativos sobre o esporte. Conhecida como “Mina do Vôlei”, Gabi também aborda temas como superação, carreira esportiva e motivação. Seu público é majoritariamente jovem e engajado com o universo esportivo.\n"
   },
   {
     "INFLUENCIADOR": "Gabriel Félix",
     "@": "imgabrielfelix",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://i.pinimg.com/280x280_RS/81/2f/ae/812fae9dc7a55623fe7cfd5234f214a6.jpg",
     "IG": "1.5 M",
     "TTK": "1.8 M",
     "YT": "814 mil",
@@ -4602,14 +4821,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, Criação de conteúdo, Humor",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Gabriel Félix é criador de conteúdo digital com foco em paternidade e cotidiano familiar. Com 1.8 milhão de seguidores no TikTok e mais de 73 milhões de curtidas , ele compartilha momentos com sua filha Amelie, reflexões sobre a vida e vídeos bem-humorados. Seu conteúdo é acolhedor, leve e voltado para quem busca conexão emocional, autenticidade e inspiração na rotina familiar."
   },
   {
     "INFLUENCIADOR": "Gabrielly Ferraz",
-    "@": "Gabrielly Ferraz",
-    "IMAGEM_URL": "",
+    "@": "gabyfeerraz\n",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVqIJDP2lRUX_O0s5zlnUN8MlU52GUWJ5Enw&s",
     "IG": "233 mil",
     "TTK": "121,8 mil",
     "YT": "-",
@@ -4617,14 +4836,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Beleza, Relacionamento, Autoconhecimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Gaby Ferraz é uma influenciadora digital de Niterói, conhecida por abordar temas como autoestima, empoderamento negro e aceitação. Formada em Jornalismo pela UFF, ela usa suas redes sociais para inspirar mulheres negras a se reconhecerem como belas, inteligentes e potentes. Com mais de 100 mil seguidores, Gaby também fala sobre relacionamentos e compartilha reflexões sobre sua trajetória pessoal e profissional."
   },
   {
     "INFLUENCIADOR": "Giovanna Ewbank",
     "@": "gioewbank",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://newr7-r7-prod.web.arc-cdn.net/resizer/v2/CSXQSOZ5DVJ4XAN52ZOYMT2LKU.jpg?auth=584a78b24c85c68a14260f683d3f3e08f635e1af095e0f063b1597767f82fcc4&width=1080&height=1350",
     "IG": "29.1 M",
     "TTK": "6.9 M",
     "YT": "5 M",
@@ -4632,14 +4851,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Causas sociais, Lifestyle, Família",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Giovanna Ewbank é atriz, apresentadora e influenciadora digital. Com mais de 29 milhões de seguidores no Instagram, ela compartilha sua rotina familiar com o marido Bruno Gagliasso e os filhos, além de abordar temas como adoção, igualdade racial e empoderamento feminino. Sua carreira inclui novelas, programas de TV e o canal \"GIOH\" no YouTube, onde entrevista convidados e discute temas cotidianos"
   },
   {
     "INFLUENCIADOR": "Gui Tank",
     "@": "gui.tank",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwNIgQfWfT3nQeISQPUyufvQ-IN_I5SINabQ&s",
     "IG": "2.5 M",
     "TTK": "7.5 M",
     "YT": "2.7 M",
@@ -4647,14 +4866,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Gastronomia, Humor, Criação de conteúdo",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Gui Tank é criador de conteúdo digital com mais de 7 milhões de seguidores no TikTok e 2 milhões no YouTube. Seus vídeos são voltados para desafios, receitas virais, lifehacks e humor cotidiano. Ele publica conteúdo diariamente e é conhecido por seu estilo descontraído e criativo"
   },
   {
     "INFLUENCIADOR": "Hana Khalil",
     "@": "khalihana",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://www.mundoboaforma.com.br/wp-content/uploads/2024/08/Hana-Khalil-1-1.jpg",
     "IG": "2.2 M",
     "TTK": "1.3 M",
     "YT": "-",
@@ -4662,14 +4881,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Saúde mental, Feminismo, Sustentabilidade, Autoconhecimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Hana Khalil é influenciadora, youtuber e ex-participante do Big Brother Brasil 19 e do reality \"De Férias com o Ex\". Formada em Cinema, ela se destaca por seu ativismo em temas como feminismo, veganismo, meio ambiente e saúde mental. Com mais de 2 milhões de seguidores, Hana usa sua visibilidade para promover reflexões profundas sobre estilo de vida consciente, empatia e transformação pessoal."
   },
   {
     "INFLUENCIADOR": "Hendyohara",
     "@": "hendyohara",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://s2-marieclaire.glbimg.com/I9EQXn9XC59IoSNErK9Rbp415mI=/0x0:1080x1350/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_51f0194726ca4cae994c33379977582d/internal_photos/bs/2024/K/7/clweBwQcmVS4eMIl0N0w/snapinsta.app-456271482-18448684249030143-4983419101837822733-n-1080.jpg",
     "IG": "5 M",
     "TTK": "3 M",
     "YT": "980 mil",
@@ -4677,14 +4896,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Autoconhecimento, Causas sociais, Lifestyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Hendyohara é influenciadora digital baiana que ganhou notoriedade ao compartilhar sua jornada como mãe solo. Após enfrentar um relacionamento abusivo, ela começou a produzir conteúdo sobre maternidade, superação e empoderamento feminino. Com mais de 2 milhões de seguidores, usa suas redes como espaço de acolhimento e inspiração para outras mulheres"
   },
   {
     "INFLUENCIADOR": "Igor Saringer",
     "@": "igorsaringer",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/gA7gs7Jrx5rVZ_wPATmjXY78mhUOZxSovPhpfDuwD4VhYfR2MWX8DEtsJqQRB8f-vxqmuHwjfw=s900-c-k-c0x00ffffff-no-rj",
     "IG": "854 mil",
     "TTK": "830 mil",
     "YT": "1.7 M",
@@ -4692,14 +4911,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Viagem, Tecnologia, Criação de conteúdo, Entretenimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Igor Saringer é influenciador digital, youtuber e criador de conteúdo. Começou sua carreira em 2013 com vídeos de DIY e dicas de aplicativos. Ficou conhecido por trabalhar na Disney e por ser pioneiro na criação de filtros de Instagram no Brasil, com mais de 25 bilhões de impressões. Já entrevistou artistas como Iza, Jão e Bebe Rexha, e colaborou com marcas como Disney Studios, HBO e Natura. Seu conteúdo mistura lifestyle, viagens, cultura pop e tecnologia"
   },
   {
     "INFLUENCIADOR": "Isabela Boscov",
     "@": "realisabelaboscov",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQiFpRPmXHDBZrOgOSG7DgXhEk7XZTuE2OxEQ&s",
     "IG": "158 mill",
     "TTK": "103 mil",
     "YT": "1.5 M",
@@ -4707,14 +4926,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura pop, Entretenimento, Crítica social",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Isabela Boscov é jornalista e crítica de cinema, formada pela ECA-USP. Atuou em veículos como Folha de S.Paulo, SET e Veja, e atualmente é uma das principais vozes da crítica cinematográfica no YouTube. Ficou conhecida por seu estilo direto e bem-humorado, que viralizou nas redes sociais, tornando-a uma influenciadora cultuada por diferentes gerações"
   },
   {
     "INFLUENCIADOR": "Jean Luca",
     "@": "jeanluca",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://i.pinimg.com/736x/3c/da/ef/3cdaef264379314cd7d3117fe4443e59.jpg",
     "IG": "1.4 M",
     "TTK": "3.8 M",
     "YT": "883 mil",
@@ -4722,14 +4941,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, Cultura pop, LGBTQIA+",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Jean Luca é ator, publicitário e youtuber. Ficou conhecido por seu canal “O Jean Luca”, onde compartilha histórias pessoais, desafios e vídeos de humor. Com mais de 3,5 milhões de inscritos no YouTube, ele também é uma voz ativa na comunidade LGBTQIAPN+ e já participou de produções como Cilada.com"
   },
   {
     "INFLUENCIADOR": "João Ferdnan",
     "@": "joaoferdnan",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkr8RWPldS8zMcJyR_7NRBWOX8onRK-J-w6Q&s",
     "IG": "2.3 M",
     "TTK": "9.5 M",
     "YT": "-",
@@ -4737,14 +4956,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Família, Relacionamento, Autoconhecimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "João Ferdnan é humorista e influenciador digital maranhense. Com mais de 9 milhões de seguidores no TikTok, ele cria vídeos baseados em situações cotidianas, muitas vezes inspiradas em conversas com a família. João também fala abertamente sobre sua deficiência física (paralisia cerebral), abordando o tema com leveza e empatia. Seu conteúdo é voltado para o humor espontâneo e acolhedor, com forte conexão com o público"
   },
   {
     "INFLUENCIADOR": "João Pedro Chaseliov",
     "@": "joaopedrochaseliov",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://idactors.com.br/wp-content/uploads/2024/03/Joa%CC%83o-Pedro-Chaseliov2.jpg",
     "IG": "1.7 M",
     "TTK": "9.4 M",
     "YT": "2.5 M",
@@ -4752,14 +4971,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Música, Humor, Família",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "João Pedro Chaseliov é ator, cantor e criador de conteúdo. Ganhou notoriedade ao participar do The Voice Kids em 2019 e hoje brilha nas redes sociais com vídeos de humor e dublagens, especialmente ao lado da mãe. Com mais de 9,5 milhões de seguidores no TikTok, ele também atua em peças de teatro musical como Shrek – O Musical"
   },
   {
     "INFLUENCIADOR": "Jonathan Ferr",
     "@": "jonathanferr_oficial",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://vivaacidadenews.com.br/wp-content/uploads/2025/08/SaveClip.App_521220932_18510468907023714_3197622461148007758_n-995x650.jpg",
     "IG": "165 mil",
     "TTK": "9221",
     "YT": "7 mil",
@@ -4767,14 +4986,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Arte, Cultura regional, Autoconhecimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Jonathan Ferr é pianista, compositor e precursor do Urban Jazz no Brasil. Seu trabalho mistura jazz com R&B, hip-hop e música eletrônica, promovendo uma estética afrofuturista. Já foi indicado ao Prêmio Multishow e é reconhecido por performances intensas e reflexivas. Seu conteúdo é voltado para quem busca arte com propósito e profundidade."
   },
   {
     "INFLUENCIADOR": "Joyce Muller",
     "@": "joycemuller",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd7KS3qghjDdgEh3koEACMREEz4LW0qNQBeA&s",
     "IG": "478 mil",
     "TTK": "489 mil",
     "YT": "-",
@@ -4782,14 +5001,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Lifestyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Joyce Muller é influenciadora carioca que viralizou com vídeos sobre o cotidiano do subúrbio do Rio de Janeiro. Formada em Direito, ela usa o humor para retratar situações comuns com autenticidade e carisma. Com mais de 400 mil seguidores no TikTok, Joyce é conhecida por seu estilo espontâneo e por representar a cultura popular com leveza."
   },
   {
     "INFLUENCIADOR": "Kananda Eller",
     "@": "deusacientista",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFVmhxgA0rsdv8VFZPKE4Snxkt0fLK8hJarA&s",
     "IG": "356 mil",
     "TTK": "156 mil",
     "YT": "-",
@@ -4797,14 +5016,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Causas sociais, Ciência, Cultura regional",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Kananda Eller, conhecida como Deusa Cientista, é química e mestranda pela USP. Ela produz conteúdo educativo sobre ciência com foco em inclusão e representatividade, especialmente voltado para mulheres negras. Com mais de 154 mil seguidores no TikTok, seu trabalho é reconhecido por desmistificar temas científicos de forma acessível."
   },
   {
     "INFLUENCIADOR": "Leandro Karnal",
     "@": "leandro_karnal",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtVR88_K0T7hopqcwJay_M35UPZg4i8E5jSg&s",
     "IG": "5.2 M",
     "TTK": "287 mil",
     "YT": "2 M",
@@ -4812,14 +5031,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Autoconhecimento, Filosofia, Cultura",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Leandro Karnal é historiador, professor e palestrante, com mais de 20 anos de carreira acadêmica. Membro da Academia Paulista de Letras, ele é conhecido por suas reflexões sobre comportamento, história e espiritualidade. Seu conteúdo é voltado para o público adulto interessado em desenvolvimento pessoal e intelectual."
   },
   {
     "INFLUENCIADOR": "Leo Bagarolo",
     "@": "leobagarolo",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://p2.trrsf.com/image/fget/cf/1200/900/middle/images.terra.com/2024/09/04/leo-bagarolo-1jet99rwl27g9.png",
     "IG": "2.4 M",
     "TTK": "2.8 M",
     "YT": "2 mil",
@@ -4827,14 +5046,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Pets, Entretenimento, Criação de conteúdo",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Leonardo Bagarolo é criador de conteúdo e roteirista, conhecido por dar voz às cachorrinhas Madalena e Biquinha no perfil @madaebica. Com mais de 2.8 milhões de seguidores no TikTok, ele viralizou com vídeos de humor e dublagens criativas. Já foi premiado pelo iBest e é referência em conteúdo pet e humor digital."
   },
   {
     "INFLUENCIADOR": "Lili Almeida",
     "@": "lilialmeida",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://www.mixpalestras.com.br/assets-custom/img/palestrantes/lili-almeida-18102021-113536.jpg",
     "IG": "1.2 M",
     "TTK": "216 mil",
     "YT": "-",
@@ -4842,14 +5061,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura regional, Causas sociais, Autoconhecimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Lili Almeida é chef de cozinha e comunicadora baiana que transformou sua trajetória empreendedora em conteúdo digital. Com mais de 200 mil seguidores no TikTok, ela compartilha receitas, reflexões e experiências culturais, promovendo a valorização da culinária afro-brasileira e da cultura negra."
   },
   {
     "INFLUENCIADOR": "Lucas Cunha",
     "@": "cunhalucass",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZmZOEqb-CusZ8FtGmdeOPv1DmQKtvwT9PfA&s",
     "IG": "488 mil",
     "TTK": "2.9 M",
     "YT": "4 M",
@@ -4857,14 +5076,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Música, Criação de conteúdo, Cultura pop",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Lucas Cunha é influenciador digital e comediante, conhecido por vídeos de improviso e paródias. Com mais de 2.9 milhões de seguidores no TikTok e presença marcante no YouTube, ele já colaborou com artistas e participou de eventos da Globo. Seu conteúdo é voltado para o público jovem e criativo."
   },
   {
     "INFLUENCIADOR": "Mada e Bica",
     "@": "madaebica",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfJn9kEk7n3wIell7LhA0CqGY-bxeD965mcXfFYObsrXbuouiyrHxzXSGCxzg5_ZJQKxo&usqp=CAU",
     "IG": "1.8 M",
     "TTK": "9 M",
     "YT": "300 mil",
@@ -4872,14 +5091,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Entretenimento, Cultura regional",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Madalena e Biquinha são pet influencers que viralizaram com vídeos dublados por seus tutores, Léo Bagarolo e Evelin Camargo. Com mais de 9 milhões de seguidores no TikTok, elas conquistaram o público com personalidades únicas e conteúdo divertido. São referência em conteúdo pet humanizado."
   },
   {
     "INFLUENCIADOR": "Malhassaum",
     "@": "malhassaum",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNJjJMIsJMeNktNKY_YciqXa5lp5HuvQcudQ&s",
     "IG": "361 mil",
     "TTK": "200 mil",
     "YT": "555",
@@ -4887,14 +5106,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura regional, Entretenimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Criado por Dig Verardi e Fer Fuchs, Malhassaum é um perfil que parodia a novela Malhação com sotaques e situações típicas do Brasil. Com mais de 160 mil seguidores no TikTok, o projeto mistura nostalgia, crítica social e comédia, sendo destaque em programas como “Conversa com Bial”."
   },
   {
     "INFLUENCIADOR": "Marcos Luca",
     "@": "marcoslucavalentim",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://media.licdn.com/dms/image/v2/C4E22AQFTtbMCOwVqiA/feedshare-shrink_800/feedshare-shrink_800/0/1633990356510?e=2147483647&v=beta&t=qXJprLu6FYzoUpImr2PaNceCLWZmUzE6V2NPqfxQYPU",
     "IG": "97,8 mil",
     "TTK": "-",
     "YT": "-",
@@ -4902,14 +5121,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Causas sociais, Autoconhecimento, Cultura",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Marcos Luca Valentim é jornalista, editor da TV Globo e criador do podcast “Ubuntu Esporte Clube”. Ele aborda temas como representatividade, racismo e cultura afro-brasileira. Seu conteúdo é voltado para reflexão social e educação crítica."
   },
   {
     "INFLUENCIADOR": "Marina Guaragna",
     "@": "marinaguaragna",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/LUgBuLcl0bcOvI4QpDSU9doFJ-YqZfDXhXSAIYGFMSSe9KvNTsMiYWyQyUnb8RttNHj1T2IObg=s900-c-k-c0x00ffffff-no-rj",
     "IG": "1.4 m",
     "TTK": "847 mil",
     "YT": "313 mil",
@@ -4917,14 +5136,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura regional, Lifestyle, Criação de conteúdo",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Marina Guaragna é influenciadora e nômade digital que compartilha experiências de viagem pelo mundo com foco em cultura, gastronomia e curiosidades locais. Com mais de 800 mil seguidores no TikTok, ela também mantém um canal no YouTube com vídeos sobre destinos como Cuba, Tailândia e Jamaica."
   },
   {
     "INFLUENCIADOR": "Marina Wilson",
     "@": "marinawilson",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa-iSfHYc4R9smcG9YbTtP3n9usiaI35HkuQ&s",
     "IG": "121 mil",
     "TTK": "364 mil",
     "YT": "1.3 mil",
@@ -4932,14 +5151,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Moda, Criação de conteúdo, Cultura pop",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Marina Wilson é formada em Cinema e produz conteúdos sobre filmes, figurinos e cultura pop. Ela viralizou no TikTok com vídeos sentada no chão de casa, comentando obras e recomendando listas de filmes. Também aborda moda de forma divertida, com looks “bregas” e criativos. Já fez parcerias com marcas como Mubi e Sephora, e mora em São Paulo com seu cachorro Josh"
   },
   {
     "INFLUENCIADOR": "Mc Soffia",
     "@": "mcsoffia",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://s2-g1.glbimg.com/7CYKA_hWa2l4dT6k_WtTg8qOgVw=/0x0:1080x929/1008x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2023/A/B/MxkJkXSWaKYYhAu5Owbw/mc-soffia-instagram.jpg",
     "IG": "531 mil",
     "TTK": "1.1 M",
     "YT": "121 mil",
@@ -4947,14 +5166,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Causas sociais, Cultura regional, Autoconhecimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "MC Soffia é rapper paulistana que começou sua carreira aos 6 anos. Suas músicas abordam empoderamento feminino, negritude e autoestima. Já se apresentou em festivais internacionais e lançou álbuns como It Girl. É referência na cultura afro-brasileira e no rap naciona"
   },
   {
     "INFLUENCIADOR": "Milton Cunha",
     "@": "miltoncunhaoficial",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFTaV6-dU0OoiAWYJyX7NtWenoZC0y4AixiQ&s",
     "IG": "1.5 M",
     "TTK": "83 mil",
     "YT": "93 mil",
@@ -4962,14 +5181,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura regional, Autoconhecimento, Entretenimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Milton Cunha é carnavalesco, comentarista da TV Globo e influenciador digital. Com formação acadêmica em psicologia e moda, ele é conhecido por suas reflexões poéticas e mensagens motivacionais. Produz conteúdo sobre arte, samba e identidade cultural"
   },
   {
     "INFLUENCIADOR": "Mister Emerson",
     "@": "mister.emerson",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTRgYTnq_1QIQiMIXClidbfPdiDDWhe-2vwnw&s",
     "IG": "1.3 M",
     "TTK": "3.6 M",
     "YT": "982 mil",
@@ -4977,29 +5196,29 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Ciência, Criação de conteúdo",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Emerson Espíndola, conhecido como Mister Emerson, é ator e influenciador que une ciência e humor em vídeos educativos sobre o corpo humano. Com milhões de seguidores, seus conteúdos são usados até em salas de aula. É reconhecido por sua linguagem acessível e divertida"
   },
   {
     "INFLUENCIADOR": "Nina Talks",
     "@": "ninatalks",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/9ODSedn5Yuq7QmZrdXvFHFOjpi2IGqX5mKeQa7ekjClETzOYZkaY3aOKjEm-gmE4su_Q0NSFag=s900-c-k-c0x00ffffff-no-rj",
     "IG": "134 mil",
     "TTK": "46 mil",
     "YT": "7 mil",
     "SEGMENTO": "Tecnologia",
-    "SEGMENTO SECUNDÁRIO": "Educação, Criação de conteúdo, Autoconhecimento",
+    "SEGMENTO SECUNDÁRIO": "pEducação, Criação de conteúdo, Autoconhecimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Karina Tronkos, criadora do Nina Talks, é UX designer, educadora e TEDx speaker. Produz conteúdos sobre tecnologia, inovação e experiência do usuário. É referência em design digital e já foi premiada pela Apple. Seu conteúdo é voltado para profissionais e estudantes da área tech"
   },
   {
     "INFLUENCIADOR": "Oli Natu",
     "@": "oli",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/NanCOAncZ54Kt8PSbjI5lwUvry_lGs33kj4XPE5drTXnI7FqM7ZF_t1uK51eeYkNbEFcQBJjC1k=s900-c-k-c0x00ffffff-no-rj",
     "IG": "2.6 M",
     "TTK": "14.9 M",
     "YT": "-",
@@ -5007,14 +5226,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura regional, Criação de conteúdo, Música",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Oli é criador de conteúdo digital e integrante do grupo Natu Rap, formado por ele e seus irmãos. Ficou conhecido por seus vídeos de humor no TikTok, onde usa filtros, expressões exageradas e situações cotidianas para criar comédia viral. É reconhecido pelo cabelo laranja encaracolado e estilo irreverente. Seu conteúdo mistura comédia, música e cultura popular brasileira."
   },
   {
     "INFLUENCIADOR": "Otávio Uga",
     "@": "otaviouga",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://media.licdn.com/dms/image/v2/C5103AQFVdUFKm7dPvA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1516923062427?e=2147483647&v=beta&t=oH_JGbelQmqlV8DbSZz6PT4ofxiPxWj6sCh4i57W6OU",
     "IG": "248 mil",
     "TTK": "1574",
     "YT": "2.2 M",
@@ -5022,14 +5241,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Criação de conteúdo, Educação",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Otávio Ugá é ator, roteirista, diretor e criador do canal Super Oito, um dos maiores canais de crítica de cinema do Brasil. Ex-integrante do Parafernalha, ele produz vídeos sobre filmes, séries e cultura pop com linguagem acessível e bem-humorada. É referência no YouTube brasileiro quando o assunto é audiovisual."
   },
   {
     "INFLUENCIADOR": "Pedro Gabriel Miziara",
     "@": "pgmiziara",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://i.pinimg.com/280x280_RS/9c/bf/9a/9cbf9ac097a992ce8ba05bf8072afdab.jpg",
     "IG": "98,1 mil",
     "TTK": "164 mil",
     "YT": "353",
@@ -5037,14 +5256,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cinema, Humor, Criação de conteúdo",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Pedro Gabriel Miziara é cineasta e influenciador digital que compartilha sua rotina, reflexões e vídeos sobre relacionamentos, decoração e cultura pop. Com mais de 160 mil seguidores no TikTok, ele mistura humor com estética visual e já colaborou com marcas e projetos da Play9."
   },
   {
     "INFLUENCIADOR": "Pedro Loos",
     "@": "pedroloos",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_lQoeh3pIl35H0tiDQ6fG3YeSrn2hWxKKCIxN11NQvnDdg=s900-c-k-c0x00ffffff-no-rj",
     "IG": "2 M",
     "TTK": "2 M",
     "YT": "7.2 M",
@@ -5052,14 +5271,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Ciência, Tecnologia, Criação de conteúdo",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Pedro Loos é criador do canal Ciência Todo Dia, onde explica conceitos científicos de forma acessível e divertida. Com milhões de seguidores no TikTok e YouTube, ele é referência em divulgação científica no Brasil. Seu conteúdo aborda física, astronomia, curiosidades e experimentos."
   },
   {
     "INFLUENCIADOR": "Phellyx",
     "@": "phellyxoficial",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCQKvqdX6aFpcCN_sgqhUP0QD-W0FQx12Lfw&s",
     "IG": "1.4 M",
     "TTK": "1.5 M",
     "YT": "197 mil",
@@ -5067,14 +5286,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Causas sociais, Criação de conteúdo, Cultura regional",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Phellyx é humorista e influenciador digital que conquistou o público com vídeos criativos e bem-humorados. Ex-funcionário do McDonald's, ele criou o projeto “Portas Abertas” para valorizar o trabalho na indústria de fast food. Já participou de podcasts e entrevistas sobre sua trajetória marcada por superação, racismo e identidade. É representado pela Play9."
   },
   {
     "INFLUENCIADOR": "Rafaella Tuma",
     "@": "rafaellatuma",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://s2-oglobo.glbimg.com/8kyHsoBoO6Snh44DQ3lgFFgLNRw=/0x0:1350x1356/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_da025474c0c44edd99332dddb09cabe8/internal_photos/bs/2022/4/a/VwwqgZQJuMG9A8sHBi7Q/captura-de-tela-2022-09-27-as-08.36.52.png",
     "IG": "6.8 M",
     "TTK": "4.2 M",
     "YT": "400 mil",
@@ -5082,14 +5301,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Criação de conteúdo, Autoconhecimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Rafaella Tuma é designer gráfica e ilustradora que viralizou com vídeos minimalistas e poéticos sobre cotidiano, sentimentos e reflexões. Com traços delicados e linguagem acessível, ela conquistou milhões de seguidores em pouco tempo. Seu conteúdo mistura arte, leveza e humor, e já foi reconhecido por celebridades e marcas."
   },
   {
     "INFLUENCIADOR": "Raquel Natu",
     "@": "raquel_natu",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrKi-TEYv8RXjPjyFNo5NK-NocZIaJQD0ekg&s",
     "IG": "310 mil",
     "TTK": "1.2 M",
     "YT": "900 mil",
@@ -5097,14 +5316,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Beleza, Dança, Cultura regional",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Raquel Natu é influenciadora digital e integrante do grupo Natu Rap, junto com seus irmãos. Ela compartilha vídeos de moda, dança e lifestyle com estética jovem e divertida. Seu conteúdo é voltado para o público adolescente e jovem adulto, com foco em estilo e identidade."
   },
   {
     "INFLUENCIADOR": "Rodrigo França",
     "@": "rodrigofranca",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRrKi-TEYv8RXjPjyFNo5NK-NocZIaJQD0ekg&s",
     "IG": "703 mil",
     "TTK": "22 mil",
     "YT": "-",
@@ -5112,14 +5331,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Causas sociais, Literatura, Cinema e TV",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Rodrigo França é ator, diretor, escritor e ativista. Participou do BBB e é autor de livros infantis que abordam diversidade, ancestralidade e inclusão. Seu trabalho é voltado para promover representatividade e educação crítica. Atua também como palestrante e produtor cultural."
   },
   {
     "INFLUENCIADOR": "Samira Close",
     "@": "samiraclose",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/7geffd34qBzHVRGiZBmSWgyTyBQmz4YtK8JC1BcdzExv42qrFc8AF9btYuncC7ZUlp0Vzqupbg=s900-c-k-c0x00ffffff-no-rj",
     "IG": "734 mil",
     "TTK": "377 mil",
     "YT": "18 mil",
@@ -5127,14 +5346,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Música, Criação de conteúdo",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Samira Close é streamer, cantora e influenciadora digital. Conhecida por suas lives de jogos como LOL, Fortnite e Marvel Rivals, ela também produz conteúdo musical e humorístico. É uma das maiores drag queens gamers do Brasil, com forte presença na Twitch e YouTube."
   },
   {
     "INFLUENCIADOR": "Stace Hills",
     "@": "stace_hills",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/XNeGcfYCsIO5ahQDLtqjZ1z4qIL3hAiRXYPgxq_QBvNOZpxJUKPK6nqUlSwOYewtXlX_dpFuJQ=s900-c-k-c0x00ffffff-no-rj",
     "IG": "464 mil",
     "TTK": "716 mil",
     "YT": "15 mil",
@@ -5142,14 +5361,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, Humor, Maternidade",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Stace Hills é uma influenciadora brasileira que mistura beleza, maternidade e humor em seus conteúdos. CEO da marca Hills Beauty, ela compartilha dicas de maquiagem, cuidados com lace, rotina de mãe e momentos engraçados do dia a dia. Com mais de 700 mil seguidores no TikTok, Stace se destaca pela autenticidade e pela forma leve com que aborda temas como gravidez e autoestima. Seus vídeos são majoritariamente em português e têm forte apelo visual e emocional, alcançando um público jovem e feminino"
   },
   {
     "INFLUENCIADOR": "Thallysson Borges",
     "@": "thallysson",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjIg6ZOoQduAD-CTshHLh2oRDd8-mYuht3Cg&s",
     "IG": "5.8 M",
     "TTK": "13 M",
     "YT": "6.4 mil",
@@ -5157,14 +5376,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura regional, Relacionamento, Entretenimento",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Thallysson Borges é um criador de conteúdo verificado no TikTok, onde acumula mais de 13 milhões de seguidores. Ele ficou conhecido por seus esquetes de comédia gravados com amigos e por criar personagens usando figurinos e perucas. Seus vídeos retratam o cotidiano com humor regional e já alcançaram milhões de visualizações. Thallysson viralizou com a personagem Taprina e é reconhecido por seu estilo espontâneo e carismático, que atrai um público diverso e engajado"
   },
   {
     "INFLUENCIADOR": "Tino Marcos",
     "@": "tinomarcos",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://voxnews.com.br/wp-content/uploads/2021/02/tino-marcos.jpg",
     "IG": "265 mil",
     "TTK": "-",
     "YT": "-",
@@ -5172,14 +5391,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Jornalismo, Viagem, Lifestyle",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Tino Marcos é um dos jornalistas esportivos mais respeitados do Brasil, com mais de 30 anos de carreira na TV Globo. Cobriu 8 Copas do Mundo, além de Olimpíadas e grandes eventos esportivos. Ficou conhecido por suas reportagens profundas e narrativas envolventes. Após deixar a Globo, passou a atuar em projetos digitais e entrevistas em podcasts. Seu conteúdo é voltado para amantes do esporte e da comunicação, com foco em histórias de bastidores e reflexões sobre o jornalismo esportivo"
   },
   {
     "INFLUENCIADOR": "Victor Vaz",
     "@": "victor_vaz_",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJqyr0CLVy7TGQV4IUuaRXLqoChU4Ky_Wt0N-_ob1ukN-JCAxdwpWrgU3TNDESyngfk5k&usqp=CAU",
     "IG": "429 mil",
     "TTK": "520 mil",
     "YT": "-",
@@ -5187,14 +5406,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Relacionamento, Lifestyle, Educação",
     "PROJETOS": "-",
     "REF. VALOR": "-",
-    "ESCOPO": "-",
     "AGÊNCIA": "Play9",
+    "ESCOPO": "-",
     "MINI BIO - INFLUENCIADOR": "Victor Vaz é criador de conteúdo com foco em humor e reflexões cotidianas. Estudante de medicina na UFJF, ele compartilha vídeos sobre relacionamentos, situações engraçadas e também materiais educativos como simulados e provas anteriores. Com mais de 478 mil seguidores no TikTok, Victor tem alto engajamento e se comunica com um público jovem e universitário, misturando leveza, inteligência e espontaneidade"
   },
   {
     "INFLUENCIADOR": "Catia Damasceno",
     "@": "catiadamasceno",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://uploads.metroimg.com/wp-content/uploads/2024/10/28180655/Catia-Damasceno-1.jpg",
     "IG": "14.3 M",
     "TTK": "9.4 M",
     "YT": "10 M",
@@ -5202,14 +5421,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Relacionamento, Saúde, Educação, Lifestyle",
     "PROJETOS": "Customizado Olla",
     "REF. VALOR": "-",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Cátia Damasceno é fisioterapeuta, sexóloga e especialista em relacionamentos. Fundadora do canal Mulheres Bem Resolvidas, ela se tornou referência em educação sexual e autoconhecimento feminino. Com mais de 10 milhões de inscritos no YouTube, Cátia aborda temas como saúde íntima, autoestima, prazer e comunicação nos relacionamentos. Também é empreendedora, dona da loja Caixa Oculta, e autora de cursos que já impactaram mais de 500 mil mulheres. Seu conteúdo é leve, educativo e voltado para mulheres que buscam empoderamento e bem-estar"
   },
   {
     "INFLUENCIADOR": "Beatriz Rangel",
     "@": "bearangel",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://static-media.hotmart.com/Bu1RbRfcJSa7sHkPLwaYWr7MYHo=/filters:quality(100)/klickart-prod/uploads/media/file/9261313/img_5514.jpg",
     "IG": "3.8 M",
     "TTK": "3.6 M",
     "YT": "31 mil",
@@ -5217,14 +5436,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Educação, Lifestyle, Causas sociais",
     "PROJETOS": "Customizado Olla",
     "REF. VALOR": "-",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Beatriz Rangel é criadora de conteúdo e professora, graduada em Psicologia. Ela compartilha reflexões sobre autoconhecimento, bem-estar e experiências pessoais, além de promover cursos online e produtos em sua loja. Seu conteúdo também inclui viagens pelo Brasil e pela França, e ela mantém uma presença ativa no Instagram, TikTok e YouTube"
   },
   {
     "INFLUENCIADOR": "Jairo Bouer",
     "@": "jairoboueroficial",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_l7BWj-y6qVFAZPvV-Tb_jXEF0aQflN52TTI0CKpiNuB-A=s900-c-k-c0x00ffffff-no-rj",
     "IG": "78,2 mil",
     "TTK": "1.2 M",
     "YT": "-",
@@ -5232,14 +5451,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Educação, Autoconhecimento, Relacionamento",
     "PROJETOS": "Customizado Olla",
     "REF. VALOR": "R$ 26.400,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Jairo Bouer é médico psiquiatra, biólogo, educador e comunicador com mais de 25 anos de atuação na divulgação de temas ligados à saúde, sexualidade e comportamento. Formado pela USP e pela UFSCar, ele já participou de programas na MTV, SBT, Rede Globo e Rádio Atlântida. É autor de diversos livros e colunista do UOL. Jairo tem forte presença nas redes sociais, onde esclarece dúvidas sobre saúde mental e sexualidade de forma acessível e sem tabus, especialmente voltado ao público jovem"
   },
   {
     "INFLUENCIADOR": "Ricardo Kores",
     "@": "dr.ricardokores",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/fQWG5UCSgtBcRHNhaoPy2TIyWI5T440ntoytzuzqwv0KWKmg5_ThMbkT2AGuEilnIxV-bNknKw=s900-c-k-c0x00ffffff-no-rj",
     "IG": "1.4 M",
     "TTK": "678 mil",
     "YT": "5 mil",
@@ -5247,14 +5466,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Causas sociais, Autoconhecimento, Educação",
     "PROJETOS": "Customizado Olla",
     "REF. VALOR": "R$ 48.840,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Dr. Ricardo Kores é médico infectologista e criador de conteúdo digital. Ele viralizou nas redes sociais ao abordar temas de saúde sexual com humor e linguagem acessível. Com mais de 1,3 milhão de seguidores no Instagram e quase 600 mil no TikTok, Ricardo combate a desinformação sobre ISTs e promove educação sexual inclusiva. Seu público inclui jovens, LGBTQIA+ e pessoas em busca de informação confiável sobre saúde íntima. Ele também realiza atendimentos online e presenciais"
   },
   {
     "INFLUENCIADOR": "Maju Ferreira",
     "@": "mjferreiraa",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY5WDvjUc7lwcrwM78Dnc7ocTyQgIAP6vNHw&s",
     "IG": "1.1 M",
     "TTK": "1.6 M",
     "YT": "46 mil",
@@ -5262,29 +5481,29 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Saúde, Educação, Lifestyle",
     "PROJETOS": "Customizado Olla",
     "REF. VALOR": "R$ 26.100,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Maria Júlia Ferreira, conhecida como Maju, é médica generalista e influenciadora digital. Ela cria conteúdo sobre saúde feminina, métodos contraceptivos, sexualidade e bem-estar com base científica. Com mais de 1,6 milhão de seguidores no TikTok, Maju se destaca por sua comunicação clara e acolhedora, voltada para mulheres jovens e adultas. Seus vídeos explicativos e vlogs médicos ajudam a desmistificar temas de saúde íntima e promover o autocuidado"
   },
   {
     "INFLUENCIADOR": "Cidinha Ikegiri",
     "@": "cidinha",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://cdn.prod.website-files.com/68377a68c058f8179fd1e24b/68377bdf33b3c23ca038c0fb_cidinha%20parcerias.png",
     "IG": "63,4 mil",
     "TTK": "1086",
     "YT": "-",
     "SEGMENTO": "Saúde",
-    "SEGMENTO SECUNDÁRIO": "Autoconhecimento, Fitness, Educação",
+    "SEGMENTO SECUNDÁRIO": "Autoconhecimento, Fitness, Educação\n",
     "PROJETOS": "Customizado Olla",
     "REF. VALOR": "R$ 23.760,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Dra. Cidinha Ikegiri é ginecologista e médica do esporte, formada pela PUC-SP com especializações em Medicina Fetal e Medicina do Exercício. Ela une conhecimento técnico à criação de conteúdo digital, abordando saúde feminina, sexualidade, rotina e bem-estar com base científica. Em seu perfil no Instagram, compartilha dicas práticas e reflexões sobre autocuidado, especialmente voltadas para mulheres em diferentes fases da vida. Seu conteúdo é humanizado, educativo e voltado para um público feminino engajado"
   },
   {
     "INFLUENCIADOR": "Mahmoud Baydoun",
     "@": "mahmoudbaydoun_",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO7h32L6YHu5aeNaqJqCA-RpEPaCUdTy5eeQ&s",
     "IG": "4.4 M",
     "TTK": "1.4 M",
     "YT": "1.2 M",
@@ -5292,14 +5511,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Relacionamento, Saúde, Educação",
     "PROJETOS": "Customizado Olla",
     "REF. VALOR": "R$ 33.000,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Mahmoud Baydoun é psicólogo, sexólogo e criador de conteúdo digital. Ficou conhecido nacionalmente ao participar do Big Brother Brasil 18 e, desde então, consolidou sua carreira como educador sexual nas redes sociais. Com mais de 1 milhão de inscritos no YouTube e presença marcante no TikTok e Instagram, Mahmoud aborda temas como autoestima, prazer, comunicação nos relacionamentos e saúde íntima com linguagem acessível e bem-humorada. Ele também realiza palestras e cursos voltados ao público jovem e adulto, promovendo o autoconhecimento e o empoderamento sexual."
   },
   {
     "INFLUENCIADOR": "Sofia Santino",
     "@": "sofiasantino",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcStwEgRpjTZfBvszDIODG9zJVHUnMXcRd92VQ&s",
     "IG": "4.8 M",
     "TTK": "11 M",
     "YT": "4.5 M",
@@ -5307,14 +5526,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Beleza, Lifestyle",
     "PROJETOS": "Customizado Olla",
     "REF. VALOR": "R$ 99.000,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Sofia Santino é influenciadora digital, atriz e apresentadora. Natural de Recife, ela começou sua carreira no Musical.ly e se destacou com vídeos de humor e maquiagem. Atualmente, apresenta o podcast POGRAMA, ao lado de Ciclopin e Doarda, que figura entre os mais ouvidos do Brasil. Sofia também atuou em filmes independentes e lançou uma linha de delineadores adesivos. Com mais de 4,5 milhões de inscritos no YouTube, seu conteúdo é voltado para jovens adultos e aborda temas como cotidiano, relacionamentos e cultura pop com leveza e irreverência."
   },
   {
     "INFLUENCIADOR": "Ciclopin",
     "@": "ciclopin",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSLJrv0Q8SMmmviF-KJitst4277VlGa9UQ_RdlM9cZAoUXQKx8K0gtkFB2DWltbqJY27As&usqp=CAU",
     "IG": "1.5 M",
     "TTK": "3.5 M",
     "YT": "236 mil",
@@ -5322,14 +5541,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, Viagem, Entretenimento",
     "PROJETOS": "Customizado Olla",
     "REF. VALOR": "R$ 52.800,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Ciclopin é criador de conteúdo e apresentador, conhecido por seu estilo irreverente e vídeos de humor. Ele integra o podcast POGRAMA com Sofia Santino e Doarda, e também produz vlogs de viagem e desafios em seu canal no YouTube. Com mais de 3,5 milhões de seguidores no TikTok, Ciclopin mistura comédia, cotidiano e reflexões pessoais, atingindo um público jovem e engajado. Seus vídeos são marcados por espontaneidade, criatividade e alto engajamento."
   },
   {
     "INFLUENCIADOR": "Carol Biazin",
     "@": "carolbiazin",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://portalpopline.com.br/wp-content/uploads/2025/08/carol-biazin-unica-artista-pop-br-top-50-spotify-br-amor-traumatizado.jpg",
     "IG": "1 M",
     "TTK": "720 mil",
     "YT": "944 mil",
@@ -5337,14 +5556,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Entretenimento, Lifestyle, Moda",
     "PROJETOS": "Customizado Olla",
     "REF. VALOR": "-",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Carol Biazin é cantora, compositora e influenciadora digital. Revelada no programa The Voice Brasil, ela consolidou sua carreira com hits autorais e colaborações com artistas como Baco Exu do Blues e Marina Sena. Seu canal no YouTube reúne clipes, sessões ao vivo e vlogs de bastidores, com quase 1 milhão de inscritos. Carol também é reconhecida por seu estilo visual marcante e por abordar temas como amor, identidade e empoderamento feminino em suas músicas. Seu público é jovem, diverso e engajado com a cena pop brasileira."
   },
   {
     "INFLUENCIADOR": "Paulo Vita",
     "@": "opaulovita",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSskwZ2_ENjfQtDV2PnneJD-X-AlKkKQRFhcA&s",
     "IG": "632 mil",
     "TTK": "357 mil",
     "YT": "1 M",
@@ -5352,14 +5571,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Relacionamento, Entretenimento, Lifestyle",
     "PROJETOS": "Customizado Olla",
     "REF. VALOR": "R$ 52.800,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Paulo Vita é criador de conteúdo e apresentador do canal Paulo Vita Show, onde produz vídeos de entrevistas, desafios e dinâmicas sociais com tom humorístico. Seus quadros como “Furou o Balão” e “Testa o Radar” viralizaram nas redes, acumulando milhões de visualizações. Com mais de 1 milhão de inscritos no YouTube, Paulo se destaca pela criatividade, espontaneidade e capacidade de gerar identificação com o público jovem. Ele também é ativo no TikTok e Instagram, onde compartilha bastidores e interações com fãs."
   },
   {
     "INFLUENCIADOR": "Laís Conter",
     "@": "laisconter",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://americapodcast.com.br/wp-content/uploads/2020/03/LAIS.jpg",
     "IG": "62,1 mil",
     "TTK": "801",
     "YT": "-",
@@ -5367,29 +5586,29 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Relacionamento, Educação, Causas sociais",
     "PROJETOS": "Customizado Olla",
     "REF. VALOR": "R$ 9.240,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Laís Conter é educadora sexual, escritora e empreendedora. Criadora do projeto Me Lambe, que começou como uma página no Instagram e virou podcast, Laís aborda sexualidade feminina com humor, responsabilidade e empatia. É também cofundadora da Tela Preta, a primeira plataforma de áudios eróticos do Brasil. Seu conteúdo visa quebrar tabus, promover o prazer sem culpa e incentivar o empoderamento feminino. Com mais de 350 mil seguidores no Instagram, Laís é referência em educação sexual acessível e inclusiva"
   },
   {
     "INFLUENCIADOR": "Ana Cilada",
     "@": "anacilada",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdAp7w-gN8o6cb2p58ulkRS5CRZPl6mvZf-g&s",
     "IG": "23,3 mil",
     "TTK": "5308",
     "YT": "-",
     "SEGMENTO": "Humor",
-    "SEGMENTO SECUNDÁRIO": "Autoconhecimento, Beleza, Lifestyle",
+    "SEGMENTO SECUNDÁRIO": "Autoconhecimento, Beleza, Lifestyle\n",
     "PROJETOS": "Customizado Olla",
     "REF. VALOR": "R$ 13.200,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Ana Cilada é criadora de conteúdo com foco em humor e sátiras do cotidiano. Seus vídeos misturam memes, reflexões e paródias, com linguagem espontânea e voltada para o público jovem. Ela também aborda temas como autoestima, autocuidado e consumo consciente, promovendo marcas sustentáveis e veganas. Com presença ativa no TikTok e Instagram, Ana se destaca por seu estilo irreverente, engajamento com seguidores e parcerias com marcas voltadas ao público feminino."
   },
   {
     "INFLUENCIADOR": "Jal Reis",
     "@": "jalreisoficial",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQbCM-xo09HpUjXTzH6tdVKknUwX8GJRk4bw&s",
     "IG": "56,5 mil",
     "TTK": "-",
     "YT": "-",
@@ -5397,29 +5616,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Autoconhecimento, Saúde, Educação",
     "PROJETOS": "Customizado Jontex",
     "REF. VALOR": "R$ 25.000,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Jal Reis é terapeuta sexual, psicanalista e criador de conteúdo digital. Ao lado de sua parceira Déa Jorio, ele produz vídeos sobre sexualidade, intimidade e relacionamentos saudáveis. O casal viralizou ao compartilhar conversas reais sobre a vida a dois, abordando temas como autoestima, prazer, conexão emocional e saúde íntima. Jal também atua como palestrante e mentor em projetos voltados ao bem-estar emocional e à educação sexual. Seu conteúdo é voltado para adultos em busca de mais consciência e qualidade nas relações."
-  },
-  {
-    "INFLUENCIADOR": "Lucas Pizane",
-    "@": "lucaspizane",
-    "IMAGEM_URL": "",
-    "IG": "959 mil",
-    "TTK": "108 mil",
-    "YT": "1.5 mil",
-    "SEGMENTO": "Música",
-    "SEGMENTO SECUNDÁRIO": "Entretenimento, Lifestyle, Cultura regional",
-    "PROJETOS": "Customizado Jontex",
-    "REF. VALOR": "R$ 60.000,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
-    "AGÊNCIA": "Cely",
-    "MINI BIO - INFLUENCIADOR": "Lucas Pizane é cantor, compositor e ex-participante do BBB 24. Natural de Itaparica (BA), ele começou sua carreira em bandas regionais e hoje segue carreira solo, misturando influências da música baiana com pop e R&B. Estudante de Produção Cultural, Pizane também cria conteúdo nas redes sociais, onde compartilha sua rotina, bastidores de shows e reflexões pessoais. Seu público é jovem e engajado com a cena musical independente"
   },
   {
     "INFLUENCIADOR": "Giovanna Lima",
     "@": "giovannallima",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROcbc_eSiolzVwVJNzGbl1BDGeoHJnb_mCaQ&s",
     "IG": "1.7 M",
     "TTK": "175 mil",
     "YT": "-",
@@ -5427,14 +5631,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Saúde, Entretenimento, Moda",
     "PROJETOS": "Customizado Jontex",
     "REF. VALOR": "R$ 55.440,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Giovanna Lima é nutricionista, influenciadora digital e ex-participante do BBB 24, onde chegou ao Top 10. Natural de Belo Horizonte (MG), ela compartilha nas redes sociais dicas de alimentação saudável, rotina fitness e momentos do dia a dia. Também atua como modelo e tem forte presença no Instagram e TikTok. Giovanna é conhecida por sua autenticidade, carisma e estilo de vida equilibrado, atraindo um público jovem-adulto interessado em bem-estar e entretenimento leve"
   },
   {
     "INFLUENCIADOR": "Luiza Parente",
     "@": "luizaparente",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0VZE8c_Z7XVnr3qexQuTmj3B21w_hIkp3rA&s",
     "IG": "7.7 M",
     "TTK": "8.5 M",
     "YT": "4.2 M",
@@ -5442,14 +5646,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Moda, Beleza, Entretenimento",
     "PROJETOS": "Customizado Jontex",
     "REF. VALOR": "R$ 118.800,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Luiza Parente é influenciadora digital e youtuber, conhecida por seus vídeos de vlogs, desafios, moda e beleza. Começou sua carreira ainda adolescente e conquistou milhões de seguidores com seu carisma e autenticidade. Participou do projeto Ilhados, com outros criadores de conteúdo, e compartilha sua rotina, viagens e transformações pessoais. Seu público é majoritariamente jovem e feminino, interessado em tendências, estilo e cotidiano leve"
   },
   {
     "INFLUENCIADOR": "Guilherme Gonella",
     "@": "guilhermegonella",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://s3.us-east-005.backblazeb2.com/glamurama01/2023/05/Guilherme-Gonella-por-Sam-Turrell.jpg",
     "IG": "326 mil",
     "TTK": "919 mil",
     "YT": "-",
@@ -5457,14 +5661,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, Entretenimento, Relacionamento",
     "PROJETOS": "Customizado Jontex",
     "REF. VALOR": "-",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Guilherme Gonella é modelo, ator e influenciador digital. Já trabalhou com marcas como Versace e Dua Lipa, e compartilha sua rotina de ensaios, bastidores de campanhas e momentos pessoais nas redes sociais. Com mais de 800 mil seguidores no TikTok, ele se destaca pelo estilo visual marcante, humor leve e presença em eventos de moda. Seu conteúdo é voltado para jovens adultos interessados em moda, comportamento e cultura pop"
   },
   {
     "INFLUENCIADOR": "Londrinando",
     "@": "londrinando",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRO2w7VkX-ac_aJka3eFgFSiK45ShI47y2gXw&s",
     "IG": "1 M",
     "TTK": "2.9 M",
     "YT": "633 mil",
@@ -5472,14 +5676,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, Viagem, Entretenimento",
     "PROJETOS": "Customizado Jontex",
     "REF. VALOR": "R$ 60.000,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "O canal Londrinando é comandado por Math e Rafa, casal que compartilha vlogs diários sobre rotina, vida a dois, reformas e momentos em família. Com mais de 2,7 milhões de seguidores no TikTok, eles conquistaram o público com autenticidade, humor e simplicidade. O conteúdo é voltado para quem gosta de acompanhar o cotidiano de casais reais, com foco em relacionamento, lar e experiências pessoais"
   },
   {
     "INFLUENCIADOR": "Yuri Oliver",
     "@": "euyurioliver",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://pbs.twimg.com/media/GyFCE8KWkAEnKTf.jpg",
     "IG": "1 M",
     "TTK": "1.4 M",
     "YT": "-",
@@ -5487,14 +5691,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Música, Humor, Relacionamento",
     "PROJETOS": "Customizado Jontex",
     "REF. VALOR": "R$ 58.000,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Yuri Oliver é cantor, ator, roteirista e criador de conteúdo. Com mais de 1,4 milhão de seguidores no TikTok e presença em diversas plataformas, ele mistura música, humor e reflexões sobre relacionamentos em seus vídeos. Também atua em produções audiovisuais e já lançou clipes musicais. Seu conteúdo é criativo, sensível e voltado para um público jovem e LGBTQIAPN+, com foco em representatividade e expressão artística"
   },
   {
     "INFLUENCIADOR": "O Mouze",
     "@": "omouze",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1482112545334902791/wvWmkd1U_400x400.jpg",
     "IG": "177 mil",
     "TTK": "93 mil",
     "YT": "-",
@@ -5502,14 +5706,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Negócios/Marketing, Tecnologia",
     "PROJETOS": "Customizado Jontex",
     "REF. VALOR": "R$ 27.000,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "O Mouze, nome artístico de Rogério Madeo, é criador de conteúdo voltado para estratégias de crescimento digital, marketing pessoal e posicionamento de marca. Ele compartilha dicas sobre como aumentar seguidores, otimizar perfis e criar conteúdo de impacto. Com forte presença no Instagram e YouTube, seu público é composto por empreendedores, criadores iniciantes e profissionais que desejam melhorar sua performance online. Seu estilo é direto, educativo e voltado para resultados práticos."
   },
   {
     "INFLUENCIADOR": "Bárbara Lapa",
     "@": "babilapa",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH8h9GhyHIPIhVI_OuTmdd48HG1rI1t75WSTgOXZgEKHHksmq26YuAv1T57W80ME7bMz0&usqp=CAU",
     "IG": "267 mil",
     "TTK": "62 mil",
     "YT": "99 mil",
@@ -5517,14 +5721,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Entretenimento, Relacionamento, Lifestyle",
     "PROJETOS": "Customizado Jontex",
     "REF. VALOR": "R$ 32.000,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Bárbara Lapa é atriz e criadora de conteúdo digital. Ficou conhecida por seus vídeos de humor e interações com estranhos no Omegle, onde interpreta personagens e cria situações engraçadas. Também atua ao lado de Bruno Bagetti no canal Lapa Bagetti, que mistura comédia de casal, desafios e vlogs. Seu conteúdo é voltado para jovens adultos e casais, com linguagem leve e divertida. Bárbara também compartilha momentos do cotidiano e reflexões sobre relacionamentos com autenticidade e carisma"
   },
   {
     "INFLUENCIADOR": "Bruno Bagetti",
     "@": "bruno.bagetti",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpY7Vwab12F8PLczvZrM23k216_C9ldERHZjeNihU30ww7af3N9IYhLUssap821pkIWqw&usqp=CAU",
     "IG": "88,9 mil",
     "TTK": "348 mil",
     "YT": "441 mil",
@@ -5532,14 +5736,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Relacionamento, Lifestyle, Entretenimento",
     "PROJETOS": "Customizado Jontex",
     "REF. VALOR": "R$ 25.000,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram, repost do Reels no Tiktok | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Bruno Bagetti é criador de conteúdo e ator, conhecido por seus vídeos de comédia em casal ao lado de Bárbara Lapa. Juntos, comandam o canal Lapa Bagetti, onde publicam desafios, esquetes e vlogs com linguagem leve e divertida. Bruno também aparece em vídeos curtos no TikTok, com mais de 180 mil seguidores, e é reconhecido por seu carisma e espontaneidade. Seu conteúdo é voltado para jovens adultos e casais, com foco em humor cotidiano e dinâmicas de relacionamento."
   },
   {
     "INFLUENCIADOR": "O Coala",
     "@": "ocoala01",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGxbGdb2Hp1SeahGoKBvD1Eyx01QlyidnVvQ&s",
     "IG": "664 mil",
     "TTK": "1.4 M",
     "YT": "3.4 mil",
@@ -5547,14 +5751,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Educação, Cultura regional, Entretenimento",
     "PROJETOS": "Customizado Wizard",
     "REF. VALOR": "R$ 33.000,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "O Coala é criador de conteúdo e roteirista, conhecido por seu universo próprio chamado Coalaverso, onde mistura humor, crítica social e personagens caricatos. Com mais de 1,4 milhão de seguidores no TikTok e 74 milhões de curtidas, ele aborda temas como escola, trabalho, sotaques regionais e filosofia com criatividade e irreverência. Seus vídeos são curtos, bem produzidos e têm forte apelo entre jovens e adultos que gostam de humor inteligente e reflexivo"
   },
   {
     "INFLUENCIADOR": "Eugenio Melo",
     "@": "oeugeniomelo",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqbB_s1aun82eRKcICSGohK6g9bQr7eOGTKQ&s",
     "IG": "115 mil",
     "TTK": "102 mil",
     "YT": "40 mil",
@@ -5562,14 +5766,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Viagem, Gastronomia, Cultura regional",
     "PROJETOS": "Customizado Wizard",
     "REF. VALOR": "R$ 10.560,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Eugenio Melo é criador de conteúdo que compartilha experiências de viagens, passeios urbanos e gastronomia. Seus vídeos incluem vlogs em cidades como São Paulo, Rio de Janeiro, Salvador e destinos internacionais como Punta Cana e Patagônia. Com estilo leve e visual bem produzido, Eugenio atrai um público interessado em turismo acessível, cultura local e dicas de restaurantes. Ele também é ativo no TikTok, onde tem mais de 90 mil seguidores e 3,8 milhões de curtidas, com vídeos que misturam humor e cotidiano"
   },
   {
     "INFLUENCIADOR": "Flavia Verso",
     "@": "flavioverso",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUzLgvYkWbGxVJbbso4T1ppgrt3KvkFryHIw&s",
     "IG": "73,7 mil",
     "TTK": "229 mil",
     "YT": "745",
@@ -5577,14 +5781,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Causas sociais, Moda, Entretenimento",
     "PROJETOS": "Customizado Wizard",
     "REF. VALOR": "R$ 10.600,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Flavia Verso se define como “webdiva de micronicho” e é conhecida por seu conteúdo crítico e bem-humorado sobre temas sociais, cultura pop e comportamento. Com mais de 222 mil seguidores no TikTok e 10,6 milhões de curtidas, ela viraliza com vídeos que misturam ironia, estética alternativa e reflexões sobre pautas feministas e LGBTQIAPN+. Flavia também participa de campanhas publicitárias e é representada pela Play9. Seu público é jovem, engajado e interessado em conteúdo com personalidade e posicionamento"
   },
   {
     "INFLUENCIADOR": "Pedro Bonvivant",
     "@": "pedrobonvivant",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOy4qp2ZT8fV1HXH3ehJRG-sA5UhrZbP3qJw&s",
     "IG": "255 mil",
     "TTK": "609 mil",
     "YT": "-",
@@ -5592,29 +5796,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Lifestyle, Relacionamento",
     "PROJETOS": "Customizado Wizard",
     "REF. VALOR": "R$ 21.200,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Pedro Bonvivant é influenciador digital e criador de conteúdo com mais de 611 mil seguidores no TikTok e 12,6 milhões de curtidas. Seus vídeos misturam humor cotidiano, dicas práticas e reflexões leves sobre a vida urbana. Ele também participa de campanhas publicitárias e eventos culturais. Pedro é conhecido por seu estilo espontâneo e por criar conteúdo que gera identificação com o público jovem-adulto"
-  },
-  {
-    "INFLUENCIADOR": "Manta Alves",
-    "@": "mantaalves",
-    "IMAGEM_URL": "",
-    "IG": "3.3 M",
-    "TTK": "2.5 M",
-    "YT": "79 mil",
-    "SEGMENTO": "Cultura regional",
-    "SEGMENTO SECUNDÁRIO": "Humor, Viagem, Lifestyle",
-    "PROJETOS": "Customizado Wizard",
-    "REF. VALOR": "R$ 138.200,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
-    "AGÊNCIA": "Cely",
-    "MINI BIO - INFLUENCIADOR": "Samanta Alves, conhecida como Manta Alves, é influenciadora e repórter carioca. Ganhou destaque com vídeos de passinho e entrevistas bem-humoradas em eventos e espaços públicos. Com mais de 2,3 milhões de seguidores no TikTok e 89 milhões de curtidas, ela representa a cultura suburbana do Rio de Janeiro com autenticidade e irreverência. Seu conteúdo mistura humor, crítica social e valorização da identidade periférica"
   },
   {
     "INFLUENCIADOR": "Giulia Bonvenuto",
     "@": "giuliabonvenuto",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsjDz0s7kVmJ3YkXa_nQbWKFWVI1U8XFeag&s",
     "IG": "50,1 mil",
     "TTK": "37 mil",
     "YT": "-",
@@ -5622,14 +5811,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Gastronomia, Moda, Cultura regional",
     "PROJETOS": "Customizado Wizard",
     "REF. VALOR": "R$ 4.700,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Giulia Bonvenuto é microinfluenciadora que compartilha vlogs sobre rotina, eventos culturais e experiências gastronômicas em São Paulo. Com mais de 29 mil seguidores no TikTok e 1,5 milhão de curtidas, ela se destaca por seu estilo estético e narrativas visuais envolventes. Giulia também aborda temas como consumo consciente e tendências urbanas, atraindo um público jovem e antenado com a vida cultural da cidade"
   },
   {
-    "INFLUENCIADOR": "Taurinagens",
+    "INFLUENCIADOR": "Flavia Antunes",
     "@": "taurinagens",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://media.licdn.com/dms/image/v2/D4D03AQG71lSyX55HWg/profile-displayphoto-shrink_200_200/B4DZc7B_39H4Ac-/0/1749042070200?e=2147483647&v=beta&t=BXcgN6rzRBsDu1DU8CLSH3ucbOsXbMMigLzcHKLBcug",
     "IG": "74,6 mil",
     "TTK": "91 mil",
     "YT": "-",
@@ -5637,14 +5826,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, Viagem, Cultura regional",
     "PROJETOS": "Customizado Wizard",
     "REF. VALOR": "R$ 10.560,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Taurinagens é o perfil da jornalista Flávia Antunes, que compartilha experiências gastronômicas em São Paulo e em viagens pelo Brasil e exterior. Com mais de 86 mil seguidores no TikTok e 2 milhões de curtidas, ela publica dicas de restaurantes, bares, brunches, culinária vegetariana e experiências culturais. Seu conteúdo é voltado para quem busca descobrir novos lugares para comer e viver momentos únicos, com linguagem leve e visual atrativo."
   },
   {
     "INFLUENCIADOR": "Flavia",
     "@": "flaviakk",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSuabzn0B1C0WYuWYA9n66rPzIDM7tp8qH6ww&s",
     "IG": "25,5 mil",
     "TTK": "19 mil",
     "YT": "-",
@@ -5652,14 +5841,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Moda, Beleza, Viagem",
     "PROJETOS": "Customizado Wizard",
     "REF. VALOR": "R$ 7.000,00",
-    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 post Reels de 60 segundos no feed do Instagram | 01 combo de stories de 04 telas de 15 segundos cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Flávia Akemi é publicitária e criadora de conteúdo digital. Compartilha vídeos sobre moda acessível, beleza, dicas de bares e restaurantes, além de experiências de viagem, especialmente em Buenos Aires. Com mais de 360 mil curtidas e 8.500 seguidores no TikTok, Flávia se destaca por seu estilo leve, visual colorido e conteúdo voltado para mulheres jovens que buscam inspiração para o dia a dia com autenticidade e bom humor"
   },
   {
     "INFLUENCIADOR": "Sasha Vilela",
     "@": "sashavilelaa",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS7N32tnGpL85Lk6Kkog3JlP4yBgTyEW0oFQ&s",
     "IG": "77,7 mil",
     "TTK": "22 mil",
     "YT": "-",
@@ -5667,14 +5856,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Entretenimento, Causas sociais",
     "PROJETOS": "Terra Verão",
     "REF. VALOR": "-",
-    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Sasha Vilela é comunicadora, estilista e influenciadora digital. Ela compartilha conteúdos sobre moda, estética, vivências pessoais e humor com um toque de crítica social. Já criou looks para drags brasileiras e participou de campanhas com marcas como Crocs. Com mais de 5.900 seguidores no TikTok e 195 mil curtidas, Sasha se destaca por sua autenticidade, criatividade e engajamento com pautas LGBTQIAPN+."
   },
   {
     "INFLUENCIADOR": "João Vitor",
     "@": "joaocgvitor",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1616266800198557696/b8FXBqyF_400x400.jpg",
     "IG": "201 mil",
     "TTK": "1 M",
     "YT": "-",
@@ -5682,14 +5871,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Relacionamento, Autoconhecimento, Humor",
     "PROJETOS": "Terra Verão",
     "REF. VALOR": "-",
-    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "João Vitor é influenciador digital com mais de 995 mil seguidores no TikTok e 34 milhões de curtidas. Ele compartilha vídeos sobre cotidiano, reflexões pessoais, motivação e humor, com linguagem acessível e espontânea. Seu conteúdo é voltado para o público jovem e LGBTQIAPN+, com foco em autenticidade, inclusão e leveza. João também realiza parcerias com marcas e é ativo em campanhas de diversidade"
   },
   {
     "INFLUENCIADOR": "Magá Moura",
     "@": "magavilhas",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://i.pinimg.com/280x280_RS/e2/cd/e5/e2cde5ce0d10831e0e5b3c87df7c7bb6.jpg",
     "IG": "235 mil",
     "TTK": "4207",
     "YT": "32 mil",
@@ -5697,14 +5886,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Beleza, Causas sociais, Lifestyle",
     "PROJETOS": "Terra Verão",
     "REF. VALOR": "-",
-    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Magá Moura é influenciadora, estilista, empreendedora e apresentadora. Nascida na Bahia e radicada em São Paulo, ela se tornou referência em estética afro-brasileira, com suas tranças coloridas e estilo vibrante. Magá cobre festivais de música, participa de campanhas publicitárias e lidera uma comunidade chamada “Clôguidores”. Seu conteúdo é voltado para empoderamento feminino, moda consciente e representatividade negra, com forte presença em eventos e mídias digitais."
   },
   {
     "INFLUENCIADOR": "Paola Carrijo",
     "@": "paolacarrijo",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWD-jqnykOn2l98kYc-yCrU6b5rak5MmbdJA&s",
     "IG": "430 mil",
     "TTK": "70 mil",
     "YT": "8 mil",
@@ -5712,29 +5901,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Saúde, Lifestyle, Viagem",
     "PROJETOS": "Terra Verão",
     "REF. VALOR": "-",
-    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Paola Carrijo é maratonista, triatleta e criadora de conteúdo digital. Ex-advogada, ela deixou a carreira jurídica para se dedicar ao esporte e à produção de conteúdo sobre corrida, alimentação saudável e bem-estar. Com mais de 71 mil seguidores no TikTok e 1,5 milhão de curtidas, Paola inspira seu público com disciplina, motivação e relatos de superação. Ela já participou de provas como o Ironman e compartilha sua rotina de treinos e viagens pelo mundo."
-  },
-  {
-    "INFLUENCIADOR": "Irlaine",
-    "@": "irlaineee",
-    "IMAGEM_URL": "",
-    "IG": "438 mil",
-    "TTK": "161 mil",
-    "YT": "350 mil",
-    "SEGMENTO": "Beleza",
-    "SEGMENTO SECUNDÁRIO": "Moda, Lifestyle, Viagem",
-    "PROJETOS": "Terra Verão",
-    "REF. VALOR": "-",
-    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
-    "AGÊNCIA": "Cely",
-    "MINI BIO - INFLUENCIADOR": "Irlaine Tavares é influenciadora digital brasileira conhecida pelo canal As Tavares, onde compartilha vlogs sobre beleza, cuidados com os cabelos, moda e estilo de vida. Ela também aborda temas como espiritualidade, física quântica e Lei da Atração. Com mais de 400 mil seguidores no Instagram e presença ativa no TikTok, Irlaine se destaca por seu conteúdo voltado ao público feminino, com foco em autoestima, empoderamento e rotina pessoal"
   },
   {
     "INFLUENCIADOR": "Ellora",
     "@": "ellorahaonne",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://guiadoestudante.abril.com.br/wp-content/uploads/sites/4/2018/09/40653468_528944737544472_7347789110530029973_n.jpg?quality=70&strip=info&w=960",
     "IG": "604 mil",
     "TTK": "161 mil",
     "YT": "1.3 M",
@@ -5742,14 +5916,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Relacionamento, Educação, Humor",
     "PROJETOS": "Terra Verão",
     "REF. VALOR": "-",
-    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Ellora Haonne é influenciadora digital, youtuber e criadora do podcast Fiz o Que Pude, onde aborda temas como saúde mental, amadurecimento, identidade e relações humanas. Seus vídeos são conhecidos por serem sinceros, reflexivos e acolhedores, com linguagem acessível e estética leve. Com mais de 1 milhão de inscritos no YouTube, Ellora se comunica com um público jovem-adulto que busca autenticidade, crescimento pessoal e conexão emocional"
   },
   {
     "INFLUENCIADOR": "Renata Lima",
     "@": "renatatbl",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://p16-common-sign.tiktokcdn-us.com/tos-maliva-avt-0068/c59937038d7de1a803ee31d7836b1ddb~tplv-tiktokx-cropcenter:720:720.jpeg?dr=9640&refresh_token=978c807e&x-expires=1761951600&x-signature=lUoHihhrk4TxI6EtJyQWPdoWpaE%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=useast5",
     "IG": "965 mil",
     "TTK": "690 mil",
     "YT": "33 mil",
@@ -5757,14 +5931,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Saúde, Lifestyle, Educação",
     "PROJETOS": "Terra Verão",
     "REF. VALOR": "-",
-    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Renata Lima é influenciadora digital e criadora de conteúdo voltado para saúde, bem-estar e rotina fitness. Ela compartilha vídeos sobre treinos, alimentação saudável, produtividade e hábitos diários. Com presença marcante no TikTok e Instagram, Renata inspira mulheres com dicas práticas e motivacionais. Seu público é composto por mulheres jovens e adultas que buscam equilíbrio entre corpo, mente e rotina produtiva"
   },
   {
     "INFLUENCIADOR": "Andressa Castorino",
     "@": "dessacastorino",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1569713428234649601/qsSQukmQ_400x400.jpg",
     "IG": "964 mi",
     "TTK": "227 mil",
     "YT": "-",
@@ -5772,14 +5946,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Moda, Relacionamento, Entretenimento",
     "PROJETOS": "Terra Verão",
     "REF. VALOR": "-",
-    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Andressa Castorino é influenciadora digital e empresária, conhecida por seus conteúdos sobre moda, vida pessoal e estilo de vida. Com mais de 900 mil seguidores no Instagram, ela compartilha ensaios fotográficos, momentos com o parceiro e reflexões sobre o cotidiano. Andressa também participa de podcasts e entrevistas sobre criação de conteúdo e já foi destaque em matérias sobre sua vida pública e relacionamentos"
   },
   {
     "INFLUENCIADOR": "Mariana Goldfarb",
     "@": "marianagoldfarb",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://jpimg.com.br/uploads/2025/03/sem-titulo-20-750x450.png",
     "IG": "1.1 M",
     "TTK": "21 mil",
     "YT": "33 mil",
@@ -5787,29 +5961,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Saúde, Moda, Causas sociais",
     "PROJETOS": "Terra Verão",
     "REF. VALOR": "-",
-    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Mariana Goldfarb é modelo, apresentadora e influenciadora digital. Formada em Nutrição, ela usa suas redes para promover saúde mental, bem-estar e aceitação corporal. Mariana já apresentou o programa Ilhas Paradisíacas no canal Off e participou de diversos podcasts e entrevistas sobre feminismo, transtornos alimentares e espiritualidade. Seu conteúdo é voltado para mulheres que buscam equilíbrio, autenticidade e empoderamento"
-  },
-  {
-    "INFLUENCIADOR": "Fred Nicacio",
-    "@": "frednicacio",
-    "IMAGEM_URL": "",
-    "IG": "1.1 M",
-    "TTK": "113 mil",
-    "YT": "-",
-    "SEGMENTO": "Saúde",
-    "SEGMENTO SECUNDÁRIO": "Causas sociais, Autoconhecimento, Entretenimento",
-    "PROJETOS": "Terra Verão",
-    "REF. VALOR": "-",
-    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
-    "AGÊNCIA": "Cely",
-    "MINI BIO - INFLUENCIADOR": "Fred Nicácio é médico, fisioterapeuta, apresentador e influenciador digital. Ficou conhecido nacionalmente após participar do BBB 23 e apresentar o programa Queer Eye Brasil. Fred é ativista das causas raciais e LGBTQIAPN+, e viralizou ao realizar atendimentos médicos em Libras e por ser o primeiro médico negro consultado por uma paciente idosa. Ele usa suas redes para falar sobre saúde, espiritualidade (adepto do Ifá), representatividade e bem-estar. Recebeu a Medalha Pedro Ernesto e foi reconhecido como cidadão honorário do Rio de Janeiro"
   },
   {
     "INFLUENCIADOR": "Victor Han",
     "@": "victorhan",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/vi7a7SQUmLBEfdg3aOwGNzTv4qD0kfXeQHWbZOAAKll72Z2syA2oJwpGVDqJY93gP0V_I6dn2w=s176-c-k-c0x00ffffff-no-rj-mo",
     "IG": "1.4 M",
     "TTK": "2.3 M",
     "YT": "449 mil",
@@ -5817,14 +5976,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura regional, Viagem, Música",
     "PROJETOS": "Terra Verão",
     "REF. VALOR": "-",
-    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Victor Han é influenciador digital, youtuber e criador de conteúdo com ascendência coreana. Ele ficou conhecido por seus vídeos sobre cultura sul-coreana, K-pop, mukbangs e vlogs de viagem. Seu canal no YouTube reúne conteúdos variados, como reações a artistas brasileiros por coreanos, experiências gastronômicas e reflexões sobre identidade asiática no Brasil. Com mais de 1,5 milhão de seguidores nos Shorts e 449 mil inscritos no canal principal, Victor se destaca pela criatividade, humor e representatividade asiática nas redes sociais"
   },
   {
     "INFLUENCIADOR": "Manuela Cit",
     "@": "manuelacit",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://s2-redeglobo.glbimg.com/i6q6n9E5fwB0taup60seqjITgCA=/0x154:1000x1050/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_b58693ed41d04a39826739159bf600a0/internal_photos/bs/2025/9/y/M4np6eTz6yheAAOl07Qg/img-0094.jpg",
     "IG": "1.6 M",
     "TTK": "1.7 M",
     "YT": "87 mil",
@@ -5832,14 +5991,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Autoconhecimento, Saúde, Lifestyle",
     "PROJETOS": "Terra Verão",
     "REF. VALOR": "-",
-    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Manuela Cit é influenciadora digital, empreendedora e ex-estudante de Medicina. Ela ganhou notoriedade ao compartilhar sua rotina intensa de treinos, produtividade e desenvolvimento pessoal. Após abandonar o curso de Medicina na UFRJ por não se identificar com o ambiente acadêmico, Manu se dedicou integralmente à carreira digital e à sua empresa de papelaria organizacional, Guday. Com mais de 1,7 milhão de seguidores no TikTok, ela inspira jovens com conteúdos sobre disciplina, saúde mental e estilo de vida equilibrado"
   },
   {
     "INFLUENCIADOR": "Rachel Apollonio",
     "@": "rachelapollonio",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://conteudo.imguol.com.br/c/splash/7a/2022/12/21/rachel-apollonio-suposto-affair-de-gabigol-1671648027620_v2_1x1.jpg",
     "IG": "1.9 M",
     "TTK": "196 mil",
     "YT": "210 mil",
@@ -5847,14 +6006,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Fitness, Viagem, Moda",
     "PROJETOS": "Terra Verão",
     "REF. VALOR": "-",
-    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Rachel Apollonio é influenciadora digital, atriz e apresentadora. Conhecida por seu estilo de vida saudável e suas aventuras ao redor do mundo, ela compartilha vlogs de viagem, treinos, curiosidades pessoais e experiências culturais. Rachel também é figura frequente em eventos esportivos e campanhas publicitárias. Com mais de 1 milhão de seguidores no Instagram e presença ativa no TikTok e YouTube, seu conteúdo é voltado para mulheres jovens que buscam inspiração em saúde, bem-estar e estilo de vida ativo"
   },
   {
     "INFLUENCIADOR": "Aline Gotschalg",
-    "@": "alinegotschalg",
-    "IMAGEM_URL": "",
+    "@": "alinegotschalg\n",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIbk1VNtam50_tLuN_eaDxDKB5zM1Xh44tzQ&s",
     "IG": "2.2 M",
     "TTK": "417 mil",
     "YT": "-",
@@ -5862,14 +6021,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Família, Moda, Beleza",
     "PROJETOS": "Terra Verão",
     "REF. VALOR": "-",
-    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença de até 04 horas no Festival de Verão | 05 combos de stories de 04 telas cada no Instagram.",
     "MINI BIO - INFLUENCIADOR": "Aline Gotschalg é modelo, influenciadora digital e ex-participante do BBB 15. Ela ficou conhecida por seus vlogs familiares no canal #2ParaOMundo, onde compartilha momentos com o marido Fernando Medeiros e o filho Lucca. Com mais de 2,2 milhões de seguidores no Instagram, Aline aborda maternidade, rotina, moda e beleza com leveza e autenticidade. Seu conteúdo é voltado para mulheres jovens e mães que buscam inspiração no cotidiano"
   },
   {
     "INFLUENCIADOR": "Astroloucamente",
     "@": "astroloucamente",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvyC_FTgc-N0NgKyxgwRccXADDnrrhOIUR9w&s",
     "IG": "4.2 M",
     "TTK": "1.4 M",
     "YT": "2 mil",
@@ -5877,14 +6036,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Educação, Cultura regional",
     "PROJETOS": "Filme \"Uma Mulher Sem Filtro\"",
     "REF. VALOR": "R$ 15.840,00",
-    "ESCOPO": "01 combo de stories de 04 telas de 15s cada no Instagram | Repost do Reels no Tiktok.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 combo de stories de 04 telas de 15s cada no Instagram | Repost do Reels no Tiktok.",
     "MINI BIO - INFLUENCIADOR": "Astroloucamente é o projeto da astróloga Maria Talismã, que mistura astrologia com humor e crítica social. Com mais de 1,4 milhão de seguidores no TikTok e 22,7 milhões de curtidas, ela cria conteúdos sobre signos, personalidade e comportamento com uma abordagem divertida e acessível. Também escreve colunas e está desenvolvendo um livro sobre astrologia. Seu público é jovem, engajado e busca autoconhecimento com leveza e criatividade"
   },
   {
     "INFLUENCIADOR": "Gato Irônico",
     "@": "gatoironico",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/_3KxKXZGQ9IB0e6HkawO5A1pAEhOTc0Q2JtX07QJkGn6EfZ4I3davwjU2Ri-qJSrDTzEcJXfmw=s900-c-k-c0x00ffffff-no-rj",
     "IG": "1.1 M",
     "TTK": "282 mil",
     "YT": "458 mil",
@@ -5892,14 +6051,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Entretenimento, Cultura pop, Relacionamento",
     "PROJETOS": "Filme \"Uma Mulher Sem Filtro\"",
     "REF. VALOR": "R$ 9.640,00",
-    "ESCOPO": "01 combo de stories de 04 telas de 15s cada no Instagram | Repost do Reels no Tiktok.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 combo de stories de 04 telas de 15s cada no Instagram | Repost do Reels no Tiktok.",
     "MINI BIO - INFLUENCIADOR": "Gato Irônico é um criador de conteúdo que viralizou com vídeos curtos e memes sobre situações cotidianas, cultura pop e relacionamentos. Com mais de 50 milhões de visualizações em seus vídeos no TikTok e YouTube, ele se destaca pelo humor ácido, estética minimalista e linguagem jovem. Seu conteúdo é voltado para quem gosta de rir das ironias da vida com criatividade e sarcasmo"
   },
   {
     "INFLUENCIADOR": "Seu Filme Favorito",
     "@": "seufilmefavorito",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeOhfQkN_Wr60Tc218kjGM6PSlOmXJlXgapw&s",
     "IG": "6 M",
     "TTK": "11 mil",
     "YT": "114",
@@ -5907,14 +6066,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Entretenimento, Criação de conteúdo, Cultura pop",
     "PROJETOS": "Filme \"Uma Mulher Sem Filtro\"",
     "REF. VALOR": "R$ 38.540,00",
-    "ESCOPO": "01 combo de stories de 04 telas de 15s cada no Instagram | Repost do Reels no Tiktok.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 combo de stories de 04 telas de 15s cada no Instagram | Repost do Reels no Tiktok.",
     "MINI BIO - INFLUENCIADOR": "Seu Filme Favorito é um canal dedicado a comentar e recomendar filmes e séries. Com presença no TikTok e YouTube, o perfil compartilha trechos, curiosidades e análises leves sobre produções populares. O conteúdo é voltado para cinéfilos casuais e fãs de cultura pop que buscam sugestões rápidas e divertidas para assistir. O canal ainda está em crescimento, com foco em engajamento e comunidade de fãs"
   },
   {
     "INFLUENCIADOR": "Fofoca Marota",
     "@": "fofocamarota",
-    "IMAGEM_URL": "",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNkPp0zTADXwNNgUXUrEe3d0QpR2PTVI-VhA&s",
     "IG": "1.3 M",
     "TTK": "1.3 M",
     "YT": "1.1 M",
@@ -5922,14 +6081,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura pop, Humor, Relacionamento",
     "PROJETOS": "Filme \"Uma Mulher Sem Filtro\"",
     "REF. VALOR": "R$ 11.250,00",
-    "ESCOPO": "01 combo de stories de 04 telas de 15s cada no Instagram | Repost do Reels no Tiktok.",
     "AGÊNCIA": "Cely",
+    "ESCOPO": "01 combo de stories de 04 telas de 15s cada no Instagram | Repost do Reels no Tiktok.",
     "MINI BIO - INFLUENCIADOR": "Fofoca Marota é um perfil voltado para notícias e fofocas do mundo dos influenciadores e celebridades. Com mais de 1,3 milhão de seguidores no TikTok e 106 milhões de curtidas, o criador compartilha vídeos curtos com manchetes polêmicas, comentários irônicos e atualizações sobre a vida de famosos. O canal no YouTube, Tropa da Fofoca, complementa o conteúdo com vídeos mais longos e entrevistas. O estilo é direto, divertido e voltado para quem gosta de acompanhar os bastidores da internet."
   },
-{
+  {
     "INFLUENCIADOR": "Brazilian Version",
     "@": "brazilianversion",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/prBuhW12TS0zNUxnUgfMkO79Y7fXQKq4zTvMIVYoU22CYIN9SEV6eNpPNSomORuWBQhjUVxXJw=s900-c-k-c0x00ffffff-no-rj6",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdBnukK4b18RnXQjviwAY_vGRWC4Iga44CUQ&s",
     "IG": "2.6 M",
     "TTK": "88 mil",
     "YT": "-",
@@ -5944,7 +6103,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Memes Brasil",
     "@": "memesbrasil",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/prBuhW12TS0zNUxnUgfMkO79Y7fXQKq4zTvMIVYoU22CYIN9SEV6eNpPNSomORuWBQhjUVxXJw=s900-c-k-c0x00ffffff-no-rj7",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/QilP0or6sZ7u_KdJPgj2OFyYmPDKUg7jB_YsrYSENJUEwqGbUPVPOQZHWsuovfiGeU2bMfZnYNs=s900-c-k-c0x00ffffff-no-rj",
     "IG": "3.5 M",
     "TTK": "-",
     "YT": "-",
@@ -5959,7 +6118,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Barbára Carrara",
     "@": "astrologiadeboah",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/prBuhW12TS0zNUxnUgfMkO79Y7fXQKq4zTvMIVYoU22CYIN9SEV6eNpPNSomORuWBQhjUVxXJw=s900-c-k-c0x00ffffff-no-rj8",
+    "IMAGEM_URL": "https://media.licdn.com/dms/image/v2/C4E03AQHyXf4dAxxoWg/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1630380873583?e=2147483647&v=beta&t=-6-JDzGGDb6V-1JXUiNuPn_SpN54VL5vq_d8Lo5gTVk",
     "IG": "150 mil",
     "TTK": "75 mil",
     "YT": "3380",
@@ -5974,7 +6133,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Isabella Mezzadri",
     "@": "isabellamezzadri",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/prBuhW12TS0zNUxnUgfMkO79Y7fXQKq4zTvMIVYoU22CYIN9SEV6eNpPNSomORuWBQhjUVxXJw=s900-c-k-c0x00ffffff-no-rj9",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_ljCWP0i2ugIBsLgN_9Lr8Y7wAengvcCGVlwdOt5eDoPMU=s160-c-k-c0x00ffffff-no-rj",
     "IG": "402 mil",
     "TTK": "36 mil",
     "YT": "63 mil",
@@ -5989,7 +6148,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Vitor diCastro",
     "@": "vitordicastro",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/aQK31Agr6lZ38-WOYmfKNlWaYaqvXmkZISa3cRE5rx57iJyX7o21YK5ocsroa8QbqWdKzxHn=s900-c-k-c0x00ffffff-no-rj0",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxzUHSBzMGRyIXvjDYspo5YBnBh1xOaLOuYg&s",
     "IG": "1.3 M",
     "TTK": "1.3 M",
     "YT": "1 M",
@@ -6004,7 +6163,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Mica Rocha",
     "@": "micarocha",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/aQK31Agr6lZ38-WOYmfKNlWaYaqvXmkZISa3cRE5rx57iJyX7o21YK5ocsroa8QbqWdKzxHn=s900-c-k-c0x00ffffff-no-rj1",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTn6fUIDjln91t5nYn2Sa5VG6Ctnp7iSMB-7Q&s",
     "IG": "1.5 M",
     "TTK": "173 mil",
     "YT": "142 mil",
@@ -6019,7 +6178,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Marcia Sensitiva",
     "@": "marciasensitiva",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/aQK31Agr6lZ38-WOYmfKNlWaYaqvXmkZISa3cRE5rx57iJyX7o21YK5ocsroa8QbqWdKzxHn=s900-c-k-c0x00ffffff-no-rj2",
+    "IMAGEM_URL": "https://www.rbsdirect.com.br/filestore/9/9/8/7/8/0/5_da739a0aa8cdee9/5087899_a1e6c92c9e4a2f1.jpg?w=700",
     "IG": "6.8 M",
     "TTK": "3 M",
     "YT": "2.6 M",
@@ -6034,7 +6193,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Madama",
     "@": "br000ra",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/aQK31Agr6lZ38-WOYmfKNlWaYaqvXmkZISa3cRE5rx57iJyX7o21YK5ocsroa8QbqWdKzxHn=s900-c-k-c0x00ffffff-no-rj3",
+    "IMAGEM_URL": "https://f.i.uol.com.br/fotografia/2019/06/28/15617551765d167e282f9e0_1561755176_3x2_rt.jpg",
     "IG": "213 mil",
     "TTK": "27 mil",
     "YT": "-",
@@ -6044,12 +6203,12 @@ const segmentColors = {
     "REF. VALOR": "R$ 6.600,00",
     "AGÊNCIA": "Cely",
     "ESCOPO": "01 combo de stories de 04 telas de 15s cada no Instagram | Repost do Reels no Tiktok.",
-    "MINI BIO - INFLUENCIADOR": "Madama Br000na, nome artístico de Bruna Paludo, é astróloga, taróloga e influenciadora digital. Natural de Passo Fundo (RS), ela deixou a carreira de advogada e produtora de conteúdo corporativo para se dedicar à astrologia e ao tarô. Seu estilo é moderno, com linguagem acessível e cheia de memes, o que atrai especialmente o público millennial e da comunidade LGBTQIA+. Feminista e pansexual assumida, Brona aborda temas como amor, espiritualidade e empoderamento com leveza e profundidade. É conhecida por unir astrologia com cultura pop e humor."
+    "MINI BIO - INFLUENCIADOR": "Madama Br000na, nome artístico de Bruna Paludo, é astróloga, taróloga e influenciadora digital. Natural de Passo Fundo (RS), ela deixou a carreira de advogada e produtora de conteúdo corporativo para se dedicar à astrologia e ao tarô. Seu estilo é moderno, com linguagem acessível e cheia de memes, o que atrai especialmente o público millennial e da comunidade LGBTQIA+. Feminista e pansexual assumida, Brona aborda temas como amor, espiritualidade e empoderamento com leveza e profundidade. É conhecida por unir astrologia com cultura pop e humor.\n"
   },
   {
     "INFLUENCIADOR": "Tatiane Lisbon",
     "@": "papisa_",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/aQK31Agr6lZ38-WOYmfKNlWaYaqvXmkZISa3cRE5rx57iJyX7o21YK5ocsroa8QbqWdKzxHn=s900-c-k-c0x00ffffff-no-rj4",
+    "IMAGEM_URL": "https://www.tvtime.com/_next/image?url=https%3A%2F%2Fartworks.thetvdb.com%2Fbanners%2Fv4%2Factor%2F9126425%2Fphoto%2F66287572d2464.jpg&w=640&q=75",
     "IG": "70,6 mil",
     "TTK": "1173",
     "YT": "-",
@@ -6064,12 +6223,12 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Bruna",
     "@": "brvnks",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/aQK31Agr6lZ38-WOYmfKNlWaYaqvXmkZISa3cRE5rx57iJyX7o21YK5ocsroa8QbqWdKzxHn=s900-c-k-c0x00ffffff-no-rj5",
+    "IMAGEM_URL": "https://s2-g1.glbimg.com/IKXAaafpNVj9glzWa_pnRCXR8wg=/0x554:1400x1400/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2019/u/l/lS6KuPTY6WAFgmDEaKBw/brvnks.jpg",
     "IG": "53,5 mil",
     "TTK": "20 mil",
     "YT": "7500",
     "SEGMENTO": "Música",
-    "SEGMENTO SECUNDÁRIO": "Lifestyle, Humor, Criação de conteúdo",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Humor, Criação de conteúdo\n",
     "PROJETOS": "Filme \"Uma Mulher Sem Filtro\"",
     "REF. VALOR": "R$ 7.260,00",
     "AGÊNCIA": "Cely",
@@ -6079,7 +6238,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Bruno Miranda",
     "@": "ocriticoqueninguempediu",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/aQK31Agr6lZ38-WOYmfKNlWaYaqvXmkZISa3cRE5rx57iJyX7o21YK5ocsroa8QbqWdKzxHn=s900-c-k-c0x00ffffff-no-rj6",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqDhoESD85OoIGLPyFfkH3PHlbHi7IAgZVkA&s",
     "IG": "1 M",
     "TTK": "693 mil",
     "YT": "1.6 M",
@@ -6094,7 +6253,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Pedro Gemim",
     "@": "pedrogemim",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/aQK31Agr6lZ38-WOYmfKNlWaYaqvXmkZISa3cRE5rx57iJyX7o21YK5ocsroa8QbqWdKzxHn=s900-c-k-c0x00ffffff-no-rj7",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkEgkmtOthXQ7l-UuLKqT55pzCiDkKZclaVY1y0lPA3LHD-q40wdIQRbzQYEhJoxNJc38&usqp=CAU",
     "IG": "817 mil",
     "TTK": "105 mil",
     "YT": "-",
@@ -6109,7 +6268,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Gabriel Gemim",
     "@": "gabrielgemim",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/aQK31Agr6lZ38-WOYmfKNlWaYaqvXmkZISa3cRE5rx57iJyX7o21YK5ocsroa8QbqWdKzxHn=s900-c-k-c0x00ffffff-no-rj8",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0PJvcUcImX8N2zoER8WJSaDvhZW5O3b1xwQ&s",
     "IG": "902 mil",
     "TTK": "359 mil",
     "YT": "-",
@@ -6121,10 +6280,10 @@ const segmentColors = {
     "ESCOPO": "01 presença de até 04 horas no Rodeio de Itu | 02 Combos de Stories de 03 telas cada no Instagram | 02 Reels de 60 segundos no feed do Instagram.",
     "MINI BIO - INFLUENCIADOR": "Gabriel Gemim é influenciador digital e irmão de Pedro Gemim. Juntos, eles formam uma dupla carismática que conquistou o público com vídeos engraçados e espontâneos. Gabriel é conhecido por seu estilo leve e divertido, com conteúdos que misturam humor, música e cotidiano. Seu público é jovem e regional, com forte presença nas redes sociais como TikTok. Ele se destaca pela naturalidade e conexão com temas populares."
   },
-  {
+{
     "INFLUENCIADOR": "Gabriela Gobo",
     "@": "gabigobo",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/aQK31Agr6lZ38-WOYmfKNlWaYaqvXmkZISa3cRE5rx57iJyX7o21YK5ocsroa8QbqWdKzxHn=s900-c-k-c0x00ffffff-no-rj9",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrqwFuZziGeaBDmayxaF8xSA385nRI-TrVNPctPuy7IsGK0t1poo5uk7yRSxJhrYDgqws&usqp=CAU",
     "IG": "177 mil",
     "TTK": "152 mil",
     "YT": "-",
@@ -6139,7 +6298,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Gustavo Tubarão",
     "@": "ogustavotubarao",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/dwbQ_G4fQZi6wmQ-7Tw84pzYi3BR5wVUAsK65YDptpyUKR6wrEym05x8xV3l8REOI0skhwSh4g=s900-c-k-c0x00ffffff-no-rj0",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCtyxI1yn8D9BnrUsnAQPCh6BVjwZxIE-vRg&s",
     "IG": "12,8 mil",
     "TTK": "13.7 M",
     "YT": "1 M",
@@ -6154,7 +6313,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Fausto o Menzinho",
     "@": "ofaustocarvalho",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/dwbQ_G4fQZi6wmQ-7Tw84pzYi3BR5wVUAsK65YDptpyUKR6wrEym05x8xV3l8REOI0skhwSh4g=s900-c-k-c0x00ffffff-no-rj1",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSsiJWst2X4RWA4BFPTuGz_DtRcKxYQC_fGNw&s",
     "IG": "4.2 M",
     "TTK": "1.2 M",
     "YT": "117 mil",
@@ -6169,12 +6328,12 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Marina Fabris",
     "@": "marinafabris",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/dwbQ_G4fQZi6wmQ-7Tw84pzYi3BR5wVUAsK65YDptpyUKR6wrEym05x8xV3l8REOI0skhwSh4g=s900-c-k-c0x00ffffff-no-rj2",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSP2RIcB-mxt_Hv_fOBXriS2S-Jox5La-zziA&s",
     "IG": "570 mil",
     "TTK": "35 mil",
     "YT": "972",
     "SEGMENTO": "Cultura regional",
-    "SEGMENTO SECUNDÁRIO": "Lifestyle, Moda, Viagem, Criação de conteúdo",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Moda, Viagem, Criação de conteúdo\n",
     "PROJETOS": "Rodeio de Itu",
     "REF. VALOR": "R$ 29.040,00",
     "AGÊNCIA": "Cely",
@@ -6184,7 +6343,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Bruna Lipiani",
     "@": "brunalipiani",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/dwbQ_G4fQZi6wmQ-7Tw84pzYi3BR5wVUAsK65YDptpyUKR6wrEym05x8xV3l8REOI0skhwSh4g=s900-c-k-c0x00ffffff-no-rj3",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJSXL_fJ64h8Oh4fRSm8PqgDBnBIXKvzGSCg&s",
     "IG": "2.3 M",
     "TTK": "1.8 M",
     "YT": "34,7 mil",
@@ -6199,7 +6358,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Giovanna Jacobina",
     "@": "giovanna_jacobina",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/dwbQ_G4fQZi6wmQ-7Tw84pzYi3BR5wVUAsK65YDptpyUKR6wrEym05x8xV3l8REOI0skhwSh4g=s900-c-k-c0x00ffffff-no-rj4",
+    "IMAGEM_URL": "https://f.i.uol.com.br/fotografia/2025/01/19/1737306837678d32d54e2d5_1737306837_3x2_lg.jpg",
     "IG": "413 mil",
     "TTK": "47 mil",
     "YT": "-",
@@ -6209,12 +6368,12 @@ const segmentColors = {
     "REF. VALOR": "R$ 19.800,00",
     "AGÊNCIA": "Cely",
     "ESCOPO": "01 presença de até 04 horas no Rodeio de Itu | 02 Combos de Stories de 03 telas cada no Instagram | 02 Reels de 60 segundos no feed do Instagram.",
-    "MINI BIO - INFLUENCIADOR": "Giovanna Jacobina é médica veterinária, influenciadora digital e ex-participante do BBB 25, onde entrou como dupla da irmã Gracyanne Barbosa. Natural de Campo Grande (MS), Giovanna compartilha conteúdos sobre bem-estar, rotina fitness, viagens e autoestima. Ela também é conhecida por sua personalidade forte e estilo marcante. Seu público é jovem-adulto, interessado em saúde, beleza e estilo de vida. Giovanna se destaca pela autenticidade e por representar mulheres independentes e determinadas"
+    "MINI BIO - INFLUENCIADOR": "Giovanna Jacobina é médica veterinária, influenciadora digital e ex-participante do BBB 25, onde entrou como dupla da irmã Gracyanne Barbosa. Natural de Campo Grande (MS), Giovanna compartilha conteúdos sobre bem-estar, rotina fitness e viagens e autoestima. Ela também é conhecida por sua personalidade forte e estilo marcante. Seu público é jovem-adulto, interessado em saúde, beleza e estilo de vida. Giovanna se destaca pela autenticidade e por representar mulheres independentes e determinadas"
   },
   {
     "INFLUENCIADOR": "Gabi Martins",
     "@": "gabimartins",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/dwbQ_G4fQZi6wmQ-7Tw84pzYi3BR5wVUAsK65YDptpyUKR6wrEym05x8xV3l8REOI0skhwSh4g=s900-c-k-c0x00ffffff-no-rj5",
+    "IMAGEM_URL": "https://i0.statig.com.br/bancodeimagens/imgalta/bk/ke/i0/bkkei0xtbeoomf0kz4vnocep6.jpg",
     "IG": "14.2 M",
     "TTK": "7.5 M",
     "YT": "1.2 M",
@@ -6229,7 +6388,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Carol Loback",
     "@": "carolinaloback",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/dwbQ_G4fQZi6wmQ-7Tw84pzYi3BR5wVUAsK65YDptpyUKR6wrEym05x8xV3l8REOI0skhwSh4g=s900-c-k-c0x00ffffff-no-rj6",
+    "IMAGEM_URL": "https://media.licdn.com/dms/image/v2/D4D03AQFcmcTXeGwpCw/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1679074629462?e=2147483647&v=beta&t=KK6uet6WZvUk_3fvdMZX3pr8AdJHg3gfRp7bZxCK-I4",
     "IG": "1.3 M",
     "TTK": "154 mil",
     "YT": "81 mil",
@@ -6244,7 +6403,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Huylson",
     "@": "huylson",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/dwbQ_G4fQZi6wmQ-7Tw84pzYi3BR5wVUAsK65YDptpyUKR6wrEym05x8xV3l8REOI0skhwSh4g=s900-c-k-c0x00ffffff-no-rj7",
+    "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1760505064622350336/XYrWsD4I.jpg",
     "IG": "282 mil",
     "TTK": "1.5 M",
     "YT": "1560",
@@ -6259,7 +6418,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Vitória Bueno",
     "@": "vitoriabuenoofficial",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/dwbQ_G4fQZi6wmQ-7Tw84pzYi3BR5wVUAsK65YDptpyUKR6wrEym05x8xV3l8REOI0skhwSh4g=s900-c-k-c0x00ffffff-no-rj8",
+    "IMAGEM_URL": "https://www.theepochtimes.com/_next/image?url=https%3A%2F%2Fimg.theepochtimes.com%2Fassets%2Fuploads%2F2023%2F06%2F02%2Fid5307888-Vitoria-Bueno1.jpg&w=1200&q=75",
     "IG": "729 mil",
     "TTK": "-",
     "YT": "39 mil",
@@ -6274,7 +6433,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Penelopy Jean",
     "@": "penelopyjean",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/dwbQ_G4fQZi6wmQ-7Tw84pzYi3BR5wVUAsK65YDptpyUKR6wrEym05x8xV3l8REOI0skhwSh4g=s900-c-k-c0x00ffffff-no-rj9",
+    "IMAGEM_URL": "https://www.meioemensagem.com.br/wp-content/uploads/2025/05/Penelopy-Jean.jpg",
     "IG": "249 mil",
     "TTK": "449 mil",
     "YT": "149 mil",
@@ -6289,7 +6448,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Carolinne Gonçalves",
     "@": "carolinnega",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/D9_mxso16r92hlt7VyYXFyCE7t2vHfctjDjtv00Sy94w6us3eIlpgR16lIUFJONSDJf2C-Og=s900-c-k-c0x00ffffff-no-rj0",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoQOoJPwl5M0f8kxyevtQ507h3WXCPeXQUtmsILKXlVLsiGt0aEO6WsMkVVhO6U_mZZpw&usqp=CAU",
     "IG": "144 mil",
     "TTK": "184 mil",
     "YT": "6570",
@@ -6304,7 +6463,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Babu Carreira",
     "@": "babucarreira",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/D9_mxso16r92hlt7VyYXFyCE7t2vHfctjDjtv00Sy94w6us3eIlpgR16lIUFJONSDJf2C-Og=s900-c-k-c0x00ffffff-no-rj1",
+    "IMAGEM_URL": "https://br.web.img3.acsta.net/c_310_420/pictures/22/07/11/22/54/4385621.jpg",
     "IG": "124 mil",
     "TTK": "189 mil",
     "YT": "14.6 mil",
@@ -6319,7 +6478,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Preta Araújo",
     "@": "pretaraujo",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/D9_mxso16r92hlt7VyYXFyCE7t2vHfctjDjtv00Sy94w6us3eIlpgR16lIUFJONSDJf2C-Og=s900-c-k-c0x00ffffff-no-rj2",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQKyCUWubGB9ZOuNI-HVXyq3ZR37DhHTNqNaQ&s",
     "IG": "145 mil",
     "TTK": "113 mil",
     "YT": "88 mil",
@@ -6334,7 +6493,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Rafa Brunelli",
     "@": "rafabrunelli",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/D9_mxso16r92hlt7VyYXFyCE7t2vHfctjDjtv00Sy94w6us3eIlpgR16lIUFJONSDJf2C-Og=s900-c-k-c0x00ffffff-no-rj3",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZ0do-Ngl2iplLxJw9Qp-6j9_NS0oa1JMRIg&s",
     "IG": "61,2 mil",
     "TTK": "71 mil",
     "YT": "-",
@@ -6349,7 +6508,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Paloma Barbiezinha",
     "@": "palomabarbiezinha",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/D9_mxso16r92hlt7VyYXFyCE7t2vHfctjDjtv00Sy94w6us3eIlpgR16lIUFJONSDJf2C-Og=s900-c-k-c0x00ffffff-no-rj4",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl3k6qaL6cYlYRRI41eFWgkeB34D0Wyo4b5g&s",
     "IG": "55,3 mil",
     "TTK": "28 mil",
     "YT": "6 mil",
@@ -6359,12 +6518,12 @@ const segmentColors = {
     "REF. VALOR": "-",
     "AGÊNCIA": "Mosaico",
     "ESCOPO": "-",
-    "MINI BIO - INFLUENCIADOR": "Paloma Barbiezinha é influenciadora digital baiana que se inspira na estética da Barbie para criar um universo pink cheio de cor, criatividade e empoderamento. Ela compartilha conteúdos sobre moda colorida, decoração divertida, beleza e autoestima. Paloma também participou do reality Corrida das Blogueiras, onde se destacou pela originalidade e carisma. Seu público é jovem, diverso e engajado, e seu diferencial está na estética vibrante e na mensagem de liberdade e expressão pessoal."
+    "MINI BIO - INFLUENCIADOR": "Paloma Barbiezinha é influenciadora digital baiana que se inspira na estética da Barbie para criar um universo pink cheio de cor, criatividade e empoderamento. Ela compartilha conteúdos sobre moda colorida, decoração divertida, beleza e autoestima. Paloma também participou do reality Corrida das Blogueiras, onde se destacou pela originalidade e carisma. Seu público é jovem, diverso e engajado, e seu diferencial está na estética vibrante e na mensagem de liberdade e expressão pessoal.\n"
   },
   {
     "INFLUENCIADOR": "Vini Cordeiro",
     "@": "vinicordeiro",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/D9_mxso16r92hlt7VyYXFyCE7t2vHfctjDjtv00Sy94w6us3eIlpgR16lIUFJONSDJf2C-Og=s900-c-k-c0x00ffffff-no-rj5",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_kZZ6zWsAJaE34K4XJASsnvsYDySG1jntFXLXySibKsdQ=s900-c-k-c0x00ffffff-no-rj",
     "IG": "1 M",
     "TTK": "368 mil",
     "YT": "1 M",
@@ -6379,7 +6538,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Jessica Ingrede",
     "@": "jessicaingrede",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/D9_mxso16r92hlt7VyYXFyCE7t2vHfctjDjtv00Sy94w6us3eIlpgR16lIUFJONSDJf2C-Og=s900-c-k-c0x00ffffff-no-rj6",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROjrWOF6mN1noJ1tzgEzklh8NPoyLb98KtZA&s",
     "IG": "329 mil",
     "TTK": "1.1 M",
     "YT": "-",
@@ -6394,7 +6553,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Barbit",
     "@": "abarbit",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/D9_mxso16r92hlt7VyYXFyCE7t2vHfctjDjtv00Sy94w6us3eIlpgR16lIUFJONSDJf2C-Og=s900-c-k-c0x00ffffff-no-rj7",
+    "IMAGEM_URL": "https://www.breaktudo.com/wp-content/uploads/2023/12/barbit-do-brazil-wiki-biografia-fotos-quem-e-idade.jpg",
     "IG": "140 mil",
     "TTK": "2.6 M",
     "YT": "518 mil",
@@ -6409,7 +6568,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Luísa Assaf",
     "@": "lu_assaf",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/D9_mxso16r92hlt7VyYXFyCE7t2vHfctjDjtv00Sy94w6us3eIlpgR16lIUFJONSDJf2C-Og=s900-c-k-c0x00ffffff-no-rj8",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRImFbht-FcuJXbev5r6DPd3yyKxHrFoFrRsw&s",
     "IG": "152 mil",
     "TTK": "716 mil",
     "YT": "-",
@@ -6424,7 +6583,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Pedro HMC",
     "@": "hmcpedro",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/D9_mxso16r92hlt7VyYXFyCE7t2vHfctjDjtv00Sy94w6us3eIlpgR16lIUFJONSDJf2C-Og=s900-c-k-c0x00ffffff-no-rj9",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBKE1kop0JSGSUOBV9AJ3Na0HM9MvQ422bcw&s",
     "IG": "387 mil",
     "TTK": "167 mil",
     "YT": "1.2 M",
@@ -6439,7 +6598,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Miguel Barbieri",
     "@": "miguelbarbieri",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/THIDjzOEkjV082bTTdawKYYs9L0dtcbxIlpd-z_VumTmfexa7Y91dl5TYrGZml2N4rRiD8_u=s900-c-k-c0x00ffffff-no-rj0",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbrh6t0KYRmOSWKTRsif3mP-FCY8npLhVTRg&s",
     "IG": "144 mil",
     "TTK": "4724",
     "YT": "3 mil",
@@ -6454,12 +6613,12 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Stella Yeshua",
     "@": "stella.yeshua",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/THIDjzOEkjV082bTTdawKYYs9L0dtcbxIlpd-z_VumTmfexa7Y91dl5TYrGZml2N4rRiD8_u=s900-c-k-c0x00ffffff-no-rj1",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQy0kKY7o2B3HuhgfC2wNho3Kq3CN8uY-05pw&s",
     "IG": "137 mil",
     "TTK": "140 mil",
     "YT": "-",
     "SEGMENTO": "Música",
-    "SEGMENTO SECUNDÁRIO": "Causas sociais, Moda, Autoconhecimento, Cultura regional",
+    "SEGMENTO SECUNDÁRIO": "Causas sociais, Moda, Autoconhecimento, Cultura regional\n",
     "PROJETOS": "-",
     "REF. VALOR": "-",
     "AGÊNCIA": "Mosaico",
@@ -6469,7 +6628,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Mayra Sigwalt",
     "@": "mayrasigwalt",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/THIDjzOEkjV082bTTdawKYYs9L0dtcbxIlpd-z_VumTmfexa7Y91dl5TYrGZml2N4rRiD8_u=s900-c-k-c0x00ffffff-no-rj2",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/gyYhrC14qAJVZMVrSD-Ui4EpBOhZm_mM9P7C8DPlFvQbOGBLNyJCp_h30pWdQMIgaXfLT6rX=s900-c-k-c0x00ffffff-no-rj",
     "IG": "29,8 mil",
     "TTK": "15 mil",
     "YT": "55.6 mil",
@@ -6484,7 +6643,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Luana Xavier",
     "@": "luanaxavier",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/THIDjzOEkjV082bTTdawKYYs9L0dtcbxIlpd-z_VumTmfexa7Y91dl5TYrGZml2N4rRiD8_u=s900-c-k-c0x00ffffff-no-rj3",
+    "IMAGEM_URL": "https://s2-extra.glbimg.com/k_N-6P3GEVyxksIS8kv1Wbo1Rb0=/0x0:3000x4500/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_1f551ea7087a47f39ead75f64041559a/internal_photos/bs/2024/b/g/EkGRxAQzqy5tnThB2l8w/106866688-a-atriz-e-apresentadora-luana-xavier-posa-para-a-canal-extra-em-seu-primeiro-ensaio-de-mod.jpg",
     "IG": "378 mil",
     "TTK": "-",
     "YT": "-",
@@ -6499,7 +6658,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Rhayssa Couto",
     "@": "rhayssacouto",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/THIDjzOEkjV082bTTdawKYYs9L0dtcbxIlpd-z_VumTmfexa7Y91dl5TYrGZml2N4rRiD8_u=s900-c-k-c0x00ffffff-no-rj4",
+    "IMAGEM_URL": "https://s2-redeglobo.glbimg.com/aKmQK6OuoCHBkslaRuFtp4J_rAo=/0x0:854x1280/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_e84042ef78cb4708aeebdf1c68c6cbd6/internal_photos/bs/2020/5/R/MiaDVVQTKLoblsDoAXig/aff1d955-3af7-4777-a94a-7e48aa0eca0e.jpg",
     "IG": "31,1 mil",
     "TTK": "3671",
     "YT": "-",
@@ -6514,7 +6673,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Fefito",
     "@": "fefito",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/THIDjzOEkjV082bTTdawKYYs9L0dtcbxIlpd-z_VumTmfexa7Y91dl5TYrGZml2N4rRiD8_u=s900-c-k-c0x00ffffff-no-rj5",
+    "IMAGEM_URL": "https://noticiasdatv.uol.com.br/media/uploads/artigos_2024/fefito-mulheres-6-6-2025--gazeta.jpg",
     "IG": "351 mil",
     "TTK": "899",
     "YT": "-",
@@ -6529,7 +6688,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Traemme",
     "@": "traemme",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/THIDjzOEkjV082bTTdawKYYs9L0dtcbxIlpd-z_VumTmfexa7Y91dl5TYrGZml2N4rRiD8_u=s900-c-k-c0x00ffffff-no-rj6",
+    "IMAGEM_URL": "https://p2.trrsf.com/image/fget/cf/500/0/images.terra.com/2023/09/29/344513710_1019756405652904_7039474129026068999_n-sohwcba578kx.jpg",
     "IG": "36 mil",
     "TTK": "12 mil",
     "YT": "11.1 mil",
@@ -6539,12 +6698,12 @@ const segmentColors = {
     "REF. VALOR": "-",
     "AGÊNCIA": "Mosaico",
     "ESCOPO": "-",
-    "MINI BIO - INFLUENCIADOR": "Traemme é cantora, compositora e influenciadora digital trans, nascida em Embu Guaçu (SP). Aos 26 anos, ela se destaca por letras que abordam empoderamento, vivência LGBTQIA+ e superação. Já se apresentou em eventos como Hopi Pride e Agrada Gregos, e suas músicas como Me Ama Que Eu Sei e Sou Eu têm forte apelo emocional e estético. Traemme também compartilha sua trajetória de vida, incluindo desafios enfrentados na juventude e na transição. Seu diferencial é a força artística e a representatividade que carrega em cada projeto."
+    "MINI BIO - INFLUENCIADOR": "Traemme é cantora, compositora e influenciadora digital trans, nascida em Embu Guaçu (SP). Aos 26 anos, ela se destaca por letras que abordam empoderamento, vivência LGBTQIA+ e superação. Já se apresentou em eventos como Hopi Pride e Agrada Gregos, e suas músicas como Me Ama Que Eu Sei e Sou Eu têm forte apelo emocional e estético. Traemme também compartilha sua trajetória de vida, incluindo desafios enfrentados na juventude e na transição. Seu diferencial é a força artística e a representatividade que carrega em cada projeto.\n"
   },
   {
     "INFLUENCIADOR": "Jessica Kian",
     "@": "jessicakian_",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/THIDjzOEkjV082bTTdawKYYs9L0dtcbxIlpd-z_VumTmfexa7Y91dl5TYrGZml2N4rRiD8_u=s900-c-k-c0x00ffffff-no-rj7",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTnfhr2hQNk3NKOvhsgg_NoeF6Y9MFTt3_ziw&s",
     "IG": "43,3 mil",
     "TTK": "6717",
     "YT": "-",
@@ -6559,7 +6718,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Preta Caminhão",
     "@": "pretacaminhao",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/THIDjzOEkjV082bTTdawKYYs9L0dtcbxIlpd-z_VumTmfexa7Y91dl5TYrGZml2N4rRiD8_u=s900-c-k-c0x00ffffff-no-rj8",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9akqGfsYwHkw9uhX27DX7phuw4V2ObW4pcA&s",
     "IG": "17,8 mil",
     "TTK": "946",
     "YT": "33 mil",
@@ -6574,7 +6733,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Pietra Silvestri",
     "@": "pietra.silvestri",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/THIDjzOEkjV082bTTdawKYYs9L0dtcbxIlpd-z_VumTmfexa7Y91dl5TYrGZml2N4rRiD8_u=s900-c-k-c0x00ffffff-no-rj9",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQw9GJISjoHYG8knx5iWDFGoCSWoxHvemY9ZA&s",
     "IG": "350 mil",
     "TTK": "1.1 M",
     "YT": "33 mil",
@@ -6589,7 +6748,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Jão Jão Edu",
     "@": "jaojaoedu",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_mXsLtUH6zbkuoQPfg8E2Ur4U2L-EtS3aBg1yPA6jIh7CA=s160-c-k-c0x00ffffff-no-rj0",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThcgSwEOMefYsnFd1V1_e67ywGYwdiNSfOeA&s",
     "IG": "318 mil",
     "TTK": "360mil",
     "YT": "-",
@@ -6604,7 +6763,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Sabe Aquela Cena",
     "@": "sabeaquelacena",
-    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-88s0uJhzRWVI_mPjprr7db9gHdpGLpARNA&s",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqX-jItad0rdrGXVEFEeFfTRHMiyO_qXYuRQ&s",
     "IG": "114 mil",
     "TTK": "81 mil",
     "YT": "141 mil",
@@ -6619,7 +6778,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Amanda Monteiro",
     "@": "amandamonteirods",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_mXsLtUH6zbkuoQPfg8E2Ur4U2L-EtS3aBg1yPA6jIh7CA=s160-c-k-c0x00ffffff-no-rj1",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSu_7w8pJRmOhEODdaVXUgexA5mnInasvNLA&s",
     "IG": "27 mil",
     "TTK": "43 mil",
     "YT": "32 mil",
@@ -6634,7 +6793,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Vitor Zucarelli",
     "@": "vitorzucarelli",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_mXsLtUH6zbkuoQPfg8E2Ur4U2L-EtS3aBg1yPA6jIh7CA=s160-c-k-c0x00ffffff-no-rj2",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8R4gkHWAzr0Kb4fsT5ije1pG5qZRuhvFzbw&s",
     "IG": "113 mil",
     "TTK": "217 mil",
     "YT": "-",
@@ -6649,7 +6808,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Orlando Beraldo",
     "@": "orlandoberaldo",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_mXsLtUH6zbkuoQPfg8E2Ur4U2L-EtS3aBg1yPA6jIh7CA=s160-c-k-c0x00ffffff-no-rj3",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWnnryLYQix5vO9kv-YXiRKlXoc6Q9PHQvPw&s",
     "IG": "209 mil",
     "TTK": "1.4 M",
     "YT": "6800",
@@ -6664,7 +6823,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Georgia Castro",
     "@": "georgiacastro",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_mXsLtUH6zbkuoQPfg8E2Ur4U2L-EtS3aBg1yPA6jIh7CA=s160-c-k-c0x00ffffff-no-rj4",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC14HixIsOh40u9aEPNHLhg2nEdWGDElQcRA&s",
     "IG": "593 mil",
     "TTK": "835 mil",
     "YT": "61.5 mil",
@@ -6679,7 +6838,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Vitor Dourado",
     "@": "douradolife",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_mXsLtUH6zbkuoQPfg8E2Ur4U2L-EtS3aBg1yPA6jIh7CA=s160-c-k-c0x00ffffff-no-rj5",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVdXt6vCQuOeVw_jIj_ZzcwwXkX2SF2aXhgw&s",
     "IG": "133 mil",
     "TTK": "9417",
     "YT": "1 mil",
@@ -6694,12 +6853,12 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Rose Cohen",
     "@": "cohenrose",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_mXsLtUH6zbkuoQPfg8E2Ur4U2L-EtS3aBg1yPA6jIh7CA=s160-c-k-c0x00ffffff-no-rj6",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGVaSPRocmM7CiNiRm0VOi7c4ZwEvcjD5ykw&s",
     "IG": "731 mil",
     "TTK": "734 mil",
     "YT": "3 mil",
     "SEGMENTO": "Música",
-    "SEGMENTO SECUNDÁRIO": "Moda, Entretenimento, Causas sociais",
+    "SEGMENTO SECUNDÁRIO": "Moda, Entretenimento, Causas sociais\n",
     "PROJETOS": "-",
     "REF. VALOR": "-",
     "AGÊNCIA": "Mosaico",
@@ -6709,7 +6868,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Bárbara Aires",
     "@": "dra.barbaraaires",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_mXsLtUH6zbkuoQPfg8E2Ur4U2L-EtS3aBg1yPA6jIh7CA=s160-c-k-c0x00ffffff-no-rj7",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIZpH0CHuDZGMU3vLYVucwMS5xLjyA80K2Qw&s",
     "IG": "29,9 mil",
     "TTK": "-",
     "YT": "-",
@@ -6724,7 +6883,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Dora Criadora",
     "@": "doracriadora",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_mXsLtUH6zbkuoQPfg8E2Ur4U2L-EtS3aBg1yPA6jIh7CA=s160-c-k-c0x00ffffff-no-rj8",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTd8pynvutlTGBzZLJPsAG0kTi-XiLbCw9-Fg&s",
     "IG": "83,8 mil",
     "TTK": "62 mil",
     "YT": "-",
@@ -6737,24 +6896,9 @@ const segmentColors = {
     "MINI BIO - INFLUENCIADOR": "Dora Criadora é drag queen, cantora independente e criadora de conteúdo. Com mais de 57 mil seguidores no TikTok e 1,5 milhão de curtidas, Dora compartilha vídeos sobre maquiagem, vivências LGBTQIA+, música e reflexões sobre relacionamentos e identidade. Seu conteúdo é artístico e provocativo, com foco em expressão pessoal e crítica social. Dora se destaca pela estética vibrante e pela abordagem sensível e criativa sobre temas diversos"
   },
   {
-    "INFLUENCIADOR": "Sasha Vilela",
-    "@": "sashavilelaa",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_mXsLtUH6zbkuoQPfg8E2Ur4U2L-EtS3aBg1yPA6jIh7CA=s160-c-k-c0x00ffffff-no-rj9",
-    "IG": "77,9 mil",
-    "TTK": "22 mil",
-    "YT": "-",
-    "SEGMENTO": "Moda",
-    "SEGMENTO SECUNDÁRIO": "Humor, Entretenimento, Causas sociais",
-    "PROJETOS": "Terra Verão",
-    "REF. VALOR": "-",
-    "AGÊNCIA": "Cely",
-    "ESCOPO": "01 presença/04 horas no Festival de Verão - 03 post Reels/feed do Instagram/collab com o Terra - 05 combos de stories de 04 telas cada no Instagram",
-    "MINI BIO - INFLUENCIADOR": "Sasha Vilela é comunicadora e influenciadora digital que compartilha suas vivências com humor e autenticidade. Ela aborda temas como moda, cultura pop e questões sociais, especialmente voltadas à comunidade LGBTQIA+. Com presença marcante no TikTok e Instagram, Sasha se destaca pela linguagem leve, estética criativa e engajamento com pautas identitárias."
-  },
-  {
     "INFLUENCIADOR": "Marcos Felipe Oli",
     "@": "marcosfelipeoli",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/Xa8AkcZuR3Pc57lJEQuxv-K6FzD75dFywRn-tCCOPGq8kc3AfzAnXNerg_-yQjGe5J5D-56Kaw=s900-c-k-c0x00ffffff-no-rj0",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQsAPG-8O0QD2rCb3u5FfjdLBUNMGmSMuPtcw&s",
     "IG": "169 mil",
     "TTK": "-",
     "YT": "-",
@@ -6764,42 +6908,12 @@ const segmentColors = {
     "REF. VALOR": "R$ 100.000,00",
     "AGÊNCIA": "Cely",
     "ESCOPO": "01 presença/04 horas no Festival de Verão - 03 post Reels/feed do Instagram/collab com o Terra - 05 combos de stories de 04 telas cada no Instagram",
-    "MINI BIO - INFLUENCIADOR": "Marcos Felipe Oli é influenciador digital que compartilha sua rotina, reflexões e momentos pessoais com leveza e espontaneidade. Seu conteúdo é voltado para o público jovem-adulto e aborda temas como autoestima, relacionamentos e cotidiano. Ele se destaca pela linguagem acessível e pela conexão emocional com seus seguidores."
-  },
-  {
-    "INFLUENCIADOR": "Magá Moura",
-    "@": "magavilhas",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/Xa8AkcZuR3Pc57lJEQuxv-K6FzD75dFywRn-tCCOPGq8kc3AfzAnXNerg_-yQjGe5J5D-56Kaw=s900-c-k-c0x00ffffff-no-rj1",
-    "IG": "235 mil",
-    "TTK": "4236",
-    "YT": "33 mil",
-    "SEGMENTO": "Moda",
-    "SEGMENTO SECUNDÁRIO": "Cultura regional, Causas sociais, Lifestyle",
-    "PROJETOS": "Terra Verão",
-    "REF. VALOR": "R$ 180.000,00",
-    "AGÊNCIA": "Cely",
-    "ESCOPO": "01 presença/04 horas no Festival de Verão - 03 post Reels/feed do Instagram/collab com o Terra - 05 combos de stories de 04 telas cada no Instagram",
-    "MINI BIO - INFLUENCIADOR": "Magavilhas é o nome artístico de Magá Moura, influenciadora digital, stylist e empreendedora. Conhecida por seu estilo vibrante e colorido, Magá é referência em moda afro-brasileira e cultura urbana. Ela já participou de eventos como Lollapalooza e é reconhecida por promover diversidade e representatividade no universo fashion. Seu público é engajado e diverso, e seu diferencial está na estética marcante e na valorização da cultura negra."
-  },
-  {
-    "INFLUENCIADOR": "Paola Carrijo",
-    "@": "paolacarrijo",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/Xa8AkcZuR3Pc57lJEQuxv-K6FzD75dFywRn-tCCOPGq8kc3AfzAnXNerg_-yQjGe5J5D-56Kaw=s900-c-k-c0x00ffffff-no-rj2",
-    "IG": "429 mil",
-    "TTK": "70 mil",
-    "YT": "9160",
-    "SEGMENTO": "Fitness",
-    "SEGMENTO SECUNDÁRIO": "Lifestyle, Autoconhecimento, Cultura regional",
-    "PROJETOS": "Terra Verão",
-    "REF. VALOR": "R$ 110.000,00",
-    "AGÊNCIA": "Cely",
-    "ESCOPO": "01 presença/04 horas no Festival de Verão - 03 post Reels/feed do Instagram/collab com o Terra - 05 combos de stories de 04 telas cada no Instagram",
-    "MINI BIO - INFLUENCIADOR": "Paola Carrijo é triatleta amadora, influenciadora digital e ex-advogada. Natural de Curitiba (PR), ela compartilha sua rotina de treinos, alimentação saudável e superação pessoal. Com mais de 410 mil seguidores no Instagram e 71 mil no TikTok, Paola inspira mulheres a adotarem um estilo de vida ativo e equilibrado. Seu diferencial está na autenticidade e na forma leve com que aborda temas como disciplina, saúde e bem-estar"
+    "MINI BIO - INFLUENCIADOR": "Marcos Felipe Oli é influenciador digital que compartilha sua rotina, reflexões e momentos pessoais com leveza e espontaneidade. Seu conteúdo é voltado para o público jovem-adulto e aborda temas como autoestima, relacionamentos e cotidiano. Ele se destaca pela linguagem acessível e pela conexão emocional com seus seguidores.\n"
   },
   {
     "INFLUENCIADOR": "Christian Malheiros",
     "@": "christianmalheiros_",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/Xa8AkcZuR3Pc57lJEQuxv-K6FzD75dFywRn-tCCOPGq8kc3AfzAnXNerg_-yQjGe5J5D-56Kaw=s900-c-k-c0x00ffffff-no-rj3",
+    "IMAGEM_URL": "https://p2.trrsf.com/image/fget/cf/640/853/images.terra.com/2023/07/25/reproducao-instagramchristianmalheiros_-s0uhan27ys6v.png",
     "IG": "2 M",
     "TTK": "1.9 M",
     "YT": "-",
@@ -6814,12 +6928,12 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Patricia Ramos",
     "@": "patriciaramos",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/Xa8AkcZuR3Pc57lJEQuxv-K6FzD75dFywRn-tCCOPGq8kc3AfzAnXNerg_-yQjGe5J5D-56Kaw=s900-c-k-c0x00ffffff-no-rj4",
+    "IMAGEM_URL": "https://p2.trrsf.com.br/image/fget/cf/540/960/smart/images.terra.com/2023/11/01/patriciaramos-(3)-1hbafzpq37j35.jpg",
     "IG": "5.7 M",
     "TTK": "5 M",
     "YT": "521 mil",
     "SEGMENTO": "Humor",
-    "SEGMENTO SECUNDÁRIO": "Beleza, Autoconhecimento, Negócios/Marketing, Relacionamento",
+    "SEGMENTO SECUNDÁRIO": "Beleza, Autoconhecimento, Negócios/Marketing, Relacionamento\n",
     "PROJETOS": "Terra Verão",
     "REF. VALOR": "R$ 400.000,00",
     "AGÊNCIA": "Cely",
@@ -6829,7 +6943,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Jojoca",
     "@": "jojoca",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/Xa8AkcZuR3Pc57lJEQuxv-K6FzD75dFywRn-tCCOPGq8kc3AfzAnXNerg_-yQjGe5J5D-56Kaw=s900-c-k-c0x00ffffff-no-rj5",
+    "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1202381289241927680/7pocsiiN_400x400.jpg",
     "IG": "410 mil",
     "TTK": "120 mil",
     "YT": "-",
@@ -6844,7 +6958,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Ícaro Bomfim",
     "@": "icarobomfimm",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/Xa8AkcZuR3Pc57lJEQuxv-K6FzD75dFywRn-tCCOPGq8kc3AfzAnXNerg_-yQjGe5J5D-56Kaw=s900-c-k-c0x00ffffff-no-rj6",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTXbNhezfdz80mpkulGH7Ou35FmaHtFtJ3srQ&s",
     "IG": "951 mil",
     "TTK": "157 mil",
     "YT": "-",
@@ -6859,7 +6973,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Bertha Salles",
     "@": "berthasalles",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/Xa8AkcZuR3Pc57lJEQuxv-K6FzD75dFywRn-tCCOPGq8kc3AfzAnXNerg_-yQjGe5J5D-56Kaw=s900-c-k-c0x00ffffff-no-rj7",
+    "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1689625787782123520/esRUqOV9_400x400.jpg",
     "IG": "42 mil",
     "TTK": "2723",
     "YT": "8,8 mil",
@@ -6872,24 +6986,9 @@ const segmentColors = {
     "MINI BIO - INFLUENCIADOR": "Bertha Salles é apresentadora, podcaster e criadora de conteúdo. Ela aborda temas como saúde mental, relacionamentos e autoestima com leveza e humor. Criadora do Substack Associação dos Sem Carisma, Bertha também participa de eventos como o Flash Humanidades e entrevistas em podcasts. Seu público é jovem-adulto, e seu diferencial está na linguagem afetiva e na capacidade de transformar vulnerabilidade em força"
   },
   {
-    "INFLUENCIADOR": "Letticia Munniz",
-    "@": "letticiamunniz",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/Xa8AkcZuR3Pc57lJEQuxv-K6FzD75dFywRn-tCCOPGq8kc3AfzAnXNerg_-yQjGe5J5D-56Kaw=s900-c-k-c0x00ffffff-no-rj8",
-    "IG": "1.1 M",
-    "TTK": "85 mil",
-    "YT": "44 mil",
-    "SEGMENTO": "Moda",
-    "SEGMENTO SECUNDÁRIO": "Autoconhecimento, Causas sociais, Beleza",
-    "PROJETOS": "Terra Verão",
-    "REF. VALOR": "R$ 370.000,00",
-    "AGÊNCIA": "Cely",
-    "ESCOPO": "01 presença/04 horas no Festival de Verão - 03 post Reels/feed do Instagram/collab com o Terra - 05 combos de stories de 04 telas cada no Instagram",
-    "MINI BIO - INFLUENCIADOR": "Letticia Munniz é modelo plus size, apresentadora e ativista da positividade corporal. Natural de Vitória (ES), mudou-se para São Paulo aos 18 anos para estudar Rádio e TV. Viralizou com fotos de biquíni e discursos sobre aceitação, quebrando padrões estéticos. Foi assistente de palco no Domingão do Huck e hoje é referência em autoestima e diversidade. Seu diferencial é a coragem de se posicionar e inspirar outras mulheres a se libertarem dos padrões impostos pela sociedade"
-  },
-  {
     "INFLUENCIADOR": "Caio Cabral",
     "@": "caiocabral",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/Xa8AkcZuR3Pc57lJEQuxv-K6FzD75dFywRn-tCCOPGq8kc3AfzAnXNerg_-yQjGe5J5D-56Kaw=s900-c-k-c0x00ffffff-no-rj9",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSlF_pmGV0BsczS_15Np1t_17tb0ntzUf-hdg&s",
     "IG": "771 mil",
     "TTK": "196 mil",
     "YT": "-",
@@ -6904,7 +7003,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Palomita",
     "@": "palomita",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/8F_zjkuDX81V5UAfDOeAfpSovg04IUw40GI4oQsy6CwHSDtsPwZGFRXKgd52TOWKuMg5TIqEJw=s900-c-k-c0x00ffffff-no-rj0",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4hiNk9yPgQe6QwVA8wlh4CsrO4J_r5WTcXA&s",
     "IG": "304 mil",
     "TTK": "120 mil",
     "YT": "-",
@@ -6919,7 +7018,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Lu Nunes",
     "@": "luu_nunes",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/8F_zjkuDX81V5UAfDOeAfpSovg04IUw40GI4oQsy6CwHSDtsPwZGFRXKgd52TOWKuMg5TIqEJw=s900-c-k-c0x00ffffff-no-rj1",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZM6_hqmnfZ7yAUoIRu5ISA6tSSUCA0wIP5Q&s",
     "IG": "91,6 mil",
     "TTK": "126 mil",
     "YT": "460",
@@ -6932,9 +7031,9 @@ const segmentColors = {
     "MINI BIO - INFLUENCIADOR": "Lu Nunes é influenciadora digital que compartilha sua rotina, dicas de moda e momentos pessoais. Com mais de 126 mil seguidores no TikTok, ela se destaca por vídeos espontâneos e criativos, especialmente voltados para o público feminino. Seu conteúdo mistura humor, estilo e vivências afetivas, com forte conexão com temas do cotidiano."
   },
   {
-    "INFLUENCIADOR": "Eduardo Gordinho",
-    "@": "eduardo.gordinho",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/8F_zjkuDX81V5UAfDOeAfpSovg04IUw40GI4oQsy6CwHSDtsPwZGFRXKgd52TOWKuMg5TIqEJw=s900-c-k-c0x00ffffff-no-rj2",
+    "INFLUENCIADOR": "Eduardo Godinho",
+    "@": "eduardo.godinho",
+    "IMAGEM_URL": "https://pbs.twimg.com/media/F-OAX7XWAAAqplC.jpg",
     "IG": "512 mil",
     "TTK": "-",
     "YT": "77 mil",
@@ -6949,7 +7048,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Rafa Brites",
     "@": "rafabrites",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/8F_zjkuDX81V5UAfDOeAfpSovg04IUw40GI4oQsy6CwHSDtsPwZGFRXKgd52TOWKuMg5TIqEJw=s900-c-k-c0x00ffffff-no-rj3",
+    "IMAGEM_URL": "https://newr7-r7-prod.web.arc-cdn.net/resizer/v2/4QUEIAWJYJGTTFBBC4GVKWFK7U.jpg?auth=d955d98fbb0806e3a4e4f0ed09c957abf316290ac005de878b9d3040c37707c3&width=1920&height=1080",
     "IG": "2.3 M",
     "TTK": "6617",
     "YT": "21 mil",
@@ -6964,7 +7063,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Raquel Castanharo",
     "@": "raquelcastanharo",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/8F_zjkuDX81V5UAfDOeAfpSovg04IUw40GI4oQsy6CwHSDtsPwZGFRXKgd52TOWKuMg5TIqEJw=s900-c-k-c0x00ffffff-no-rj4",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/t8V2iniXXtl4uZbw3KxKW5KvHUtfk4B9aoXWsMPZgSazxM8nx4H8HlqP-VB16npi2gMDCylBo70=s900-c-k-c0x00ffffff-no-rj",
     "IG": "535 mil",
     "TTK": "92 mil",
     "YT": "163 mil",
@@ -6979,7 +7078,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Fê Medeiros",
     "@": "femedeiros",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/8F_zjkuDX81V5UAfDOeAfpSovg04IUw40GI4oQsy6CwHSDtsPwZGFRXKgd52TOWKuMg5TIqEJw=s900-c-k-c0x00ffffff-no-rj5",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDKpBw09jZJc5U5ZHqScRrABPwYP8VKpVLVQ&s",
     "IG": "1.3 M",
     "TTK": "551 mil",
     "YT": "-",
@@ -6994,7 +7093,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Gui Martins",
     "@": "oguigamag",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/8F_zjkuDX81V5UAfDOeAfpSovg04IUw40GI4oQsy6CwHSDtsPwZGFRXKgd52TOWKuMg5TIqEJw=s900-c-k-c0x00ffffff-no-rj6",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRj9_XpAKOZOf__vnDRIa5wCSgYueK-iz9P1g&s",
     "IG": "75mil",
     "TTK": "95 mil",
     "YT": "18 mil",
@@ -7009,7 +7108,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Victão Faria",
     "@": "basquetepravida",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/8F_zjkuDX81V5UAfDOeAfpSovg04IUw40GI4oQsy6CwHSDtsPwZGFRXKgd52TOWKuMg5TIqEJw=s900-c-k-c0x00ffffff-no-rj7",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNnR62BxVr-gcU_PeY8dwfFwFYqO3tuBtqLQ&s",
     "IG": "198 mil",
     "TTK": "-",
     "YT": "410 mil",
@@ -7024,7 +7123,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Dibradoras",
     "@": "dibradoras",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/8F_zjkuDX81V5UAfDOeAfpSovg04IUw40GI4oQsy6CwHSDtsPwZGFRXKgd52TOWKuMg5TIqEJw=s900-c-k-c0x00ffffff-no-rj8",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_lupcrTefmdt8lMLR8n4Z1_yrdRMJFqT26kRvGSFNfe1Q=s900-c-k-c0x00ffffff-no-rj",
     "IG": "139 mil",
     "TTK": "58 mil",
     "YT": "7 mil",
@@ -7039,7 +7138,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Cayo Da Resenha",
     "@": "cayodaresenha",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/8F_zjkuDX81V5UAfDOeAfpSovg04IUw40GI4oQsy6CwHSDtsPwZGFRXKgd52TOWKuMg5TIqEJw=s900-c-k-c0x00ffffff-no-rj9",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/hghUOBq9xU4MXXUE54BEhKFkZAdVNohsVe74IWqZZ8vNIWa_WZQGzpZ6NpksLGSCcxd2t5wV=s900-c-k-c0x00ffffff-no-rj",
     "IG": "907 mil",
     "TTK": "1.6 M",
     "YT": "2 M",
@@ -7054,7 +7153,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Tulinho",
     "@": "tulinho",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/heghJYg30HB_ML_vavd-YuDOrmHYGkuXSZXeuWJ7-fzl-l2DgOYl-NWjf8TKAMtWizE9vhh2LA=s900-c-k-c0x00ffffff-no-rj0",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSeiRZXoYmLz3NMyrvYOH2LbX59KTSKjD8Obw&s",
     "IG": "985 mil",
     "TTK": "1.2 M",
     "YT": "1.2 M",
@@ -7069,7 +7168,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Guga Kuerte",
     "@": "gugakuerte",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/heghJYg30HB_ML_vavd-YuDOrmHYGkuXSZXeuWJ7-fzl-l2DgOYl-NWjf8TKAMtWizE9vhh2LA=s900-c-k-c0x00ffffff-no-rj1",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSzsO2Z-qla-Y5-41rYdnfwG1nreQYIXZT1kw&s",
     "IG": "651 mil",
     "TTK": "-",
     "YT": "-",
@@ -7084,7 +7183,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Bia Haddad Maia",
     "@": "biahaddadmaia",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/heghJYg30HB_ML_vavd-YuDOrmHYGkuXSZXeuWJ7-fzl-l2DgOYl-NWjf8TKAMtWizE9vhh2LA=s900-c-k-c0x00ffffff-no-rj2",
+    "IMAGEM_URL": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Beatriz_Haddad_Maia_RG_2023_cropped.jpg",
     "IG": "461 mil",
     "TTK": "1217",
     "YT": "-",
@@ -7099,7 +7198,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Guto Miguel",
     "@": "gutomigueltenista",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/heghJYg30HB_ML_vavd-YuDOrmHYGkuXSZXeuWJ7-fzl-l2DgOYl-NWjf8TKAMtWizE9vhh2LA=s900-c-k-c0x00ffffff-no-rj3",
+    "IMAGEM_URL": "https://redetenisbrasil.com.br/wp-content/uploads/2024/02/500_4724-scaled.jpg",
     "IG": "35 mil",
     "TTK": "-",
     "YT": "59 mil",
@@ -7114,7 +7213,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Marcelinho Huertas",
     "@": "marcelinhohuertas",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/heghJYg30HB_ML_vavd-YuDOrmHYGkuXSZXeuWJ7-fzl-l2DgOYl-NWjf8TKAMtWizE9vhh2LA=s900-c-k-c0x00ffffff-no-rj4",
+    "IMAGEM_URL": "https://s2-ge.glbimg.com/fNCzrVrXzCW08DLq4552KdYKX-I=/0x0:1024x683/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2024/0/A/540c0TR8qs8OxW8ee2PA/huertas.webp",
     "IG": "122 mil",
     "TTK": "-",
     "YT": "-",
@@ -7129,7 +7228,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Bruno Formiga",
     "@": "bruno.formiga",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/heghJYg30HB_ML_vavd-YuDOrmHYGkuXSZXeuWJ7-fzl-l2DgOYl-NWjf8TKAMtWizE9vhh2LA=s900-c-k-c0x00ffffff-no-rj5",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCHBS7sZ8oEzjFv7pDNcNTNZasKpJ9esZr8Q&s",
     "IG": "653 mil",
     "TTK": "40 mil",
     "YT": "424 mil",
@@ -7142,9 +7241,9 @@ const segmentColors = {
     "MINI BIO - INFLUENCIADOR": "Bruno Enderson Nogueira da Silva, conhecido como Bruno Formiga, é jornalista, comentarista esportivo e youtuber. Ficou conhecido por seu trabalho no Esporte Interativo e TNT Sports, e atualmente integra o projeto GE TV do Grupo Globo. Formado pela Universidade de Fortaleza, Bruno também é atleta federado pela CBF e já atuou como jogador profissional. Seu canal aborda futebol com profundidade, humor e crítica, e ele se destaca por análises táticas, storytelling e paixão pelo esporte"
   },
   {
-    "INFLUENCIADOR": "Suelen Nickel",
+    "INFLUENCIADOR": "Suelen Nickel]",
     "@": "suelennickel",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/heghJYg30HB_ML_vavd-YuDOrmHYGkuXSZXeuWJ7-fzl-l2DgOYl-NWjf8TKAMtWizE9vhh2LA=s900-c-k-c0x00ffffff-no-rj6",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR_OEmHztFfCnaK7-F3_gF5iETbt8GU8gQ9g&s",
     "IG": "43 mil",
     "TTK": "2900",
     "YT": "5530",
@@ -7159,7 +7258,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Karolainy Katley",
     "@": "karolainykatley",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/heghJYg30HB_ML_vavd-YuDOrmHYGkuXSZXeuWJ7-fzl-l2DgOYl-NWjf8TKAMtWizE9vhh2LA=s900-c-k-c0x00ffffff-no-rj7",
+    "IMAGEM_URL": "https://i.pinimg.com/736x/cb/7c/00/cb7c0063f4ac62858b620fc203067c1b.jpg",
     "IG": "43 mil",
     "TTK": "30 mil",
     "YT": "-",
@@ -7174,7 +7273,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Luana Fajtlowicz",
     "@": "lufajj",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/heghJYg30HB_ML_vavd-YuDOrmHYGkuXSZXeuWJ7-fzl-l2DgOYl-NWjf8TKAMtWizE9vhh2LA=s900-c-k-c0x00ffffff-no-rj8",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTQY0brfMAhv0TYc3N7Pff0b962BU1UgieJA&s",
     "IG": "63 mil",
     "TTK": "89 mil",
     "YT": "-",
@@ -7189,7 +7288,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Viviany Landim",
     "@": "viviilandim",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/heghJYg30HB_ML_vavd-YuDOrmHYGkuXSZXeuWJ7-fzl-l2DgOYl-NWjf8TKAMtWizE9vhh2LA=s900-c-k-c0x00ffffff-no-rj9",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRoQfs3xxCer7NS7SPdTGzST1_LpblepppFyA&s",
     "IG": "145 mil",
     "TTK": "6030",
     "YT": "-",
@@ -7204,7 +7303,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Mariana Rosas",
     "@": "marianarosas",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/3-oQKJb_1JgXurJ7M7IfGDx7BtQYmfo1wLa9zB0G_ln7LlPqc0HkOQDHhTYd5fJHyVsxHcnOFg=s160-c-k-c0x00ffffff-no-rj0",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD4DApc619WSac400SAYDJ0XFU9RLc3kx_Qg&s",
     "IG": "138 mil",
     "TTK": "118 mil",
     "YT": "9820",
@@ -7219,7 +7318,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Kah Nogueira",
     "@": "kah.nogueiraa",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/3-oQKJb_1JgXurJ7M7IfGDx7BtQYmfo1wLa9zB0G_ln7LlPqc0HkOQDHhTYd5fJHyVsxHcnOFg=s160-c-k-c0x00ffffff-no-rj1",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/4YPUdjnrWvXoQo3kK0mVMT724abf5A_1Ag6tP1lmHhLQ0Kefr22zcnC7O4rbU92wuyuUUurRKw=s900-c-k-c0x00ffffff-no-rj",
     "IG": "69 mil",
     "TTK": "85 mil",
     "YT": "-",
@@ -7234,7 +7333,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Thalita Miranda",
     "@": "thalitamirandam",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/3-oQKJb_1JgXurJ7M7IfGDx7BtQYmfo1wLa9zB0G_ln7LlPqc0HkOQDHhTYd5fJHyVsxHcnOFg=s160-c-k-c0x00ffffff-no-rj2",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkGI4SLQm3mrOs5DXkdqlHUpBZfIh2SrAS8Q&s",
     "IG": "36 mil",
     "TTK": "13 mil",
     "YT": "-",
@@ -7249,7 +7348,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Monica Pinto",
     "@": "monicapinto",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/3-oQKJb_1JgXurJ7M7IfGDx7BtQYmfo1wLa9zB0G_ln7LlPqc0HkOQDHhTYd5fJHyVsxHcnOFg=s160-c-k-c0x00ffffff-no-rj3",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsr3sxriR3u79cJTRkGZB_0jB_IC7odcLnHw&s",
     "IG": "92 mil",
     "TTK": "1870",
     "YT": "-",
@@ -7264,7 +7363,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Gee Ramos",
     "@": "geeeramos",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/3-oQKJb_1JgXurJ7M7IfGDx7BtQYmfo1wLa9zB0G_ln7LlPqc0HkOQDHhTYd5fJHyVsxHcnOFg=s160-c-k-c0x00ffffff-no-rj4",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkYQvXrtJArju4zi6jJA5fU89vfZ9bLev13-f_jdLGZLUcfu1hekNp_zDdwFJjOCEqc_A&usqp=CAU",
     "IG": "60 mil",
     "TTK": "84 mil",
     "YT": "-",
@@ -7279,7 +7378,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Milena Luna",
     "@": "milenalunaa",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/3-oQKJb_1JgXurJ7M7IfGDx7BtQYmfo1wLa9zB0G_ln7LlPqc0HkOQDHhTYd5fJHyVsxHcnOFg=s160-c-k-c0x00ffffff-no-rj5",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQqWUJ_TuUaIshh-OrJhll5-3gLB4iM4VKMw&s",
     "IG": "126 mil",
     "TTK": "45 mil",
     "YT": "-",
@@ -7294,7 +7393,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Magê Campos",
     "@": "magecampos",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/3-oQKJb_1JgXurJ7M7IfGDx7BtQYmfo1wLa9zB0G_ln7LlPqc0HkOQDHhTYd5fJHyVsxHcnOFg=s160-c-k-c0x00ffffff-no-rj6",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRM6g_2VFWU_SaQmjz_oY-qkq3vzZRnl_joXw&s",
     "IG": "140 mil",
     "TTK": "248 mil",
     "YT": "-",
@@ -7309,7 +7408,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Monique Lindmann",
     "@": "molindmann",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/3-oQKJb_1JgXurJ7M7IfGDx7BtQYmfo1wLa9zB0G_ln7LlPqc0HkOQDHhTYd5fJHyVsxHcnOFg=s160-c-k-c0x00ffffff-no-rj7",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREPfAnIPL96-Bti1dkYhmw0l6C4rlLU0a6JA&s",
     "IG": "130 mil",
     "TTK": "255 mil",
     "YT": "1720",
@@ -7324,7 +7423,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Kauana Yrina",
     "@": "kauanayrina",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/3-oQKJb_1JgXurJ7M7IfGDx7BtQYmfo1wLa9zB0G_ln7LlPqc0HkOQDHhTYd5fJHyVsxHcnOFg=s160-c-k-c0x00ffffff-no-rj8",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPY6-E9XbP5JFlnkiJR-v1bdR4SO-tEuTDsw&s",
     "IG": "104 mil",
     "TTK": "-",
     "YT": "-",
@@ -7339,7 +7438,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Manu Canielas",
     "@": "manucanielas",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/3-oQKJb_1JgXurJ7M7IfGDx7BtQYmfo1wLa9zB0G_ln7LlPqc0HkOQDHhTYd5fJHyVsxHcnOFg=s160-c-k-c0x00ffffff-no-rj9",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxeqveTA9otYZZjN77I3Nrhs22Vh32jIK6Fg&s",
     "IG": "92 mil",
     "TTK": "305 mil",
     "YT": "3930",
@@ -7354,7 +7453,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Bea Araújo",
     "@": "ibeaaraujo",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/pvTXxTpv6mmgBnphA3UqCueYDZh3ykB_hiKPjELlQ__jorJRALXTP7k8mx_aZ5pOjPRf1Hk6uiU=s160-c-k-c0x00ffffff-no-rj0",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcScNAuhuKKvwa9vn-g3ws4rn4J3PWjraWefFQ&s",
     "IG": "58 mil",
     "TTK": "310 mil",
     "YT": "4550",
@@ -7369,7 +7468,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Giovanna Cristinne",
     "@": "giovannacristinne",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/pvTXxTpv6mmgBnphA3UqCueYDZh3ykB_hiKPjELlQ__jorJRALXTP7k8mx_aZ5pOjPRf1Hk6uiU=s160-c-k-c0x00ffffff-no-rj1",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb18PlEqoQy01W_ht48n_hMRgaaRvCxAWcychVGu3pAYCFPnNDc8zlQ_Rgk3jpuZYHA1s&usqp=CAU",
     "IG": "41 mil",
     "TTK": "122 mil",
     "YT": "1260",
@@ -7384,7 +7483,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Sofia | TBS",
     "@": "tbsouvenir",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/pvTXxTpv6mmgBnphA3UqCueYDZh3ykB_hiKPjELlQ__jorJRALXTP7k8mx_aZ5pOjPRf1Hk6uiU=s160-c-k-c0x00ffffff-no-rj2",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFMXFApHqBqlMPosXogpj1nAevRQQ4LgAK8C8G8rKBj1YDJHqxQrCck219PhSQJFKMi8I&usqp=CAU",
     "IG": "22,5 mil",
     "TTK": "31 mil",
     "YT": "977",
@@ -7394,12 +7493,12 @@ const segmentColors = {
     "REF. VALOR": "-",
     "AGÊNCIA": "Sotaq",
     "ESCOPO": "3 reels + 1 combo de stories",
-    "MINI BIO - INFLUENCIADOR": "Sofia é criadora do projeto TBS (Turista em qualquer lugar), uma influenciadora cearense apaixonada por turismo local e experiências culturais. Produz conteúdos sobre roteiros, hospedagens, gastronomia e dicas de viagem, com foco especial no Ceará. Seu público é formado por viajantes e amantes da cultura nordestina. Sofia se destaca pela linguagem acolhedora, estética visual e curadoria de experiências autênticas."
+    "MINI BIO - INFLUENCIADOR": "Cultura regional, Lifestyle, Gastronomia\nMini bio: Sofia é criadora do projeto TBS (Turista em qualquer lugar), uma influenciadora cearense apaixonada por turismo local e experiências culturais. Produz conteúdos sobre roteiros, hospedagens, gastronomia e dicas de viagem, com foco especial no Ceará. Seu público é formado por viajantes e amantes da cultura nordestina. Sofia se destaca pela linguagem acolhedora, estética visual e curadoria de experiências autênticas."
   },
   {
     "INFLUENCIADOR": "Vanessa Wonsovicz",
     "@": "vanessawz",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/pvTXxTpv6mmgBnphA3UqCueYDZh3ykB_hiKPjELlQ__jorJRALXTP7k8mx_aZ5pOjPRf1Hk6uiU=s160-c-k-c0x00ffffff-no-rj3",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQd-E3gsIrx6gXePGx1iJfssggjsF5UL-mNBA&s",
     "IG": "331 mil",
     "TTK": "66 mil",
     "YT": "400 mil",
@@ -7414,7 +7513,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Bia Oliveira",
     "@": "biaoliveira_",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/pvTXxTpv6mmgBnphA3UqCueYDZh3ykB_hiKPjELlQ__jorJRALXTP7k8mx_aZ5pOjPRf1Hk6uiU=s160-c-k-c0x00ffffff-no-rj4",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTf36iR5PPbU00ro_09e3yka4kfTVXkD2icGQ&s",
     "IG": "215 mil",
     "TTK": "-",
     "YT": "825 mil",
@@ -7429,7 +7528,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Ei Sampa",
     "@": "ei_sampa",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/pvTXxTpv6mmgBnphA3UqCueYDZh3ykB_hiKPjELlQ__jorJRALXTP7k8mx_aZ5pOjPRf1Hk6uiU=s160-c-k-c0x00ffffff-no-rj5",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTLG0qgxy0eoqw0WnfTbHd0GkhukaKKV0apACEMIm8XPt1WqW11eSpq0sza_uI1wsIXbFs&usqp=CAU",
     "IG": "213 mil",
     "TTK": "14 mil",
     "YT": "-",
@@ -7444,7 +7543,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Camily Viana",
     "@": "camilyviana",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/pvTXxTpv6mmgBnphA3UqCueYDZh3ykB_hiKPjELlQ__jorJRALXTP7k8mx_aZ5pOjPRf1Hk6uiU=s160-c-k-c0x00ffffff-no-rj6",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRphckRN4loblB5C7CwVSLz3zwR8En5LQAOAw&s",
     "IG": "456 mil",
     "TTK": "33 mil",
     "YT": "-",
@@ -7459,7 +7558,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Thais Leia",
     "@": "thaisleia",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/pvTXxTpv6mmgBnphA3UqCueYDZh3ykB_hiKPjELlQ__jorJRALXTP7k8mx_aZ5pOjPRf1Hk6uiU=s160-c-k-c0x00ffffff-no-rj7",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa_dLGz2Yc2d-gV6niUTgVU9dGP80aw06etw&s",
     "IG": "484 mil",
     "TTK": "-",
     "YT": "-",
@@ -7474,7 +7573,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Alissa Cassol",
     "@": "alissawcassol",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/pvTXxTpv6mmgBnphA3UqCueYDZh3ykB_hiKPjELlQ__jorJRALXTP7k8mx_aZ5pOjPRf1Hk6uiU=s160-c-k-c0x00ffffff-no-rj8",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkeWghn3BpORB9pnkygTmQ8gUMxsRaZFlKMg&s",
     "IG": "366 mil",
     "TTK": "637 mil",
     "YT": "-",
@@ -7489,7 +7588,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Isabella Wilhelms",
     "@": "byisacaroline",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/pvTXxTpv6mmgBnphA3UqCueYDZh3ykB_hiKPjELlQ__jorJRALXTP7k8mx_aZ5pOjPRf1Hk6uiU=s160-c-k-c0x00ffffff-no-rj9",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkZrLrbv-blQsVSqoqINVtsSqr7d444WMgmg&s",
     "IG": "200 mil",
     "TTK": "219 mil",
     "YT": "-",
@@ -7504,7 +7603,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Matheus Martins Pereira",
     "@": "tosemkit",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/LNN2tJ94yg6Z97OLWmdkPE6SsFd1S8zswKgA_zO4Fi3luEDhYGcJmIqlAgcr5p-QFXLhZEDqMWM=s900-c-k-c0x00ffffff-no-rj0",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/mFbwFwUPUuzQuzbF6gUiFnK-7HwdiGPfjvvSR43pgff7HNwfHv9QO3XQP69pfFLphbA_PQDvTA=s900-c-k-c0x00ffffff-no-rj",
     "IG": "239 mil",
     "TTK": "326 mil",
     "YT": "195 mil",
@@ -7519,7 +7618,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Lívia Matuti",
     "@": "liviamatuti",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/LNN2tJ94yg6Z97OLWmdkPE6SsFd1S8zswKgA_zO4Fi3luEDhYGcJmIqlAgcr5p-QFXLhZEDqMWM=s900-c-k-c0x00ffffff-no-rj1",
+    "IMAGEM_URL": "https://i.pinimg.com/280x280_RS/d2/f9/90/d2f990ac1e7e56b5b40fd6c3bd313d5a.jpg",
     "IG": "288 mil",
     "TTK": "766 mil",
     "YT": "-",
@@ -7534,7 +7633,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Gabriel Miranda",
     "@": "omirandagabriel",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/LNN2tJ94yg6Z97OLWmdkPE6SsFd1S8zswKgA_zO4Fi3luEDhYGcJmIqlAgcr5p-QFXLhZEDqMWM=s900-c-k-c0x00ffffff-no-rj2",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/NSUl60FCR6FH-yGfrTUJVFiZaUmRJ6IbPgjL0GzkGgwzr7FFm-1NqEAj3-kjoBJvlIbV6ny8GvM=s160-c-k-c0x00ffffff-no-rj",
     "IG": "442 mil",
     "TTK": "361 mil",
     "YT": "-",
@@ -7549,7 +7648,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Juliana Franceschi",
     "@": "jujufranceschi",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/LNN2tJ94yg6Z97OLWmdkPE6SsFd1S8zswKgA_zO4Fi3luEDhYGcJmIqlAgcr5p-QFXLhZEDqMWM=s900-c-k-c0x00ffffff-no-rj3",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOisuBvhqKRWvYT3GyCpJLBh96UomO1_V_Qg&s",
     "IG": "215 mil",
     "TTK": "46 mil",
     "YT": "72 mil",
@@ -7564,7 +7663,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Adriana Lima",
     "@": "adriana.hlima",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/LNN2tJ94yg6Z97OLWmdkPE6SsFd1S8zswKgA_zO4Fi3luEDhYGcJmIqlAgcr5p-QFXLhZEDqMWM=s900-c-k-c0x00ffffff-no-rj4",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm_egxU7DVu9bbCig25NMG7ol_GBT5sFwkIA&s",
     "IG": "289 mil",
     "TTK": "-",
     "YT": "-",
@@ -7579,7 +7678,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Kerolen Lobato",
     "@": "kerolenlobatoo",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/LNN2tJ94yg6Z97OLWmdkPE6SsFd1S8zswKgA_zO4Fi3luEDhYGcJmIqlAgcr5p-QFXLhZEDqMWM=s900-c-k-c0x00ffffff-no-rj5",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtYc5zUj5XlQ9MCPS-6UABrd5pbIAIzgqfvA&s",
     "IG": "326 mil",
     "TTK": "1111",
     "YT": "-",
@@ -7589,12 +7688,12 @@ const segmentColors = {
     "REF. VALOR": "R$ 15.360,00",
     "AGÊNCIA": "Sotaq",
     "ESCOPO": "3 reels + 1 combo de stories",
-    "MINI BIO - INFLUENCIADOR": "Kerolen Lobato é influenciadora digital que compartilha momentos do cotidiano, maternidade e relacionamentos. Ganhou visibilidade por seu envolvimento com figuras públicas e por abordar temas como pensão, criação de filhos e vida familiar. Seu público é adulto e engajado com temas reais e cotidianos. Kerolen se destaca pela transparência e autenticidade nas redes."
+    "MINI BIO - INFLUENCIADOR": "Kerolen Lobato é influenciadora digital que compartilha momentos do cotidiano, maternidade e relacionamentos. Ganhou visibilidade por seu envolvimento com figuras públicas e por abordar temas como pensão, criação de filhos e vida familiar. Seu público é adulto e engajado com temas reais e cotidianos. Kerolen se destaca pela transparência e autenticidade nas redes.\n\n"
   },
   {
     "INFLUENCIADOR": "Dani Albino",
     "@": "danialbino",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/LNN2tJ94yg6Z97OLWmdkPE6SsFd1S8zswKgA_zO4Fi3luEDhYGcJmIqlAgcr5p-QFXLhZEDqMWM=s900-c-k-c0x00ffffff-no-rj6",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0AteWjhQjRfaksw6GoaT5DoJNQ--T1HhMAQ&s",
     "IG": "326 mil",
     "TTK": "377 mil",
     "YT": "132 mil",
@@ -7604,12 +7703,12 @@ const segmentColors = {
     "REF. VALOR": "R$ 13.200,00",
     "AGÊNCIA": "Sotaq",
     "ESCOPO": "3 reels + 1 combo de stories",
-    "MINI BIO - INFLUENCIADOR": "Dani Albino é influenciadora digital especializada em cuidados com o cabelo, beleza natural e autoestima. Ficou conhecida por seus vídeos virais sobre finalização de cachos sem calor, usando técnicas criativas como prendedores de roupa e meias. Seu conteúdo mistura dicas práticas com humor leve, conquistando um público jovem e engajado. Dani também compartilha momentos pessoais e reflexões sobre empoderamento feminino. Seu diferencial está na autenticidade e na abordagem acessível, com forte presença no TikTok e Instagram."
+    "MINI BIO - INFLUENCIADOR": "Dani Albino é influenciadora digital especializada em cuidados com o cabelo, beleza natural e autoestima. Ficou conhecida por seus vídeos virais sobre finalização de cachos sem calor, usando técnicas criativas como prendedores de roupa e meias. Seu conteúdo mistura dicas práticas com humor leve, conquistando um público jovem e engajado. Dani também compartilha momentos pessoais e reflexões sobre empoderamento feminino. Seu diferencial está na autenticidade e na abordagem acessível, com forte presença no TikTok e Instagram.\n\n"
   },
   {
     "INFLUENCIADOR": "Mateus Pinho Silva",
     "@": "mateuspinhosilva_",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/LNN2tJ94yg6Z97OLWmdkPE6SsFd1S8zswKgA_zO4Fi3luEDhYGcJmIqlAgcr5p-QFXLhZEDqMWM=s900-c-k-c0x00ffffff-no-rj7",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2lEo_8CeNv4guQU4I0mz9tLCB7jhpXFG_EksjpmfGoKD7jjHNruaUe4nz24-4AIuy7ak&usqp=CAU",
     "IG": "223 mil",
     "TTK": "553 mil",
     "YT": "109 mil",
@@ -7624,22 +7723,22 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Beatriz Macedo",
     "@": "beatriz__macedoo",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/LNN2tJ94yg6Z97OLWmdkPE6SsFd1S8zswKgA_zO4Fi3luEDhYGcJmIqlAgcr5p-QFXLhZEDqMWM=s900-c-k-c0x00ffffff-no-rj8",
+    "IMAGEM_URL": "https://holofotte.com/wp-content/uploads/2023/09/01_FotosSite_Influs_BeatrizMacedo-700x700.jpg",
     "IG": "153 mil",
     "TTK": "54 mil",
     "YT": "66 mil",
     "SEGMENTO": "Beleza",
-    "SEGMENTO SECUNDÁRIO": "Moda, Lifestyle",
+    "SEGMENTO SECUNDÁRIO": "Moda, Lifestyle\n",
     "PROJETOS": "Natal",
     "REF. VALOR": "-",
     "AGÊNCIA": "Sotaq",
     "ESCOPO": "3 reels + 1 combo de stories",
-    "MINI BIO - INFLUENCIADOR": "Beatriz Macedo é uma influenciadora digital que compartilha conteúdos voltados para beleza e estilo pessoal. Seu conteúdo inclui dicas de maquiagem, cuidados com o cabelo e looks do dia. Apesar de ainda estar em fase de crescimento nas redes, Beatriz aposta em autenticidade e estética leve para se conectar com seu público."
+    "MINI BIO - INFLUENCIADOR": "Beatriz Macedo é uma influenciadora digital que compartilha conteúdos voltados para beleza e estilo pessoal. Seu conteúdo inclui dicas de maquiagem, cuidados com o cabelo e looks do dia. Apesar de ainda estar em fase de crescimento nas redes, Beatriz aposta em autenticidade e estética leve para se conectar com seu público.\n"
   },
   {
     "INFLUENCIADOR": "Thaís Garras",
     "@": "thaisgarras",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/LNN2tJ94yg6Z97OLWmdkPE6SsFd1S8zswKgA_zO4Fi3luEDhYGcJmIqlAgcr5p-QFXLhZEDqMWM=s900-c-k-c0x00ffffff-no-rj9",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOTyBBxOUFDgcQEnIh476WeqSjWVNuADVjquSyxmnhQmRiwCwRQw1cqHYrbd3tnbmFFGE&usqp=CAU",
     "IG": "163 mil",
     "TTK": "97 mil",
     "YT": "1710",
@@ -7654,7 +7753,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Letícia Luger",
     "@": "leticialuger",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_nhQgI8vll8hcfqj3d2OL9MTWgYMHrkC8WckQcV3M7gK_0=s900-c-k-c0x00ffffff-no-rj0",
+    "IMAGEM_URL": "https://i.pinimg.com/280x280_RS/95/51/a2/9551a2ea806976bf32cb385e2ea58d84.jpg",
     "IG": "382 mil",
     "TTK": "117 mil",
     "YT": "260 mil",
@@ -7669,7 +7768,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Jersu",
     "@": "jeersu",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_nhQgI8vll8hcfqj3d2OL9MTWgYMHrkC8WckQcV3M7gK_0=s900-c-k-c0x00ffffff-no-rj1",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/w63WY6bhH4VHTUrkJp3BXVz6XvuzTJTGjCDCY-capHKlkvBmyt33u36rRECAOr-mhLUZiGcZaA=s900-c-k-c0x00ffffff-no-rj",
     "IG": "173 mil",
     "TTK": "114 mil",
     "YT": "1500",
@@ -7684,7 +7783,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Layla Samylle",
     "@": "laylasamylle",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_nhQgI8vll8hcfqj3d2OL9MTWgYMHrkC8WckQcV3M7gK_0=s900-c-k-c0x00ffffff-no-rj2",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9y-jYmB4nwvbuzKYv9sjytorcwDpWWJbhqQ&s",
     "IG": "345 mil",
     "TTK": "96 mil",
     "YT": "-",
@@ -7699,7 +7798,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Clara Novais",
     "@": "claranovais",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_nhQgI8vll8hcfqj3d2OL9MTWgYMHrkC8WckQcV3M7gK_0=s900-c-k-c0x00ffffff-no-rj3",
+    "IMAGEM_URL": "https://i.pinimg.com/736x/ba/22/40/ba2240fa2fbb87e3a6aa29bd28904dab.jpg",
     "IG": "53 mil",
     "TTK": "76 mil",
     "YT": "529",
@@ -7711,15 +7810,15 @@ const segmentColors = {
     "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Clara Novais é jornalista, foliã apaixonada por Carnaval e estudante de psicanálise. Produz conteúdos sobre relações humanas, autoestima, feminismo e cultura popular. Seu público é majoritariamente feminino, interessado em reflexões sobre amor, desejo, saúde mental e autenticidade. Clara se destaca pela escrita sensível, vídeos com mensagens profundas e estética colorida e afetiva."
   },
-  {
+{
     "INFLUENCIADOR": "Naetê Andreo",
     "@": "naeteandreo",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_nhQgI8vll8hcfqj3d2OL9MTWgYMHrkC8WckQcV3M7gK_0=s900-c-k-c0x00ffffff-no-rj4",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSt2Mrip7Ea31FQtELJ4tC6pnGu9aKIJSnSg&s",
     "IG": "44 mil",
     "TTK": "38 mil",
     "YT": "87 mil",
     "SEGMENTO": "Lifestyle",
-    "SEGMENTO SECUNDÁRIO": "Moda, Cultura, Feminismo",
+    "SEGMENTO SECUNDÁRIO": "Moda, Cultura, Feminismo\n",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "R$ 187.200,00",
     "AGÊNCIA": "Sotaq",
@@ -7727,24 +7826,9 @@ const segmentColors = {
     "MINI BIO - INFLUENCIADOR": "Naetê Andreo é diretora criativa, produtora de conteúdo e comunicadora visual. Compartilha experiências sobre vida urbana, brechós, relacionamentos e independência feminina. Seu conteúdo é voltado para mulheres criativas e autênticas, com foco em estilo de vida alternativo e expressão pessoal. Naetê se destaca pela estética maximalista, linguagem direta e reflexões sobre liberdade e identidade."
   },
   {
-    "INFLUENCIADOR": "Luiza Parente",
-    "@": "luizaparente",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_nhQgI8vll8hcfqj3d2OL9MTWgYMHrkC8WckQcV3M7gK_0=s900-c-k-c0x00ffffff-no-rj5",
-    "IG": "7.7 M",
-    "TTK": "8.4 M",
-    "YT": "4.2 M",
-    "SEGMENTO": "Moda",
-    "SEGMENTO SECUNDÁRIO": "Beleza, Entretenimento, Lifestyle",
-    "PROJETOS": "Carnaval",
-    "REF. VALOR": "R$ 280.800,00",
-    "AGÊNCIA": "Sotaq",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
-    "MINI BIO - INFLUENCIADOR": "Luiza Parente é uma das maiores influenciadoras de moda e beleza do Brasil. Criadora do projeto “Lupe Arte Ataques”, mistura criatividade, humor e estilo em vídeos virais. Produz conteúdos sobre maquiagem, tendências, customizações e campanhas com grandes marcas. Seu público é jovem, engajado e apaixonado por moda criativa. Luiza se destaca pela autenticidade, visual ousado e presença multiplataforma."
-  },
-  {
     "INFLUENCIADOR": "Sabrina Dibynis",
     "@": "sabrinadibynis",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_nhQgI8vll8hcfqj3d2OL9MTWgYMHrkC8WckQcV3M7gK_0=s900-c-k-c0x00ffffff-no-rj6",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXzPICC2z0Q8gumBRzEmVAe_kOyDVbeGKfCg&s",
     "IG": "221 mil",
     "TTK": "41 mil",
     "YT": "68 mil",
@@ -7759,7 +7843,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Alice Castelo",
     "@": "tripspelarua",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_nhQgI8vll8hcfqj3d2OL9MTWgYMHrkC8WckQcV3M7gK_0=s900-c-k-c0x00ffffff-no-rj7",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQK-wZ3xk_Tc5tSJZUyYrKENZz8o39f_KSt2g&s",
     "IG": "40 mil",
     "TTK": "26 mil",
     "YT": "-",
@@ -7774,7 +7858,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Natália Paixão",
     "@": "nataliapaixao",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_nhQgI8vll8hcfqj3d2OL9MTWgYMHrkC8WckQcV3M7gK_0=s900-c-k-c0x00ffffff-no-rj8",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvGQeJwiUV-UkIE24ZIsJLr7vaelOphTmACiwx0wrdyK1MERF4WCoIn_fZ7It1Wjs4Iqs&usqp=CAU",
     "IG": "54 mil",
     "TTK": "29 mil",
     "YT": "458",
@@ -7789,7 +7873,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Alexia Del Papa",
     "@": "alexiadelpapa",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/ytc/AIdro_nhQgI8vll8hcfqj3d2OL9MTWgYMHrkC8WckQcV3M7gK_0=s900-c-k-c0x00ffffff-no-rj9",
+    "IMAGEM_URL": "https://i.pinimg.com/736x/e2/84/6b/e2846bb72026438756cda1ad3b8eff10.jpg",
     "IG": "205 mil",
     "TTK": "372 mil",
     "YT": "-",
@@ -7804,7 +7888,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Lívia Pereira",
     "@": "livia.apereira",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/zqYkqlPKTRXABidMhJ8HVMGwTqaE_E1ZC6lNQeIRQCQJeG2DwVSQ_qNCX1XZVR2yOilxQ8dMXA=s900-c-k-c0x00ffffff-no-rj0",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTveh8b2Cu83R2YK7cLGa6rvd7M8GJzhY4TIQ&s",
     "IG": "91 mil",
     "TTK": "-",
     "YT": "13 mil",
@@ -7819,7 +7903,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Flávia Viana",
     "@": "flavia_viana",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/zqYkqlPKTRXABidMhJ8HVMGwTqaE_E1ZC6lNQeIRQCQJeG2DwVSQ_qNCX1XZVR2yOilxQ8dMXA=s900-c-k-c0x00ffffff-no-rj1",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQS63LdiyTnkKzWZ2dw5J5SExBfvwyCowisqA&s",
     "IG": "2.7 M",
     "TTK": "956 mil",
     "YT": "-",
@@ -7834,12 +7918,12 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Duda Kropf",
     "@": "dudakropf",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/zqYkqlPKTRXABidMhJ8HVMGwTqaE_E1ZC6lNQeIRQCQJeG2DwVSQ_qNCX1XZVR2yOilxQ8dMXA=s900-c-k-c0x00ffffff-no-rj2",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHdTHxW1f0x-FX_nDrKxrKieMzCzSD13unVw&s",
     "IG": "2 M",
     "TTK": "2.7 M",
     "YT": "186 mil",
     "SEGMENTO": "Moda",
-    "SEGMENTO SECUNDÁRIO": "Beleza, Lifestyle, Arte",
+    "SEGMENTO SECUNDÁRIO": "Beleza, Lifestyle, Arte\n",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "-",
     "AGÊNCIA": "Sotaq",
@@ -7849,11 +7933,11 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Amanda Britto",
     "@": "amandabritto",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/zqYkqlPKTRXABidMhJ8HVMGwTqaE_E1ZC6lNQeIRQCQJeG2DwVSQ_qNCX1XZVR2yOilxQ8dMXA=s900-c-k-c0x00ffffff-no-rj3",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSccSuL48tx-Pr115f5fDTXusW1EyRiaWAPUA&s",
     "IG": "83 mil",
     "TTK": "25 mil",
     "YT": "-",
-    "SEGMENTO": "Lifestyle",
+    "SEGMENTO": "Lifestyle\n",
     "SEGMENTO SECUNDÁRIO": "Viagem, Carnaval, Beleza",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "R$ 93.600,00",
@@ -7864,11 +7948,11 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Carol Pessanha",
     "@": "carolpessanha",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/zqYkqlPKTRXABidMhJ8HVMGwTqaE_E1ZC6lNQeIRQCQJeG2DwVSQ_qNCX1XZVR2yOilxQ8dMXA=s900-c-k-c0x00ffffff-no-rj4",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmqIq9d5xokNg63NZJmwjF6RQ_SutCRiKvQQ&s",
     "IG": "38 mil",
     "TTK": "47 mil",
     "YT": "-",
-    "SEGMENTO": "Lifestyle",
+    "SEGMENTO": "Lifestyle\n",
     "SEGMENTO SECUNDÁRIO": "Viagem, Cultura regional, Entretenimento",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "R$ 15.600,00",
@@ -7879,7 +7963,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Mariana Guimarães",
     "@": "mariqguimaraes",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/zqYkqlPKTRXABidMhJ8HVMGwTqaE_E1ZC6lNQeIRQCQJeG2DwVSQ_qNCX1XZVR2yOilxQ8dMXA=s900-c-k-c0x00ffffff-no-rj5",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR9RLpGUtDqKrQ1yvw0o1kB5dcyGA1QQrNKcg&s",
     "IG": "150 mil",
     "TTK": "307 mil",
     "YT": "816",
@@ -7894,7 +7978,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Beatriz Vasconcelos",
     "@": "biavasconcelosg",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/zqYkqlPKTRXABidMhJ8HVMGwTqaE_E1ZC6lNQeIRQCQJeG2DwVSQ_qNCX1XZVR2yOilxQ8dMXA=s900-c-k-c0x00ffffff-no-rj6",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS6de3k5aXGfmapgS6WWxqpgSJx7KHgReciGQ&s",
     "IG": "286 mil",
     "TTK": "1.4 M",
     "YT": "-",
@@ -7909,7 +7993,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Giulia Dantas",
     "@": "dantasgiulia",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/zqYkqlPKTRXABidMhJ8HVMGwTqaE_E1ZC6lNQeIRQCQJeG2DwVSQ_qNCX1XZVR2yOilxQ8dMXA=s900-c-k-c0x00ffffff-no-rj7",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm96x9s_Bj0tZewCC0dwZQ4AhSuhQVycbAvQ&s",
     "IG": "898 mil",
     "TTK": "910 mil",
     "YT": "10 mil",
@@ -7924,7 +8008,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Camilla de Lucas",
     "@": "camilladelucas",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/zqYkqlPKTRXABidMhJ8HVMGwTqaE_E1ZC6lNQeIRQCQJeG2DwVSQ_qNCX1XZVR2yOilxQ8dMXA=s900-c-k-c0x00ffffff-no-rj8",
+    "IMAGEM_URL": "https://assets.propmark.com.br/uploads/2021/07/camilla-de-lucas-2.jpg",
     "IG": "8.7 M",
     "TTK": "5.2 M",
     "YT": "2.4 M",
@@ -7939,7 +8023,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Giullia Buscacio",
     "@": "giubuscacio",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/zqYkqlPKTRXABidMhJ8HVMGwTqaE_E1ZC6lNQeIRQCQJeG2DwVSQ_qNCX1XZVR2yOilxQ8dMXA=s900-c-k-c0x00ffffff-no-rj9",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7T0ffdLku04BPXQHb_lD_VyFXJ9cPo79yBw&s",
     "IG": "1 M",
     "TTK": "1.2 M",
     "YT": "-",
@@ -7954,7 +8038,7 @@ const segmentColors = {
   {
     "INFLUENCIADOR": "Duda Iannuzzi",
     "@": "dudaiannuzzi",
-    "IMAGEM_URL": "https://yt3.googleusercontent.com/PovCiKvuFCau9KCtEKMGXXzBLIVQhIghLExhbFwodjBENzICnfatv327pctwkE0CActok5nXZg=s900-c-k-c0x00ffffff-no-rj0",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMZBsHWZNaNEs2q8rVwPpe2I2NPvHtvv3RGQ&s",
     "IG": "185 mil",
     "TTK": "46 mil",
     "YT": "-",
@@ -7966,9 +8050,10 @@ const segmentColors = {
     "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Duda Iannuzzi é criadora de conteúdo com foco em espiritualidade afro-brasileira, cultura popular e brasilidade. Produz vídeos com dicas de decoração, moda com axé e reflexões sobre ancestralidade. Seu conteúdo é voltado para um público engajado com causas sociais e diversidade cultural. Ela se destaca por trazer representatividade e autenticidade às redes sociais."
   },
-{
+  {
     "INFLUENCIADOR": "Kripshna",
     "@": "kripshna",
+    "IMAGEM_URL": "https://pbs.twimg.com/profile_images/1390089206949634049/PPpXyNHc_400x400.jpg",
     "IG": "119 mil",
     "TTK": "48 mil",
     "YT": "-",
@@ -7976,13 +8061,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Psicologia, Livros, Lifestyle",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "R$ 85.800,00",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Kripshna é criadora de conteúdo voltada para temas de autoconhecimento, psicologia e espiritualidade. Seu público é majoritariamente jovem e engajado com reflexões pessoais e desenvolvimento emocional. Ela compartilha conteúdos sobre livros, bem-estar e experiências pessoais, com uma abordagem sensível e acolhedora."
   },
   {
     "INFLUENCIADOR": "Luci Gonçalves",
     "@": "lucigoncalvesa",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTpkYMMoBwrZdbpLJOM3NTHQj3V0XwTeAIzw&s",
     "IG": "99 mil",
     "TTK": "22 mil",
     "YT": "289 mil",
@@ -7990,13 +8076,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Beleza, Gastronomia, Lifestyle, Causas sociais",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "R$ 87.360,00",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Luci Gonçalves é influenciadora, youtuber e criadora de conteúdo que aborda temas como beleza, culinária, favela, comportamento e estilo de vida. Participante do concurso NextUp do YouTube, ela se destaca por trazer representatividade e autenticidade, com conteúdos que valorizam a cultura periférica e o cotidiano carioca. Seu público é diverso e engajado com temas sociais e culturais."
   },
   {
     "INFLUENCIADOR": "Laudo de Cria",
     "@": "laudodecria",
+    "IMAGEM_URL": "https://pulliginfluencers.com.br/wp-content/uploads/2023/07/laudo-de-cira.jpg",
     "IG": "569 mil",
     "TTK": "387 mil",
     "YT": "71 mil",
@@ -8004,13 +8091,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Viagem, Gastronomia, Entretenimento",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "-",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Laudo de Cria é um projeto de conteúdo criado por Gabriel, focado em mostrar o cotidiano, os rolês e as paisagens do Rio de Janeiro, especialmente nas favelas e bairros periféricos. Com vídeos autênticos e bem-humorados, ele compartilha dicas de turismo local, trilhas, praias e gastronomia acessível. Seu público é jovem e engajado com cultura urbana e experiências reais do RJ."
   },
   {
     "INFLUENCIADOR": "Elisa Santiago",
     "@": "elisa__santiago",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvhHUd6YGmlZifVigGNXkQ_atYiLmch2ejiA&s",
     "IG": "36 mil",
     "TTK": "29 mil",
     "YT": "-",
@@ -8018,13 +8106,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Moda, Carnaval, Lifestyle",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "-",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Elisa Santiago é comunicadora de cultura, moda e carnaval, com forte atuação em Belo Horizonte. Produz conteúdos sobre estilo pessoal, festas populares e cultura mineira. Seu público é engajado com temas criativos e identitários, e ela se destaca por trazer representatividade e autenticidade em suas produções."
   },
   {
     "INFLUENCIADOR": "Henri",
     "@": "henri.7",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEmTqLoR9nNryG0ek2AoxCHvPKGT7SvzqB7Q&s",
     "IG": "74 mil",
     "TTK": "37 mil",
     "YT": "-",
@@ -8032,13 +8121,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura regional, Lifestyle",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "R$ 101.400,00",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Henri é rapper e produtor musical independente. Compartilha prévias e lançamentos de suas músicas autorais no YouTube e TikTok, com estilo voltado ao trap e rap nacional. Seu conteúdo é voltado para jovens que acompanham a cena musical underground. Ele se destaca pela autenticidade e dedicação à produção musical"
   },
   {
     "INFLUENCIADOR": "Michele Balieiro",
     "@": "eumichelebalieiro",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTs-gvMaa55QMM3vHKC6bJ4oQG6vDQU6b4Tzw&s",
     "IG": "263 mil",
     "TTK": "39 mil",
     "YT": "17 mil",
@@ -8046,13 +8136,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Viagem, DIY, Gastronomia, Decoração",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "R$ 85.800,00",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Michele Balieiro é publicitária e criadora de conteúdo que compartilha vídeos sobre viagens, decoração acessível, receitas e cotidiano. Seu canal no YouTube apresenta roteiros por cidades brasileiras e europeias, além de dicas de microcasas e experiências com hospedagens alternativas. Seu público é jovem-adulto, interessado em estilo de vida simples e criativo."
   },
   {
     "INFLUENCIADOR": "Helena Luttembarck",
     "@": "helenalut",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRz-1KFvRxaF7ApEkGRPYi6oRolD94JQLptgg&s",
     "IG": "265 mil",
     "TTK": "2.6 M",
     "YT": "750 mil",
@@ -8060,27 +8151,29 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Lifestyle, Viagem",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "R$ 46.800,00",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Helena Lut é publicitária e criadora de conteúdo especializada em vídeos curtos e criativos. Produz conteúdos sobre moda alternativa, fantasias, tutoriais de customização e viagens. Com forte presença no TikTok e YouTube, ela se destaca pela originalidade, estética lúdica e engajamento com temas como SPFW, Eurotrip e cultura pop. Seu público é jovem, criativo e engajado com tendências visuais."
   },
   {
     "INFLUENCIADOR": "Isaías Silva",
     "@": "isaias",
+    "IMAGEM_URL": "https://s2-g1.glbimg.com/4Pv2UIWlTYvuTNtD9qxyPDHw7wY=/0x0:640x784/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_59edd422c0c84a879bd37670ae4f538a/internal_photos/bs/2020/Z/D/CoCridQxenR4MHLc4Blw/whatsapp-image-2020-12-23-at-17.10.45.jpeg",
     "IG": "7 M",
-    "TTK": "2.6 M",
+    "TTK": "11.5 M",
     "YT": "-",
     "SEGMENTO": "Humor",
     "SEGMENTO SECUNDÁRIO": "Cultura regional, Relacionamento, Entretenimento",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "R$ 390.000,00",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Isaías Silva é influenciador digital mineiro que conquistou milhões com seus vídeos de humor cotidiano. Interpreta personagens como Rayane, inspirada em figuras femininas da sua infância. Com mais de 20 milhões de seguidores nas redes, ele já atuou em filmes e é reconhecido por seu estilo espontâneo e carismático. Seu público é amplo, com forte presença feminina e jovem-adulta."
   },
   {
     "INFLUENCIADOR": "Ana Laura Lopes",
     "@": "analauralopesf",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/Xvbl-T9iziit5YxwadVkJDE5UKrFqYbw4FXIAmrn9syvfMwCocQELIpXj5gFtbrWuTl8LPf_yA=s160-c-k-c0x00ffffff-no-rj",
     "IG": "1.4 M",
     "TTK": "1.7 M",
     "YT": "2 M",
@@ -8088,13 +8181,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, Relacionamento, Humor",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "-",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Ana Laura Lopes é cantora, compositora e influenciadora digital. Criadora da série musical “Meu Endereço”, ela mistura música com storytelling e coreografias. Seu canal no YouTube é um dos mais populares entre jovens brasileiros, com clipes que abordam temas como amor, amizade e cotidiano. Ela se destaca pela autenticidade, talento vocal e conexão emocional com o público."
   },
   {
     "INFLUENCIADOR": "Rapha Oliveira",
     "@": "raphaoliveeira_",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2HkN7O3_3xMIuUQ58h0mUeVoCuRpkNe2wBw&s",
     "IG": "138 mil",
     "TTK": "177 mil",
     "YT": "-",
@@ -8102,13 +8196,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Lifestyle, Relacionamento",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "-",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Rapha Oliveira é criador de conteúdo que mistura humor, lifestyle e interações com o público por meio de vídeos curtos e criativos. Seus conteúdos incluem rankings de beleza, cantadas engraçadas e experiências em rolês. Ele se comunica com um público jovem e engajado, com foco em entretenimento leve e cotidiano."
   },
   {
     "INFLUENCIADOR": "Carmine Ripoli",
     "@": "carmineuai",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRonKqoulJsDZ_6Epe13dOxQguZRHvt9Bilmw&s",
     "IG": "83 mil",
     "TTK": "137 mil",
     "YT": "-",
@@ -8116,13 +8211,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura regional, Cinema e TV, Música",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "-",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Carmine Ripoli é humorista e comunicador de Belo Horizonte. Produz conteúdos sobre o sotaque mineiro, curiosidades culturais e resenhas sobre séries, filmes e música. Criador do talk show “Saidêra”, ele se destaca pela espontaneidade e pela valorização da cultura local. Seu público é jovem-adulto, engajado com humor inteligente e cotidiano."
   },
   {
     "INFLUENCIADOR": "Ana Luiza Palhares",
     "@": "cindereladementira",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6m7yU4DVzccMlBcUnlNkn7wohRWx5L_VjqQ&s",
     "IG": "1 M",
     "TTK": "325 mil",
     "YT": "268 mil",
@@ -8130,27 +8226,29 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Beleza, Autoconhecimento, Lifestyle",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "R$ 74.880,00",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
-    "MINI BIO - INFLUENCIADOR": "Ana Luiza Palhares é influenciadora plus size e criadora do projeto Cinderela de Mentira. Desde 2012, compartilha conteúdos sobre moda inclusiva, autoestima e beleza com leveza e autenticidade. Seu público é majoritariamente feminino, engajado com temas de empoderamento e estilo pessoal. Ela se destaca por sua abordagem acolhedora e representativa."
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
+    "MINI BIO - INFLUENCIADOR": "Ana Luiza Palhares é influenciadora plus size e criadora do projeto Cinderela de Mentira. Desde 2012, compartilha conteúdos sobre moda inclusiva, autoestima e beleza com leveza e autenticidade. Seu público é majoritariamente feminino, engajado com temas de empoderamento e estilo pessoal. Ela se destaca por sua abordagem acolhedora e representativa.\n\n"
   },
   {
     "INFLUENCIADOR": "Gleidistone",
     "@": "eugleidistone",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTTMeFlv3K_xRO67Uiy7dx4OWO7sZRZW8-xA&s",
     "IG": "29 mil",
     "TTK": "3100",
     "YT": "-",
     "SEGMENTO": "Moda",
-    "SEGMENTO SECUNDÁRIO": "Beleza, Lifestyle",
+    "SEGMENTO SECUNDÁRIO": "Beleza, Lifestyle\n",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "R$ 28.080,00",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Eugleidistone é criadora de conteúdo voltada para moda e estilo pessoal. Compartilha looks, tendências e inspirações visuais com foco em estética urbana e contemporânea. Seu público é jovem e engajado com moda acessível e criativa."
   },
   {
     "INFLUENCIADOR": "Raoni Oliveira",
     "@": "raonioliveira",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReEHGw2XuZ4wUjH9IObFdsc9T37ytMu5BPdg&s",
     "IG": "341 mil",
     "TTK": "231 mil",
     "YT": "19 mil",
@@ -8158,27 +8256,29 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Cultura regional, Humor, Cinema e TV",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "R$ 28.080,00",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Raoni Oliveira é apresentador da TVE Bahia e host do Tapioca Podcast. Produz conteúdos sobre cultura baiana, entrevistas com artistas e temas sociais. Seu estilo é leve, informativo e bem-humorado. Ele se destaca por sua comunicação democrática e engajamento com o público jovem-adulto."
   },
   {
     "INFLUENCIADOR": "Leo Quinttino",
     "@": "leoquinttino",
-    "IG": "392 mil",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcsqDHSSHzQtDaY8emwy975gkmJj5Nle3_BQ&s",
+    "IG": "392mil",
     "TTK": "149 mil",
     "YT": "-",
     "SEGMENTO": "Lifestyle",
     "SEGMENTO SECUNDÁRIO": "Viagem, Cultura regional",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "R$ 51.480,00",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Leo Quinttino é criador de conteúdo voltado para experiências de vida, viagens e cotidiano. Compartilha momentos pessoais com leveza e autenticidade, atingindo um público interessado em estilo de vida simples e conectado com a natureza e cultura local."
   },
   {
     "INFLUENCIADOR": "Ismael Carvalho",
     "@": "ismaelcarvalhoss",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5Zg8ic_feokh9kCxlNQvPtUf1dleT8VqRwA&s",
     "IG": "57 mil",
     "TTK": "13 mil",
     "YT": "2120",
@@ -8186,13 +8286,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, Cultura regional",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "R$ 85.800,00",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Ismael Carvalho é criador de conteúdo com foco em vídeos curtos e engraçados no TikTok. Seu estilo é espontâneo e voltado para situações cotidianas, com linguagem acessível e regional. Seu público é jovem e engajado com humor leve e cotidiano."
   },
   {
     "INFLUENCIADOR": "Amanda Mota",
     "@": "amoramota",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSngTHZbhrp7enQMs1AwYYTWyXwqXgDVg9UYQ&s",
     "IG": "347 mil",
     "TTK": "101 mil",
     "YT": "13,4 mil",
@@ -8200,13 +8301,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Gastronomia, Viagem, Lifestyle",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "R$ 112.320,00",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Amanda Mota é influenciadora baiana que compartilha experiências culturais, gastronômicas e turísticas de Salvador e da Bahia. Seu conteúdo valoriza a identidade local com leveza e autenticidade. Ela se destaca por trazer dicas de passeios, comidas típicas e curiosidades regionais, com forte conexão com o público local e turístico."
   },
   {
     "INFLUENCIADOR": "Juliana Paiva",
     "@": "paivajuliana",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUqjGz8xN6pabpCiKc40UDniq5boKV2xz3cw&s",
     "IG": "1 M",
     "TTK": "79 mil",
     "YT": "-",
@@ -8214,13 +8316,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Beleza, Família, Cultura regional",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "R$ 129.480,00",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Ju Paiva é influenciadora digital que compartilha conteúdos sobre maternidade, cuidados pessoais, carnaval e cotidiano. Seu estilo é leve e acolhedor, voltado para mulheres e mães que buscam inspiração e conexão. Ela já realizou parcerias com marcas como Hydratta e Renault, e se destaca pela autenticidade e engajamento com temas femininos e familiares."
   },
   {
     "INFLUENCIADOR": "Patrícia Guerra",
     "@": "patiguerra",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz6d7SPFs4gww1tIyqzazUiGkyJeuhd7_XE69dALI9Qvdm-IPiumYKbibkkMrFBCc39yY&usqp=CAU",
     "IG": "842 mil",
     "TTK": "63 mil",
     "YT": "-",
@@ -8228,13 +8331,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Lifestyle, Relacionamento",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "-",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Patrícia Guerra é influenciadora digital que produz conteúdos humorísticos sobre vida de casal, cotidiano e situações engraçadas. Com forte presença em vídeos curtos e virais, ela se comunica com um público jovem-adulto que busca entretenimento leve e relacionável. Seu estilo é espontâneo e divertido, com foco em dinâmicas de casal e humor cotidiano."
   },
   {
     "INFLUENCIADOR": "Leandro na Bahia",
     "@": "leandronabahia",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRkRZEyXl9MiDSLxEEVphuLSqto3LPeGBIG1Q&s",
     "IG": "72 mil",
     "TTK": "5730",
     "YT": "-",
@@ -8242,13 +8346,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Viagem, Gastronomia, Entretenimento",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "R$ 13.800,00",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Leandro é criador de conteúdo baiano que compartilha experiências culturais, rolês em Salvador, eventos locais e dicas de turismo. Seus vídeos valorizam a identidade da Bahia com leveza e humor. Ele se destaca por mostrar o cotidiano da cidade com autenticidade e conexão com o público local."
   },
   {
     "INFLUENCIADOR": "Lore Improta",
     "@": "loreimprota",
+    "IMAGEM_URL": "https://uploads.metroimg.com/wp-content/uploads/2024/05/22145614/capa-1463.jpg",
     "IG": "16 M",
     "TTK": "9.2 M",
     "YT": "3.9 M",
@@ -8256,13 +8361,14 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Música, Lifestyle, Família, Beleza",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "-",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Lore Improta é dançarina, apresentadora e influenciadora digital. Ganhou destaque no programa Domingão do Faustão e consolidou sua carreira com conteúdos sobre dança, maternidade, empreendedorismo e estilo de vida. É casada com o cantor Léo Santana e tem forte presença nas redes sociais, com milhões de seguidores engajados em suas coreografias e projetos pessoais."
   },
   {
     "INFLUENCIADOR": "Ruivo Baiano",
     "@": "ruivobaiano",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS2YATtngA0z9k4gQPeyAvI-yLZL0f64Kn_rQ&s",
     "IG": "86 mil",
     "TTK": "62 mil",
     "YT": "762",
@@ -8270,10 +8376,552 @@ const segmentColors = {
     "SEGMENTO SECUNDÁRIO": "Humor, Viagem, Música",
     "PROJETOS": "Carnaval",
     "REF. VALOR": "R$ 31.200,00",
-    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "AGÊNCIA": "Sotaq",
+    "ESCOPO": "6 videos collab com Terra | Impulsionamento 30 dias",
     "MINI BIO - INFLUENCIADOR": "Marcelo, conhecido como Ruivo Baiano, é influenciador digital que celebra a cultura baiana com vídeos sobre Salvador, gírias locais, eventos e nostalgia dos anos 90 e 2000. Seu conteúdo é leve, divertido e voltado para quem ama a Bahia e suas tradições. Ele se destaca pela linguagem acessível e conexão com o público local."
+  },
+{
+    "INFLUENCIADOR": "MC Hariel",
+    "@": "mchariel",
+    "IMAGEM_URL": "https://f.i.uol.com.br/fotografia/2023/03/23/1679597918641ca15e4afa9_1679597918_3x2_rt.jpg",
+    "IG": "13 M",
+    "TTK": "1.6 M",
+    "YT": "2.3 M",
+    "SEGMENTO": "Música",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Cultura regional",
+    "PROJETOS": "Carnaval",
+    "REF. VALOR": "R$ 528.000,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença VIP-3 horas +01 post Reels-60s IG +01 repost-TikTok +01 Combo de Stories com 04 telas",
+    "MINI BIO - INFLUENCIADOR": "MC Hariel é cantor e compositor de funk paulista, conhecido por letras que valorizam sua trajetória e identidade periférica.\nNo Instagram, mostra bastidores de shows, rotina artística, conquistas e momentos pessoais.\nTambém compartilha mensagens motivacionais, reflexões sobre origem e valorização da cultura do funk."
+  },
+  {
+    "INFLUENCIADOR": "Alva",
+    "@": "alvaflex",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/3-9erHavDSZBVxOm5lOjuYfnKdEoyp2xD3rm8RM3e-I83rKtiLxQTiu-YMzcVKbehzkZLgjB7w=s900-c-k-c0x00ffffff-no-rj",
+    "IG": "302 mil",
+    "TTK": "227 mil",
+    "YT": "333 mil",
+    "SEGMENTO": "Música",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Moda, Entretenimento",
+    "PROJETOS": "Carnaval",
+    "REF. VALOR": "R$ 26.400,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença VIP-3 horas +01 post Reels-60s IG +01 repost-TikTok +01 Combo de Stories com 04 telas",
+    "MINI BIO - INFLUENCIADOR": "Conhecido por ser o \"Rei da Vibe\", Alva também é apresentador da Batalha da Aldeia. É conhecido em suas redes pela sua conexão com o mundo fashion e lifestyle, pelos conteúdos compartilhados com seus seguidores, que compõe a \"Tropa do Erro\""
+  },
+  {
+    "INFLUENCIADOR": "Levinsk",
+    "@": "levinskoficial",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDb2BsWC130eP8rb3VvRExvSDy67oboeeXQg&s",
+    "IG": "248 mil",
+    "TTK": "37 mil",
+    "YT": "-",
+    "SEGMENTO": "Música",
+    "SEGMENTO SECUNDÁRIO": "Entretenimento, Cultura urbana",
+    "PROJETOS": "Carnaval",
+    "REF. VALOR": "R$ 15.840,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença VIP-3 horas +01 post Reels-60s IG +01 repost-TikTok +01 Combo de Stories com 04 telas",
+    "MINI BIO - INFLUENCIADOR": "A maior campeã da Batalha das Venenosas e uma das maiores campeãs da Batalha da Aldeia, Levinsk conquistou respeito em todas as batalhas do Brasil. Conhecida como a 'Rainha do Twolala', ela se destaca pelas construções de suas rimas, pelo speedflow, sua participação na série 'Sintonia' (Netflix) e colaborações publicitárias com marcas como Club Social, Vivo, Oxxo, Kaboom, Marvel, entre outras."
+  },
+  {
+    "INFLUENCIADOR": "Zeus",
+    "@": "oficialzeusmc",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/yi5PXSijJqtiE91FVA9maRtFeB9ZOlSMoTUJgmWSbf0H-n0kOr9BBCsjub81BZgjCz3-TgSo=s900-c-k-c0x00ffffff-no-rj",
+    "IG": "2 M",
+    "TTK": "2 M",
+    "YT": "501 mil",
+    "SEGMENTO": "Música",
+    "SEGMENTO SECUNDÁRIO": "Humor, Cultura urbana",
+    "PROJETOS": "Carnaval",
+    "REF. VALOR": "R$ 26.400,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença VIP-3 horas +01 post Reels-60s IG +01 repost-TikTok +01 Combo de Stories com 04 telas",
+    "MINI BIO - INFLUENCIADOR": "Zeus, rapper e compositor de sucesso, alcançou reconhecimento com suas músicas nas redes sociais, tornando-se uma figura proeminente no cenário musical entre os jovens."
+  },
+  {
+    "INFLUENCIADOR": "Guri",
+    "@": "oi_guri\n",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTndccA5i_rhA7l1QyNJhrcEn3YUOzKQgv4CgaamFsIB0URpNu5eAjFnM0RB7tWA1Uk9us&usqp=CAU",
+    "IG": "380 mil",
+    "TTK": "-",
+    "YT": "30 mil",
+    "SEGMENTO": "Música",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Cultura urbana",
+    "PROJETOS": "Carnaval",
+    "REF. VALOR": "R$ 18.480,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença VIP-3 horas +01 post Reels-60s IG +01 repost-TikTok +01 Combo de Stories com 04 telas",
+    "MINI BIO - INFLUENCIADOR": "Guri possui o típico perfil 'nego doce', sendo alguém que fala suavemente ao ouvido, é vaidoso, carinhoso, galanteador, busca atenção, sabe como se aproximar, encanta e envolve a vítima."
+  },
+  {
+    "INFLUENCIADOR": "Devilzinha Mc",
+    "@": "devilzinha",
+    "IMAGEM_URL": "https://portalpopclub.com.br/wp-content/uploads/2024/07/Imagem-do-WhatsApp-de-2024-07-30-as-20.53.12_541ee1ca-829x1024.jpg",
+    "IG": "142 mil",
+    "TTK": "363 mil",
+    "YT": "3 mil",
+    "SEGMENTO": "Música",
+    "SEGMENTO SECUNDÁRIO": "Entretenimento, Dança, Causas sociais",
+    "PROJETOS": "Carnaval",
+    "REF. VALOR": "R$ 3.960,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença VIP-3 horas +01 post Reels-60s IG +01 repost-TikTok +01 Combo de Stories com 04 telas",
+    "MINI BIO - INFLUENCIADOR": "Devilzinha Mc traz uma valiosa representatividade para a cena do rap e hip-hop como uma mulher trans. Suas letras poderosas e marcantes não apenas expressam sua identidade única, mas também contribuem para a diversidade e inclusão dentro do cenário musical."
+  },
+  {
+    "INFLUENCIADOR": "Julia Costa",
+    "@": "ajuliacosta",
+    "IMAGEM_URL": "https://yt3.googleusercontent.com/D2EmZAV4pu97dIZefzE5z8CGes9Wa_g9gSoTeEtCmJLHKIDbTLis_u0q0KpbFWESP7IjjEZT=s900-c-k-c0x00ffffff-no-rj",
+    "IG": "736 mil",
+    "TTK": "313 mil",
+    "YT": "142 mil",
+    "SEGMENTO": "Música",
+    "SEGMENTO SECUNDÁRIO": "Moda, Lifestyle, Causas sociais",
+    "PROJETOS": "Carnaval",
+    "REF. VALOR": "R$ 330.000,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença VIP-3 horas +01 post Reels-60s IG +01 repost-TikTok +01 Combo de Stories com 04 telas",
+    "MINI BIO - INFLUENCIADOR": "Ajuliacosta é rapper, cantora e compositora brasileira que compartilha no Instagram sua trajetória artística, bastidores de gravações, performances ao vivo e momentos de bastidor.\nEla aborda temas como empoderamento feminino, identidade periférica, cultura hip-hop e relações pessoais/autenticidade, utilizando o perfil para mostrar tanto a arte quanto o processo por trás dela."
+  },
+  {
+    "INFLUENCIADOR": "Tracie Okereke",
+    "@": "tracieokereke",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm533ol5KVU00onmcJg9UkPhOtHXynl12lVA&s",
+    "IG": "834 mil",
+    "TTK": "373 mil",
+    "YT": "274 mil",
+    "SEGMENTO": "Música",
+    "SEGMENTO SECUNDÁRIO": "Moda, Arte, Cultura urbana",
+    "PROJETOS": "Carnaval",
+    "REF. VALOR": "R$ 462.000,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença VIP-3 horas +01 post Reels-60s IG +01 repost-TikTok +01 Combo de Stories com 04 telas",
+    "MINI BIO - INFLUENCIADOR": "Tracie Okereke é rapper brasileira, integrante da dupla Tasha & Tracie, com forte presença na cena de rap, trap e hip-hop.\nNo Instagram, compartilha shows, bastidores de estúdio, moda urbana e momentos de lifestyle ligados à cultura negra e à estética street.\nFala sobre empoderamento, identidade periférica, autonomia criativa e sua trajetória na música e na cultura."
+  },
+  {
+    "INFLUENCIADOR": "Tasha Okereke",
+    "@": "tashaokereke",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRn56dGSjGytJBRuixH6sdPLmVfaP3XqneK8g&s",
+    "IG": "1 M",
+    "TTK": "397 mil",
+    "YT": "274 mil",
+    "SEGMENTO": "Música",
+    "SEGMENTO SECUNDÁRIO": "Moda, Lifestyle, Ativismo",
+    "PROJETOS": "Carnaval",
+    "REF. VALOR": "R$ 462.000,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença VIP-3 horas +01 post Reels-60s IG +01 repost-TikTok +01 Combo de Stories com 04 telas",
+    "MINI BIO - INFLUENCIADOR": "Tasha Okereke é rapper e compositora brasileira, parte da dupla Tasha & Tracie, originária da Zona Norte de São Paulo.\nNo Instagram, ela compartilha bastidores de shows e estúdio, fotos de estilo de vida, moda urbana e celebração da cultura periférica.\nEla comunica temas como empoderamento feminino, identidade negra, autonomia artística e a vivência na favela."
+  },
+  {
+    "INFLUENCIADOR": "L7nnon",
+    "@": "l7nnon",
+    "IMAGEM_URL": "https://contrateatracao.com.br/wp-content/uploads/2024/07/L7nnon.png",
+    "IG": "10 M",
+    "TTK": "2.8 M",
+    "YT": "3.8 M",
+    "SEGMENTO": "Música",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Moda, Entretenimento",
+    "PROJETOS": "Carnaval",
+    "REF. VALOR": "R$ 586.080,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença VIP-3 horas +01 post Reels-60s IG +01 repost-TikTok +01 Combo de Stories com 04 telas",
+    "MINI BIO - INFLUENCIADOR": "L7NNON é rapper e compositor brasileiro com forte presença na cena do hip-hop.\nNo Instagram, compartilha shows, bastidores de estúdio, projetos musicais e momentos da rotina.\nFala sobre superação, vivência periférica, autenticidade e sua trajetória dentro do rap."
+  },
+  {
+    "INFLUENCIADOR": "Livinho",
+    "@": "mclivinho",
+    "IMAGEM_URL": "https://i.metroimg.com/AaRAjGq0UmblNdZ9wbadGrNQP4ADQlAwEKAJx3kpo1U/w:1200/q:85/f:webp/plain/2025/07/30124037/capa-3057.jpg",
+    "IG": "13 M",
+    "TTK": "6.6 M",
+    "YT": "3.4 M",
+    "SEGMENTO": "Música",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Fitness, Esporte\n",
+    "PROJETOS": "Carnaval",
+    "REF. VALOR": "R$ 264.000,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença VIP-3 horas +01 post Reels-60s IG +01 repost-TikTok +01 Combo de Stories com 04 telas",
+    "MINI BIO - INFLUENCIADOR": "Conhecido por suas músicas dançantes no cenário do funk, MC Livinho tem uma presença forte nas redes sociais. Sua influência na Geração Z se reflete na popularidade de suas músicas e em sua capacidade de criar tendências."
+  },
+  {
+    "INFLUENCIADOR": "BK'",
+    "@": "bkttlapa",
+    "IMAGEM_URL": "https://p2.trrsf.com.br/image/fget/cf/540/960/smart/images.terra.com/2023/11/01/reproducao-instagrambkttlapa-(3)-s4v5iswqjt5v.png",
+    "IG": "1.5 M",
+    "TTK": "413 mil",
+    "YT": "1.1 M",
+    "SEGMENTO": "Música",
+    "SEGMENTO SECUNDÁRIO": "Arte, Cultura urbana, Causas sociais",
+    "PROJETOS": "Carnaval",
+    "REF. VALOR": "-",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença VIP-3 horas +01 post Reels-60s IG +01 repost-TikTok +01 Combo de Stories com 04 telas",
+    "MINI BIO - INFLUENCIADOR": "BK’ (também citado como bkttlapa no Instagram) é rapper carioca bastante reconhecido no cenário do hip-hop brasileiro.\nNo Instagram, ele compartilha trechos de shows ao vivo, gravações em estúdio, bastidores da carreira e reflexões pessoais ligadas à música e à cultura urbana.\nEle aborda temas como realismo periférico, o poder da caneta/letra no rap, identidade negra, representatividade e o cotidiano das favelas."
+  },
+  {
+    "INFLUENCIADOR": "Duquesa",
+    "@": "duquesa",
+    "IMAGEM_URL": "https://www.jornaldorap.com.br/wp-content/uploads/2024/04/duquesa-boggie-naipe-960x608.jpg",
+    "IG": "1 M",
+    "TTK": "836 mil",
+    "YT": "280 mil",
+    "SEGMENTO": "Música",
+    "SEGMENTO SECUNDÁRIO": "Moda, Lifestyle, Cultura urbana",
+    "PROJETOS": "Carnaval",
+    "REF. VALOR": "-",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença VIP-3 horas +01 post Reels-60s IG +01 repost-TikTok +01 Combo de Stories com 04 telas",
+    "MINI BIO - INFLUENCIADOR": "Duquesa é cantora e compositora de rap, trap e R&B, reconhecida pela estética forte e pela voz marcada na cena urbana.\nNo Instagram, mostra bastidores de estúdio, shows, processos criativos e momentos de lifestyle ligados à moda e à sua identidade artística.\nFala sobre empoderamento, autenticidade, trajetória periférica e a construção da sua marca como “rapstar”."
+  },
+  {
+    "INFLUENCIADOR": "Lili",
+    "@": "cachos_cachiados",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJ_69J94caPOnryAjainw_HO1lVhbhi8K32w&s",
+    "IG": "396 mil",
+    "TTK": "504 mil",
+    "YT": "-",
+    "SEGMENTO": "Música",
+    "SEGMENTO SECUNDÁRIO": "Beleza, Lifestyle, Causas sociais",
+    "PROJETOS": "Carnaval",
+    "REF. VALOR": "-",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença VIP-3 horas +01 post Reels-60s IG +01 repost-TikTok +01 Combo de Stories com 04 telas",
+    "MINI BIO - INFLUENCIADOR": "Lili, a primeira MC feminina a rimar na Aldeia, originária de Ribeirão Preto. Hoje, ela é considerada uma inspiração para todas as meninas que rimam, sendo um exemplo a ser seguido. Lili já realizou campanhas para Rider e também participou da quarta temporada de Sintonia."
+  },
+  {
+    "INFLUENCIADOR": "Kroy",
+    "@": "kroyemici\n",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyah9Ih5bW09XdkUS6XxzNgCmFMbMhG13K6g&s",
+    "IG": "158 mil",
+    "TTK": "50 mil",
+    "YT": "-",
+    "SEGMENTO": "Música",
+    "SEGMENTO SECUNDÁRIO": "Cultura urbana, Entretenimento",
+    "PROJETOS": "Carnaval",
+    "REF. VALOR": "-",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "01 presença VIP-3 horas +01 post Reels-60s IG +01 repost-TikTok +01 Combo de Stories com 04 telas",
+    "MINI BIO - INFLUENCIADOR": "Com vários prêmios no cenário de rap e hip-hop, conquistou seu espaço com letras que ressoam de forma significativa entre o público adolescente. Seu talento musical notável e seu impacto positivo nas gerações mais jovens o destacam como uma figura influente e premiada no mundo da música."
+  },
+  {
+    "INFLUENCIADOR": "Amanda",
+    "@": "amandinhaporai",
+    "IMAGEM_URL": "https://scontent-gru2-1.cdninstagram.com/v/t51.2885-19/566948576_18631359766056707_6307201701543124217_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-gru2-1.cdninstagram.com&_nc_cat=111&_nc_oc=Q6cZ2QFe1IsPEXYFyE8IBcIzuHNVeGKtdmF_euMojhCxYJUnHMAozoGnHAiV0njMV_6Eoas&_nc_ohc=Lx5l31-BfUoQ7kNvwEmrBNI&_nc_gid=ltEeOkJR6DzrINhaheZDLw&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfnKDyZeHgbk1YNZOSDf5h0DYKTIodgGeVNZPuCnmhRT2A&oe=6938EC09&_nc_sid=7a9f4b",
+    "IG": "118 mil",
+    "TTK": "83 mil",
+    "YT": "27 mil",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Educação, Gastronomia",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "R$ 17.250,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Amanda Zanoni, criadora do projeto Amandinha Por Aí, é influenciadora especializada em viagens acessíveis e planejamento econômico. Com mais de 106 mil seguidores no Instagram, compartilha roteiros, dicas para economizar, conteúdos sobre milhas, seguro viagem e experiências culturais pelo Brasil e exterior. Também oferece cursos de idiomas e parcerias com marcas como Rosetta Stone e Holafly. Público jovem-adulto, interessado em turismo, mochilão e viagens low cost. Diferencial: foco em democratizar viagens com dicas práticas e conteúdos educativos."
+  },
+  {
+    "INFLUENCIADOR": "Sá e Felipe",
+    "@": "sa.indopelomundo",
+    "IMAGEM_URL": "https://scontent-gru2-1.cdninstagram.com/v/t51.2885-19/116437965_326949945020275_2026327350442898669_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-gru2-1.cdninstagram.com&_nc_cat=107&_nc_oc=Q6cZ2QH6YxIfSYCiLMG0feWhjUpY0MG4hkACDsZHJauaOAe_kxC0a_lOk494m6_4869ENaw&_nc_ohc=E-gwqHIFa1oQ7kNvwHjWQn6&_nc_gid=3lJy5aNclwhAkS-8oz7QbQ&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AfmWrieFu_Am4xZdZBP-Jwh9DEJgxsA_Xfhs5cTq8QtkMQ&oe=6938E95C&_nc_sid=7d3ac5",
+    "IG": "71 mil",
+    "TTK": "70 mil",
+    "YT": "1750",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Gastronomia, Cultura",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "R$ 17.200,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Sá e Felipe são criadores do projeto Saindo Pelo Mundo, voltado para turismo internacional e experiências culturais. Produzem conteúdos sobre roteiros, dicas para economizar, stopover e curiosidades de destinos como Qatar, Europa e América Latina. Com presença no Instagram, YouTube e TikTok, compartilham vlogs detalhados e informações úteis para viajantes iniciantes e experientes. Público jovem e famílias que buscam inspiração para viagens internacionais. Diferencial: abordagem prática e visual, com foco em planejamento inteligente e experiências autênticas."
+  },
+  {
+    "INFLUENCIADOR": "Sylvia Barreto",
+    "@": "viajaresimples",
+    "IMAGEM_URL": "https://scontent-gru2-2.cdninstagram.com/v/t51.2885-19/373395528_776807450801693_3053517888039666989_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-gru2-2.cdninstagram.com&_nc_cat=105&_nc_oc=Q6cZ2QFB7B0KU-UASBc4CB4CEFsw0pAciHO0bgzF9QUQhxNT_GzRVtJOTbQ1VUh_rgv1rTg&_nc_ohc=x0d8zHkdTcgQ7kNvwGohOQx&_nc_gid=2gKzK3NFx6J9Bjx_d9wSRA&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AflR8v5dET1QlBEzO31LeKUgXbFes4phsBSM6KU6u3TBnQ&oe=6938CDAA&_nc_sid=7a9f4b",
+    "IG": "167 mil",
+    "TTK": "9791",
+    "YT": "-",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Causas sociais, Educação",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "-",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Sylvia Barreto é jornalista e fundadora do projeto Viajar é Simples, criado para democratizar o turismo e tornar as viagens acessíveis a todos. Com mais de 171 mil seguidores no Instagram, atua como criadora de conteúdo e editora do site viajaresimples.com.br, oferecendo dicas sobre hospedagens, destinos nacionais e internacionais, além de abordar inclusão e diversidade no turismo. Diferencial: conteúdo jornalístico aliado a experiências pessoais."
+  },
+  {
+    "INFLUENCIADOR": "Gui Cury",
+    "@": "guicury",
+    "IMAGEM_URL": "https://scontent-gru2-1.cdninstagram.com/v/t51.2885-19/588264969_18539600671057687_8271810659572923932_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby42NTkuYzIifQ&_nc_ht=scontent-gru2-1.cdninstagram.com&_nc_cat=107&_nc_oc=Q6cZ2QGnBScdZuWVRbrvdUmaweOEPv31M593yqI0GaBX7ue7XlD7JMwvYYXVwOnM4pWMUkA&_nc_ohc=MyCAoaJTrLQQ7kNvwGDkTAq&_nc_gid=if20WKA5HBiUNLo9R5Vp_Q&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_Afm_UZLgjfscYefPrCjjCdEGm5AzcouE2FOWA5vwmOjPmg&oe=6938D538&_nc_sid=7d3ac5",
+    "IG": "189 mil",
+    "TTK": "239 mil",
+    "YT": "-",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Gastronomia, Moda",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "-",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Guilherme Cury, conhecido como Gui Cury, é criador de conteúdo especializado em viagens, experiências e lifestyle. Com mais de 184 mil seguidores no Instagram, compartilha dicas de turismo, hospedagens, gastronomia e curiosidades culturais. Fundador do blog Moda Para Homens. Diferencial: mistura conteúdo de viagem com moda masculina e lifestyle sofisticado."
+  },
+  {
+    "INFLUENCIADOR": "Deisi Remus",
+    "@": "deisiremus",
+    "IMAGEM_URL": "https://scontent-gru2-1.cdninstagram.com/v/t51.2885-19/452077911_968671595006829_5536256268211424011_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-gru2-1.cdninstagram.com&_nc_cat=109&_nc_oc=Q6cZ2QF3Tcpo3zK8hGP7pGj-6AsgikGatjC5e28a3QPA6GlhrCkWTAJruTeVdF5T3qJQylA&_nc_ohc=ZRvgYFvGBwUQ7kNvwFWXmz4&_nc_gid=_vtgRrUX7DzHiaCXuJuS8Q&edm=ALGbJPMBAAAA&ccb=7-5&oh=00_AfnHIz7MGosuu30rwOECAMM63TThRKm7bztHsmqHjXth_Q&oe=6938CEC4&_nc_sid=7d3ac5",
+    "IG": "158 mil",
+    "TTK": "204 mil",
+    "YT": "596",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Moda, Lifestyle, Beleza",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "-",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Deisi Remus é influenciadora digital e criadora do projeto Experiências Pelo Mundo, com foco em turismo internacional e dicas de lifestyle. Formada em Moda, compartilha conteúdos sobre destinos e moda. Diferencial: expertise em moda e viagens, com abordagem estética e informativa."
+  },
+  {
+    "INFLUENCIADOR": "Giba Sandes",
+    "@": "giovannisandes",
+    "IMAGEM_URL": "https://scontent-gru1-1.cdninstagram.com/v/t51.2885-19/468996013_2580159918852145_4339830877958652974_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby45MzQuYzIifQ&_nc_ht=scontent-gru1-1.cdninstagram.com&_nc_cat=101&_nc_oc=Q6cZ2QE2MNweXXE1RfbvM_qMpre34NVga_OC4icW45Z-VVWQLT6VWHCnDCOdwBB5KvTYHbM&_nc_ohc=IsubGli00wEQ7kNvwGY5mJE&_nc_gid=88GD_LxgkBXZvi5MQ7jqvg&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfmVlNRZrbMPpqDbvO3yBV3bQeXaIjvCuC8Zet-AEVw3Gw&oe=6938DA5B&_nc_sid=7a9f4b",
+    "IG": "152 mil",
+    "TTK": "198 mil",
+    "YT": "3830",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Negócios/Marketing, Lifestyle, Gastronomia",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "R$ 18.800,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Giovanni Sandes, conhecido como Giba Sandes, é criador de conteúdo e empreendedor. Participou do Shark Tank Brasil e fundou a marca migs!. Compartilha dicas de viagem, roteiros e curiosidades culturais aliando com marketing digital e negócios."
+  },
+  {
+    "INFLUENCIADOR": "Carol Ribeiro",
+    "@": "carolribeiro.blog",
+    "IMAGEM_URL": "https://scontent-gru2-1.cdninstagram.com/v/t51.2885-19/386341654_1292671981401335_1371178618359814565_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-gru2-1.cdninstagram.com&_nc_cat=111&_nc_oc=Q6cZ2QFzFzxW8ungrh9ByPWUo8fe49QGCLnRwqWg6tqP4dpcrJQMIgdsW6OFOvuTBFxH1Ac&_nc_ohc=KXOUgK3hzGUQ7kNvwFYZJcd&_nc_gid=Y2N5oWorqFkceW4zawAtGw&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfmFk-GfTdnEJvRgup_s1KMzo40zj1Tl6R2VYwPaDo4sQA&oe=6938FBFC&_nc_sid=7a9f4b",
+    "IG": "85 mil",
+    "TTK": "20 mil",
+    "YT": "24 mil",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Educação, Gastronomia",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "R$ 17.645,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Carol Ribeiro é criadora de conteúdo especializada em turismo e planejamento de viagens econômicas. Compartilha dicas para viajar barato, roteiros completos e informações sobre milhas. Também atua como agente de viagens."
+  },
+  {
+    "INFLUENCIADOR": "Léo e Fabi",
+    "@": "leoefabivalle",
+    "IMAGEM_URL": "https://scontent-gru2-2.cdninstagram.com/v/t51.2885-19/483586946_966681202234506_6795780554714905129_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-gru2-2.cdninstagram.com&_nc_cat=106&_nc_oc=Q6cZ2QHG1okNtcqMWBoVQSkw2YvQF4vIY2OHZkco0JpfFOYgOPEQpLjoVq0mtVz7Zy0Rx1k&_nc_ohc=eYHTe8-pZZUQ7kNvwEhoOO-&_nc_gid=PheUQaviqvvWeSZe9gjbeA&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfmNfqg-o4HNlrN4cpO-MgNASE3D5PzuCXY081QNoljRgA&oe=6938F58D&_nc_sid=7a9f4b",
+    "IG": "161 mil",
+    "TTK": "63 mil",
+    "YT": "247 mil",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Gastronomia, Cultura",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "-",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Léo e Fabi Valle são criadores do projeto Saindo Pelo Mundo, vivendo como nômades digitais há mais de 5 anos. Compartilham conteúdos sobre viagens internacionais, vida em motorhome e experiências culturais."
+  },
+  {
+    "INFLUENCIADOR": "Fernanda",
+    "@": "feandaporai",
+    "IMAGEM_URL": "https://scontent-gru2-2.cdninstagram.com/v/t51.2885-19/521042559_18070499954511701_2654311449089705289_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-gru2-2.cdninstagram.com&_nc_cat=105&_nc_oc=Q6cZ2QELhqPTbIAAe4lOHvthpYg9xxiYzi1KamGjOOUAcUW-4wjwTABPIKMZcO7RCIt2ZhE&_nc_ohc=W2r15UcQT0EQ7kNvwGTujUi&_nc_gid=2PY_GNwmvY60zYZjVgNeTQ&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_Afm6u8hdQXyuAQhyYP8CczCR_92-TVkEm8ur4l1Yvt0K1w&oe=6938F2BF&_nc_sid=7a9f4b",
+    "IG": "198 mil",
+    "TTK": "157 mil",
+    "YT": "-",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Gastronomia, Lifestyle",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "R$ 18.000,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Fernanda Figueiredo, criadora do perfil Fe Ando Por Aí, produz conteúdos sobre turismo, gastronomia e experiências culturais. Compartilha dicas de destinos nacionais e internacionais e roteiros."
+  },
+  {
+    "INFLUENCIADOR": "Daniel Negreiros e Paula Albino",
+    "@": "numpulo",
+    "IMAGEM_URL": "https://scontent-gru2-1.cdninstagram.com/v/t51.2885-19/364182737_978889096492235_1117580934735854400_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-gru2-1.cdninstagram.com&_nc_cat=111&_nc_oc=Q6cZ2QFvkT6G6_tYYluaptwlQ37iNRjd3bua9yvLEZW7Wb_Jc_8us7UXL6h-DeQarG8hvEA&_nc_ohc=1qHY1DvzOjsQ7kNvwHQqiBZ&_nc_gid=2D2_n_nZnOgVXykWFG65Lw&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfldFUwvYSz-NBWAB8tVfjycuHDtdWynHQJbn3qD2xI2Ng&oe=6938E313&_nc_sid=7a9f4b",
+    "IG": "139 mil",
+    "TTK": "283 mil",
+    "YT": "283 mil",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Fotografia, Criação de conteúdo",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "R$ 31.900,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Daniel Negreiros e Paula Albino são criadores do projeto Num Pulo. Publicitários e designers, produzem conteúdos visuais únicos com foco em inspiração e criatividade. Referência visual no segmento de viagem no Brasil."
+  },
+  {
+    "INFLUENCIADOR": "Mary Teles",
+    "@": "vidamochileira",
+    "IMAGEM_URL": "https://scontent-gru2-1.cdninstagram.com/v/t51.2885-19/315447028_623353499470655_4637697789030429651_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-gru2-1.cdninstagram.com&_nc_cat=111&_nc_oc=Q6cZ2QFPVWTKr4wq0f5Y3zWhHoFPqm0MmQ1LZZ1whP9XVqFPlSc3roTi4Ycr2qQD4yAzoSE&_nc_ohc=MTwRofmh1scQ7kNvwGu29-Z&_nc_gid=fJCO9ulu6SNU1dVk6I02Sw&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfkDiodZpcg5EzxirGNeEQs21OneOdl8tpWc9w0X_6-6SQ&oe=6938DDAE&_nc_sid=7a9f4b",
+    "IG": "166 mil",
+    "TTK": "48 mil",
+    "YT": "48 mil",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Autoconhecimento, Educação, Causas sociais",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "-",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Mary Teles, criadora do projeto Vida Mochileira, é referência em viagens solo e mochilão low cost. Compartilha dicas para viajar barato, voluntariado e experiências transformadoras. Organiza expedições internacionais."
+  },
+  {
+    "INFLUENCIADOR": "Robson Franzói",
+    "@": "umviajante",
+    "IMAGEM_URL": "https://scontent-gru1-2.cdninstagram.com/v/t51.2885-19/47691956_1456028474527572_7357135788133318656_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-gru1-2.cdninstagram.com&_nc_cat=100&_nc_oc=Q6cZ2QHuhy7LFDwQPiQAQPZlJ4OT5twJ9mYqXTk43ol-nNAY7SBivWtsCvXeVZOtaTKz1wo&_nc_ohc=i_0MIbdkEnoQ7kNvwHD4V-p&_nc_gid=iudb3YDQUAUwFmwBu2XpZQ&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfnpQhv8oy4tmFWBbMflIcTpDlLUbQKQ0zpBO4rM3P8MYw&oe=6938D6D5&_nc_sid=7a9f4b",
+    "IG": "121 mil",
+    "TTK": "64 mil",
+    "YT": "64 mil",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Fotografia, Tecnologia, Gastronomia",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "-",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Robson Franzói é fundador do blog Um Viajante, um dos mais consolidados no Brasil. Conteúdo com foco em roteiros detalhados, fotografia de alta qualidade e produção audiovisual sofisticada."
+  },
+  {
+    "INFLUENCIADOR": "Mário silva",
+    "@": "maismario",
+    "IMAGEM_URL": "https://scontent-gru1-2.cdninstagram.com/v/t51.2885-19/496906724_18507833776056848_8637183042861525213_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-gru1-2.cdninstagram.com&_nc_cat=108&_nc_oc=Q6cZ2QHykzGuSnWr9RHomwJ2w5soM3_EAwds96lOCYAM_0HScVRgZg_hgYoNCFpSo3pbHEo&_nc_ohc=F7C_Y6KtVgoQ7kNvwEtWgGZ&_nc_gid=cb5KxXYhol-V1x25-rT-_g&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfnOT-qJKP4HAaE2iCI6y4eqPKgaToJnJnRH34sQRP9Y9A&oe=6938FB88&_nc_sid=7a9f4b",
+    "IG": "487 mil",
+    "TTK": "-",
+    "YT": "-",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Gastronomia, Fotografia",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "R$ 19.800,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Mário Silva é criador de conteúdo especializado em turismo e experiências culturais. Produz conteúdos sobre roteiros, hospedagens e gastronomia para quem busca explorar destinos de forma acessível."
+  },
+  {
+    "INFLUENCIADOR": "Richard Viana",
+    "@": "nossas.viagens",
+    "IMAGEM_URL": "https://scontent-gru2-1.cdninstagram.com/v/t51.2885-19/473780590_1503107307037255_322624719755451649_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-gru2-1.cdninstagram.com&_nc_cat=107&_nc_oc=Q6cZ2QEbJsNWxAct8oCFT5g694o5nNENys_sR9HpyAla4vChValMlsoQGzs0nEoCV-PvqQA&_nc_ohc=EhVshOpXtBkQ7kNvwErKXUs&_nc_gid=bxpa752fajUdprbwRmcpvw&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_Afnkx31ytppGT3S1pP_qSgLBofKpSUOCpEBkQz3HbYzLHQ&oe=6938E07B&_nc_sid=7a9f4b",
+    "IG": "476 mil",
+    "TTK": "-",
+    "YT": "-",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Família, Gastronomia",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "R$ 19.830,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Richard Viana é criador do projeto Nossas Viagens, voltado para turismo em família, incluindo dicas para viajar com crianças e pets. Foco em roteiros econômicos e planejamento inteligente."
+  },
+  {
+    "INFLUENCIADOR": "David Brito",
+    "@": "viajabrito",
+    "IMAGEM_URL": "https://scontent-gru1-1.cdninstagram.com/v/t51.2885-19/317180941_629280842280700_2678769134294966350_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-gru1-1.cdninstagram.com&_nc_cat=104&_nc_oc=Q6cZ2QGFPup5bOcJqsxMgMT0OdndP1GoRVaAcnkkk-7D4drabInR8DF87oVx35TjJ1CK3zY&_nc_ohc=X56TD8-jFRIQ7kNvwFvqffG&_nc_gid=aS4LMuvX2nn7RE2m7KrApQ&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfkXpU0lIqX3ZrjAfRRBfln6D8j-4Gh_1pddpLR1VyRfQg&oe=6938E7DD&_nc_sid=7a9f4b",
+    "IG": "340 mil",
+    "TTK": "40 mil",
+    "YT": "34 mil",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Gastronomia, Educação",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "R$ 20.000,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "David Brito é influenciador e fundador do projeto Viaja Brito. Produz conteúdos sobre destinos nacionais e internacionais, roteiros detalhados e experiências gastronômicas. Atuou como influenciador oficial da Riotur."
+  },
+  {
+    "INFLUENCIADOR": "Ana Costa",
+    "@": "anacosta.acc",
+    "IMAGEM_URL": "https://scontent-gru2-2.cdninstagram.com/v/t51.2885-19/456685756_865375435188616_2038360958185039807_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-gru2-2.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2QF4j6rXIvxKpaxvfW3kBUY4k8-vXzhpiWhyI_yGEwDKWH8NjyUQ4AZu_GGfoQb-cyM&_nc_ohc=RMNTM6yr3qQQ7kNvwGgF83j&_nc_gid=f_UhkeZycxhCe-bmOWJjFA&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AfnCOaITjgRzEt8wnD66J5QyAzJqspRdUhiXa_xbwk3WwQ&oe=6938DAB9&_nc_sid=7a9f4b",
+    "IG": "234 mil",
+    "TTK": "79 mil",
+    "YT": "-",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Moda, Lifestyle, Gastronomia",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "R$ 19.950,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Ana Costa é criadora de conteúdo com foco em viagens e lifestyle fashion. Compartilha dicas de destinos, hotéis e parques temáticos com estética visual atrativa."
+  },
+  {
+    "INFLUENCIADOR": "Bárbara Francisco",
+    "@": "barbarafranccisco",
+    "IMAGEM_URL": "https://scontent-gru1-2.cdninstagram.com/v/t51.2885-19/226590969_520659465831507_4388240164858772383_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-gru1-2.cdninstagram.com&_nc_cat=103&_nc_oc=Q6cZ2QE43Dk4XrRzch73KeSmU6bTbXJ2YODZQOn4y0r30sWjzRvjwjR8yKEX3rkA1l1nLHk&_nc_ohc=g75_lveLRYgQ7kNvwE6s--r&_nc_gid=mxn-h_O6zQGIvnU4jIytBQ&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_Afm3JRy6gPAnYZTiOXYRs4U9nPVfWawnnx4YW-UZv7XtbQ&oe=69390203&_nc_sid=7a9f4b",
+    "IG": "222 mil",
+    "TTK": "145 mil",
+    "YT": "10 mil",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Fotografia, Gastronomia",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "R$ 19.230,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Bárbara Francisco produz conteúdos sobre destinos nacionais e internacionais, roteiros detalhados e hospedagens diferenciadas."
+  },
+  {
+    "INFLUENCIADOR": "Verônica",
+    "@": "amantesdeestrada",
+    "IMAGEM_URL": "https://scontent-gru2-2.cdninstagram.com/v/t51.2885-19/518817345_18072069797490175_6050811976009563797_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-gru2-2.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2QHWtE9w3L2H-k1lvZXVAwvTnoCI0rOMyJ0v_Tf3jMZNc-HB_t9IRtdXgTJGUNrNszA&_nc_ohc=-d2QQNND0gsQ7kNvwFujRj9&_nc_gid=EhTH-rgZMJX_Z2tBY9EjOw&edm=AP4sbd4BAAAA&ccb=7-5&oh=00_AflnRR-92ejzHC9QJ0IssvSyXPsxCWhGQQDadWGtdc1evQ&oe=6938F65D&_nc_sid=7a9f4b",
+    "IG": "379 mil",
+    "TTK": "817 mil",
+    "YT": "-",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Lifestyle, Família, Gastronomia",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "R$ 19.000,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Verônica e Rafael são criadores do projeto Amantes de Estrada. Foco em viagens de casal, resorts e experiências culturais nacionais e internacionais."
+  },
+  {
+    "INFLUENCIADOR": "Felipe Almeida",
+    "@": "eufelipealmeidaa",
+    "IMAGEM_URL": "https://scontent-gru2-2.cdninstagram.com/v/t51.2885-19/588001068_18544507339002225_9098731978704467849_n.jpg?stp=dst-jpg_s150x150_tt6&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLmRqYW5nby4xMDgwLmMyIn0&_nc_ht=scontent-gru2-2.cdninstagram.com&_nc_cat=1&_nc_oc=Q6cZ2QGSBJ7u5kLt1EUl45AOmY4tZzfrlWTRKqmA4HezibUMBVf8i8dV7vlPUDhafDhUmPM&_nc_ohc=Zq0Y_bFQtaIQ7kNvwF1L9Ds&_nc_gid=_wJKOhchXZSv7fKj3QpyiQ&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfndoqeAT5C-fSbJe9OqwuZgmXKH3RL8pktBxYbWVooSjA&oe=6938F73A&_nc_sid=8b3546",
+    "IG": "899 mil",
+    "TTK": "1430",
+    "YT": "-",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Negócios/Marketing, Lifestyle, Educação",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "R$ 20.000,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Felipe Almeida é fundador do Grupo Na Janela. Democratiza o acesso a viagens com alertas de passagens e mentorias para viajar gastando pouco."
+  },
+  {
+    "INFLUENCIADOR": "Adriana Chaia",
+    "@": "viajandocomhistoria",
+    "IMAGEM_URL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSVtrvgvszNMcIbzag1P8Ec1kR8e7X2SCe_ig&s",
+    "IG": "880 mil",
+    "TTK": "10 mil",
+    "YT": "-",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Cultura, Gastronomia, Lifestyle",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "R$ 20.000,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Adriana Chaia é jornalista e criadora do projeto Viajando com História. Foco em turismo cultural, histórico e de luxo, com roteiros detalhados em mais de 38 países."
+  },
+  {
+    "INFLUENCIADOR": "Sabrina Bull",
+    "@": "sabrinabull",
+    "IMAGEM_URL": "https://media.licdn.com/dms/image/v2/D4E03AQH5JQ7jJ_VEsA/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1720667909876?e=2147483647&v=beta&t=qz2CH3dGSB_OxQffR3aUcTuQmJ_34U4PbfY-oU3dWX3dW",
+    "IG": "323 mil",
+    "TTK": "23 mil",
+    "YT": "132 mil",
+    "SEGMENTO": "Viagem",
+    "SEGMENTO SECUNDÁRIO": "Educação, Lifestyle, Família",
+    "PROJETOS": "Gol Black Friday",
+    "REF. VALOR": "R$ 19.690,00",
+    "AGÊNCIA": "Cely",
+    "ESCOPO": "1 Reels Feed ou TikTok+ 1 Post Feed IG+1 sequência 3 stories",
+    "MINI BIO - INFLUENCIADOR": "Sabrina Bull é influenciadora e mentora especializada em turismo. Já visitou mais de 70 países e ajuda empreendedores a estruturar negócios no setor através do seu método."
   }
+
+
 
 ]
 
@@ -8406,7 +9054,7 @@ const couplesData = [
               "IG": "1 M", 
               "TTK": "2.9 M", 
               "YT": "633 mil", 
-              "SEGMENTO": "Lifestyle, Viagem, Entretenimento"}
+              "SEGMENTO": "Lifestyle, Viagens, Entretenimento"}
         ]
     },
     {
@@ -8427,6 +9075,8 @@ const couplesData = [
               "TTK": "200 mil", 
               "YT": "555", 
               "SEGMENTO": "Cultura regional, Entretenimento"}
+
         ]
     }
 ];
+
