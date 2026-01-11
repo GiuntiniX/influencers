@@ -118,9 +118,13 @@
                     </button>
                 </div>
                 
-                <button type="submit" 
-                    class="w-full py-3 px-4 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-bold rounded-lg shadow-lg transform transition hover:-translate-y-1 hover:shadow-xl">
-                    Entrar no Painel
+                <button type="submit" id="login-submit-btn"
+                    class="w-full py-3 px-4 bg-gradient-to-r from-amber-500 to-orange-600 hover:from-amber-600 hover:to-orange-700 text-white font-bold rounded-lg shadow-lg transform transition hover:-translate-y-1 hover:shadow-xl flex justify-center items-center gap-2">
+                    <span>Entrar no Painel</span>
+                    <svg id="btn-spinner" class="animate-spin h-5 w-5 text-white hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
                 </button>
             </form>
 
@@ -334,7 +338,9 @@
     // ==========================================
     // SCRIPT DE LOGIN
     // ==========================================
-    const PASSWORD_CORRECT = "TerraInfluencers";
+    // A senha "TerraInfluencers" convertida para Base64 para ofuscação básica
+    // Para gerar nova: btoa("SuaNovaSenha") no console do navegador
+    const ENCRYPTED_PASS = "VGVycmFJbmZsdWVuY2Vycw=="; 
     const SESSION_KEY = "terra_influencers_auth";
 
     // Toggle Password Visibility
@@ -359,21 +365,24 @@
         });
     }
 
-    // Limpar mensagem de erro ao digitar
-    if (passwordInput) {
-        passwordInput.addEventListener('input', () => {
-            document.getElementById('login-error').classList.add('hidden');
-            passwordInput.classList.remove('ring-red-500');
-        });
-    }
-
-    function checkPassword() {
+    async function checkPassword() {
         const input = document.getElementById('password-input');
         const errorMsg = document.getElementById('login-error');
-        const loginScreen = document.getElementById('login-screen');
-        const appContent = document.getElementById('app-content');
+        const submitBtn = document.getElementById('login-submit-btn');
+        const btnSpinner = document.getElementById('btn-spinner');
+        const btnText = submitBtn.querySelector('span');
         
-        if (input.value === PASSWORD_CORRECT) {
+        // Estado de "Carregando"
+        submitBtn.disabled = true;
+        submitBtn.classList.add('opacity-75', 'cursor-not-allowed');
+        btnSpinner.classList.remove('hidden');
+        btnText.textContent = "Verificando...";
+
+        // Pequeno delay artificial para UX (sensação de verificação)
+        await new Promise(r => setTimeout(r, 400));
+
+        // Verificação usando Base64 (btoa) para não deixar a senha crua no código
+        if (btoa(input.value) === ENCRYPTED_PASS) {
             // Sucesso
             errorMsg.classList.add('hidden');
             
@@ -386,6 +395,14 @@
             errorMsg.classList.remove('hidden');
             input.classList.add('ring-2', 'ring-red-500', 'shake');
             setTimeout(() => input.classList.remove('shake'), 500);
+            
+            // Resetar botão
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('opacity-75', 'cursor-not-allowed');
+            btnSpinner.classList.add('hidden');
+            btnText.textContent = "Entrar no Painel";
+            
+            input.focus();
         }
     }
 
